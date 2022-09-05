@@ -4,11 +4,16 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Documents/CODE/android/scribo-chat-repo/app/src/main/res/drawable/header.xml" value="0.145" />
+        <entry key="..\:/Documents/CODE/android/scribo-chat-repo/app/src/main/res/drawable/ic_baseline_edit_24.xml" value="0.2395" />
+        <entry key="..\:/Documents/CODE/android/scribo-chat-repo/app/src/main/res/drawable/ic_btn_action_menu.xml" value="0.2395" />
+        <entry key="..\:/Documents/CODE/android/scribo-chat-repo/app/src/main/res/drawable/ic_btn_action_menu_change_name.xml" value="0.2395" />
+        <entry key="..\:/Documents/CODE/android/scribo-chat-repo/app/src/main/res/drawable/ic_btn_action_menu_exit.xml" value="0.2395" />
         <entry key="..\:/Documents/CODE/android/scribo-chat-repo/app/src/main/res/drawable/ripple_effect.xml" value="0.2395" />
         <entry key="..\:/Documents/CODE/android/scribo-chat-repo/app/src/main/res/layout/activity_main.xml" value="0.2826086956521739" />
         <entry key="..\:/Documents/CODE/android/scribo-chat-repo/app/src/main/res/layout/fragment_base.xml" value="0.35260416666666666" />
         <entry key="..\:/Documents/CODE/android/scribo-chat-repo/app/src/main/res/layout/fragment_chats.xml" value="0.2962962962962963" />
         <entry key="..\:/Documents/CODE/android/scribo-chat-repo/app/src/main/res/layout/fragment_settings.xml" value="0.36666666666666664" />
+        <entry key="..\:/Documents/CODE/android/scribo-chat-repo/app/src/main/res/menu/settings_action_menu.xml" value="0.36666666666666664" />
       </map>
     </option>
   </component>

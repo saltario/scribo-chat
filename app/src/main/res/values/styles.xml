@@ -1,11 +1,13 @@
 <resources>
 
+    <!-- Application light theme -->
     <style name="AppThemeLight" parent="MaterialDrawerTheme">
 
         <item name="colorPrimary">@color/color_primary</item>
         <item name="colorPrimaryDark">@color/color_primary_dark</item>
         <item name="colorAccent">@color/color_accent</item>
         <item name="android:colorBackground">@color/color_accent</item>
+        <item name="popupTheme">@style/actionMenu</item>
 
         <!-- MaterialDrawer -->
         <item name="material_drawer_background">@color/material_drawer_background</item>
@@ -23,6 +25,13 @@
 
     </style>
 
+    <!-- Action menu -->
+    <style name="actionMenu" parent="Theme.AppCompat.Light">
+        <item name="background">@color/color_background_light</item>
+        <item name="actionMenuTextColor">@color/color_label</item>
+    </style>
+
+    <!-- Settings buttons-->
     <style name="settings_buttons">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">wrap_content</item>
@@ -32,6 +41,7 @@
         <item name="android:background">@drawable/ripple_effect</item>
     </style>
 
+    <!-- Text-->
     <style name="normal_text">
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>
