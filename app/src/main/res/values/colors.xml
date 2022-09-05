@@ -3,6 +3,7 @@
     <color name="color_primary">#BF3030</color>
     <color name="color_primary_dark">#A60000</color>
     <color name="color_accent">#FFFFFF</color>
+    <color name="color_label">#A1A1A1</color>
 
     <!-- MaterialDrawer colors -->
     <color name="material_drawer_primary">#2196F3</color>
