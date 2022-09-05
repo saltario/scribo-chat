@@ -1,10 +1,11 @@
 <resources>
 
-    <style name="AppThemeLight" parent="MaterialDrawerTheme.Light">
+    <style name="AppThemeLight" parent="MaterialDrawerTheme">
 
         <item name="colorPrimary">@color/color_primary</item>
         <item name="colorPrimaryDark">@color/color_primary_dark</item>
         <item name="colorAccent">@color/color_accent</item>
+        <item name="android:colorBackground">@color/color_accent</item>
 
         <!-- MaterialDrawer -->
         <item name="material_drawer_background">@color/material_drawer_background</item>
