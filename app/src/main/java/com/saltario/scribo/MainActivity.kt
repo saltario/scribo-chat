@@ -1,11 +1,16 @@
 package com.saltario.scribo
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.appcompat.widget.Toolbar
+import com.saltario.scribo.activities.RegisterActivity
 import com.saltario.scribo.databinding.ActivityMainBinding
 import com.saltario.scribo.ui.fragments.ChatsFragment
 import com.saltario.scribo.ui.objects.AppDrawer
+import com.saltario.scribo.utilits.replaceActivity
+import com.saltario.scribo.utilits.replaceFragment
+
 
 class MainActivity : AppCompatActivity() {
 
@@ -32,10 +37,14 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun initFunc() {
-        setSupportActionBar(mToolBar)
-        mAppDrawer.create()
-        supportFragmentManager.beginTransaction()
-            .replace(R.id.dataContainer, ChatsFragment())
-            .commit()
+
+        if (true){
+            setSupportActionBar(mToolBar)
+            mAppDrawer.create()
+            replaceFragment(ChatsFragment())
+        }
+        else {
+            replaceActivity(RegisterActivity())
+        }
     }
 }

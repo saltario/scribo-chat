@@ -5,21 +5,28 @@
 
     <!-- Settings -->
     <string name="settings_text_account">Аккаунт</string>
-
     <string name="settings_username_default">Вадим Шаульский</string>
     <string name="settings_user_status_default">Онлайн</string>
-
     <string name="settings_number_phone_default">+79857493395</string>
     <string name="settings_label_number_phone">Нажмите чтобы изменить номер телефона</string>
-
     <string name="settings_login_default">saltario</string>
-    <string name="settings_label_login">Нажмите чтобы изменить имя пользователя</string>
-
+    <string name="settings_label_username">Нажмите чтобы изменить имя пользователя</string>
     <string name="settings_bio_default">О себе</string>
     <string name="settings_label_bio">Нажмите чтобы изменить описание</string>
 
     <!-- Settings action menu -->
     <string name="settings_action_menu_change_name">Изменить имя</string>
     <string name="settings_action_menu_exit">Выход</string>
+
+    <!-- Register -->
+    <string name="cd_register_image">content description</string>
+    <string name="register_text_enter_code">Введите код</string>
+    <string name="register_text_we_sent">Мы отправили вам смс с кодом проверки на ваш телефон</string>
+    <string name="register_hint_default_code">- - - - - -</string>
+    <string name="register_title_your_phone">Ваш телефон</string>
+    <string name="register_toast_enter_phone_number">Введите номер телефона!</string>
+
+    <!-- Other -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 
 </resources>
