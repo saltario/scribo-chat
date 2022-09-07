@@ -3,12 +3,12 @@ package com.saltario.scribo
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.appcompat.widget.Toolbar
-import com.google.firebase.auth.FirebaseAuth
 import com.saltario.scribo.activities.RegisterActivity
 import com.saltario.scribo.databinding.ActivityMainBinding
 import com.saltario.scribo.ui.fragments.ChatsFragment
 import com.saltario.scribo.ui.objects.AppDrawer
 import com.saltario.scribo.utilits.AUTH
+import com.saltario.scribo.utilits.initFirebase
 import com.saltario.scribo.utilits.replaceActivity
 import com.saltario.scribo.utilits.replaceFragment
 
@@ -34,7 +34,7 @@ class MainActivity : AppCompatActivity() {
     private fun initFields() {
         mToolBar = mBinding.mainToolBar
         mAppDrawer = AppDrawer(this, mToolBar)
-        AUTH = FirebaseAuth.getInstance()
+        initFirebase()
     }
 
     private fun initFunc() {

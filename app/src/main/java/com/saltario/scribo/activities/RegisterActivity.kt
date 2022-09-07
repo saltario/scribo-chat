@@ -6,6 +6,7 @@ import androidx.appcompat.widget.Toolbar
 import com.saltario.scribo.R
 import com.saltario.scribo.databinding.ActivityRegisterBinding
 import com.saltario.scribo.ui.fragments.EnterPhoneNumberFragment
+import com.saltario.scribo.utilits.initFirebase
 import com.saltario.scribo.utilits.replaceFragment
 
 class RegisterActivity : AppCompatActivity() {
@@ -17,6 +18,8 @@ class RegisterActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         mBinding = ActivityRegisterBinding.inflate(layoutInflater)
         setContentView(mBinding.root)
+
+        initFirebase()
     }
 
     override fun onStart() {
@@ -25,6 +28,6 @@ class RegisterActivity : AppCompatActivity() {
         mToolBar = mBinding.registerToolBar
         setSupportActionBar(mToolBar)
         title = getString(R.string.register_title_your_phone)
-        replaceFragment(EnterPhoneNumberFragment(), false)
+        replaceFragment(EnterPhoneNumberFragment())
     }
 }

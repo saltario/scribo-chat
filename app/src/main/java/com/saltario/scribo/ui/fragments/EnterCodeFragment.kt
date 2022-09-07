@@ -6,10 +6,7 @@ import com.google.firebase.auth.PhoneAuthProvider
 import com.saltario.scribo.MainActivity
 import com.saltario.scribo.R
 import com.saltario.scribo.activities.RegisterActivity
-import com.saltario.scribo.utilits.AUTH
-import com.saltario.scribo.utilits.AppTextWatcher
-import com.saltario.scribo.utilits.replaceActivity
-import com.saltario.scribo.utilits.showToast
+import com.saltario.scribo.utilits.*
 import kotlinx.android.synthetic.main.fragment_enter_code.*
 
 class EnterCodeFragment(val phoneNumber: String, val id: String) : Fragment(R.layout.fragment_enter_code) {
@@ -34,8 +31,22 @@ class EnterCodeFragment(val phoneNumber: String, val id: String) : Fragment(R.la
 
         AUTH.signInWithCredential(credential).addOnCompleteListener { task ->
             if (task.isSuccessful){
-                showToast("Welcome")
-                (activity as RegisterActivity).replaceActivity(MainActivity())
+
+                val uid: String = AUTH.currentUser?.uid.toString()
+                val dateMap = mutableMapOf<String, Any>()
+                dateMap[CHILD_ID] = uid
+                dateMap[CHILD_PHONE] = phoneNumber
+                dateMap[CHILD_USERNAME] = uid
+
+                REF_DATABASE_ROOT.child(NODE_USERS).child(uid).updateChildren(dateMap)
+                    .addOnCompleteListener {task2 ->
+                        if(task2.isSuccessful) {
+                            showToast(getString(R.string.welcome_message))
+                            (activity as RegisterActivity).replaceActivity(MainActivity())
+                        } else {
+                            showToast(task2.exception?.message.toString())
+                        }
+                }
             } else {
                 showToast(task.exception?.message.toString())
             }

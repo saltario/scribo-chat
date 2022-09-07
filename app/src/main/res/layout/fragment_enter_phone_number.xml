@@ -12,6 +12,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         android:importantForAutofill="no"
+        android:hint="@string/register_phone_number_hint"
         style="@style/edit_phone_number"
         tools:ignore="LabelFor" />
 
