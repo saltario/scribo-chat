@@ -12,7 +12,6 @@ import com.saltario.scribo.utilits.AUTH
 import com.saltario.scribo.utilits.replaceActivity
 import com.saltario.scribo.utilits.replaceFragment
 
-
 class MainActivity : AppCompatActivity() {
 
     private lateinit var mBinding: ActivityMainBinding
@@ -43,7 +42,7 @@ class MainActivity : AppCompatActivity() {
         if (AUTH.currentUser != null){
             setSupportActionBar(mToolBar)
             mAppDrawer.create()
-            replaceFragment(ChatsFragment())
+            replaceFragment(ChatsFragment(), false)
         }
         else {
             replaceActivity(RegisterActivity())
