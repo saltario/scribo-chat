@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "901869768690",
+    "project_id": "scribo-chat",
+    "storage_bucket": "scribo-chat.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:901869768690:android:0b2b4369f4ca5940f1656b",
+        "android_client_info": {
+          "package_name": "com.saltario.scribo"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "901869768690-1l02q68n382mo63ehcvt76l38s8576tu.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyChV3h0efKOUjUsZrJm5oogIxapIH4gdPo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "901869768690-1l02q68n382mo63ehcvt76l38s8576tu.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
