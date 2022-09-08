@@ -1,4 +1,4 @@
-package com.saltario.scribo.utilits
+package com.saltario.scribo.ui.objects
 
 import android.text.Editable
 import android.text.TextWatcher

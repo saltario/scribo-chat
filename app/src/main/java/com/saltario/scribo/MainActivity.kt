@@ -3,14 +3,16 @@ package com.saltario.scribo
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.appcompat.widget.Toolbar
+import com.google.firebase.database.DataSnapshot
+import com.google.firebase.database.DatabaseError
+import com.google.firebase.database.ValueEventListener
 import com.saltario.scribo.activities.RegisterActivity
 import com.saltario.scribo.databinding.ActivityMainBinding
+import com.saltario.scribo.models.User
 import com.saltario.scribo.ui.fragments.ChatsFragment
 import com.saltario.scribo.ui.objects.AppDrawer
-import com.saltario.scribo.utilits.AUTH
-import com.saltario.scribo.utilits.initFirebase
-import com.saltario.scribo.utilits.replaceActivity
-import com.saltario.scribo.utilits.replaceFragment
+import com.saltario.scribo.ui.objects.AppValueEventListener
+import com.saltario.scribo.utilits.*
 
 class MainActivity : AppCompatActivity() {
 
@@ -35,6 +37,14 @@ class MainActivity : AppCompatActivity() {
         mToolBar = mBinding.mainToolBar
         mAppDrawer = AppDrawer(this, mToolBar)
         initFirebase()
+        initUser()
+    }
+
+    private fun initUser() {
+        REF_DATABASE_ROOT.child(NODE_USERS).child(UID)
+            .addListenerForSingleValueEvent(AppValueEventListener{
+                USER = it.getValue(User::class.java) ?: User()
+            })
     }
 
     private fun initFunc() {

@@ -6,6 +6,7 @@ import com.google.firebase.auth.PhoneAuthProvider
 import com.saltario.scribo.MainActivity
 import com.saltario.scribo.R
 import com.saltario.scribo.activities.RegisterActivity
+import com.saltario.scribo.ui.objects.AppTextWatcher
 import com.saltario.scribo.utilits.*
 import kotlinx.android.synthetic.main.fragment_enter_code.*
 
