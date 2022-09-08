@@ -87,4 +87,15 @@
         <item name="android:textColorHint">@color/color_label</item>
     </style>
 
+    <style name="edit_text">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">@color/color_primary</item>
+        <item name="android:textSize">@dimen/normal_text_size</item>
+        <item name="android:layout_margin">@dimen/horizontal_margin</item>
+        <item name="android:padding">@dimen/app_padding</item>
+        <item name="android:maxLines">1</item>
+        <item name="android:textColorHint">@color/color_label</item>
+    </style>
+
 </resources>

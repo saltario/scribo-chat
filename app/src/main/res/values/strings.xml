@@ -30,5 +30,9 @@
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="register_phone_number_hint">------</string>
     <string name="welcome_message">Welcome</string>
+    <string name="settings_input_name_hint">Имя</string>
+    <string name="settings_input_surname_hint">Фамилия</string>
+    <string name="settings_toast_name_is_empty">Имя не может быть пустым</string>
+    <string name="toast_data_update">Данные обновлены</string>
 
 </resources>
