@@ -1,7 +1,6 @@
 package com.saltario.scribo.ui.fragments
 
 import android.view.*
-import androidx.fragment.app.Fragment
 import com.saltario.scribo.MainActivity
 import com.saltario.scribo.R
 import com.saltario.scribo.utilits.*
@@ -25,13 +24,13 @@ class ChangeNameFragment : BaseFragment(R.layout.fragment_change_name) {
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
 
         when (item.itemId) {
-            R.id.settings_confirm_change -> changeName()
+            R.id.settings_confirm_change -> change()
         }
 
         return true
     }
 
-    private fun changeName() {
+    private fun change() {
         val name = settings_input_name.text.toString()
         val surname = settings_input_surname.text.toString()
 

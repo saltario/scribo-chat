@@ -18,6 +18,11 @@ class SettingsFragment : BaseFragment(R.layout.fragment_settings) {
         super.onResume()
         setHasOptionsMenu(true)
         initFields()
+        initListeners()
+    }
+
+    private fun initListeners() {
+        settings_btn_change_username.setOnClickListener { replaceFragment(ChangeUsernameFragment()) }
     }
 
     private fun initFields() {
