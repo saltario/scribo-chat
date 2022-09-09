@@ -37,5 +37,6 @@
     <string name="settings_input_username_hint">Username</string>
     <string name="settings_toast_username_is_empty">Имя пользователя пустое</string>
     <string name="settings_toast_username_not_unique">Имя не уникально</string>
+    <string name="settings_input_bio_hint">Bio</string>
 
 </resources>
