@@ -3,7 +3,6 @@ package com.saltario.scribo.ui.fragments
 import com.saltario.scribo.R
 import com.saltario.scribo.utilits.*
 import kotlinx.android.synthetic.main.fragment_change_bio.*
-import kotlinx.android.synthetic.main.fragment_change_name.*
 
 class ChangeBioFragment : BaseChangeFragment(R.layout.fragment_change_bio) {
 
