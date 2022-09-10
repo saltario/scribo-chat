@@ -31,7 +31,7 @@ class MainActivity : AppCompatActivity() {
         APP_ACTIVITY = this
         mToolBar = mBinding.mainToolBar
         mAppDrawer = AppDrawer(this, mToolBar)
-        initFirebase()
+        initDatabase()
         initUser()
     }
 
