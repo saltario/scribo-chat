@@ -1,14 +1,14 @@
 package com.saltario.scribo
 
+import android.content.pm.PackageManager
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
+import androidx.core.content.ContextCompat
 import com.saltario.scribo.activities.RegisterActivity
 import com.saltario.scribo.databinding.ActivityMainBinding
-import com.saltario.scribo.models.User
 import com.saltario.scribo.ui.fragments.ChatsFragment
 import com.saltario.scribo.ui.objects.AppDrawer
-import com.saltario.scribo.ui.objects.AppValueEventListener
 import com.saltario.scribo.utilits.*
 
 class MainActivity : AppCompatActivity() {
@@ -27,6 +27,24 @@ class MainActivity : AppCompatActivity() {
         initUser(){
             initFields()
             initFunc()
+            initContacts()
+        }
+    }
+
+    private fun initContacts() {
+        if (checkPermission(READ_CONTACTS)){
+            showToast("Чтение контактов")
+        }
+    }
+
+    override fun onRequestPermissionsResult(
+        requestCode: Int,
+        permissions: Array<out String>,
+        grantResults: IntArray
+    ) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults)
+        if (ContextCompat.checkSelfPermission(APP_ACTIVITY, READ_CONTACTS)==PackageManager.PERMISSION_GRANTED){
+            initContacts()
         }
     }
 

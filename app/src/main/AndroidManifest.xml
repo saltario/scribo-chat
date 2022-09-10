@@ -4,7 +4,11 @@
     package="com.saltario.scribo">
 
     <uses-permission
-        android:name="android.permission.READ_EXTERNAL_STORAGE">
+    android:name="android.permission.READ_EXTERNAL_STORAGE">
+    </uses-permission>
+
+    <uses-permission
+        android:name="android.permission.READ_CONTACTS">
     </uses-permission>
 
     <uses-permission
