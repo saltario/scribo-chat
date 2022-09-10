@@ -59,6 +59,9 @@ dependencies {
     // ImageCropper
     implementation 'com.theartofdev.edmodo:android-image-cropper:2.8.0'
 
+    // Picasso
+    implementation 'com.squareup.picasso:picasso:2.8'
+
     // Firebase
     implementation 'com.google.firebase:firebase-auth:21.0.8'
     implementation 'com.google.firebase:firebase-database:20.0.6'

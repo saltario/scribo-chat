@@ -4,9 +4,9 @@ import android.view.Menu
 import android.view.MenuInflater
 import android.view.MenuItem
 import androidx.fragment.app.Fragment
-import com.saltario.scribo.MainActivity
 import com.saltario.scribo.R
 import com.saltario.scribo.utilits.APP_ACTIVITY
+import com.saltario.scribo.utilits.hideKeyboard
 
 open class BaseChangeFragment(layout: Int) : Fragment(layout) {
 
@@ -15,11 +15,11 @@ open class BaseChangeFragment(layout: Int) : Fragment(layout) {
 
         APP_ACTIVITY.mAppDrawer.disableDrawer()
         setHasOptionsMenu(true)
+        hideKeyboard()
     }
 
     override fun onStop() {
         super.onStop()
-        APP_ACTIVITY.hideKeyboard()
     }
 
     override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
