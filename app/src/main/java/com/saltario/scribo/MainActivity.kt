@@ -1,11 +1,8 @@
 package com.saltario.scribo
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
-import com.google.firebase.database.DataSnapshot
-import com.google.firebase.database.DatabaseError
-import com.google.firebase.database.ValueEventListener
 import com.saltario.scribo.activities.RegisterActivity
 import com.saltario.scribo.databinding.ActivityMainBinding
 import com.saltario.scribo.models.User
@@ -25,18 +22,16 @@ class MainActivity : AppCompatActivity() {
 
         mBinding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(mBinding.root)
-    }
 
-    override fun onStart() {
-        super.onStart()
         initFields()
         initFunc()
     }
 
     private fun initFields() {
+        APP_ACTIVITY = this
         mToolBar = mBinding.mainToolBar
         mAppDrawer = AppDrawer(this, mToolBar)
-        initFirebase()
+        initDatabase()
         initUser()
     }
 

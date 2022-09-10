@@ -6,7 +6,7 @@ import androidx.appcompat.widget.Toolbar
 import com.saltario.scribo.R
 import com.saltario.scribo.databinding.ActivityRegisterBinding
 import com.saltario.scribo.ui.fragments.EnterPhoneNumberFragment
-import com.saltario.scribo.utilits.initFirebase
+import com.saltario.scribo.utilits.initDatabase
 import com.saltario.scribo.utilits.replaceFragment
 
 class RegisterActivity : AppCompatActivity() {
@@ -19,7 +19,7 @@ class RegisterActivity : AppCompatActivity() {
         mBinding = ActivityRegisterBinding.inflate(layoutInflater)
         setContentView(mBinding.root)
 
-        initFirebase()
+        initDatabase()
     }
 
     override fun onStart() {
