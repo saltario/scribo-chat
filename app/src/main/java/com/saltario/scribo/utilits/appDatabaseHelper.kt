@@ -7,6 +7,7 @@ import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.storage.FirebaseStorage
 import com.google.firebase.storage.StorageReference
 import com.saltario.scribo.models.User
+import com.saltario.scribo.ui.objects.AppValueEventListener
 
 lateinit var REF_DATABASE_ROOT: DatabaseReference
 lateinit var REF_STORAGE_ROOT: StorageReference
@@ -52,4 +53,15 @@ inline fun putImageToStorage(uri: Uri, path: StorageReference, crossinline funct
     path.putFile(uri)
         .addOnSuccessListener { function() }
         .addOnFailureListener { showToast(it.message.toString()) }
+}
+
+inline fun initUser(crossinline function: () -> Unit) {
+    REF_DATABASE_ROOT.child(NODE_USERS).child(UID)
+        .addListenerForSingleValueEvent(AppValueEventListener{
+            USER = it.getValue(User::class.java) ?: User()
+            if (USER.username.isEmpty()){
+                USER.username = UID
+            }
+            function()
+        })
 }

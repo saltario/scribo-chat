@@ -76,6 +76,7 @@ class SettingsFragment : BaseFragment(R.layout.fragment_settings) {
                     putUrlToDatabase(it) {
                         settings_photo.downloadAndSetImage(it)
                         USER.photoUrl = it
+                        APP_ACTIVITY.mAppDrawer.updateHeader()
                         showToast(getString(R.string.toast_data_update))
                     }
                 }
