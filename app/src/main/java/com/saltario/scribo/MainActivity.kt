@@ -9,6 +9,7 @@ import com.saltario.scribo.activities.RegisterActivity
 import com.saltario.scribo.databinding.ActivityMainBinding
 import com.saltario.scribo.ui.fragments.ChatsFragment
 import com.saltario.scribo.ui.objects.AppDrawer
+import com.saltario.scribo.ui.objects.AppStates
 import com.saltario.scribo.utilits.*
 
 class MainActivity : AppCompatActivity() {
