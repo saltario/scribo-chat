@@ -31,7 +31,7 @@ class EnterCodeFragment(val phoneNumber: String, val id: String) : Fragment(R.la
         val credential: PhoneAuthCredential = PhoneAuthProvider.getCredential(id, code)
 
         AUTH.signInWithCredential(credential).addOnCompleteListener { task ->
-            if (task.isSuccessful){
+            if (task.isSuccessful) {
 
                 val uid: String = AUTH.currentUser?.uid.toString()
                 val dateMap = mutableMapOf<String, Any>()
@@ -39,15 +39,16 @@ class EnterCodeFragment(val phoneNumber: String, val id: String) : Fragment(R.la
                 dateMap[CHILD_PHONE] = phoneNumber
                 dateMap[CHILD_USERNAME] = uid
 
-                REF_DATABASE_ROOT.child(NODE_USERS).child(uid).updateChildren(dateMap)
-                    .addOnCompleteListener {task2 ->
-                        if(task2.isSuccessful) {
-                            showToast(getString(R.string.welcome_message))
-                            (activity as RegisterActivity).replaceActivity(MainActivity())
-                        } else {
-                            showToast(task2.exception?.message.toString())
-                        }
-                }
+                REF_DATABASE_ROOT.child(NODE_PHONES).child(phoneNumber).setValue(uid)
+                    .addOnFailureListener { showToast(it.message.toString()) }
+                    .addOnSuccessListener {
+                        REF_DATABASE_ROOT.child(NODE_USERS).child(uid).updateChildren(dateMap)
+                            .addOnFailureListener { showToast(it.message.toString()) }
+                            .addOnSuccessListener {
+                                showToast(getString(R.string.welcome_message))
+                                (activity as RegisterActivity).replaceActivity(MainActivity())
+                            }
+                    }
             } else {
                 showToast(task.exception?.message.toString())
             }
