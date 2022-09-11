@@ -31,6 +31,7 @@ const val CHILD_STATE = "state"
 
 const val NODE_USERNAMES = "usernames"
 const val NODE_PHONES = "phones"
+// Хранит контакты пользователя, которые зарегестрированы в приложении
 const val NODE_PHONES_CONTACTS = "phones_contacts"
 
 const val FOLDER_PROFILE_IMAGE = "profile_image"

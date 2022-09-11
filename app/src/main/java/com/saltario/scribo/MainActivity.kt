@@ -15,7 +15,7 @@ import com.saltario.scribo.utilits.*
 class MainActivity : AppCompatActivity() {
 
     private lateinit var mBinding: ActivityMainBinding
-    private lateinit var mToolBar: Toolbar
+    lateinit var mToolBar: Toolbar
     lateinit var mAppDrawer: AppDrawer
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -31,8 +31,6 @@ class MainActivity : AppCompatActivity() {
             initContacts()
         }
     }
-
-
 
     override fun onRequestPermissionsResult(
         requestCode: Int,
@@ -58,7 +56,7 @@ class MainActivity : AppCompatActivity() {
     private fun initFields() {
         APP_ACTIVITY = this
         mToolBar = mBinding.mainToolBar
-        mAppDrawer = AppDrawer(this, mToolBar)
+        mAppDrawer = AppDrawer()
     }
 
     private fun initFunc() {
