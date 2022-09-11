@@ -6,13 +6,13 @@ plugins {
 }
 
 android {
-    compileSdk 32
+    compileSdk 33
     viewBinding.enabled = true
 
     defaultConfig {
         applicationId "com.saltario.scribo"
         minSdk 21
-        targetSdk 32
+        targetSdk 33
         versionCode 1
         versionName "1.0"
 
@@ -47,8 +47,8 @@ dependencies {
     implementation "com.mikepenz:materialdrawer-nav:7.0.0"
 
     // Standard
-    implementation 'androidx.core:core-ktx:1.8.0'
-    implementation 'androidx.appcompat:appcompat:1.5.0'
+    implementation 'androidx.core:core-ktx:1.9.0'
+    implementation 'androidx.appcompat:appcompat:1.5.1'
     implementation 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.5.1'
     implementation 'com.google.android.material:material:1.6.1'
     implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
@@ -66,6 +66,7 @@ dependencies {
     implementation 'com.google.firebase:firebase-auth:21.0.8'
     implementation 'com.google.firebase:firebase-database:20.0.6'
     implementation 'com.google.firebase:firebase-storage:20.0.2'
+    implementation 'com.firebaseui:firebase-ui-database:8.0.1'
 
     // reCaptcha
     implementation 'androidx.browser:browser:1.4.0'
