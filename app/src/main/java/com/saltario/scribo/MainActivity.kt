@@ -55,7 +55,7 @@ class MainActivity : AppCompatActivity() {
 
     private fun initFields() {
         APP_ACTIVITY = this
-        mToolBar = mBinding.mainToolBar
+        mToolBar = mBinding.mainToolbar
         mAppDrawer = AppDrawer()
     }
 

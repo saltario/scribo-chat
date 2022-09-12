@@ -7,7 +7,7 @@
     android:background="@color/color_primary">
 
     <de.hdodenhof.circleimageview.CircleImageView
-        android:id="@+id/toolbar_photo"
+        android:id="@+id/info_toolbar_photo"
         android:layout_width="@dimen/toolbar_user_photo_width"
         android:layout_height="@dimen/toolbar_user_photo_height"
         android:src="@drawable/default_photo"
@@ -17,18 +17,18 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/toolbar_fullname"
+        android:id="@+id/info_toolbar_fullname"
         style="@style/normal_text"
         android:textColor="@color/color_accent"
         tools:text="@string/app_fullname_default"
-        app:layout_constraintStart_toEndOf="@+id/toolbar_photo"
-        app:layout_constraintTop_toTopOf="@+id/toolbar_photo" />
+        app:layout_constraintStart_toEndOf="@+id/info_toolbar_photo"
+        app:layout_constraintTop_toTopOf="@+id/info_toolbar_photo" />
 
     <TextView
-        android:id="@+id/toolbar_state"
+        android:id="@+id/info_toolbar_state"
         style="@style/small_text"
         tools:text="@string/app_state_default"
-        app:layout_constraintStart_toEndOf="@+id/toolbar_photo"
-        app:layout_constraintTop_toBottomOf="@+id/toolbar_fullname" />
+        app:layout_constraintStart_toEndOf="@+id/info_toolbar_photo"
+        app:layout_constraintTop_toBottomOf="@+id/info_toolbar_fullname" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
