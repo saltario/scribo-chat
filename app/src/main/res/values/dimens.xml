@@ -2,8 +2,6 @@
 <resources>
 
     <!-- Application -->
-
-
     <dimen name="large_text_size">16sp</dimen>
     <dimen name="normal_text_size">16sp</dimen>
     <dimen name="small_text_size">14sp</dimen>

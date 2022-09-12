@@ -13,6 +13,7 @@
         android:layout_height="0dp"
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
         tools:listitem="@layout/message_item"
+        android:background="@color/color_background_chat"
         app:layout_constraintBottom_toTopOf="@+id/chat_input_message"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

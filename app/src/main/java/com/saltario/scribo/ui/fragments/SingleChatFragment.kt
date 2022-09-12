@@ -10,11 +10,11 @@ class SingleChatFragment(contact: Common) : BaseFragment(R.layout.fragment_singl
 
     override fun onResume() {
         super.onResume()
-        APP_ACTIVITY.mToolBar.infoToolBar.visibility = View.VISIBLE
+        APP_ACTIVITY.mToolBar.info_toolbar.visibility = View.VISIBLE
     }
 
     override fun onStop() {
         super.onStop()
-        APP_ACTIVITY.mToolBar.infoToolBar.visibility = View.GONE
+        APP_ACTIVITY.mToolBar.info_toolbar.visibility = View.GONE
     }
 }

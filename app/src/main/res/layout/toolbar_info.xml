@@ -12,7 +12,6 @@
         android:layout_height="@dimen/toolbar_user_photo_height"
         android:src="@drawable/default_photo"
         app:civ_circle_background_color="@color/color_accent"
-        android:layout_marginStart="@dimen/toolbar_horizontal_margin"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
