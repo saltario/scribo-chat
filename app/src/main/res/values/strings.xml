@@ -5,14 +5,21 @@
 
     <!-- Settings -->
     <string name="settings_text_account">Аккаунт</string>
-    <string name="settings_username_default">Вадим Шаульский</string>
-    <string name="settings_user_status_default">Онлайн</string>
+    <string name="settings_fullname_default">Вадим Шаульский</string>
+    <string name="settings_state_default">Онлайн</string>
     <string name="settings_number_phone_default">+79857493395</string>
     <string name="settings_label_number_phone">Нажмите чтобы изменить номер телефона</string>
     <string name="settings_login_default">saltario</string>
     <string name="settings_label_username">Нажмите чтобы изменить имя пользователя</string>
     <string name="settings_bio_default">О себе</string>
     <string name="settings_label_bio">Нажмите чтобы изменить описание</string>
+    <string name="settings_input_username_hint">Username</string>
+    <string name="settings_toast_username_is_empty">Имя пользователя пустое</string>
+    <string name="settings_toast_username_not_unique">Имя не уникально</string>
+    <string name="settings_input_bio_hint">Bio</string>
+    <string name="settings_input_name_hint">Имя</string>
+    <string name="settings_input_surname_hint">Фамилия</string>
+    <string name="settings_toast_name_is_empty">Имя не может быть пустым</string>
 
     <!-- Settings action menu -->
     <string name="settings_action_menu_change_name">Изменить имя</string>
@@ -25,18 +32,11 @@
     <string name="register_hint_default_code">- - - - - -</string>
     <string name="register_title_your_phone">Ваш телефон</string>
     <string name="register_toast_enter_phone_number">Введите номер телефона!</string>
+    <string name="register_phone_number_hint">------</string>
 
     <!-- Other -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
-    <string name="register_phone_number_hint">------</string>
     <string name="welcome_message">Welcome</string>
-    <string name="settings_input_name_hint">Имя</string>
-    <string name="settings_input_surname_hint">Фамилия</string>
-    <string name="settings_toast_name_is_empty">Имя не может быть пустым</string>
     <string name="toast_data_update">Данные обновлены</string>
-    <string name="settings_input_username_hint">Username</string>
-    <string name="settings_toast_username_is_empty">Имя пользователя пустое</string>
-    <string name="settings_toast_username_not_unique">Имя не уникально</string>
-    <string name="settings_input_bio_hint">Bio</string>
 
 </resources>

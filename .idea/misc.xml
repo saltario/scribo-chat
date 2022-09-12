@@ -11,11 +11,13 @@
         <entry key="..\:/Documents/CODE/android/scribo-chat-repo/app/src/main/res/drawable/ripple_effect.xml" value="0.2395" />
         <entry key="..\:/Documents/CODE/android/scribo-chat-repo/app/src/main/res/layout/activity_main.xml" value="0.2826086956521739" />
         <entry key="..\:/Documents/CODE/android/scribo-chat-repo/app/src/main/res/layout/activity_register.xml" value="0.36666666666666664" />
+        <entry key="..\:/Documents/CODE/android/scribo-chat-repo/app/src/main/res/layout/contact_item.xml" value="0.365625" />
         <entry key="..\:/Documents/CODE/android/scribo-chat-repo/app/src/main/res/layout/fragment_base.xml" value="0.35260416666666666" />
         <entry key="..\:/Documents/CODE/android/scribo-chat-repo/app/src/main/res/layout/fragment_change_bio.xml" value="0.36666666666666664" />
         <entry key="..\:/Documents/CODE/android/scribo-chat-repo/app/src/main/res/layout/fragment_change_name.xml" value="0.36666666666666664" />
         <entry key="..\:/Documents/CODE/android/scribo-chat-repo/app/src/main/res/layout/fragment_change_username.xml" value="0.36666666666666664" />
         <entry key="..\:/Documents/CODE/android/scribo-chat-repo/app/src/main/res/layout/fragment_chats.xml" value="0.2962962962962963" />
+        <entry key="..\:/Documents/CODE/android/scribo-chat-repo/app/src/main/res/layout/fragment_contacts.xml" value="0.36666666666666664" />
         <entry key="..\:/Documents/CODE/android/scribo-chat-repo/app/src/main/res/layout/fragment_enter_code.xml" value="0.36666666666666664" />
         <entry key="..\:/Documents/CODE/android/scribo-chat-repo/app/src/main/res/layout/fragment_enter_phone_number.xml" value="0.36666666666666664" />
         <entry key="..\:/Documents/CODE/android/scribo-chat-repo/app/src/main/res/layout/fragment_settings.xml" value="0.36666666666666664" />

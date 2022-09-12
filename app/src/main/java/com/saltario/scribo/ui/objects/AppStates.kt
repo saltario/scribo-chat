@@ -1,4 +1,6 @@
-package com.saltario.scribo.utilits
+package com.saltario.scribo.ui.objects
+
+import com.saltario.scribo.utilits.*
 
 enum class AppStates(val state: String) {
     ONLINE("В сети"),
