@@ -25,6 +25,12 @@ class ContactsFragment : BaseFragment(R.layout.fragment_contacts) {
     private lateinit var mRefUsersListener: AppValueEventListener
     private var mapListeners = hashMapOf<DatabaseReference, AppValueEventListener>()
 
+    override fun onResume() {
+        super.onResume()
+        APP_ACTIVITY.title = "Контакты"
+        initRecycleView()
+    }
+
     override fun onStop() {
         super.onStop()
         mAdapter.stopListening()
@@ -33,15 +39,9 @@ class ContactsFragment : BaseFragment(R.layout.fragment_contacts) {
         }
     }
 
-    override fun onResume() {
-        super.onResume()
-        APP_ACTIVITY.title = "Контакты"
-        initRecycleView()
-    }
-
     private fun initRecycleView() {
         mRecyclerView = contacts_list
-        mRefContacts = REF_DATABASE_ROOT.child(NODE_PHONES_CONTACTS).child(UID)
+        mRefContacts = REF_DATABASE_ROOT.child(NODE_PHONES_CONTACTS).child(CURRENT_UID)
 
         val options = FirebaseRecyclerOptions.Builder<Common>()
             .setQuery(mRefContacts, Common::class.java)

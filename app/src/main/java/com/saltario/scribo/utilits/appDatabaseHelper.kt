@@ -5,6 +5,7 @@ import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
+import com.google.firebase.database.ServerValue
 import com.google.firebase.storage.FirebaseStorage
 import com.google.firebase.storage.StorageReference
 import com.saltario.scribo.models.Common
@@ -21,7 +22,9 @@ lateinit var AUTH: FirebaseAuth
 // Модель пользователя (локальная)
 lateinit var USER: User
 // Идентификатор текущего пользователя (id)
-lateinit var UID: String
+lateinit var CURRENT_UID: String
+
+const val TYPE_TEXT = "text"
 
 // Список всех пользователей приложения
 const val NODE_USERS = "users"
@@ -34,12 +37,18 @@ const val CHILD_BIO = "bio"
 const val CHILD_PHOTO_URL = "photoUrl"
 const val CHILD_STATE = "state"
 
+const val CHILD_TEXT = "text"
+const val CHILD_FROM = "from"
+const val CHILD_TYPE = "type"
+const val CHILD_TIME = "time"
+
 // Все никнеймы пользователей (для исключения повторов)
 const val NODE_USERNAMES = "usernames"
 // Список номеров телефонов зарегестрированных пользователей
 const val NODE_PHONES = "phones"
 // Хранит контакты пользователя, которые зарегестрированы в приложении
 const val NODE_PHONES_CONTACTS = "phones_contacts"
+const val NODE_MESSAGES = "messages"
 // Адрес по которому хранятся аватарки пользователей
 const val FOLDER_PROFILE_IMAGE = "profile_image"
 
@@ -49,11 +58,11 @@ fun initDatabase() {
 
     AUTH = FirebaseAuth.getInstance()
     USER = User()
-    UID = AUTH.currentUser?.uid.toString()
+    CURRENT_UID = AUTH.currentUser?.uid.toString()
 }
 
 inline fun putUrlToDatabase(url: String, crossinline function: () -> Unit) {
-    REF_DATABASE_ROOT.child(NODE_USERS).child(UID).child(CHILD_PHOTO_URL).setValue(url)
+    REF_DATABASE_ROOT.child(NODE_USERS).child(CURRENT_UID).child(CHILD_PHOTO_URL).setValue(url)
         .addOnSuccessListener { function() }
         .addOnFailureListener { showToast(it.message.toString()) }
 }
@@ -71,11 +80,11 @@ inline fun putImageToStorage(uri: Uri, path: StorageReference, crossinline funct
 }
 
 inline fun initUser(crossinline function: () -> Unit) {
-    REF_DATABASE_ROOT.child(NODE_USERS).child(UID)
+    REF_DATABASE_ROOT.child(NODE_USERS).child(CURRENT_UID)
         .addListenerForSingleValueEvent(AppValueEventListener{
             USER = it.getValue(User::class.java) ?: User()
             if (USER.username.isEmpty()){
-                USER.username = UID
+                USER.username = CURRENT_UID
             }
             function()
         })
@@ -88,12 +97,12 @@ fun updatePhonesFromDatabase(arrayContacts: ArrayList<Common>) {
                 arrayContacts.forEach { contact ->
                     if (snapshot.key == contact.phone){
                         // Получаем данные контакта, чьи данные есть в БД
-                        REF_DATABASE_ROOT.child(NODE_PHONES_CONTACTS).child(UID)
+                        REF_DATABASE_ROOT.child(NODE_PHONES_CONTACTS).child(CURRENT_UID)
                             .child(snapshot.value.toString()).child(CHILD_ID)
                             .setValue(snapshot.value.toString())
                             .addOnFailureListener { showToast(it.message.toString()) }
                         // Также записываем полное имя на всякий случай( если нету fullname в БД)
-                        REF_DATABASE_ROOT.child(NODE_PHONES_CONTACTS).child(UID)
+                        REF_DATABASE_ROOT.child(NODE_PHONES_CONTACTS).child(CURRENT_UID)
                             .child(snapshot.value.toString()).child(CHILD_FULLNAME)
                             .setValue(contact.fullname)
                             .addOnFailureListener { showToast(it.message.toString()) }
@@ -109,3 +118,27 @@ fun DataSnapshot.getCommonModel(): Common =
 
 fun DataSnapshot.getUserModel(): User =
     this.getValue(User::class.java) ?: User()
+
+fun sendMessage(message: String, otherUserId: String, typeText: String, function: () -> Unit) {
+    // Ссылка на диалог для текущего пользователя
+    val refDialogUser = "$NODE_MESSAGES/$CURRENT_UID/$otherUserId"
+    // Ссылка на диалог для нашего собеседника
+    val refDialogOtherUser = "$NODE_MESSAGES/$otherUserId/$CURRENT_UID"
+    // Уникальный ключ для сообщения
+    val messageKey = REF_DATABASE_ROOT.child(refDialogUser).push().key
+    // Заполненное по модели сообщение для отправки
+    val mapMessage = hashMapOf<String, Any>()
+    mapMessage[CHILD_FROM] = CURRENT_UID
+    mapMessage[CHILD_TYPE] = typeText
+    mapMessage[CHILD_TEXT] = message
+    mapMessage[CHILD_TIME] = ServerValue.TIMESTAMP
+
+    val mapDialog = hashMapOf<String, Any>()
+    mapDialog["$refDialogUser/$messageKey"] = mapMessage
+    mapDialog["$refDialogOtherUser/$messageKey"] = mapMessage
+
+    REF_DATABASE_ROOT
+        .updateChildren(mapDialog)
+        .addOnSuccessListener { function() }
+        .addOnFailureListener { showToast(it.message.toString()) }
+}

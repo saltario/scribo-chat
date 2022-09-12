@@ -1,6 +1,5 @@
 package com.saltario.scribo.ui.objects
 
-import com.saltario.scribo.R
 import com.saltario.scribo.utilits.*
 
 enum class AppStates(val state: String) {
@@ -11,7 +10,7 @@ enum class AppStates(val state: String) {
     companion object{
         fun updateState(appStates: AppStates){
             if (AUTH.currentUser != null){
-                REF_DATABASE_ROOT.child(NODE_USERS).child(UID).child(CHILD_STATE)
+                REF_DATABASE_ROOT.child(NODE_USERS).child(CURRENT_UID).child(CHILD_STATE)
                     .setValue(appStates.state)
                     .addOnSuccessListener { USER.state = appStates.state }
                     .addOnFailureListener { showToast(it.message.toString()) }

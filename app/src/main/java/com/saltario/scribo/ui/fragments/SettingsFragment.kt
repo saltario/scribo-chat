@@ -18,6 +18,7 @@ class SettingsFragment : BaseFragment(R.layout.fragment_settings) {
     override fun onResume() {
         super.onResume()
         setHasOptionsMenu(true)
+        APP_ACTIVITY.title = "Настройки"
         initFields()
         initListeners()
     }
@@ -71,7 +72,7 @@ class SettingsFragment : BaseFragment(R.layout.fragment_settings) {
         ) {
 
             val uri = CropImage.getActivityResult(data).uri
-            val path = REF_STORAGE_ROOT.child(FOLDER_PROFILE_IMAGE).child(UID)
+            val path = REF_STORAGE_ROOT.child(FOLDER_PROFILE_IMAGE).child(CURRENT_UID)
 
             putImageToStorage(uri, path) {
                 getUrlFromStorage(path) {

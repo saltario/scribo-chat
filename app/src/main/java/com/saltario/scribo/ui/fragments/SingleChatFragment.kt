@@ -8,6 +8,7 @@ import com.saltario.scribo.models.User
 import com.saltario.scribo.ui.objects.AppValueEventListener
 import com.saltario.scribo.utilits.*
 import kotlinx.android.synthetic.main.activity_main.view.*
+import kotlinx.android.synthetic.main.fragment_single_chat.*
 import kotlinx.android.synthetic.main.toolbar_info.view.*
 
 class SingleChatFragment(private val contact: Common) : BaseFragment(R.layout.fragment_single_chat) {
@@ -20,6 +21,7 @@ class SingleChatFragment(private val contact: Common) : BaseFragment(R.layout.fr
     override fun onResume() {
         super.onResume()
         initFields()
+        initButtonListeners()
         mToolBarInfo.visibility = View.VISIBLE
     }
 
@@ -27,6 +29,7 @@ class SingleChatFragment(private val contact: Common) : BaseFragment(R.layout.fr
         super.onPause()
         mToolBarInfo.visibility = View.GONE
         mRefOtherUser.removeEventListener(mListenerInfoToolbar)
+        hideKeyboard()
     }
 
     private fun initFields() {
@@ -50,5 +53,18 @@ class SingleChatFragment(private val contact: Common) : BaseFragment(R.layout.fr
 
         mToolBarInfo.info_toolbar_state.text = mOtherUser.state
         mToolBarInfo.info_toolbar_photo.downloadAndSetImage(mOtherUser.photoUrl)
+    }
+
+    private fun initButtonListeners() {
+        chat_btn_sent_message.setOnClickListener {
+            val message = chat_input_message.text.toString()
+            if (message.isEmpty()) {
+                showToast(getString(R.string.chat_toast_message_is_empty))
+            } else {
+                sendMessage(message, contact.id, TYPE_TEXT){
+                    chat_input_message.setText("")
+                }
+            }
+        }
     }
 }
