@@ -45,7 +45,7 @@ class EnterCodeFragment(val phoneNumber: String, val id: String) : Fragment(R.la
                         REF_DATABASE_ROOT.child(NODE_USERS).child(uid).updateChildren(dateMap)
                             .addOnFailureListener { showToast(it.message.toString()) }
                             .addOnSuccessListener {
-                                showToast(getString(R.string.welcome_message))
+                                showToast(getString(R.string.app_toast_welcome_message))
                                 (activity as RegisterActivity).replaceActivity(MainActivity())
                             }
                     }

@@ -38,7 +38,7 @@ class ChangeNameFragment : BaseChangeFragment(R.layout.fragment_change_name) {
             REF_DATABASE_ROOT.child(NODE_USERS).child(UID).child(CHILD_FULLNAME)
                 .setValue(fullname).addOnCompleteListener {
                     if (it.isSuccessful){
-                        showToast(getString(R.string.toast_data_update))
+                        showToast(getString(R.string.app_toast_data_update))
                         USER.fullname = fullname
                         APP_ACTIVITY.mAppDrawer.updateHeader()
                         fragmentManager?.popBackStack()

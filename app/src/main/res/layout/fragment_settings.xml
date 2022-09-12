@@ -33,7 +33,7 @@
             android:textColor="@color/color_accent"
             android:layout_marginStart="@dimen/horizontal_margin"
             android:layout_marginTop="@dimen/vertical_margin"
-            tools:text="@string/settings_fullname_default"
+            tools:text="@string/app_fullname_default"
             android:textSize="@dimen/normal_text_size"
             app:layout_constraintStart_toEndOf="@id/settings_photo"
             app:layout_constraintEnd_toEndOf="parent"
@@ -45,7 +45,7 @@
             android:layout_height="wrap_content"
             android:textColor="@color/color_accent"
             android:layout_marginStart="@dimen/horizontal_margin"
-            tools:text="@string/settings_state_default"
+            tools:text="@string/app_state_default"
             android:textSize="@dimen/small_text_size"
             app:layout_constraintStart_toEndOf="@id/settings_photo"
             app:layout_constraintEnd_toEndOf="parent"
@@ -74,7 +74,7 @@
 
         <TextView
             android:id="@+id/settings_phone_number"
-            tools:text="@string/settings_number_phone_default"
+            tools:text="@string/app_number_phone_default"
             app:layout_constraintTop_toTopOf="@id/settings_btn_change_number_phone"
             app:layout_constraintStart_toStartOf="parent"
             style="@style/normal_text" />
@@ -103,7 +103,7 @@
 
         <TextView
             android:id="@+id/settings_username"
-            tools:text="@string/settings_login_default"
+            tools:text="@string/app_login_default"
             app:layout_constraintTop_toTopOf="@id/settings_btn_change_username"
             app:layout_constraintStart_toStartOf="parent"
             style="@style/normal_text" />
@@ -132,7 +132,7 @@
 
         <TextView
             android:id="@+id/settings_bio"
-            tools:text="@string/settings_bio_default"
+            tools:text="@string/app_bio_default"
             app:layout_constraintTop_toTopOf="@id/settings_btn_change_bio"
             app:layout_constraintStart_toStartOf="parent"
             style="@style/normal_text" />

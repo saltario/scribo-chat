@@ -20,7 +20,7 @@ class ChangeBioFragment : BaseChangeFragment(R.layout.fragment_change_bio) {
         REF_DATABASE_ROOT.child(NODE_USERS).child(UID).child(CHILD_BIO)
             .setValue(newBio).addOnCompleteListener {
                 if (it.isSuccessful){
-                    showToast(getString(R.string.toast_data_update))
+                    showToast(getString(R.string.app_toast_data_update))
                     USER.bio = newBio
                     fragmentManager?.popBackStack()
                 }

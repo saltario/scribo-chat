@@ -52,7 +52,7 @@ class ChangeUsernameFragment : BaseChangeFragment(R.layout.fragment_change_usern
         REF_DATABASE_ROOT.child(NODE_USERS).child(UID).child(CHILD_USERNAME).setValue(mNewUsername)
             .addOnCompleteListener {
                 if (it.isSuccessful){
-                    showToast(getString(R.string.toast_data_update))
+                    showToast(getString(R.string.app_toast_data_update))
                     deleteOldUsername()
                 } else {
                     showToast(it.exception?.message.toString())

@@ -15,7 +15,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        android:contentDescription="@string/cd_register_image" />
+        android:contentDescription="@string/app_content_description" />
 
     <TextView
         android:id="@+id/register_text_enter_code"
@@ -50,7 +50,7 @@
         android:gravity="center"
         android:importantForAutofill="no"
         android:maxLength="6"
-        android:hint="@string/register_hint_default_code"
+        android:hint="@string/register_input_code_hint"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/register_text_we_sent"

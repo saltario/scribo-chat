@@ -9,11 +9,17 @@
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/mainToolBar"
-
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        style="@style/main_toolbar" />
+        style="@style/main_toolbar" >
+
+        <include
+            layout="@layout/toolbar_info"
+            android:id="@+id/infoToolBar"
+            android:visibility="gone"/>
+
+    </androidx.appcompat.widget.Toolbar>
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/dataContainer"

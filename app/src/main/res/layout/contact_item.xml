@@ -19,14 +19,14 @@
     <TextView
         android:id="@+id/contact_fullname"
         style="@style/normal_text"
-        tools:text="@string/settings_fullname_default"
+        tools:text="@string/app_fullname_default"
         app:layout_constraintStart_toEndOf="@+id/contact_photo"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/contact_state"
         style="@style/small_text"
-        tools:text="@string/settings_state_default"
+        tools:text="@string/app_state_default"
         app:layout_constraintStart_toEndOf="@+id/contact_photo"
         app:layout_constraintTop_toBottomOf="@+id/contact_fullname" />
 
