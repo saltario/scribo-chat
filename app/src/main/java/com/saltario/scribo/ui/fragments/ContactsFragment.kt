@@ -10,6 +10,7 @@ import com.firebase.ui.database.FirebaseRecyclerOptions
 import com.google.firebase.database.DatabaseReference
 import com.saltario.scribo.R
 import com.saltario.scribo.models.Common
+import com.saltario.scribo.ui.fragments.single_chat.SingleChatFragment
 import com.saltario.scribo.ui.objects.AppValueEventListener
 import com.saltario.scribo.utilits.*
 import de.hdodenhof.circleimageview.CircleImageView

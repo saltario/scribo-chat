@@ -1,10 +1,12 @@
-package com.saltario.scribo.ui.fragments
+package com.saltario.scribo.ui.fragments.single_chat
 
 import android.view.View
+import androidx.recyclerview.widget.RecyclerView
 import com.google.firebase.database.DatabaseReference
 import com.saltario.scribo.R
 import com.saltario.scribo.models.Common
 import com.saltario.scribo.models.User
+import com.saltario.scribo.ui.fragments.BaseFragment
 import com.saltario.scribo.ui.objects.AppValueEventListener
 import com.saltario.scribo.utilits.*
 import kotlinx.android.synthetic.main.activity_main.view.*
@@ -17,11 +19,17 @@ class SingleChatFragment(private val contact: Common) : BaseFragment(R.layout.fr
     private lateinit var mOtherUser: User
     private lateinit var mToolBarInfo: View
     private lateinit var mRefOtherUser: DatabaseReference
+    private lateinit var mRefMessages: DatabaseReference
+    private lateinit var mAdapter: SingleChatAdapter
+    private lateinit var mRecyclerView: RecyclerView
+    private lateinit var mMessagesListeners: AppValueEventListener
+    private var mListMessages = emptyList<Common>()
 
     override fun onResume() {
         super.onResume()
         initFields()
         initButtonListeners()
+        initRecycleView()
         mToolBarInfo.visibility = View.VISIBLE
     }
 
@@ -30,6 +38,20 @@ class SingleChatFragment(private val contact: Common) : BaseFragment(R.layout.fr
         mToolBarInfo.visibility = View.GONE
         mRefOtherUser.removeEventListener(mListenerInfoToolbar)
         hideKeyboard()
+        mRefMessages.removeEventListener(mMessagesListeners)
+    }
+
+    private fun initRecycleView() {
+        mRecyclerView = chat_recycle_view
+        mAdapter = SingleChatAdapter()
+        mRefMessages = REF_DATABASE_ROOT.child(NODE_MESSAGES).child(CURRENT_UID).child(contact.id)
+        mRecyclerView.adapter = mAdapter
+        mMessagesListeners = AppValueEventListener { dataSnapshot ->
+            mListMessages = dataSnapshot.children.map { it.getCommonModel() }
+            mAdapter.setList(mListMessages)
+            mRecyclerView.smoothScrollToPosition(mAdapter.itemCount)
+        }
+        mRefMessages.addValueEventListener(mMessagesListeners)
     }
 
     private fun initFields() {

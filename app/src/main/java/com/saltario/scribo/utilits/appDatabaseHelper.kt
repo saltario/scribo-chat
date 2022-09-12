@@ -24,7 +24,8 @@ lateinit var USER: User
 // Идентификатор текущего пользователя (id)
 lateinit var CURRENT_UID: String
 
-const val TYPE_TEXT = "text"
+// Адрес по которому хранятся аватарки пользователей
+const val FOLDER_PROFILE_IMAGE = "profile_image"
 
 // Список всех пользователей приложения
 const val NODE_USERS = "users"
@@ -37,21 +38,24 @@ const val CHILD_BIO = "bio"
 const val CHILD_PHOTO_URL = "photoUrl"
 const val CHILD_STATE = "state"
 
-const val CHILD_TEXT = "text"
-const val CHILD_FROM = "from"
-const val CHILD_TYPE = "type"
-const val CHILD_TIME = "time"
-
 // Все никнеймы пользователей (для исключения повторов)
 const val NODE_USERNAMES = "usernames"
 // Список номеров телефонов зарегестрированных пользователей
 const val NODE_PHONES = "phones"
 // Хранит контакты пользователя, которые зарегестрированы в приложении
 const val NODE_PHONES_CONTACTS = "phones_contacts"
-const val NODE_MESSAGES = "messages"
-// Адрес по которому хранятся аватарки пользователей
-const val FOLDER_PROFILE_IMAGE = "profile_image"
 
+// Хранит все сообщения пользователей
+const val NODE_MESSAGES = "messages"
+// Состав сообщения
+const val CHILD_TEXT = "text"
+const val CHILD_FROM = "from"
+const val CHILD_TYPE = "type"
+const val CHILD_TIME = "time"
+// Типы сообщений
+const val TYPE_TEXT = "text"
+
+// Инициализация БД
 fun initDatabase() {
     REF_DATABASE_ROOT = FirebaseDatabase.getInstance().reference
     REF_STORAGE_ROOT = FirebaseStorage.getInstance().reference
@@ -61,24 +65,33 @@ fun initDatabase() {
     CURRENT_UID = AUTH.currentUser?.uid.toString()
 }
 
+// Кладем адрес фотографии пользователя в БД
 inline fun putUrlToDatabase(url: String, crossinline function: () -> Unit) {
     REF_DATABASE_ROOT.child(NODE_USERS).child(CURRENT_UID).child(CHILD_PHOTO_URL).setValue(url)
         .addOnSuccessListener { function() }
         .addOnFailureListener { showToast(it.message.toString()) }
 }
-
+// Получаем адрес фотографии пользователя из БД
 inline fun getUrlFromStorage(path: StorageReference, crossinline function: (url :String) -> Unit) {
     path.downloadUrl
         .addOnSuccessListener { function(it.toString()) }
         .addOnFailureListener { showToast(it.message.toString()) }
 }
-
+// По адресу фотографии получаем картинку и отправляем ее в хранилище
 inline fun putImageToStorage(uri: Uri, path: StorageReference, crossinline function: () -> Unit) {
     path.putFile(uri)
         .addOnSuccessListener { function() }
         .addOnFailureListener { showToast(it.message.toString()) }
 }
 
+// Заполняем общую модель
+fun DataSnapshot.getCommonModel(): Common =
+    this.getValue(Common::class.java) ?: Common()
+// Заполняем модель пользователя
+fun DataSnapshot.getUserModel(): User =
+    this.getValue(User::class.java) ?: User()
+
+// Инициализируем пользователя
 inline fun initUser(crossinline function: () -> Unit) {
     REF_DATABASE_ROOT.child(NODE_USERS).child(CURRENT_UID)
         .addListenerForSingleValueEvent(AppValueEventListener{
@@ -112,12 +125,6 @@ fun updatePhonesFromDatabase(arrayContacts: ArrayList<Common>) {
         })
     }
 }
-
-fun DataSnapshot.getCommonModel(): Common =
-    this.getValue(Common::class.java) ?: Common()
-
-fun DataSnapshot.getUserModel(): User =
-    this.getValue(User::class.java) ?: User()
 
 fun sendMessage(message: String, otherUserId: String, typeText: String, function: () -> Unit) {
     // Ссылка на диалог для текущего пользователя

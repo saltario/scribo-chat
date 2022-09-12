@@ -1,6 +1,7 @@
 package com.saltario.scribo.models
 
 data class Common (
+    // User
     val id: String = "",
     var username: String = "",
     var bio: String = "",
@@ -9,8 +10,9 @@ data class Common (
     var phone: String = "",
     var photoUrl: String = "empty",
 
+    // Message
     var text: String = "",
     var type: String = "",
     var from: String = "",
-    var time: String = ""
+    var time: Any = ""
 )
