@@ -1,13 +1,16 @@
 package com.saltario.scribo.utilits
 
+import android.annotation.SuppressLint
 import android.content.Context
 import android.content.Intent
+import android.provider.ContactsContract
 import android.view.inputmethod.InputMethodManager
 import android.widget.ImageView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import com.saltario.scribo.R
+import com.saltario.scribo.models.Common
 import com.squareup.picasso.Picasso
 
 fun showToast(message: String){
@@ -52,4 +55,31 @@ fun ImageView.downloadAndSetImage(url: String){
         .fit()
         .placeholder(R.drawable.default_photo)
         .into(this)
+}
+
+@SuppressLint("Range")
+fun initContacts() {
+    if (checkPermission(READ_CONTACTS)){
+        var arrayContacts = arrayListOf<Common>()
+        val cursor = APP_ACTIVITY.contentResolver.query(
+            ContactsContract.CommonDataKinds.Phone.CONTENT_URI,
+            null,
+            null,
+            null,
+            null
+        )
+        cursor?.let {
+            while (cursor.moveToNext()) {
+                val fullname = it.getString(it.getColumnIndex(ContactsContract.Contacts.DISPLAY_NAME))
+                val phone = it.getString(it.getColumnIndex(ContactsContract.CommonDataKinds.Phone.NUMBER))
+
+                val newModel = Common()
+                newModel.fullname = fullname
+                newModel.phone = phone.replace(Regex("[\\s,-]"), "")
+                arrayContacts.add(newModel)
+            }
+        }
+        cursor?.close()
+        updatePhonesFromDatabase(arrayContacts)
+    }
 }

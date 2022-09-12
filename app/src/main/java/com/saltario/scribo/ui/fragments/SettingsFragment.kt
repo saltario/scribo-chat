@@ -7,6 +7,7 @@ import android.view.MenuInflater
 import android.view.MenuItem
 import com.saltario.scribo.R
 import com.saltario.scribo.activities.RegisterActivity
+import com.saltario.scribo.ui.objects.AppStates
 import com.saltario.scribo.utilits.*
 import com.theartofdev.edmodo.cropper.CropImage
 import com.theartofdev.edmodo.cropper.CropImageView
@@ -43,6 +44,7 @@ class SettingsFragment : BaseFragment(R.layout.fragment_settings) {
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         when (item.itemId) {
             R.id.settings_action_menu_exit -> {
+                AppStates.updateState(AppStates.OFFLINE)
                 AUTH.signOut()
                 APP_ACTIVITY.replaceActivity(RegisterActivity())
             }

@@ -1,8 +1,6 @@
 package com.saltario.scribo.utilits
 
-import android.annotation.SuppressLint
 import android.net.Uri
-import android.provider.ContactsContract
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseReference
@@ -12,16 +10,22 @@ import com.google.firebase.storage.StorageReference
 import com.saltario.scribo.models.Common
 import com.saltario.scribo.models.User
 import com.saltario.scribo.ui.objects.AppValueEventListener
-import java.util.ArrayList
 
+// Realtime Database
 lateinit var REF_DATABASE_ROOT: DatabaseReference
+// Storage
 lateinit var REF_STORAGE_ROOT: StorageReference
 
+// Данные аутентификации (текущий авторизованный пользователь)
 lateinit var AUTH: FirebaseAuth
+// Модель пользователя (локальная)
 lateinit var USER: User
+// Идентификатор текущего пользователя (id)
 lateinit var UID: String
 
+// Список всех пользователей приложения
 const val NODE_USERS = "users"
+// Свойства пользователя
 const val CHILD_ID = "id"
 const val CHILD_PHONE = "phone"
 const val CHILD_USERNAME = "username"
@@ -30,11 +34,13 @@ const val CHILD_BIO = "bio"
 const val CHILD_PHOTO_URL = "photoUrl"
 const val CHILD_STATE = "state"
 
+// Все никнеймы пользователей (для исключения повторов)
 const val NODE_USERNAMES = "usernames"
+// Список номеров телефонов зарегестрированных пользователей
 const val NODE_PHONES = "phones"
 // Хранит контакты пользователя, которые зарегестрированы в приложении
 const val NODE_PHONES_CONTACTS = "phones_contacts"
-
+// Адрес по которому хранятся аватарки пользователей
 const val FOLDER_PROFILE_IMAGE = "profile_image"
 
 fun initDatabase() {
@@ -75,50 +81,31 @@ inline fun initUser(crossinline function: () -> Unit) {
         })
 }
 
-@SuppressLint("Range")
-fun initContacts() {
-    if (checkPermission(READ_CONTACTS)){
-        var arrayContacts = arrayListOf<Common>()
-        val cursor = APP_ACTIVITY.contentResolver.query(
-            ContactsContract.CommonDataKinds.Phone.CONTENT_URI,
-            null,
-            null,
-            null,
-            null
-        )
-        cursor?.let {
-            while (cursor.moveToNext()) {
-                val fullname = it.getString(it.getColumnIndex(ContactsContract.Contacts.DISPLAY_NAME))
-                val phone = it.getString(it.getColumnIndex(ContactsContract.CommonDataKinds.Phone.NUMBER))
-
-                val newModel = Common()
-                newModel.fullname = fullname
-                newModel.phone = phone.replace(Regex("[\\s,-]"), "")
-                arrayContacts.add(newModel)
-            }
-        }
-        cursor?.close()
-        updatePhonesFromDatabase(arrayContacts)
-    }
-}
-
 fun updatePhonesFromDatabase(arrayContacts: ArrayList<Common>) {
-    REF_DATABASE_ROOT.child(NODE_PHONES).addListenerForSingleValueEvent(AppValueEventListener {
-        it.children.forEach{ snapshot ->
-            arrayContacts.forEach { contact ->
-                if (snapshot.key == contact.phone){
-                    REF_DATABASE_ROOT.child(NODE_PHONES_CONTACTS).child(UID)
-                        .child(snapshot.value.toString()).child(CHILD_ID)
-                        .setValue(snapshot.value.toString())
-                        .addOnFailureListener { showToast(it.message.toString()) }
+    if (AUTH.currentUser != null){
+        REF_DATABASE_ROOT.child(NODE_PHONES).addListenerForSingleValueEvent(AppValueEventListener {
+            it.children.forEach{ snapshot ->
+                arrayContacts.forEach { contact ->
+                    if (snapshot.key == contact.phone){
+                        // Получаем данные контакта, чьи данные есть в БД
+                        REF_DATABASE_ROOT.child(NODE_PHONES_CONTACTS).child(UID)
+                            .child(snapshot.value.toString()).child(CHILD_ID)
+                            .setValue(snapshot.value.toString())
+                            .addOnFailureListener { showToast(it.message.toString()) }
+                        // Также записываем полное имя на всякий случай( если нету fullname в БД)
+                        REF_DATABASE_ROOT.child(NODE_PHONES_CONTACTS).child(UID)
+                            .child(snapshot.value.toString()).child(CHILD_FULLNAME)
+                            .setValue(contact.fullname)
+                            .addOnFailureListener { showToast(it.message.toString()) }
+                    }
                 }
             }
-        }
-    })
+        })
+    }
 }
 
 fun DataSnapshot.getCommonModel(): Common =
     this.getValue(Common::class.java) ?: Common()
 
-fun DataSnapshot.getUser(): User =
+fun DataSnapshot.getUserModel(): User =
     this.getValue(User::class.java) ?: User()

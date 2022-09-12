@@ -33,7 +33,7 @@ class SingleChatFragment(private val contact: Common) : BaseFragment(R.layout.fr
 
         mToolBarInfo = APP_ACTIVITY.mToolBar.info_toolbar
         mListenerInfoToolbar = AppValueEventListener {
-            mOtherUser = it.getUser()
+            mOtherUser = it.getUserModel()
             updateInfoToolBar()
         }
         mRefOtherUser = REF_DATABASE_ROOT.child(NODE_USERS).child(contact.id)
@@ -41,7 +41,13 @@ class SingleChatFragment(private val contact: Common) : BaseFragment(R.layout.fr
     }
 
     private fun updateInfoToolBar() {
-        mToolBarInfo.info_toolbar_fullname.text = mOtherUser.fullname
+
+        if (mOtherUser.fullname.isEmpty()) {
+            mToolBarInfo.info_toolbar_fullname.text = contact.fullname
+        } else {
+            mToolBarInfo.info_toolbar_fullname.text = mOtherUser.fullname
+        }
+
         mToolBarInfo.info_toolbar_state.text = mOtherUser.state
         mToolBarInfo.info_toolbar_photo.downloadAndSetImage(mOtherUser.photoUrl)
     }
