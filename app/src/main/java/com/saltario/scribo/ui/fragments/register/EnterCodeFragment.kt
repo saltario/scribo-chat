@@ -1,11 +1,9 @@
-package com.saltario.scribo.ui.fragments
+package com.saltario.scribo.ui.fragments.register
 
 import androidx.fragment.app.Fragment
 import com.google.firebase.auth.PhoneAuthCredential
 import com.google.firebase.auth.PhoneAuthProvider
-import com.saltario.scribo.MainActivity
 import com.saltario.scribo.R
-import com.saltario.scribo.activities.RegisterActivity
 import com.saltario.scribo.ui.objects.AppTextWatcher
 import com.saltario.scribo.utilits.*
 import kotlinx.android.synthetic.main.fragment_enter_code.*
@@ -15,7 +13,7 @@ class EnterCodeFragment(val phoneNumber: String, val id: String) : Fragment(R.la
     override fun onStart() {
         super.onStart()
 
-        (activity as RegisterActivity).title = phoneNumber
+        APP_ACTIVITY.title = phoneNumber
 
         register_input_code.addTextChangedListener(AppTextWatcher{
 
@@ -46,7 +44,7 @@ class EnterCodeFragment(val phoneNumber: String, val id: String) : Fragment(R.la
                             .addOnFailureListener { showToast(it.message.toString()) }
                             .addOnSuccessListener {
                                 showToast(getString(R.string.app_toast_welcome_message))
-                                (activity as RegisterActivity).replaceActivity(MainActivity())
+                                restartActivity()
                             }
                     }
             } else {

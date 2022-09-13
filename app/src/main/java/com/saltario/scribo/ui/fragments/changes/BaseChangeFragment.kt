@@ -1,4 +1,4 @@
-package com.saltario.scribo.ui.fragments
+package com.saltario.scribo.ui.fragments.changes
 
 import android.view.Menu
 import android.view.MenuInflater
@@ -20,6 +20,7 @@ open class BaseChangeFragment(layout: Int) : Fragment(layout) {
 
     override fun onStop() {
         super.onStop()
+        hideKeyboard()
     }
 
     override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {

@@ -1,4 +1,4 @@
-package com.saltario.scribo.ui.fragments
+package com.saltario.scribo.ui.fragments.register
 
 import androidx.fragment.app.Fragment
 import com.google.firebase.FirebaseException
@@ -6,13 +6,8 @@ import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.PhoneAuthCredential
 import com.google.firebase.auth.PhoneAuthOptions
 import com.google.firebase.auth.PhoneAuthProvider
-import com.saltario.scribo.MainActivity
 import com.saltario.scribo.R
-import com.saltario.scribo.activities.RegisterActivity
-import com.saltario.scribo.utilits.AUTH
-import com.saltario.scribo.utilits.replaceActivity
-import com.saltario.scribo.utilits.replaceFragment
-import com.saltario.scribo.utilits.showToast
+import com.saltario.scribo.utilits.*
 import kotlinx.android.synthetic.main.fragment_enter_phone_number.*
 import java.util.concurrent.TimeUnit
 
@@ -29,7 +24,7 @@ class EnterPhoneNumberFragment : Fragment(R.layout.fragment_enter_phone_number) 
                 AUTH.signInWithCredential(credential).addOnCompleteListener { task ->
                     if (task.isSuccessful){
                         showToast("Welcome")
-                        (activity as RegisterActivity).replaceActivity(MainActivity())
+                        restartActivity()
                     } else {
                         showToast(task.exception?.message.toString())
                     }
@@ -46,6 +41,7 @@ class EnterPhoneNumberFragment : Fragment(R.layout.fragment_enter_phone_number) 
         }
 
         register_btn_next.setOnClickListener { sentCode() }
+        APP_ACTIVITY.title = getString(R.string.register_title_your_phone)
     }
 
     private fun sentCode() {
@@ -62,7 +58,7 @@ class EnterPhoneNumberFragment : Fragment(R.layout.fragment_enter_phone_number) 
         PhoneAuthProvider.verifyPhoneNumber(
             PhoneAuthOptions
                 .newBuilder(FirebaseAuth.getInstance())
-                .setActivity(activity as RegisterActivity)
+                .setActivity(APP_ACTIVITY)
                 .setPhoneNumber(mPhoneNumber)
                 .setTimeout(60L, TimeUnit.SECONDS)
                 .setCallbacks(mCallback)

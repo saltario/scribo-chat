@@ -8,6 +8,7 @@ import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.database.ServerValue
 import com.google.firebase.storage.FirebaseStorage
 import com.google.firebase.storage.StorageReference
+import com.saltario.scribo.R
 import com.saltario.scribo.models.Common
 import com.saltario.scribo.models.User
 import com.saltario.scribo.ui.objects.AppValueEventListener
@@ -124,6 +125,58 @@ fun updatePhonesFromDatabase(arrayContacts: ArrayList<Common>) {
             }
         })
     }
+}
+
+fun setBioToDatabase(newBio: String) {
+    REF_DATABASE_ROOT.child(NODE_USERS).child(CURRENT_UID).child(CHILD_BIO)
+        .setValue(newBio)
+        .addOnSuccessListener {
+            showToast(APP_ACTIVITY.getString(R.string.app_toast_data_update))
+            USER.bio = newBio
+            APP_ACTIVITY.supportFragmentManager.popBackStack()
+        }
+        .addOnFailureListener { showToast(it.message.toString()) }
+}
+
+fun setFullNameToDatabase(fullname: String) {
+    REF_DATABASE_ROOT.child(NODE_USERS).child(CURRENT_UID).child(CHILD_FULLNAME)
+        .setValue(fullname)
+        .addOnSuccessListener {
+            showToast(APP_ACTIVITY.getString(R.string.app_toast_data_update))
+            USER.fullname = fullname
+            APP_ACTIVITY.mAppDrawer.updateHeader()
+            APP_ACTIVITY.supportFragmentManager.popBackStack()
+        }
+        .addOnFailureListener { showToast(it.message.toString()) }
+}
+
+fun setUsernameToDatabase(newUsername: String) {
+    REF_DATABASE_ROOT.child(NODE_USERNAMES).child(newUsername)
+        .setValue(CURRENT_UID)
+        .addOnSuccessListener {
+            updateCurrentUsername(newUsername)
+        }
+        .addOnFailureListener { showToast(it.message.toString()) }
+}
+
+private fun updateCurrentUsername(newUserName: String) {
+    REF_DATABASE_ROOT.child(NODE_USERS).child(CURRENT_UID).child(CHILD_USERNAME)
+        .setValue(newUserName)
+        .addOnSuccessListener {
+            showToast(APP_ACTIVITY.getString(R.string.app_toast_data_update))
+            deleteOldUsername(newUserName)
+        }
+        .addOnFailureListener { showToast(it.message.toString()) }
+}
+
+private fun deleteOldUsername(newUserName: String) {
+    REF_DATABASE_ROOT.child(NODE_USERNAMES).child(USER.username)
+        .removeValue()
+        .addOnSuccessListener {
+            APP_ACTIVITY.supportFragmentManager.popBackStack()
+            USER.username = newUserName
+        }
+        .addOnFailureListener { showToast(it.message.toString()) }
 }
 
 fun sendMessage(message: String, otherUserId: String, typeText: String, function: () -> Unit) {

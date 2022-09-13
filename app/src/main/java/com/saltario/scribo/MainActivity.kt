@@ -5,9 +5,9 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
 import androidx.core.content.ContextCompat
-import com.saltario.scribo.activities.RegisterActivity
 import com.saltario.scribo.databinding.ActivityMainBinding
-import com.saltario.scribo.ui.fragments.ChatsFragment
+import com.saltario.scribo.ui.fragments.ChatsMainFragment
+import com.saltario.scribo.ui.fragments.register.EnterPhoneNumberFragment
 import com.saltario.scribo.ui.objects.AppDrawer
 import com.saltario.scribo.ui.objects.AppStates
 import com.saltario.scribo.utilits.*
@@ -60,14 +60,13 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun initFunc() {
-
+        setSupportActionBar(mToolBar)
         if (AUTH.currentUser != null){
-            setSupportActionBar(mToolBar)
             mAppDrawer.create()
-            replaceFragment(ChatsFragment(), false)
+            replaceFragment(ChatsMainFragment(), false)
         }
         else {
-            replaceActivity(RegisterActivity())
+            replaceFragment(EnterPhoneNumberFragment(), false)
         }
     }
 }
