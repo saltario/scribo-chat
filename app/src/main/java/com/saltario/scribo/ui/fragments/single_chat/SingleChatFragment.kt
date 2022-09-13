@@ -7,6 +7,7 @@ import com.saltario.scribo.R
 import com.saltario.scribo.models.Common
 import com.saltario.scribo.models.User
 import com.saltario.scribo.ui.fragments.BaseFragment
+import com.saltario.scribo.ui.objects.AppChildEventListener
 import com.saltario.scribo.ui.objects.AppValueEventListener
 import com.saltario.scribo.utilits.*
 import kotlinx.android.synthetic.main.activity_main.view.*
@@ -22,8 +23,7 @@ class SingleChatFragment(private val contact: Common) : BaseFragment(R.layout.fr
     private lateinit var mRefMessages: DatabaseReference
     private lateinit var mAdapter: SingleChatAdapter
     private lateinit var mRecyclerView: RecyclerView
-    private lateinit var mMessagesListeners: AppValueEventListener
-    private var mListMessages = emptyList<Common>()
+    private lateinit var mMessagesListeners: AppChildEventListener
 
     override fun onResume() {
         super.onResume()
@@ -46,12 +46,13 @@ class SingleChatFragment(private val contact: Common) : BaseFragment(R.layout.fr
         mAdapter = SingleChatAdapter()
         mRefMessages = REF_DATABASE_ROOT.child(NODE_MESSAGES).child(CURRENT_UID).child(contact.id)
         mRecyclerView.adapter = mAdapter
-        mMessagesListeners = AppValueEventListener { dataSnapshot ->
-            mListMessages = dataSnapshot.children.map { it.getCommonModel() }
-            mAdapter.setList(mListMessages)
+        mMessagesListeners = AppChildEventListener { snapshot ->
+
+            mAdapter.addItem(snapshot.getCommonModel())
             mRecyclerView.smoothScrollToPosition(mAdapter.itemCount)
+
         }
-        mRefMessages.addValueEventListener(mMessagesListeners)
+        mRefMessages.addChildEventListener(mMessagesListeners)
     }
 
     private fun initFields() {

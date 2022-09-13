@@ -7,15 +7,18 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.constraintlayout.widget.ConstraintLayout
+import androidx.recyclerview.widget.DiffUtil
 import com.saltario.scribo.R
 import com.saltario.scribo.models.Common
 import com.saltario.scribo.utilits.CURRENT_UID
+import com.saltario.scribo.utilits.DiffUtilCallback
 import com.saltario.scribo.utilits.asTime
 import kotlinx.android.synthetic.main.message_item.view.*
 
 class SingleChatAdapter: RecyclerView.Adapter<SingleChatAdapter.SingleChatHolder>() {
 
     private var mListMessagesCache = emptyList<Common>()
+    private lateinit var mDiffResult: DiffUtil.DiffResult
 
     class SingleChatHolder(view: View): RecyclerView.ViewHolder(view){
 
@@ -55,7 +58,17 @@ class SingleChatAdapter: RecyclerView.Adapter<SingleChatAdapter.SingleChatHolder
 
     @SuppressLint("NotifyDataSetChanged")
     fun setList(list: List<Common>){
+        mDiffResult = DiffUtil.calculateDiff(DiffUtilCallback(mListMessagesCache, list))
+        mDiffResult.dispatchUpdatesTo(this)
         mListMessagesCache = list
-        notifyDataSetChanged()
+    }
+
+    fun addItem(item: Common){
+        val newList = mutableListOf<Common>()
+        newList.addAll(mListMessagesCache)
+        newList.add(item)
+        mDiffResult = DiffUtil.calculateDiff(DiffUtilCallback(mListMessagesCache, newList))
+        mDiffResult.dispatchUpdatesTo(this)
+        mListMessagesCache = newList
     }
 }
