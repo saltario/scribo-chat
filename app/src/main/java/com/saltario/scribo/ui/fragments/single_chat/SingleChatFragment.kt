@@ -19,7 +19,6 @@ import com.saltario.scribo.ui.objects.AppValueEventListener
 import com.saltario.scribo.utilits.*
 import com.theartofdev.edmodo.cropper.CropImage
 import kotlinx.android.synthetic.main.activity_main.view.*
-import kotlinx.android.synthetic.main.fragment_settings.*
 import kotlinx.android.synthetic.main.fragment_single_chat.*
 import kotlinx.android.synthetic.main.toolbar_info.view.*
 
@@ -202,7 +201,7 @@ class SingleChatFragment(private val contact: Common) : BaseFragment(R.layout.fr
     private fun attachFile() {
         CropImage.activity()
             .setAspectRatio(1, 1)
-            .setRequestedSize(200, 200)
+            .setRequestedSize(ATTACH_IMAGE_WIDTH, ATTACH_IMAGE_HEIGHT)
             .start(APP_ACTIVITY, this)
     }
 

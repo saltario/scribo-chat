@@ -62,7 +62,7 @@ class SettingsFragment : BaseFragment(R.layout.fragment_settings) {
     private fun changePhoto() {
         CropImage.activity()
             .setAspectRatio(1, 1)
-            .setRequestedSize(200, 200)
+            .setRequestedSize(PROFILE_PHOTO_WIDTH, PROFILE_PHOTO_HEIGHT)
             .setCropShape(CropImageView.CropShape.OVAL)
             .start(APP_ACTIVITY, this)
     }
