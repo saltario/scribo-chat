@@ -1,23 +1,21 @@
 package com.saltario.scribo.ui.fragments.single_chat
 
-import android.annotation.SuppressLint
 import android.view.LayoutInflater
-import androidx.recyclerview.widget.RecyclerView
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.recyclerview.widget.DiffUtil
+import androidx.recyclerview.widget.RecyclerView
 import com.saltario.scribo.R
 import com.saltario.scribo.models.Common
 import com.saltario.scribo.utilits.CURRENT_UID
-import com.saltario.scribo.utilits.DiffUtilCallback
 import com.saltario.scribo.utilits.asTime
 import kotlinx.android.synthetic.main.message_item.view.*
 
 class SingleChatAdapter: RecyclerView.Adapter<SingleChatAdapter.SingleChatHolder>() {
 
-    private var mListMessagesCache = emptyList<Common>()
+    private var mListMessagesCache = mutableListOf<Common>()
     private lateinit var mDiffResult: DiffUtil.DiffResult
 
     class SingleChatHolder(view: View): RecyclerView.ViewHolder(view){
@@ -56,26 +54,26 @@ class SingleChatAdapter: RecyclerView.Adapter<SingleChatAdapter.SingleChatHolder
         return mListMessagesCache.size
     }
 
-    @SuppressLint("NotifyDataSetChanged")
-    fun setList(list: List<Common>){
-        mDiffResult = DiffUtil.calculateDiff(DiffUtilCallback(mListMessagesCache, list))
-        mDiffResult.dispatchUpdatesTo(this)
-        mListMessagesCache = list
-    }
+    fun addItem(item: Common, toBottom: Boolean, onSuccess: () -> Unit){
 
-    fun addItem(item: Common){
-
-        val newList = mutableListOf<Common>()
-        newList.addAll(mListMessagesCache)
-
-        if (!newList.contains(item)){
-            newList.add(item)
+        // toBottom - true - скролить вниз (новое сообщение)
+        //          - false - скролить вверх (подгрузка сообщений)
+        if (toBottom){
+            // Добавление нового элемента, которого еще нету в списке
+            if (!mListMessagesCache.contains(item)){
+                mListMessagesCache.add(item)
+                // Обновить последний элемент списка
+                notifyItemInserted(mListMessagesCache.size)
+            }
+        } else {
+            if (!mListMessagesCache.contains(item)){
+                mListMessagesCache.add(item)
+                mListMessagesCache.sortBy { it.time.toString() }
+                // Обновить первый элемент списка
+                notifyItemInserted(0)
+            }
         }
 
-        newList.sortBy { it.time.toString() }
-
-        mDiffResult = DiffUtil.calculateDiff(DiffUtilCallback(mListMessagesCache, newList))
-        mDiffResult.dispatchUpdatesTo(this)
-        mListMessagesCache = newList
+        onSuccess()
     }
 }

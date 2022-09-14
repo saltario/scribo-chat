@@ -3,6 +3,7 @@ package com.saltario.scribo.ui.fragments.single_chat
 import android.view.View
 import android.widget.AbsListView
 import androidx.recyclerview.widget.RecyclerView
+import androidx.swiperefreshlayout.widget.SwipeRefreshLayout
 import com.google.firebase.database.DatabaseReference
 import com.saltario.scribo.R
 import com.saltario.scribo.models.Common
@@ -31,8 +32,6 @@ class SingleChatFragment(private val contact: Common) : BaseFragment(R.layout.fr
     private lateinit var mRefMessages: DatabaseReference
     // Подключает слушателя на изменение в сообщениях
     private lateinit var mMessagesListeners: AppChildEventListener
-    // Список слушателей (чтобы утечки памяти не было)
-    private  var mListListeners = mutableListOf<AppChildEventListener>()
     // Количество сообщений, которое будет загружаться сразу
     private var mCountMessages = 10
 
@@ -43,8 +42,12 @@ class SingleChatFragment(private val contact: Common) : BaseFragment(R.layout.fr
 
     // Если пользователь скролит список?
     private var mIsScrolling = false
-    // Нужно ли крутить список вниз?
+
     private var mSmoothScrollToPosition = true
+    // true - скролить вниз (новое сообщение)
+    // false - скролить вверх (подгрузка сообщений)
+
+    private lateinit var mSwipeRefreshLayout: SwipeRefreshLayout
 
     override fun onResume() {
         super.onResume()
@@ -60,10 +63,7 @@ class SingleChatFragment(private val contact: Common) : BaseFragment(R.layout.fr
 
         mToolBarInfo.visibility = View.GONE
         mRefOtherUser.removeEventListener(mListenerInfoToolbar)
-        mListListeners.forEach{
-            mRefMessages.removeEventListener(it)
-        }
-        println()
+        mRefMessages.removeEventListener(mMessagesListeners)
     }
 
 
@@ -109,19 +109,21 @@ class SingleChatFragment(private val contact: Common) : BaseFragment(R.layout.fr
 
     private fun initRecycleView() {
 
+        mSwipeRefreshLayout = chat_swipe_refresh
         mRecyclerView = chat_recycle_view
         mAdapter = SingleChatAdapter()
         mRefMessages = REF_DATABASE_ROOT.child(NODE_MESSAGES).child(CURRENT_UID).child(contact.id)
         mRecyclerView.adapter = mAdapter
 
         mMessagesListeners = AppChildEventListener { snapshot ->
-            mAdapter.addItem(snapshot.getCommonModel())
-            if (mSmoothScrollToPosition) {
-                mRecyclerView.smoothScrollToPosition(mAdapter.itemCount)
+            mAdapter.addItem(snapshot.getCommonModel(), mSmoothScrollToPosition){
+                if (mSmoothScrollToPosition) {
+                    mRecyclerView.smoothScrollToPosition(mAdapter.itemCount)
+                }
             }
+            mSwipeRefreshLayout.isRefreshing = false
         }
         mRefMessages.limitToLast(mCountMessages).addChildEventListener(mMessagesListeners)
-        mListListeners.add(mMessagesListeners)
 
         mRecyclerView.addOnScrollListener(object: RecyclerView.OnScrollListener(){
 
@@ -139,6 +141,8 @@ class SingleChatFragment(private val contact: Common) : BaseFragment(R.layout.fr
                 }
             }
         })
+
+        mSwipeRefreshLayout.setOnRefreshListener { updateData() }
     }
 
     private fun updateData() {
@@ -146,8 +150,7 @@ class SingleChatFragment(private val contact: Common) : BaseFragment(R.layout.fr
         mSmoothScrollToPosition = false
         mIsScrolling = false
         mCountMessages += 10
-
+        mRefMessages.removeEventListener(mMessagesListeners)
         mRefMessages.limitToLast(mCountMessages).addChildEventListener(mMessagesListeners)
-        mListListeners.add(mMessagesListeners)
     }
 }
