@@ -185,7 +185,7 @@ private fun deleteOldUsername(newUserName: String) {
         .addOnFailureListener { showToast(it.message.toString()) }
 }
 
-fun sendMessageAsText(message: String, otherUserId: String, typeText: String, function: () -> Unit) {
+fun sendMessageAsText(message: String, otherUserId: String, function: () -> Unit) {
     // Ссылка на диалог для текущего пользователя
     val refDialogUser = "$NODE_MESSAGES/$CURRENT_UID/$otherUserId"
     // Ссылка на диалог для нашего собеседника
@@ -196,7 +196,7 @@ fun sendMessageAsText(message: String, otherUserId: String, typeText: String, fu
     val mapMessage = hashMapOf<String, Any>()
     mapMessage[CHILD_ID] = messageKey.toString()
     mapMessage[CHILD_FROM] = CURRENT_UID
-    mapMessage[CHILD_TYPE] = typeText
+    mapMessage[CHILD_TYPE] = TYPE_TEXT
     mapMessage[CHILD_TEXT] = message
     mapMessage[CHILD_TIME] = ServerValue.TIMESTAMP
 
@@ -210,7 +210,7 @@ fun sendMessageAsText(message: String, otherUserId: String, typeText: String, fu
         .addOnFailureListener { showToast(it.message.toString()) }
 }
 
-fun sendMessageAsImage(otherUserId: String, imageUrl: String, messageKey: String) {
+fun sendMessageAsImage(imageUrl: String, otherUserId: String, messageKey: String) {
     // Ссылка на диалог для текущего пользователя
     val refDialogUser = "$NODE_MESSAGES/$CURRENT_UID/$otherUserId"
     // Ссылка на диалог для нашего собеседника

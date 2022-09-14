@@ -114,13 +114,16 @@ class SingleChatFragment(private val contact: Common) : BaseFragment(R.layout.fr
             if (message.isEmpty()) {
                 showToast(getString(R.string.chat_toast_message_is_empty))
             } else {
-                sendMessageAsText(message, contact.id, TYPE_TEXT){
+                sendMessageAsText(message, contact.id){
                     chat_input_message.setText("")
                 }
             }
         }
         // Отправка вложения
-        chat_btn_attach.setOnClickListener { attachFile() }
+        chat_btn_attach.setOnClickListener {
+            mSmoothScrollToPosition = true
+            attachFile()
+        }
 
         // Проверяем если поле ввода текста пустое то скрываем кнопку отправки
         chat_input_message.addTextChangedListener(AppTextWatcher{
@@ -217,15 +220,9 @@ class SingleChatFragment(private val contact: Common) : BaseFragment(R.layout.fr
 
             putImageToStorage(uri, path) {
                 getUrlFromStorage(path) {
-                    putUrlToDatabase(it) {
-                        sendMessageAsImage(contact.id, it, messageKey)
-                    }
+                    sendMessageAsImage(it, contact.id, messageKey)
                 }
             }
         }
     }
-
-
-
-
 }
