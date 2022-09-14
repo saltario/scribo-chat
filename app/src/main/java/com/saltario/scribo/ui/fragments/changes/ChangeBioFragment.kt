@@ -1,7 +1,8 @@
 package com.saltario.scribo.ui.fragments.changes
 
 import com.saltario.scribo.R
-import com.saltario.scribo.utilits.*
+import com.saltario.scribo.database.USER
+import com.saltario.scribo.database.setBioToDatabase
 import kotlinx.android.synthetic.main.fragment_change_bio.*
 
 class ChangeBioFragment : BaseChangeFragment(R.layout.fragment_change_bio) {

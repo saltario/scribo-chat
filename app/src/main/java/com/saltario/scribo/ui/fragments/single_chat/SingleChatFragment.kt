@@ -1,5 +1,7 @@
 package com.saltario.scribo.ui.fragments.single_chat
 
+import android.app.Activity
+import android.content.Intent
 import android.view.View
 import android.widget.AbsListView
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -7,13 +9,17 @@ import androidx.recyclerview.widget.RecyclerView
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout
 import com.google.firebase.database.DatabaseReference
 import com.saltario.scribo.R
+import com.saltario.scribo.database.*
 import com.saltario.scribo.models.Common
 import com.saltario.scribo.models.User
 import com.saltario.scribo.ui.fragments.BaseFragment
 import com.saltario.scribo.ui.objects.AppChildEventListener
+import com.saltario.scribo.ui.objects.AppTextWatcher
 import com.saltario.scribo.ui.objects.AppValueEventListener
 import com.saltario.scribo.utilits.*
+import com.theartofdev.edmodo.cropper.CropImage
 import kotlinx.android.synthetic.main.activity_main.view.*
+import kotlinx.android.synthetic.main.fragment_settings.*
 import kotlinx.android.synthetic.main.fragment_single_chat.*
 import kotlinx.android.synthetic.main.toolbar_info.view.*
 
@@ -101,17 +107,32 @@ class SingleChatFragment(private val contact: Common) : BaseFragment(R.layout.fr
     }
 
     private fun initButtonListeners() {
+        // Отправка сообщений
         chat_btn_sent_message.setOnClickListener {
             mSmoothScrollToPosition = true
             val message = chat_input_message.text.toString()
             if (message.isEmpty()) {
                 showToast(getString(R.string.chat_toast_message_is_empty))
             } else {
-                sendMessage(message, contact.id, TYPE_TEXT){
+                sendMessageAsText(message, contact.id, TYPE_TEXT){
                     chat_input_message.setText("")
                 }
             }
         }
+        // Отправка вложения
+        chat_btn_attach.setOnClickListener { attachFile() }
+
+        // Проверяем если поле ввода текста пустое то скрываем кнопку отправки
+        chat_input_message.addTextChangedListener(AppTextWatcher{
+            val string = chat_input_message.text.toString()
+            if (string.isEmpty()){
+                chat_btn_sent_message.visibility = View.GONE
+                chat_btn_attach.visibility = View.VISIBLE
+            } else {
+                chat_btn_sent_message.visibility = View.VISIBLE
+                chat_btn_attach.visibility = View.GONE
+            }
+        })
     }
 
     private fun initRecycleView() {
@@ -174,4 +195,37 @@ class SingleChatFragment(private val contact: Common) : BaseFragment(R.layout.fr
         mRefMessages.removeEventListener(mMessagesListeners)
         mRefMessages.limitToLast(mCountMessages).addChildEventListener(mMessagesListeners)
     }
+
+    private fun attachFile() {
+        CropImage.activity()
+            .setAspectRatio(1, 1)
+            .setRequestedSize(200, 200)
+            .start(APP_ACTIVITY, this)
+    }
+
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        super.onActivityResult(requestCode, resultCode, data)
+
+        if (requestCode == CropImage.CROP_IMAGE_ACTIVITY_REQUEST_CODE
+            && resultCode == Activity.RESULT_OK && data != null
+        ) {
+
+            val uri = CropImage.getActivityResult(data).uri
+            val messageKey = REF_DATABASE_ROOT.child(NODE_MESSAGES).child(CURRENT_UID)
+                .child(contact.id).push().key.toString()
+            val path = REF_STORAGE_ROOT.child(FOLDER_MESSAGE_IMAGE).child(messageKey)
+
+            putImageToStorage(uri, path) {
+                getUrlFromStorage(path) {
+                    putUrlToDatabase(it) {
+                        sendMessageAsImage(contact.id, it, messageKey)
+                    }
+                }
+            }
+        }
+    }
+
+
+
+
 }

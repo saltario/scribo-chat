@@ -1,6 +1,10 @@
 package com.saltario.scribo.ui.fragments.changes
 
 import com.saltario.scribo.R
+import com.saltario.scribo.database.NODE_USERNAMES
+import com.saltario.scribo.database.REF_DATABASE_ROOT
+import com.saltario.scribo.database.USER
+import com.saltario.scribo.database.setUsernameToDatabase
 import com.saltario.scribo.ui.objects.AppValueEventListener
 import com.saltario.scribo.utilits.*
 import kotlinx.android.synthetic.main.fragment_change_username.*

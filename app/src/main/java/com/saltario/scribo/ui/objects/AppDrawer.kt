@@ -18,7 +18,7 @@ import com.saltario.scribo.R
 import com.saltario.scribo.ui.fragments.ContactsFragment
 import com.saltario.scribo.ui.fragments.SettingsFragment
 import com.saltario.scribo.utilits.APP_ACTIVITY
-import com.saltario.scribo.utilits.USER
+import com.saltario.scribo.database.USER
 import com.saltario.scribo.utilits.downloadAndSetImage
 import com.saltario.scribo.utilits.replaceFragment
 

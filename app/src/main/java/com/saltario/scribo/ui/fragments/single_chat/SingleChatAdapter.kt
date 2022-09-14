@@ -9,7 +9,7 @@ import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.saltario.scribo.R
 import com.saltario.scribo.models.Common
-import com.saltario.scribo.utilits.CURRENT_UID
+import com.saltario.scribo.database.CURRENT_UID
 import com.saltario.scribo.utilits.asTime
 import kotlinx.android.synthetic.main.message_item.view.*
 

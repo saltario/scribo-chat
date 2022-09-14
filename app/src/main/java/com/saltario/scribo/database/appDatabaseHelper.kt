@@ -1,4 +1,4 @@
-package com.saltario.scribo.utilits
+package com.saltario.scribo.database
 
 import android.net.Uri
 import com.google.firebase.auth.FirebaseAuth
@@ -12,6 +12,8 @@ import com.saltario.scribo.R
 import com.saltario.scribo.models.Common
 import com.saltario.scribo.models.User
 import com.saltario.scribo.ui.objects.AppValueEventListener
+import com.saltario.scribo.utilits.APP_ACTIVITY
+import com.saltario.scribo.utilits.showToast
 
 // Realtime Database
 lateinit var REF_DATABASE_ROOT: DatabaseReference
@@ -27,6 +29,7 @@ lateinit var CURRENT_UID: String
 
 // Адрес по которому хранятся аватарки пользователей
 const val FOLDER_PROFILE_IMAGE = "profile_image"
+const val FOLDER_MESSAGE_IMAGE = "message_image"
 
 // Список всех пользователей приложения
 const val NODE_USERS = "users"
@@ -53,8 +56,11 @@ const val CHILD_TEXT = "text"
 const val CHILD_FROM = "from"
 const val CHILD_TYPE = "type"
 const val CHILD_TIME = "time"
+const val CHILD_IMAGE_URL = "imageUrl"
+
 // Типы сообщений
 const val TYPE_TEXT = "text"
+const val TYPE_IMAGE = "image"
 
 // Инициализация БД
 fun initDatabase() {
@@ -179,7 +185,7 @@ private fun deleteOldUsername(newUserName: String) {
         .addOnFailureListener { showToast(it.message.toString()) }
 }
 
-fun sendMessage(message: String, otherUserId: String, typeText: String, function: () -> Unit) {
+fun sendMessageAsText(message: String, otherUserId: String, typeText: String, function: () -> Unit) {
     // Ссылка на диалог для текущего пользователя
     val refDialogUser = "$NODE_MESSAGES/$CURRENT_UID/$otherUserId"
     // Ссылка на диалог для нашего собеседника
@@ -201,5 +207,28 @@ fun sendMessage(message: String, otherUserId: String, typeText: String, function
     REF_DATABASE_ROOT
         .updateChildren(mapDialog)
         .addOnSuccessListener { function() }
+        .addOnFailureListener { showToast(it.message.toString()) }
+}
+
+fun sendMessageAsImage(otherUserId: String, imageUrl: String, messageKey: String) {
+    // Ссылка на диалог для текущего пользователя
+    val refDialogUser = "$NODE_MESSAGES/$CURRENT_UID/$otherUserId"
+    // Ссылка на диалог для нашего собеседника
+    val refDialogOtherUser = "$NODE_MESSAGES/$otherUserId/$CURRENT_UID"
+
+    // Заполненное по модели сообщение для отправки
+    val mapMessage = hashMapOf<String, Any>()
+    mapMessage[CHILD_ID] = messageKey
+    mapMessage[CHILD_FROM] = CURRENT_UID
+    mapMessage[CHILD_TYPE] = TYPE_IMAGE
+    mapMessage[CHILD_TIME] = ServerValue.TIMESTAMP
+    mapMessage[CHILD_IMAGE_URL] = imageUrl
+
+    val mapDialog = hashMapOf<String, Any>()
+    mapDialog["$refDialogUser/$messageKey"] = mapMessage
+    mapDialog["$refDialogOtherUser/$messageKey"] = mapMessage
+
+    REF_DATABASE_ROOT
+        .updateChildren(mapDialog)
         .addOnFailureListener { showToast(it.message.toString()) }
 }

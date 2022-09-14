@@ -5,6 +5,9 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
 import androidx.core.content.ContextCompat
+import com.saltario.scribo.database.AUTH
+import com.saltario.scribo.database.initDatabase
+import com.saltario.scribo.database.initUser
 import com.saltario.scribo.databinding.ActivityMainBinding
 import com.saltario.scribo.ui.fragments.ChatsMainFragment
 import com.saltario.scribo.ui.fragments.register.EnterPhoneNumberFragment

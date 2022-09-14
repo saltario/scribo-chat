@@ -6,6 +6,7 @@ import android.view.Menu
 import android.view.MenuInflater
 import android.view.MenuItem
 import com.saltario.scribo.R
+import com.saltario.scribo.database.*
 import com.saltario.scribo.ui.fragments.changes.ChangeBioFragment
 import com.saltario.scribo.ui.fragments.changes.ChangeFullnameFragment
 import com.saltario.scribo.ui.fragments.changes.ChangeUsernameFragment
@@ -61,7 +62,7 @@ class SettingsFragment : BaseFragment(R.layout.fragment_settings) {
     private fun changePhoto() {
         CropImage.activity()
             .setAspectRatio(1, 1)
-            .setRequestedSize(500, 500)
+            .setRequestedSize(200, 200)
             .setCropShape(CropImageView.CropShape.OVAL)
             .start(APP_ACTIVITY, this)
     }

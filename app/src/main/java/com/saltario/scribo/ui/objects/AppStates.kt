@@ -1,5 +1,6 @@
 package com.saltario.scribo.ui.objects
 
+import com.saltario.scribo.database.*
 import com.saltario.scribo.utilits.*
 
 enum class AppStates(val state: String) {

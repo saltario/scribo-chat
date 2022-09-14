@@ -4,6 +4,7 @@ import androidx.fragment.app.Fragment
 import com.google.firebase.auth.PhoneAuthCredential
 import com.google.firebase.auth.PhoneAuthProvider
 import com.saltario.scribo.R
+import com.saltario.scribo.database.*
 import com.saltario.scribo.ui.objects.AppTextWatcher
 import com.saltario.scribo.utilits.*
 import kotlinx.android.synthetic.main.fragment_enter_code.*

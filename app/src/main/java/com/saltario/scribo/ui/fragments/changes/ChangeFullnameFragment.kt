@@ -1,6 +1,8 @@
 package com.saltario.scribo.ui.fragments.changes
 
 import com.saltario.scribo.R
+import com.saltario.scribo.database.USER
+import com.saltario.scribo.database.setFullNameToDatabase
 import com.saltario.scribo.utilits.*
 import kotlinx.android.synthetic.main.fragment_change_name.*
 

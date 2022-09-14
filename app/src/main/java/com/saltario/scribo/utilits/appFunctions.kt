@@ -7,10 +7,10 @@ import android.provider.ContactsContract
 import android.view.inputmethod.InputMethodManager
 import android.widget.ImageView
 import android.widget.Toast
-import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import com.saltario.scribo.MainActivity
 import com.saltario.scribo.R
+import com.saltario.scribo.database.updatePhonesFromDatabase
 import com.saltario.scribo.models.Common
 import com.squareup.picasso.Picasso
 import java.text.SimpleDateFormat
