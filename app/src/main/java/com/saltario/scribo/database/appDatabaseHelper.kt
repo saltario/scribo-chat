@@ -188,6 +188,7 @@ fun sendMessage(message: String, otherUserId: String, typeText: String, function
     val messageKey = REF_DATABASE_ROOT.child(refDialogUser).push().key
     // Заполненное по модели сообщение для отправки
     val mapMessage = hashMapOf<String, Any>()
+    mapMessage[CHILD_ID] = messageKey.toString()
     mapMessage[CHILD_FROM] = CURRENT_UID
     mapMessage[CHILD_TYPE] = typeText
     mapMessage[CHILD_TEXT] = message

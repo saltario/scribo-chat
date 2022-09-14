@@ -54,26 +54,23 @@ class SingleChatAdapter: RecyclerView.Adapter<SingleChatAdapter.SingleChatHolder
         return mListMessagesCache.size
     }
 
-    fun addItem(item: Common, toBottom: Boolean, onSuccess: () -> Unit){
-
-        // toBottom - true - скролить вниз (новое сообщение)
-        //          - false - скролить вверх (подгрузка сообщений)
-        if (toBottom){
-            // Добавление нового элемента, которого еще нету в списке
-            if (!mListMessagesCache.contains(item)){
-                mListMessagesCache.add(item)
-                // Обновить последний элемент списка
-                notifyItemInserted(mListMessagesCache.size)
-            }
-        } else {
-            if (!mListMessagesCache.contains(item)){
-                mListMessagesCache.add(item)
-                mListMessagesCache.sortBy { it.time.toString() }
-                // Обновить первый элемент списка
-                notifyItemInserted(0)
-            }
+    fun addItemToBottom(item: Common, onSuccess: () -> Unit){
+        if (!mListMessagesCache.contains(item)){
+            mListMessagesCache.add(item)
+            // Обновить последний элемент списка
+            notifyItemInserted(mListMessagesCache.size)
         }
-
         onSuccess()
     }
+
+    fun addItemToTop(item: Common, onSuccess: () -> Unit){
+        if (!mListMessagesCache.contains(item)){
+            mListMessagesCache.add(item)
+            mListMessagesCache.sortBy { it.time.toString() }
+            // Обновить первый элемент списка
+            notifyItemInserted(0)
+        }
+        onSuccess()
+    }
+
 }

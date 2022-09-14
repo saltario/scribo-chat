@@ -2,6 +2,7 @@ package com.saltario.scribo.ui.fragments.single_chat
 
 import android.view.View
 import android.widget.AbsListView
+import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout
 import com.google.firebase.database.DatabaseReference
@@ -32,8 +33,8 @@ class SingleChatFragment(private val contact: Common) : BaseFragment(R.layout.fr
     private lateinit var mRefMessages: DatabaseReference
     // Подключает слушателя на изменение в сообщениях
     private lateinit var mMessagesListeners: AppChildEventListener
-    // Количество сообщений, которое будет загружаться сразу
-    private var mCountMessages = 10
+    // Количество сообщений, которое будет загружаться и подгружаться сразу
+    private var mCountMessages = 15
 
     // Список
     private lateinit var mRecyclerView: RecyclerView
@@ -48,10 +49,12 @@ class SingleChatFragment(private val contact: Common) : BaseFragment(R.layout.fr
     // false - скролить вверх (подгрузка сообщений)
 
     private lateinit var mSwipeRefreshLayout: SwipeRefreshLayout
+    private lateinit var mLayoutManager: LinearLayoutManager
 
     override fun onResume() {
         super.onResume()
 
+        initLayoutFields()
         initToolBar()
         initOtherUser()
         initButtonListeners()
@@ -66,6 +69,10 @@ class SingleChatFragment(private val contact: Common) : BaseFragment(R.layout.fr
         mRefMessages.removeEventListener(mMessagesListeners)
     }
 
+    private fun initLayoutFields() {
+        mSwipeRefreshLayout = chat_swipe_refresh
+        mLayoutManager = LinearLayoutManager(this.context)
+    }
 
     private fun initToolBar() {
         mToolBarInfo = APP_ACTIVITY.mToolBar.info_toolbar
@@ -109,20 +116,31 @@ class SingleChatFragment(private val contact: Common) : BaseFragment(R.layout.fr
 
     private fun initRecycleView() {
 
-        mSwipeRefreshLayout = chat_swipe_refresh
         mRecyclerView = chat_recycle_view
+        mRecyclerView.layoutManager = mLayoutManager
+        mRecyclerView.setHasFixedSize(true)
+        mRecyclerView.isNestedScrollingEnabled = false
+
         mAdapter = SingleChatAdapter()
         mRefMessages = REF_DATABASE_ROOT.child(NODE_MESSAGES).child(CURRENT_UID).child(contact.id)
         mRecyclerView.adapter = mAdapter
 
         mMessagesListeners = AppChildEventListener { snapshot ->
-            mAdapter.addItem(snapshot.getCommonModel(), mSmoothScrollToPosition){
-                if (mSmoothScrollToPosition) {
+
+            val message = snapshot.getCommonModel()
+
+            if (mSmoothScrollToPosition) {
+                mAdapter.addItemToBottom(message) {
                     mRecyclerView.smoothScrollToPosition(mAdapter.itemCount)
                 }
+
+            } else {
+                mAdapter.addItemToTop(message) {
+                    mSwipeRefreshLayout.isRefreshing = false
+                }
             }
-            mSwipeRefreshLayout.isRefreshing = false
         }
+
         mRefMessages.limitToLast(mCountMessages).addChildEventListener(mMessagesListeners)
 
         mRecyclerView.addOnScrollListener(object: RecyclerView.OnScrollListener(){
@@ -136,7 +154,10 @@ class SingleChatFragment(private val contact: Common) : BaseFragment(R.layout.fr
 
             override fun onScrolled(recyclerView: RecyclerView, dx: Int, dy: Int) {
                 super.onScrolled(recyclerView, dx, dy)
-                if (mIsScrolling && dy < 0){
+
+                if (mIsScrolling &&
+                    dy < 0 &&
+                    mLayoutManager.findFirstVisibleItemPosition() <= mCountMessages){
                     updateData()
                 }
             }
@@ -149,7 +170,7 @@ class SingleChatFragment(private val contact: Common) : BaseFragment(R.layout.fr
 
         mSmoothScrollToPosition = false
         mIsScrolling = false
-        mCountMessages += 10
+        mCountMessages += mCountMessages
         mRefMessages.removeEventListener(mMessagesListeners)
         mRefMessages.limitToLast(mCountMessages).addChildEventListener(mMessagesListeners)
     }

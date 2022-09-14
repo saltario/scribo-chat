@@ -15,4 +15,9 @@ data class Common (
     var type: String = "",
     var from: String = "",
     var time: Any = ""
-)
+){
+    // Сравниваем сообщения по id
+    override fun equals(other: Any?): Boolean {
+        return (other as Common).id == id
+    }
+}
