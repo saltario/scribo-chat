@@ -36,7 +36,7 @@
     <style name="settings_buttons">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">wrap_content</item>
-        <item name="android:layout_marginTop">@dimen/vertical_margin</item>
+        <item name="android:layout_marginTop">@dimen/app_vertical_margin</item>
         <item name="android:clickable">true</item>
         <item name="android:focusable">true</item>
         <item name="android:background">@drawable/ripple_effect</item>
@@ -46,7 +46,7 @@
     <style name="normal_text">
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>
-        <item name="android:layout_marginStart">@dimen/horizontal_margin</item>
+        <item name="android:layout_marginStart">@dimen/app_horizontal_margin</item>
         <item name="android:textSize">@dimen/normal_text_size</item>
         <item name="android:textColor">@color/color_primary</item>
     </style>
@@ -54,7 +54,7 @@
     <style name="small_text">
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>
-        <item name="android:layout_marginStart">@dimen/horizontal_margin</item>
+        <item name="android:layout_marginStart">@dimen/app_horizontal_margin</item>
         <item name="android:textSize">@dimen/small_text_size</item>
         <item name="android:textColor">@color/color_label</item>
     </style>
@@ -63,9 +63,9 @@
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">1dp</item>
         <item name="android:background">@color/color_label</item>
-        <item name="android:layout_marginTop">@dimen/vertical_margin</item>
-        <item name="android:layout_marginEnd">@dimen/horizontal_margin</item>
-        <item name="android:layout_marginStart">@dimen/horizontal_margin</item>
+        <item name="android:layout_marginTop">@dimen/app_vertical_margin</item>
+        <item name="android:layout_marginEnd">@dimen/app_horizontal_margin</item>
+        <item name="android:layout_marginStart">@dimen/app_horizontal_margin</item>
     </style>
 
     <style name="main_toolbar">
@@ -80,7 +80,7 @@
         <item name="android:layout_height">wrap_content</item>
         <item name="android:textColor">@color/color_primary</item>
         <item name="android:textSize">@dimen/normal_text_size</item>
-        <item name="android:layout_margin">@dimen/horizontal_margin</item>
+        <item name="android:layout_margin">@dimen/app_horizontal_margin</item>
         <item name="android:padding">@dimen/app_padding</item>
         <item name="android:maxLines">1</item>
         <item name="android:inputType">phone</item>
@@ -92,7 +92,7 @@
         <item name="android:layout_height">wrap_content</item>
         <item name="android:textColor">@color/color_primary</item>
         <item name="android:textSize">@dimen/normal_text_size</item>
-        <item name="android:layout_margin">@dimen/horizontal_margin</item>
+        <item name="android:layout_margin">@dimen/app_horizontal_margin</item>
         <item name="android:padding">@dimen/app_padding</item>
         <item name="android:maxLines">1</item>
         <item name="android:textColorHint">@color/color_label</item>

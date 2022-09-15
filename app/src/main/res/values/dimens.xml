@@ -2,16 +2,15 @@
 <resources>
 
     <!-- Application -->
+    <dimen name="app_padding">10dp</dimen>
+    <dimen name="app_horizontal_margin">16dp</dimen>
+    <dimen name="app_vertical_margin">10dp</dimen>
+    <dimen name="app_vertical_large_margin">16dp</dimen>
+
+    <!--Text-->
     <dimen name="large_text_size">16sp</dimen>
     <dimen name="normal_text_size">16sp</dimen>
     <dimen name="small_text_size">14sp</dimen>
-
-    <dimen name="app_padding">10dp</dimen>
-
-    <dimen name="horizontal_margin">16dp</dimen>
-
-    <dimen name="vertical_margin">10dp</dimen>
-    <dimen name="vertical_large_margin">16dp</dimen>
 
     <!--Settings fragment-->
     <dimen name="settings_user_photo_width">55dp</dimen>
@@ -28,7 +27,9 @@
     <dimen name="toolbar_user_photo_height">40dp</dimen>
     <dimen name="toolbar_horizontal_margin">10dp</dimen>
     <dimen name="toolbar_vertical_margin">5dp</dimen>
-    <dimen name="background_message_radius">10dp</dimen>
+
+    <!--Chat-->
+    <dimen name="chat_background_message_radius">10dp</dimen>
     <dimen name="chat_message_image_width">180dp</dimen>
     <dimen name="chat_message_image_height">180dp</dimen>
 
