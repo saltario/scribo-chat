@@ -6,6 +6,7 @@ import com.google.firebase.auth.PhoneAuthProvider
 import com.saltario.scribo.R
 import com.saltario.scribo.database.*
 import com.saltario.scribo.ui.objects.AppTextWatcher
+import com.saltario.scribo.ui.objects.AppValueEventListener
 import com.saltario.scribo.utilits.*
 import kotlinx.android.synthetic.main.fragment_enter_code.*
 
@@ -36,18 +37,25 @@ class EnterCodeFragment(val phoneNumber: String, val id: String) : Fragment(R.la
                 val dateMap = mutableMapOf<String, Any>()
                 dateMap[CHILD_ID] = uid
                 dateMap[CHILD_PHONE] = phoneNumber
-                dateMap[CHILD_USERNAME] = uid
 
-                REF_DATABASE_ROOT.child(NODE_PHONES).child(phoneNumber).setValue(uid)
-                    .addOnFailureListener { showToast(it.message.toString()) }
-                    .addOnSuccessListener {
-                        REF_DATABASE_ROOT.child(NODE_USERS).child(uid).updateChildren(dateMap)
+                REF_DATABASE_ROOT.child(NODE_USERS).child(uid)
+                    .addListenerForSingleValueEvent(AppValueEventListener{
+
+                        if (!it.hasChild(CHILD_USERNAME)) {
+                            dateMap[CHILD_USERNAME] = uid
+                        }
+
+                        REF_DATABASE_ROOT.child(NODE_PHONES).child(phoneNumber).setValue(uid)
                             .addOnFailureListener { showToast(it.message.toString()) }
                             .addOnSuccessListener {
-                                showToast(getString(R.string.app_toast_welcome_message))
-                                restartActivity()
+                                REF_DATABASE_ROOT.child(NODE_USERS).child(uid).updateChildren(dateMap)
+                                    .addOnFailureListener { showToast(it.message.toString()) }
+                                    .addOnSuccessListener {
+                                        showToast(getString(R.string.app_toast_welcome_message))
+                                        restartActivity()
+                                    }
                             }
-                    }
+                    })
             } else {
                 showToast(task.exception?.message.toString())
             }
