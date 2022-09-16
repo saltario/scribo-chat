@@ -1,9 +1,12 @@
 package com.saltario.scribo.ui.fragments.single_chat
 
+import android.annotation.SuppressLint
 import android.app.Activity
 import android.content.Intent
+import android.view.MotionEvent
 import android.view.View
 import android.widget.AbsListView
+import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout
@@ -21,6 +24,9 @@ import com.theartofdev.edmodo.cropper.CropImage
 import kotlinx.android.synthetic.main.activity_main.view.*
 import kotlinx.android.synthetic.main.fragment_single_chat.*
 import kotlinx.android.synthetic.main.toolbar_info.view.*
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
 
 class SingleChatFragment(private val contact: Common) : BaseFragment(R.layout.fragment_single_chat) {
 
@@ -105,6 +111,7 @@ class SingleChatFragment(private val contact: Common) : BaseFragment(R.layout.fr
         mRefOtherUser.addValueEventListener(mListenerInfoToolbar)
     }
 
+    @SuppressLint("ClickableViewAccessibility")
     private fun initButtonListeners() {
         // Отправка сообщений
         chat_btn_sent_message.setOnClickListener {
@@ -124,15 +131,34 @@ class SingleChatFragment(private val contact: Common) : BaseFragment(R.layout.fr
             attachFile()
         }
 
+        CoroutineScope(Dispatchers.IO).launch {
+            chat_btn_voice.setOnTouchListener { v, event ->
+
+                if (checkPermission(RECORD_AUDIO)){
+                    if (event.action == MotionEvent.ACTION_DOWN){
+                        chat_input_message.setText(getString(R.string.chat_record))
+                        chat_btn_voice.setColorFilter(ContextCompat.getColor(APP_ACTIVITY, R.color.color_black))
+
+                    } else if (event.action == MotionEvent.ACTION_UP) {
+                        chat_input_message.setText("")
+                        chat_btn_voice.colorFilter = null
+                    }
+                }
+                true
+            }
+        }
+
         // Проверяем если поле ввода текста пустое то скрываем кнопку отправки
         chat_input_message.addTextChangedListener(AppTextWatcher{
             val string = chat_input_message.text.toString()
-            if (string.isEmpty()){
+            if (string.isEmpty() || string == getString(R.string.chat_record)){
                 chat_btn_sent_message.visibility = View.GONE
                 chat_btn_attach.visibility = View.VISIBLE
+                chat_btn_voice.visibility = View.VISIBLE
             } else {
                 chat_btn_sent_message.visibility = View.VISIBLE
                 chat_btn_attach.visibility = View.GONE
+                chat_btn_voice.visibility = View.GONE
             }
         })
     }

@@ -47,6 +47,7 @@
     <!-- Chat -->
     <!-- Chat Hints-->
     <string name="chat_input_message">Сообщение</string>
+    <string name="chat_record">Запись</string>
     <!-- Chat Toasts-->
     <string name="chat_toast_message_is_empty">Сообщение не может быть пустым</string>
 
