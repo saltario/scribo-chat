@@ -1,6 +1,8 @@
-package com.saltario.scribo.utilits
+package com.saltario.scribo.ui.objects
 
 import android.media.MediaRecorder
+import com.saltario.scribo.utilits.APP_ACTIVITY
+import com.saltario.scribo.utilits.showToast
 import java.io.File
 
 class AppVoiceRecorder {

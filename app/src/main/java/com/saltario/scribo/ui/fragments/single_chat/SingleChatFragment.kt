@@ -17,9 +17,11 @@ import com.saltario.scribo.database.*
 import com.saltario.scribo.models.Common
 import com.saltario.scribo.models.User
 import com.saltario.scribo.ui.fragments.BaseFragment
+import com.saltario.scribo.ui.fragments.message_recycle_view.views.AppViewFactory
 import com.saltario.scribo.ui.objects.AppChildEventListener
 import com.saltario.scribo.ui.objects.AppTextWatcher
 import com.saltario.scribo.ui.objects.AppValueEventListener
+import com.saltario.scribo.ui.objects.AppVoiceRecorder
 import com.saltario.scribo.utilits.*
 import com.theartofdev.edmodo.cropper.CropImage
 import kotlinx.android.synthetic.main.activity_main.view.*
@@ -192,12 +194,12 @@ class SingleChatFragment(private val contact: Common) : BaseFragment(R.layout.fr
             val message = snapshot.getCommonModel()
 
             if (mSmoothScrollToPosition) {
-                mAdapter.addItemToBottom(message) {
+                mAdapter.addItemToBottom(AppViewFactory.getView(message)) {
                     mRecyclerView.smoothScrollToPosition(mAdapter.itemCount)
                 }
 
             } else {
-                mAdapter.addItemToTop(message) {
+                mAdapter.addItemToTop(AppViewFactory.getView(message)) {
                     mSwipeRefreshLayout.isRefreshing = false
                 }
             }
