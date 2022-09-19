@@ -2,6 +2,7 @@ package com.saltario.scribo.ui.fragments.message_recycle_view.views
 
 import com.saltario.scribo.database.TYPE_IMAGE
 import com.saltario.scribo.database.TYPE_TEXT
+import com.saltario.scribo.database.TYPE_VOICE
 import com.saltario.scribo.models.Common
 
 class AppViewFactory {
@@ -23,6 +24,13 @@ class AppViewFactory {
                      message.time.toString(),
                      message.fileUrl,
                      message.text
+                 )
+
+                 TYPE_VOICE -> ViewVoiceMessage(
+                     message.id,
+                     message.from,
+                     message.time.toString(),
+                     message.fileUrl
                  )
 
                  else -> { ViewTextMessage(

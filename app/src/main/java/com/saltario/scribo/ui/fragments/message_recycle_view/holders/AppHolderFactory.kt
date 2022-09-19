@@ -4,7 +4,6 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.saltario.scribo.R
-import com.saltario.scribo.database.TYPE_IMAGE
 import com.saltario.scribo.ui.fragments.message_recycle_view.views.MessageView
 
 class AppHolderFactory {
@@ -19,6 +18,13 @@ class AppHolderFactory {
                         .inflate(R.layout.message_image_item, parent, false)
                     HolderImageMessage(view)
                 }
+
+                MessageView.MESSAGE_VOICE -> {
+                    val view = LayoutInflater.from(parent.context)
+                        .inflate(R.layout.message_voice_item, parent, false)
+                    HolderVoiceMessage(view)
+                }
+
                 else -> {
                     val view = LayoutInflater.from(parent.context)
                         .inflate(R.layout.message_text_item, parent, false)

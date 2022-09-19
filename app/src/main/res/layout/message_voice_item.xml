@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/block_other_voice"
+        android:layout_width="@dimen/chat_message_voice_width"
+        android:layout_height="@dimen/chat_message_voice_height"
+        android:layout_margin="@dimen/app_horizontal_margin"
+        android:background="@drawable/bg_other_message"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/chat_btn_other_play_voice"
+            android:layout_width="@dimen/chat_btn_play_voice_message_width"
+            android:layout_height="@dimen/chat_btn_play_voice_message_height"
+            android:layout_margin="5dp"
+            android:src="@drawable/ic_btn_play_voice_message"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/chat_btn_other_stop_voice"
+            android:layout_width="@dimen/chat_btn_play_voice_message_width"
+            android:layout_height="@dimen/chat_btn_play_voice_message_height"
+            android:layout_margin="5dp"
+            android:src="@drawable/ic_btn_stop_voice_message"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/chat_other_voice"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:contentDescription="@string/app_content_description"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/chat_other_voice_time"
+            style="@style/small_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/app_horizontal_margin"
+            android:gravity="end"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            tools:text="21:45" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/block_user_voice"
+        android:layout_width="@dimen/chat_message_voice_width"
+        android:layout_height="@dimen/chat_message_voice_height"
+        android:layout_margin="@dimen/app_horizontal_margin"
+        android:background="@drawable/bg_user_message"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/chat_btn_user_play_voice"
+            android:layout_width="@dimen/chat_btn_play_voice_message_width"
+            android:layout_height="@dimen/chat_btn_play_voice_message_height"
+            android:layout_margin="5dp"
+            android:src="@drawable/ic_btn_play_voice_message"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/chat_btn_user_stop_voice"
+            android:layout_width="@dimen/chat_btn_play_voice_message_width"
+            android:layout_height="@dimen/chat_btn_play_voice_message_height"
+            android:layout_margin="5dp"
+            android:src="@drawable/ic_btn_stop_voice_message"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/chat_user_voice"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:contentDescription="@string/app_content_description"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/chat_user_voice_time"
+            style="@style/small_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/app_horizontal_margin"
+            android:gravity="end"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            tools:text="21:45" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

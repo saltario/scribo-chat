@@ -7,6 +7,7 @@ import com.saltario.scribo.database.CURRENT_UID
 import com.saltario.scribo.ui.fragments.message_recycle_view.holders.AppHolderFactory
 import com.saltario.scribo.ui.fragments.message_recycle_view.holders.HolderImageMessage
 import com.saltario.scribo.ui.fragments.message_recycle_view.holders.HolderTextMessage
+import com.saltario.scribo.ui.fragments.message_recycle_view.holders.HolderVoiceMessage
 import com.saltario.scribo.ui.fragments.message_recycle_view.views.MessageView
 import com.saltario.scribo.utilits.asTime
 import com.saltario.scribo.utilits.downloadAndSetImage
@@ -22,49 +23,15 @@ class SingleChatAdapter: RecyclerView.Adapter<RecyclerView.ViewHolder>() {
     override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
 
         when (holder){
-            is HolderTextMessage -> drawMessageAsText(holder, position)
-            is HolderImageMessage -> drawMessageAsImage(holder, position)
+            is HolderTextMessage -> holder.drawMessageAsText(holder, mListMessagesCache[position])
+            is HolderImageMessage -> holder.drawMessageAsImage(holder, mListMessagesCache[position])
+            is HolderVoiceMessage -> holder.drawMessageAsVoice(holder, mListMessagesCache[position])
             else -> {}
         }
     }
 
     override fun getItemViewType(position: Int): Int {
         return mListMessagesCache[position].getTypeView()
-    }
-
-    private fun drawMessageAsImage(holder: HolderImageMessage, position: Int) {
-
-        if (mListMessagesCache[position].from == CURRENT_UID){
-
-            holder.blockUserImageMessage.visibility = View.VISIBLE
-            holder.blockOtherUserImageMessage.visibility = View.GONE
-            holder.chatUserImageMessage.downloadAndSetImage(mListMessagesCache[position].fileUrl)
-            holder.chatUserImageMessageTime.text = mListMessagesCache[position].time.asTime()
-
-        } else {
-
-            holder.blockUserImageMessage.visibility = View.GONE
-            holder.blockOtherUserImageMessage.visibility = View.VISIBLE
-            holder.chatOtherUserImageMessage.downloadAndSetImage(mListMessagesCache[position].fileUrl)
-            holder.chatOtherUserImageMessageTime.text = mListMessagesCache[position].time.asTime()
-        }
-    }
-
-    private fun drawMessageAsText(holder: HolderTextMessage, position: Int) {
-
-        if (mListMessagesCache[position].from == CURRENT_UID){
-
-            holder.blockUserMessage.visibility = View.VISIBLE
-            holder.blockOtherUserMessage.visibility = View.GONE
-            holder.chatUserMessage.text = mListMessagesCache[position].text
-            holder.chatUserMessageTime.text = mListMessagesCache[position].time.asTime()
-        } else {
-
-            holder.blockUserMessage.visibility = View.GONE
-            holder.blockOtherUserMessage.visibility = View.VISIBLE
-            holder.chatOtherUserMessage.text = mListMessagesCache[position].text
-            holder.chatOtherUserMessageTime.text = mListMessagesCache[position].time.asTime()
-        }
     }
 
     override fun getItemCount(): Int {

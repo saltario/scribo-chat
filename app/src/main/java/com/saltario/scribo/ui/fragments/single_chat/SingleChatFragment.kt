@@ -62,23 +62,20 @@ class SingleChatFragment(private val contact: Common) : BaseFragment(R.layout.fr
     // true - скролить вниз (новое сообщение)
     // false - скролить вверх (подгрузка сообщений)
 
+    // Определяют переменные поведения обновления и дозагрузки layout элементов
     private lateinit var mSwipeRefreshLayout: SwipeRefreshLayout
     private lateinit var mLayoutManager: LinearLayoutManager
+
+    // Рекордер звуковых файлов
     private lateinit var mAppVoiceRecorder: AppVoiceRecorder
 
     override fun onResume() {
         super.onResume()
 
-        initVoiceRecorder()
-        initLayoutFields()
         initToolBar()
-        initOtherUser()
+        initFields()
         initButtonListeners()
         initRecycleView()
-    }
-
-    private fun initVoiceRecorder() {
-        mAppVoiceRecorder = AppVoiceRecorder()
     }
 
     override fun onPause() {
@@ -89,9 +86,21 @@ class SingleChatFragment(private val contact: Common) : BaseFragment(R.layout.fr
         mRefMessages.removeEventListener(mMessagesListeners)
     }
 
-    private fun initLayoutFields() {
+    override fun onDestroy() {
+        super.onDestroy()
+        mAppVoiceRecorder.releaseRecorder()
+    }
+
+    private fun initFields() {
+
+        mAppVoiceRecorder = AppVoiceRecorder()
+
         mSwipeRefreshLayout = chat_swipe_refresh
         mLayoutManager = LinearLayoutManager(this.context)
+
+        mRefOtherUser = REF_DATABASE_ROOT.child(NODE_USERS).child(contact.id)
+        mRefOtherUser.addValueEventListener(mListenerInfoToolbar)
+
     }
 
     private fun initToolBar() {
@@ -115,13 +124,9 @@ class SingleChatFragment(private val contact: Common) : BaseFragment(R.layout.fr
         mToolBarInfo.info_toolbar_photo.downloadAndSetImage(mOtherUser.photoUrl)
     }
 
-    private fun initOtherUser() {
-        mRefOtherUser = REF_DATABASE_ROOT.child(NODE_USERS).child(contact.id)
-        mRefOtherUser.addValueEventListener(mListenerInfoToolbar)
-    }
-
     @SuppressLint("ClickableViewAccessibility")
     private fun initButtonListeners() {
+
         // Отправка сообщений
         chat_btn_sent_message.setOnClickListener {
             mSmoothScrollToPosition = true
@@ -140,6 +145,7 @@ class SingleChatFragment(private val contact: Common) : BaseFragment(R.layout.fr
             attachFile()
         }
 
+        // Отправка звукового сообщения
         CoroutineScope(Dispatchers.IO).launch {
             chat_btn_voice.setOnTouchListener { v, event ->
 
@@ -258,10 +264,5 @@ class SingleChatFragment(private val contact: Common) : BaseFragment(R.layout.fr
             uploadAnSendFileMessageToStorage(uri, messageKey, contact.id, TYPE_IMAGE)
             mSmoothScrollToPosition = true
         }
-    }
-
-    override fun onDestroy() {
-        super.onDestroy()
-        mAppVoiceRecorder.releaseRecorder()
     }
 }
