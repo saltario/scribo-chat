@@ -15,7 +15,7 @@ data class Common (
     var type: String = "",
     var from: String = "",
     var time: Any = "",
-    var imageUrl: String = "empty"
+    var fileUrl: String = "empty"
 ){
     // Сравниваем сообщения по id
     override fun equals(other: Any?): Boolean {

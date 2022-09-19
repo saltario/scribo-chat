@@ -3,6 +3,7 @@ package com.saltario.scribo.ui.fragments.single_chat
 import android.annotation.SuppressLint
 import android.app.Activity
 import android.content.Intent
+import android.net.Uri
 import android.view.MotionEvent
 import android.view.View
 import android.widget.AbsListView
@@ -61,15 +62,21 @@ class SingleChatFragment(private val contact: Common) : BaseFragment(R.layout.fr
 
     private lateinit var mSwipeRefreshLayout: SwipeRefreshLayout
     private lateinit var mLayoutManager: LinearLayoutManager
+    private lateinit var mAppVoiceRecorder: AppVoiceRecorder
 
     override fun onResume() {
         super.onResume()
 
+        initVoiceRecorder()
         initLayoutFields()
         initToolBar()
         initOtherUser()
         initButtonListeners()
         initRecycleView()
+    }
+
+    private fun initVoiceRecorder() {
+        mAppVoiceRecorder = AppVoiceRecorder()
     }
 
     override fun onPause() {
@@ -138,10 +145,16 @@ class SingleChatFragment(private val contact: Common) : BaseFragment(R.layout.fr
                     if (event.action == MotionEvent.ACTION_DOWN){
                         chat_input_message.setText(getString(R.string.chat_record))
                         chat_btn_voice.setColorFilter(ContextCompat.getColor(APP_ACTIVITY, R.color.color_black))
+                        val messageKey = getMessageKey(contact.id)
+                        mAppVoiceRecorder.startRecorder(messageKey)
 
                     } else if (event.action == MotionEvent.ACTION_UP) {
                         chat_input_message.setText("")
                         chat_btn_voice.colorFilter = null
+                        mAppVoiceRecorder.stopRecorder { file, messageKey ->
+
+                            uploadFileToStorage(Uri.fromFile(file), messageKey)
+                        }
                     }
                 }
                 true
@@ -239,8 +252,7 @@ class SingleChatFragment(private val contact: Common) : BaseFragment(R.layout.fr
         ) {
 
             val uri = CropImage.getActivityResult(data).uri
-            val messageKey = REF_DATABASE_ROOT.child(NODE_MESSAGES).child(CURRENT_UID)
-                .child(contact.id).push().key.toString()
+            val messageKey = getMessageKey(contact.id)
             val path = REF_STORAGE_ROOT.child(FOLDER_MESSAGE_IMAGE).child(messageKey)
 
             putImageToStorage(uri, path) {
@@ -249,5 +261,10 @@ class SingleChatFragment(private val contact: Common) : BaseFragment(R.layout.fr
                 }
             }
         }
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        mAppVoiceRecorder.releaseRecorder()
     }
 }
