@@ -1,7 +1,6 @@
 package com.saltario.scribo.ui.screens.single_chat
 
 import android.annotation.SuppressLint
-import android.app.Activity
 import android.content.Intent
 import android.net.Uri
 import android.view.MotionEvent
@@ -11,6 +10,7 @@ import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+import com.google.android.material.bottomsheet.BottomSheetBehavior
 import com.google.firebase.database.DatabaseReference
 import com.saltario.scribo.R
 import com.saltario.scribo.database.*
@@ -25,6 +25,7 @@ import com.saltario.scribo.ui.objects.AppVoiceRecorder
 import com.saltario.scribo.utilits.*
 import com.theartofdev.edmodo.cropper.CropImage
 import kotlinx.android.synthetic.main.activity_main.view.*
+import kotlinx.android.synthetic.main.chat_choice_upload.*
 import kotlinx.android.synthetic.main.fragment_single_chat.*
 import kotlinx.android.synthetic.main.toolbar_info.view.*
 import kotlinx.coroutines.CoroutineScope
@@ -69,6 +70,8 @@ class SingleChatFragment(private val contact: Common) : BaseFragment(R.layout.fr
     // Рекордер звуковых файлов
     private lateinit var mAppVoiceRecorder: AppVoiceRecorder
 
+    private lateinit var mBottomSheetBehavior: BottomSheetBehavior<*>
+
     override fun onResume() {
         super.onResume()
 
@@ -93,6 +96,9 @@ class SingleChatFragment(private val contact: Common) : BaseFragment(R.layout.fr
     }
 
     private fun initFields() {
+
+        mBottomSheetBehavior = BottomSheetBehavior.from(bottom_sheet_choice)
+        mBottomSheetBehavior.state = BottomSheetBehavior.STATE_HIDDEN
 
         mAppVoiceRecorder = AppVoiceRecorder()
 
@@ -143,12 +149,12 @@ class SingleChatFragment(private val contact: Common) : BaseFragment(R.layout.fr
         // Отправка вложения
         chat_btn_attach.setOnClickListener {
             mSmoothScrollToPosition = true
-            attachFile()
+            attach()
         }
 
         // Отправка звукового сообщения
         CoroutineScope(Dispatchers.IO).launch {
-            chat_btn_voice.setOnTouchListener { v, event ->
+            chat_btn_voice.setOnTouchListener { _, event ->
 
                 if (checkPermission(RECORD_AUDIO)){
                     if (event.action == MotionEvent.ACTION_DOWN){
@@ -183,6 +189,12 @@ class SingleChatFragment(private val contact: Common) : BaseFragment(R.layout.fr
                 chat_btn_voice.visibility = View.GONE
             }
         })
+    }
+
+    private fun attach() {
+        mBottomSheetBehavior.state = BottomSheetBehavior.STATE_EXPANDED
+        btn_bottom_sheet_attach_file.setOnClickListener { attachFile() }
+        btn_bottom_sheet_attach_image.setOnClickListener { attachImage() }
     }
 
     private fun initRecycleView() {
@@ -246,24 +258,39 @@ class SingleChatFragment(private val contact: Common) : BaseFragment(R.layout.fr
         mRefMessages.limitToLast(mCountMessages).addChildEventListener(mMessagesListeners)
     }
 
-    private fun attachFile() {
+    private fun attachImage() {
         CropImage.activity()
             .setAspectRatio(1, 1)
             .setRequestedSize(ATTACH_IMAGE_WIDTH, ATTACH_IMAGE_HEIGHT)
             .start(APP_ACTIVITY, this)
     }
 
+    private fun attachFile() {
+        val intent = Intent(Intent.ACTION_GET_CONTENT)
+        intent.type = "*/*"
+        startActivityForResult(intent, PICK_FILE_REQUEST_CODE)
+    }
+
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
 
-        if (requestCode == CropImage.CROP_IMAGE_ACTIVITY_REQUEST_CODE
-            && resultCode == Activity.RESULT_OK && data != null
-        ) {
+        if (data != null){
+            when (requestCode) {
 
-            val uri = CropImage.getActivityResult(data).uri
-            val messageKey = getMessageKey(contact.id)
-            uploadAnSendFileMessageToStorage(uri, messageKey, contact.id, TYPE_IMAGE)
-            mSmoothScrollToPosition = true
+                CropImage.CROP_IMAGE_ACTIVITY_REQUEST_CODE -> {
+                    val uri = CropImage.getActivityResult(data).uri
+                    val messageKey = getMessageKey(contact.id)
+                    uploadAnSendFileMessageToStorage(uri, messageKey, contact.id, TYPE_IMAGE)
+                    mSmoothScrollToPosition = true
+                }
+
+                PICK_FILE_REQUEST_CODE -> {
+                    val uri = data.data
+                    val messageKey = getMessageKey(contact.id)
+                    uri?.let { uploadAnSendFileMessageToStorage(it, messageKey, contact.id, TYPE_FILE) }
+                    mSmoothScrollToPosition = true
+                }
+            }
         }
     }
 }

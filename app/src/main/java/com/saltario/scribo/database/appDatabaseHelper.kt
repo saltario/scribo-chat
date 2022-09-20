@@ -65,6 +65,7 @@ const val CHILD_FILE_URL = "fileUrl"
 const val TYPE_TEXT = "text"
 const val TYPE_IMAGE = "image"
 const val TYPE_VOICE = "voice"
+const val TYPE_FILE = "file"
 
 //</editor-fold>
 
