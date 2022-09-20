@@ -1,15 +1,15 @@
-package com.saltario.scribo.ui.fragments.message_recycle_view.views
+package com.saltario.scribo.ui.message_recycle_view.views
 
-data class ViewTextMessage(
+data class ViewVoiceMessage(
     override val id: String,
     override val from: String,
     override val time: String,
-    override val fileUrl: String = "",
-    override val text: String
+    override val fileUrl: String,
+    override val text: String = ""
 ) : MessageView{
 
     override fun getTypeView(): Int {
-        return MessageView.MESSAGE_TEXT
+        return MessageView.MESSAGE_VOICE
     }
 
     override fun equals(other: Any?): Boolean {

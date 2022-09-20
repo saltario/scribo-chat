@@ -1,4 +1,4 @@
-package com.saltario.scribo.ui.fragments.single_chat
+package com.saltario.scribo.ui.screens.single_chat
 
 import android.annotation.SuppressLint
 import android.app.Activity
@@ -16,8 +16,8 @@ import com.saltario.scribo.R
 import com.saltario.scribo.database.*
 import com.saltario.scribo.models.Common
 import com.saltario.scribo.models.User
-import com.saltario.scribo.ui.fragments.BaseFragment
-import com.saltario.scribo.ui.fragments.message_recycle_view.views.AppViewFactory
+import com.saltario.scribo.ui.screens.BaseFragment
+import com.saltario.scribo.ui.message_recycle_view.views.AppViewFactory
 import com.saltario.scribo.ui.objects.AppChildEventListener
 import com.saltario.scribo.ui.objects.AppTextWatcher
 import com.saltario.scribo.ui.objects.AppValueEventListener

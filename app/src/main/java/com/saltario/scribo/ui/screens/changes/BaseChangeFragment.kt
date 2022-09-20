@@ -1,4 +1,4 @@
-package com.saltario.scribo.ui.fragments.changes
+package com.saltario.scribo.ui.screens.changes
 
 import android.view.Menu
 import android.view.MenuInflater

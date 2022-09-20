@@ -1,4 +1,4 @@
-package com.saltario.scribo.ui.fragments
+package com.saltario.scribo.ui.screens
 
 import androidx.fragment.app.Fragment
 import com.saltario.scribo.R

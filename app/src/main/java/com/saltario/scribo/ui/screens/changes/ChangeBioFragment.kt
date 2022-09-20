@@ -1,4 +1,4 @@
-package com.saltario.scribo.ui.fragments.changes
+package com.saltario.scribo.ui.screens.changes
 
 import com.saltario.scribo.R
 import com.saltario.scribo.database.USER

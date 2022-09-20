@@ -1,4 +1,4 @@
-package com.saltario.scribo.ui.fragments.message_recycle_view.views
+package com.saltario.scribo.ui.message_recycle_view.views
 
 import com.saltario.scribo.database.TYPE_IMAGE
 import com.saltario.scribo.database.TYPE_TEXT

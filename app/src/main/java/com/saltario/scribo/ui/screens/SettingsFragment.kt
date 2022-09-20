@@ -1,4 +1,4 @@
-package com.saltario.scribo.ui.fragments
+package com.saltario.scribo.ui.screens
 
 import android.app.Activity.RESULT_OK
 import android.content.Intent
@@ -7,9 +7,9 @@ import android.view.MenuInflater
 import android.view.MenuItem
 import com.saltario.scribo.R
 import com.saltario.scribo.database.*
-import com.saltario.scribo.ui.fragments.changes.ChangeBioFragment
-import com.saltario.scribo.ui.fragments.changes.ChangeFullnameFragment
-import com.saltario.scribo.ui.fragments.changes.ChangeUsernameFragment
+import com.saltario.scribo.ui.screens.changes.ChangeBioFragment
+import com.saltario.scribo.ui.screens.changes.ChangeFullnameFragment
+import com.saltario.scribo.ui.screens.changes.ChangeUsernameFragment
 import com.saltario.scribo.ui.objects.AppStates
 import com.saltario.scribo.utilits.*
 import com.theartofdev.edmodo.cropper.CropImage

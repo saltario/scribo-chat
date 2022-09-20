@@ -1,16 +1,9 @@
-package com.saltario.scribo.ui.fragments.single_chat
+package com.saltario.scribo.ui.screens.single_chat
 
-import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.saltario.scribo.database.CURRENT_UID
-import com.saltario.scribo.ui.fragments.message_recycle_view.holders.AppHolderFactory
-import com.saltario.scribo.ui.fragments.message_recycle_view.holders.HolderImageMessage
-import com.saltario.scribo.ui.fragments.message_recycle_view.holders.HolderTextMessage
-import com.saltario.scribo.ui.fragments.message_recycle_view.holders.HolderVoiceMessage
-import com.saltario.scribo.ui.fragments.message_recycle_view.views.MessageView
-import com.saltario.scribo.utilits.asTime
-import com.saltario.scribo.utilits.downloadAndSetImage
+import com.saltario.scribo.ui.message_recycle_view.holders.*
+import com.saltario.scribo.ui.message_recycle_view.views.MessageView
 
 class SingleChatAdapter: RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
@@ -22,12 +15,7 @@ class SingleChatAdapter: RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
     override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
 
-        when (holder){
-            is HolderTextMessage -> holder.drawMessageAsText(holder, mListMessagesCache[position])
-            is HolderImageMessage -> holder.drawMessageAsImage(holder, mListMessagesCache[position])
-            is HolderVoiceMessage -> holder.drawMessageAsVoice(holder, mListMessagesCache[position])
-            else -> {}
-        }
+        (holder as MessageHolder).drawMessage(mListMessagesCache[position])
     }
 
     override fun getItemViewType(position: Int): Int {

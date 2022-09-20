@@ -1,4 +1,4 @@
-package com.saltario.scribo.ui.fragments.message_recycle_view.views
+package com.saltario.scribo.ui.message_recycle_view.views
 
 data class ViewImageMessage(
     override val id: String,

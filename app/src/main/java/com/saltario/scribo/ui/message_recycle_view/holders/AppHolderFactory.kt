@@ -1,10 +1,10 @@
-package com.saltario.scribo.ui.fragments.message_recycle_view.holders
+package com.saltario.scribo.ui.message_recycle_view.holders
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.saltario.scribo.R
-import com.saltario.scribo.ui.fragments.message_recycle_view.views.MessageView
+import com.saltario.scribo.ui.message_recycle_view.views.MessageView
 
 class AppHolderFactory {
 
