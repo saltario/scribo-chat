@@ -8,13 +8,13 @@ import com.saltario.scribo.ui.message_recycle_view.views.MessageView
 class SingleChatAdapter: RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
     private var mListMessagesCache = mutableListOf<MessageView>()
+    private val mListHolders = mutableListOf<MessageHolder>()
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
         return AppHolderFactory.getHolder(parent, viewType)
     }
 
     override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
-
         (holder as MessageHolder).drawMessage(mListMessagesCache[position])
     }
 
@@ -24,6 +24,18 @@ class SingleChatAdapter: RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
     override fun getItemCount(): Int {
         return mListMessagesCache.size
+    }
+
+    override fun onViewAttachedToWindow(holder: RecyclerView.ViewHolder) {
+        (holder as MessageHolder).onAttach(mListMessagesCache[holder.adapterPosition])
+        mListHolders.add((holder as MessageHolder))
+        super.onViewAttachedToWindow(holder)
+    }
+
+    override fun onViewDetachedFromWindow(holder: RecyclerView.ViewHolder) {
+        (holder as MessageHolder).onDetach()
+        mListHolders.remove((holder as MessageHolder))
+        super.onViewDetachedFromWindow(holder)
     }
 
     fun addItemToBottom(item: MessageView, onSuccess: () -> Unit){
@@ -45,4 +57,9 @@ class SingleChatAdapter: RecyclerView.Adapter<RecyclerView.ViewHolder>() {
         onSuccess()
     }
 
+    fun onDestroy() {
+        mListHolders.forEach {
+            it.onDetach()
+        }
+    }
 }

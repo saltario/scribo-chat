@@ -89,6 +89,7 @@ class SingleChatFragment(private val contact: Common) : BaseFragment(R.layout.fr
     override fun onDestroy() {
         super.onDestroy()
         mAppVoiceRecorder.releaseRecorder()
+        mAdapter.onDestroy()
     }
 
     private fun initFields() {

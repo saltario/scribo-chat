@@ -14,6 +14,7 @@ import com.saltario.scribo.models.User
 import com.saltario.scribo.ui.objects.AppValueEventListener
 import com.saltario.scribo.utilits.APP_ACTIVITY
 import com.saltario.scribo.utilits.showToast
+import java.io.File
 
 //<editor-fold desc="VARIABLES">
 
@@ -287,6 +288,13 @@ fun sendMessageAsText(message: String, otherUserId: String, function: () -> Unit
 fun getMessageKey(id: String): String {
     return REF_DATABASE_ROOT.child(NODE_MESSAGES).child(CURRENT_UID)
         .child(id).push().key.toString()
+}
+
+fun getFileFromStorage(file: File, fileUrl: String, function: () -> Unit) {
+    val path = REF_STORAGE_ROOT.storage.getReferenceFromUrl(fileUrl)
+    path.getFile(file)
+        .addOnSuccessListener { function() }
+        .addOnFailureListener { showToast(it.message.toString())}
 }
 
 //</editor-fold>
