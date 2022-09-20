@@ -218,18 +218,18 @@ inline fun putFileToStorage(uri: Uri, path: StorageReference, crossinline functi
 
 //<editor-fold desc="SEND FILE">
 
-fun uploadAnSendFileMessageToStorage(uri: Uri, messageKey: String, otherUserId: String, messageType: String) {
+fun uploadAnSendFileMessageToStorage(uri: Uri, messageKey: String, otherUserId: String, messageType: String, fileName: String = "") {
 
     val path = REF_STORAGE_ROOT.child(FOLDER_MESSAGE_FILES).child(messageKey)
 
     putFileToStorage(uri, path) {
         getUrlFromStorage(path) {
-            sendMessageAsFile(it, otherUserId, messageKey, messageType)
+            sendMessageAsFile(it, otherUserId, messageKey, messageType, fileName)
         }
     }
 }
 
-private fun sendMessageAsFile(fileUrl: String, otherUserId: String, messageKey: String, messageType: String) {
+private fun sendMessageAsFile(fileUrl: String, otherUserId: String, messageKey: String, messageType: String, fileName: String) {
 
     // Ссылка на диалог для текущего пользователя
     val refDialogUser = "$NODE_MESSAGES/$CURRENT_UID/$otherUserId"
@@ -243,6 +243,7 @@ private fun sendMessageAsFile(fileUrl: String, otherUserId: String, messageKey: 
     mapMessage[CHILD_TYPE] = messageType
     mapMessage[CHILD_TIME] = ServerValue.TIMESTAMP
     mapMessage[CHILD_FILE_URL] = fileUrl
+    mapMessage[CHILD_TEXT] = fileName
 
     val mapDialog = hashMapOf<String, Any>()
     mapDialog["$refDialogUser/$messageKey"] = mapMessage

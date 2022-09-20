@@ -286,8 +286,9 @@ class SingleChatFragment(private val contact: Common) : BaseFragment(R.layout.fr
 
                 PICK_FILE_REQUEST_CODE -> {
                     val uri = data.data
+                    val fileName = getFileNameFromUri(uri!!)
                     val messageKey = getMessageKey(contact.id)
-                    uri?.let { uploadAnSendFileMessageToStorage(it, messageKey, contact.id, TYPE_FILE) }
+                    uploadAnSendFileMessageToStorage(uri, messageKey, contact.id, TYPE_FILE, fileName)
                     mSmoothScrollToPosition = true
                 }
             }

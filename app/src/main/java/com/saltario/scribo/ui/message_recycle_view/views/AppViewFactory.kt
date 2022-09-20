@@ -1,5 +1,6 @@
 package com.saltario.scribo.ui.message_recycle_view.views
 
+import com.saltario.scribo.database.TYPE_FILE
 import com.saltario.scribo.database.TYPE_IMAGE
 import com.saltario.scribo.database.TYPE_TEXT
 import com.saltario.scribo.database.TYPE_VOICE
@@ -31,6 +32,14 @@ class AppViewFactory {
                      message.from,
                      message.time.toString(),
                      message.fileUrl
+                 )
+
+                 TYPE_FILE -> ViewFileMessage(
+                     message.id,
+                     message.from,
+                     message.time.toString(),
+                     message.fileUrl,
+                     message.text
                  )
 
                  else -> { ViewTextMessage(

@@ -50,5 +50,6 @@
     <string name="chat_record">Запись</string>
     <!-- Chat Toasts-->
     <string name="chat_toast_message_is_empty">Сообщение не может быть пустым</string>
+    <string name="chat_toast_download_success">Загружено</string>
 
 </resources>
