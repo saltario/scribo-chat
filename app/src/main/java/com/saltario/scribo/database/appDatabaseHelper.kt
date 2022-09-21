@@ -67,6 +67,13 @@ const val TYPE_IMAGE = "image"
 const val TYPE_VOICE = "voice"
 const val TYPE_FILE = "file"
 
+const val NODE_MAIN_LIST = "main_list"
+
+// Типы чатов
+const val TYPE_CHAT = "chat"
+const val TYPE_GROUP = "group"
+const val TYPE_CHANNEL = "channel"
+
 //</editor-fold>
 
 //<editor-fold desc="INIT">
@@ -300,3 +307,25 @@ fun getFileFromStorage(file: File, fileUrl: String, function: () -> Unit) {
 }
 
 //</editor-fold>
+
+fun saveToMainList(otherUserId: String, type: String) {
+
+    val refUser = "$NODE_MAIN_LIST/$CURRENT_UID/$otherUserId"
+    val refOtherUser = "$NODE_MAIN_LIST/$otherUserId/$CURRENT_UID"
+
+    val mapUser = hashMapOf<String, Any>()
+    val mapOtherUser = hashMapOf<String, Any>()
+
+    mapUser[CHILD_ID] = otherUserId
+    mapUser[CHILD_TYPE] = type
+
+    mapOtherUser[CHILD_ID] = CURRENT_UID
+    mapOtherUser[CHILD_TYPE] = type
+
+    val commonMap = hashMapOf<String, Any>()
+    commonMap[refUser] = mapUser
+    commonMap[refOtherUser] = mapOtherUser
+
+    REF_DATABASE_ROOT.updateChildren(commonMap)
+        .addOnFailureListener { showToast(it.message.toString()) }
+}

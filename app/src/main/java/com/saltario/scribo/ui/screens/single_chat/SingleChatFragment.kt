@@ -143,6 +143,7 @@ class SingleChatFragment(private val contact: Common) : BaseFragment(R.layout.fr
             } else {
                 sendMessageAsText(message, contact.id){
                     chat_input_message.setText("")
+                    saveToMainList(contact.id, TYPE_CHAT)
                 }
             }
         }
