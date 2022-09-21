@@ -7,7 +7,9 @@ import android.view.ViewGroup
 import android.widget.TextView
 import com.saltario.scribo.R
 import com.saltario.scribo.models.Common
+import com.saltario.scribo.ui.screens.single_chat.SingleChatFragment
 import com.saltario.scribo.utilits.downloadAndSetImage
+import com.saltario.scribo.utilits.replaceFragment
 import de.hdodenhof.circleimageview.CircleImageView
 import kotlinx.android.synthetic.main.main_list_item.view.*
 
@@ -15,10 +17,11 @@ class MainListAdapter : RecyclerView.Adapter<MainListAdapter.MainListHolder>() {
 
     private val mListItems = mutableListOf<Common>()
 
-
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MainListHolder {
         val view = LayoutInflater.from(parent.context).inflate(R.layout.main_list_item, parent, false)
-        return MainListHolder(view)
+        val holder = MainListHolder(view)
+        holder.itemView.setOnClickListener { replaceFragment(SingleChatFragment(mListItems[holder.absoluteAdapterPosition])) }
+        return holder
     }
 
     override fun onBindViewHolder(holder: MainListHolder, position: Int) {
