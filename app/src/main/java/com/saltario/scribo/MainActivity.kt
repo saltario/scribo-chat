@@ -9,7 +9,7 @@ import com.saltario.scribo.database.AUTH
 import com.saltario.scribo.database.initDatabase
 import com.saltario.scribo.database.initUser
 import com.saltario.scribo.databinding.ActivityMainBinding
-import com.saltario.scribo.ui.screens.ChatsMainFragment
+import com.saltario.scribo.ui.screens.main_list.MainListFragment
 import com.saltario.scribo.ui.screens.register.EnterPhoneNumberFragment
 import com.saltario.scribo.ui.objects.AppDrawer
 import com.saltario.scribo.ui.objects.AppStates
@@ -66,7 +66,7 @@ class MainActivity : AppCompatActivity() {
         setSupportActionBar(mToolBar)
         if (AUTH.currentUser != null){
             mAppDrawer.create()
-            replaceFragment(ChatsMainFragment(), false)
+            replaceFragment(MainListFragment(), false)
         }
         else {
             replaceFragment(EnterPhoneNumberFragment(), false)

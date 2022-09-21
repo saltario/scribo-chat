@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="@dimen/app_horizontal_margin"
+    style="@style/settings_buttons">
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/main_list_photo"
+        android:layout_width="@dimen/settings_user_photo_width"
+        android:layout_height="@dimen/settings_user_photo_height"
+        android:src="@drawable/default_photo"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"/>
+
+    <TextView
+        android:id="@+id/main_list_fullname"
+        style="@style/normal_text"
+        tools:text="@string/app_fullname_default"
+        app:layout_constraintStart_toEndOf="@+id/main_list_photo"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/main_list_last_message"
+        style="@style/small_text"
+        android:maxLines="1"
+        tools:text="Hello"
+        app:layout_constraintStart_toEndOf="@+id/main_list_photo"
+        app:layout_constraintTop_toBottomOf="@+id/main_list_fullname" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

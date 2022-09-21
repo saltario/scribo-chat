@@ -3,12 +3,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.screens.ChatsMainFragment">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".ui.screens.main_list.MainListFragment">
 
-    <TextView
-        android:textColor="@color/color_primary"
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/main_list_recycle_view"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="chats" />
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        tools:listitem="@layout/main_list_item" />
 
 </FrameLayout>
