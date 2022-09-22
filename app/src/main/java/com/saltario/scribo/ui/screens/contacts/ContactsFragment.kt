@@ -1,4 +1,4 @@
-package com.saltario.scribo.ui.screens
+package com.saltario.scribo.ui.screens.contacts
 
 import android.view.LayoutInflater
 import android.view.View
@@ -13,6 +13,7 @@ import com.saltario.scribo.database.*
 import com.saltario.scribo.models.Common
 import com.saltario.scribo.ui.screens.single_chat.SingleChatFragment
 import com.saltario.scribo.ui.objects.AppValueEventListener
+import com.saltario.scribo.ui.screens.BaseFragment
 import com.saltario.scribo.utilits.*
 import de.hdodenhof.circleimageview.CircleImageView
 import kotlinx.android.synthetic.main.contact_item.view.*

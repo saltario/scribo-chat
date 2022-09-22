@@ -18,7 +18,8 @@ data class Common (
     var fileUrl: String = "empty",
 
     // Chat
-    var lastMessage: String = ""
+    var lastMessage: String = "",
+    var check: Boolean = false
 ){
     // Сравниваем сообщения по id
     override fun equals(other: Any?): Boolean {

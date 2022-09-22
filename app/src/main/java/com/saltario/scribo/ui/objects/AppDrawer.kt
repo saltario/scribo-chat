@@ -15,10 +15,11 @@ import com.mikepenz.materialdrawer.model.interfaces.IDrawerItem
 import com.mikepenz.materialdrawer.util.AbstractDrawerImageLoader
 import com.mikepenz.materialdrawer.util.DrawerImageLoader
 import com.saltario.scribo.R
-import com.saltario.scribo.ui.screens.ContactsFragment
-import com.saltario.scribo.ui.screens.SettingsFragment
+import com.saltario.scribo.ui.screens.contacts.ContactsFragment
+import com.saltario.scribo.ui.screens.changes.SettingsFragment
 import com.saltario.scribo.utilits.APP_ACTIVITY
 import com.saltario.scribo.database.USER
+import com.saltario.scribo.ui.screens.groups.AddContactsFragment
 import com.saltario.scribo.utilits.downloadAndSetImage
 import com.saltario.scribo.utilits.replaceFragment
 
@@ -182,6 +183,7 @@ class AppDrawer (){
 
     private fun clickItem(position: Int){
         when (position){
+            1 -> replaceFragment(AddContactsFragment())
             7 -> replaceFragment(SettingsFragment())
             4 -> replaceFragment(ContactsFragment())
         }
