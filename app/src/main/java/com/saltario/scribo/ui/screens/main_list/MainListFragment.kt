@@ -41,33 +41,67 @@ class MainListFragment : Fragment(R.layout.fragment_main_list) {
             // Для каждого диалога, получаем пользователя
             mListItems.forEach { model ->
 
-                // Записываем пользователя в новую модель
-                mRefUsers.child(model.id).addListenerForSingleValueEvent(AppValueEventListener{
-                    val newModel = it.getCommonModel()
-
-                    // Получаем последнее сообщение
-                    mRefMessages.child(model.id).limitToLast(1)
-                        .addListenerForSingleValueEvent(AppValueEventListener {
-
-                            val tempList = it.children.map { it.getCommonModel() }
-
-                            if (tempList.isEmpty()) {
-                                newModel.lastMessage = "Чат очищен"
-                            } else {
-                                newModel.lastMessage = tempList[0].text
-                            }
-
-                            if (newModel.fullname.isEmpty()){
-                                newModel.fullname = newModel.phone
-                            }
-
-                            mAdapter.updateListItem(newModel)
-                        })
-                })
+                when (model.type) {
+                    TYPE_CHAT -> showChat(model)
+                    TYPE_GROUP -> showGroup(model)
+                }
             }
         })
 
         mRecyclerView.adapter = mAdapter
+    }
+
+    private fun showGroup(model: Common) {
+
+        val pathGroup = REF_DATABASE_ROOT.child(NODE_GROUPS)
+
+        // Записываем пользователя в новую модель
+        pathGroup.child(model.id)
+            .addListenerForSingleValueEvent(AppValueEventListener {
+                val newModel = it.getCommonModel()
+
+                // Получаем последнее сообщение
+                pathGroup.child(model.id).child(NODE_MESSAGES).limitToLast(1)
+                    .addListenerForSingleValueEvent(AppValueEventListener {
+
+                        val tempList = it.children.map { it.getCommonModel() }
+
+                        if (tempList.isEmpty()) {
+                            newModel.lastMessage = "Чат очищен"
+                        } else {
+                            newModel.lastMessage = tempList[0].text
+                        }
+
+                        mAdapter.updateListItem(newModel)
+                    })
+            })
+    }
+
+    private fun showChat(model: Common) {
+
+        // Записываем пользователя в новую модель
+        mRefUsers.child(model.id).addListenerForSingleValueEvent(AppValueEventListener {
+            val newModel = it.getCommonModel()
+
+            // Получаем последнее сообщение
+            mRefMessages.child(model.id).limitToLast(1)
+                .addListenerForSingleValueEvent(AppValueEventListener {
+
+                    val tempList = it.children.map { it.getCommonModel() }
+
+                    if (tempList.isEmpty()) {
+                        newModel.lastMessage = "Чат очищен"
+                    } else {
+                        newModel.lastMessage = tempList[0].text
+                    }
+
+                    if (newModel.fullname.isEmpty()) {
+                        newModel.fullname = newModel.phone
+                    }
+
+                    mAdapter.updateListItem(newModel)
+                })
+        })
     }
 
     private fun updateFragmentFields() {

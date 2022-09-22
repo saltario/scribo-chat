@@ -19,7 +19,7 @@ class AddContactsFragment : BaseFragment(R.layout.fragment_add_contacts) {
     private var mListItems = listOf<Common>()
 
     // Ссылка на список диалогов для текущего пользователя
-    private val mRefMainList = REF_DATABASE_ROOT.child(NODE_MAIN_LIST).child(CURRENT_UID)
+    private val mRefContactsList = REF_DATABASE_ROOT.child(NODE_PHONES_CONTACTS).child(CURRENT_UID)
     // Ссылка на сообщения для текущего пользователя
     private val mRefMessages = REF_DATABASE_ROOT.child(NODE_MESSAGES).child(CURRENT_UID)
     // Ссылка на список пользователей
@@ -54,11 +54,13 @@ class AddContactsFragment : BaseFragment(R.layout.fragment_add_contacts) {
         mAdapter = AddContactsAdapter()
 
         // Первым запросом получаем список всех диалогов и кастим в Common модель
-        mRefMainList.addListenerForSingleValueEvent(AppValueEventListener {
+        mRefContactsList.addListenerForSingleValueEvent(AppValueEventListener {
             mListItems = it.children.map { it.getCommonModel() }
 
             // Для каждого диалога, получаем пользователя
             mListItems.forEach { model ->
+
+                if (model.type != TYPE_GROUP)
 
                 // Записываем пользователя в новую модель
                 mRefUsers.child(model.id).addListenerForSingleValueEvent(AppValueEventListener{

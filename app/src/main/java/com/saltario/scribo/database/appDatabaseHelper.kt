@@ -15,6 +15,7 @@ import com.saltario.scribo.ui.objects.AppValueEventListener
 import com.saltario.scribo.utilits.APP_ACTIVITY
 import com.saltario.scribo.utilits.showToast
 import java.io.File
+import java.util.HashMap
 
 //<editor-fold desc="VARIABLES">
 
@@ -73,6 +74,14 @@ const val NODE_MAIN_LIST = "main_list"
 const val TYPE_CHAT = "chat"
 const val TYPE_GROUP = "group"
 const val TYPE_CHANNEL = "channel"
+
+const val NODE_GROUPS = "groups"
+const val NODE_GROUP_MEMBERS = "members"
+const val FOLDER_GROUPS_IMAGE = "groups_image"
+const val TYPE_USER_GROUP_CREATOR = "creator"
+const val TYPE_USER_GROUP_ADMIN = "admin"
+const val TYPE_USER_GROUP_MEMBER = "member"
+
 
 //</editor-fold>
 
@@ -350,4 +359,60 @@ fun clearSingleChat(id: String, function: () -> Unit) {
                 .addOnFailureListener { showToast(it.message.toString()) }
                 .addOnSuccessListener { function() }
         }
+}
+
+fun addNewGroupToDatabase(
+    nameGroup: String,
+    photoGroupUri: Uri,
+    listContacts: List<Common>,
+    function: () -> Unit) {
+
+    val keyGroup = REF_DATABASE_ROOT.child(NODE_GROUPS).push().key.toString()
+    val pathGroup = REF_DATABASE_ROOT.child(NODE_GROUPS).child(keyGroup)
+    val pathGroupStorage = REF_STORAGE_ROOT.child(FOLDER_GROUPS_IMAGE).child(keyGroup)
+
+    val mapGroupMembers = hashMapOf<String, Any>()
+    listContacts.forEach { mapGroupMembers[it.id] = TYPE_USER_GROUP_MEMBER }
+    mapGroupMembers[CURRENT_UID] = TYPE_USER_GROUP_CREATOR
+
+    val mapGroupData = hashMapOf<String, Any>()
+    mapGroupData[CHILD_ID] = keyGroup
+    mapGroupData[CHILD_FULLNAME] = nameGroup
+    mapGroupData[CHILD_PHOTO_URL] = "empty"
+    mapGroupData[NODE_GROUP_MEMBERS] = mapGroupMembers
+
+    pathGroup.updateChildren(mapGroupData)
+        .addOnFailureListener { showToast(it.message.toString()) }
+        .addOnSuccessListener {
+
+            if (photoGroupUri != Uri.EMPTY) {
+                putFileToStorage(photoGroupUri, pathGroupStorage) {
+                    getUrlFromStorage(pathGroupStorage) { photoUri ->
+                        pathGroup.child(CHILD_PHOTO_URL).setValue(photoUri)
+                        addGroupToMainList(mapGroupData, listContacts){ function() }
+                    }
+                }
+            } else {
+                addGroupToMainList(mapGroupData, listContacts){ function() }
+            }
+        }
+}
+
+fun addGroupToMainList(
+    mapGroupData: HashMap<String, Any>,
+    listContacts: List<Common>,
+    function: () -> Unit) {
+
+    val pathMainList = REF_DATABASE_ROOT.child(NODE_MAIN_LIST)
+    val mapMainList = hashMapOf<String, Any>()
+
+    mapMainList[CHILD_ID] = mapGroupData[CHILD_ID].toString()
+    mapMainList[CHILD_TYPE] = TYPE_GROUP
+    listContacts.forEach { contact ->
+        pathMainList.child(contact.id).child(mapMainList[CHILD_ID].toString()).updateChildren(mapMainList)
+    }
+    pathMainList.child(CURRENT_UID).child(mapMainList[CHILD_ID].toString()).updateChildren(mapMainList)
+        .addOnSuccessListener { function() }
+        .addOnFailureListener { showToast(it.message.toString()) }
+
 }
