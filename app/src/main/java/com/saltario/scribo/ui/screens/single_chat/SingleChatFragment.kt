@@ -3,8 +3,7 @@ package com.saltario.scribo.ui.screens.single_chat
 import android.annotation.SuppressLint
 import android.content.Intent
 import android.net.Uri
-import android.view.MotionEvent
-import android.view.View
+import android.view.*
 import android.widget.AbsListView
 import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -18,10 +17,9 @@ import com.saltario.scribo.models.Common
 import com.saltario.scribo.models.User
 import com.saltario.scribo.ui.screens.BaseFragment
 import com.saltario.scribo.ui.message_recycle_view.views.AppViewFactory
-import com.saltario.scribo.ui.objects.AppChildEventListener
-import com.saltario.scribo.ui.objects.AppTextWatcher
-import com.saltario.scribo.ui.objects.AppValueEventListener
-import com.saltario.scribo.ui.objects.AppVoiceRecorder
+import com.saltario.scribo.ui.objects.*
+import com.saltario.scribo.ui.screens.changes.ChangeFullnameFragment
+import com.saltario.scribo.ui.screens.main_list.MainListFragment
 import com.saltario.scribo.utilits.*
 import com.theartofdev.edmodo.cropper.CropImage
 import kotlinx.android.synthetic.main.activity_main.view.*
@@ -96,6 +94,8 @@ class SingleChatFragment(private val contact: Common) : BaseFragment(R.layout.fr
     }
 
     private fun initFields() {
+
+        setHasOptionsMenu(true)
 
         mBottomSheetBehavior = BottomSheetBehavior.from(bottom_sheet_choice)
         mBottomSheetBehavior.state = BottomSheetBehavior.STATE_HIDDEN
@@ -294,5 +294,27 @@ class SingleChatFragment(private val contact: Common) : BaseFragment(R.layout.fr
                 }
             }
         }
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
+        activity?.menuInflater?.inflate(R.menu.single_chat_action_menu, menu)
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        when (item.itemId) {
+            R.id.single_chat_action_menu_clear -> {
+                clearSingleChat(contact.id) {
+                    showToast(getString(R.string.chat_toast_clear))
+                    replaceFragment(MainListFragment())
+                }
+            }
+            R.id.single_chat_action_menu_delete -> {
+                deleteSingleChat(contact.id) {
+                    showToast(getString(R.string.chat_toast_delete))
+                    replaceFragment(MainListFragment())
+                }
+            }
+        }
+        return true
     }
 }

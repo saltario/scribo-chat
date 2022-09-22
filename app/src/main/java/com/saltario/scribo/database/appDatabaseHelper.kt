@@ -329,3 +329,25 @@ fun saveToMainList(otherUserId: String, type: String) {
     REF_DATABASE_ROOT.updateChildren(commonMap)
         .addOnFailureListener { showToast(it.message.toString()) }
 }
+
+fun deleteSingleChat(id: String, function: () -> Unit) {
+
+    REF_DATABASE_ROOT.child(NODE_MAIN_LIST).child(CURRENT_UID).child(id)
+        .removeValue()
+        .addOnFailureListener { showToast(it.message.toString()) }
+        .addOnSuccessListener { function() }
+}
+
+fun clearSingleChat(id: String, function: () -> Unit) {
+
+    REF_DATABASE_ROOT.child(NODE_MESSAGES).child(CURRENT_UID).child(id)
+        .removeValue()
+        .addOnFailureListener { showToast(it.message.toString()) }
+        .addOnSuccessListener {
+
+            REF_DATABASE_ROOT.child(NODE_MESSAGES).child(id).child(CURRENT_UID)
+                .removeValue()
+                .addOnFailureListener { showToast(it.message.toString()) }
+                .addOnSuccessListener { function() }
+        }
+}

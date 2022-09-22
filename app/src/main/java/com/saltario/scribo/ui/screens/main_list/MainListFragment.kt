@@ -50,7 +50,12 @@ class MainListFragment : Fragment(R.layout.fragment_main_list) {
                         .addListenerForSingleValueEvent(AppValueEventListener {
 
                             val tempList = it.children.map { it.getCommonModel() }
-                            newModel.lastMessage = tempList[0].text
+
+                            if (tempList.isEmpty()) {
+                                newModel.lastMessage = "Чат очищен"
+                            } else {
+                                newModel.lastMessage = tempList[0].text
+                            }
 
                             if (newModel.fullname.isEmpty()){
                                 newModel.fullname = newModel.phone

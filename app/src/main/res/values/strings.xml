@@ -51,5 +51,9 @@
     <!-- Chat Toasts-->
     <string name="chat_toast_message_is_empty">Сообщение не может быть пустым</string>
     <string name="chat_toast_download_success">Загружено</string>
+    <string name="single_chat_action_menu_clear">Очистить чат</string>
+    <string name="single_chat_action_menu_delete">Удалить чат</string>
+    <string name="chat_toast_clear">Чат очищен</string>
+    <string name="chat_toast_delete">Чат удален</string>
 
 </resources>
