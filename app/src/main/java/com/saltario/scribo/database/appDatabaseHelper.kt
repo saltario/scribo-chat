@@ -299,6 +299,24 @@ fun sendMessageAsText(message: String, otherUserId: String, function: () -> Unit
         .addOnFailureListener { showToast(it.message.toString()) }
 }
 
+fun sendMessageToGroupAsText(message: String, groupId: String, function: () -> Unit) {
+
+    val refGroupMessages = "$NODE_GROUPS/$groupId/$NODE_MESSAGES"
+    val messageKey = REF_DATABASE_ROOT.child(refGroupMessages).push().key
+
+    val mapMessage = hashMapOf<String, Any>()
+    mapMessage[CHILD_ID] = messageKey.toString()
+    mapMessage[CHILD_FROM] = CURRENT_UID
+    mapMessage[CHILD_TYPE] = TYPE_TEXT
+    mapMessage[CHILD_TEXT] = message
+    mapMessage[CHILD_TIME] = ServerValue.TIMESTAMP
+
+    REF_DATABASE_ROOT.child(refGroupMessages).child(messageKey.toString())
+        .updateChildren(mapMessage)
+        .addOnSuccessListener { function() }
+        .addOnFailureListener { showToast(it.message.toString()) }
+}
+
 //</editor-fold>
 
 //<editor-fold desc="OTHER">

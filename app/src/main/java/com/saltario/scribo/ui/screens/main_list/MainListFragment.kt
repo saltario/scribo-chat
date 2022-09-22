@@ -72,6 +72,7 @@ class MainListFragment : Fragment(R.layout.fragment_main_list) {
                             newModel.lastMessage = tempList[0].text
                         }
 
+                        newModel.type = TYPE_GROUP
                         mAdapter.updateListItem(newModel)
                     })
             })
@@ -99,6 +100,7 @@ class MainListFragment : Fragment(R.layout.fragment_main_list) {
                         newModel.fullname = newModel.phone
                     }
 
+                    newModel.type = TYPE_CHAT
                     mAdapter.updateListItem(newModel)
                 })
         })
