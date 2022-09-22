@@ -1,17 +1,18 @@
 package com.saltario.scribo.ui.screens.groups
 
-import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.RecyclerView
 import com.saltario.scribo.R
 import com.saltario.scribo.database.*
 import com.saltario.scribo.models.Common
 import com.saltario.scribo.ui.objects.AppValueEventListener
+import com.saltario.scribo.ui.screens.BaseFragment
 import com.saltario.scribo.utilits.APP_ACTIVITY
 import com.saltario.scribo.utilits.hideKeyboard
 import com.saltario.scribo.utilits.replaceFragment
+import com.saltario.scribo.utilits.showToast
 import kotlinx.android.synthetic.main.fragment_add_contacts.*
 
-class AddContactsFragment : Fragment(R.layout.fragment_add_contacts) {
+class AddContactsFragment : BaseFragment(R.layout.fragment_add_contacts) {
 
     private lateinit var mRecyclerView: RecyclerView
     private lateinit var mAdapter: AddContactsAdapter
@@ -27,14 +28,23 @@ class AddContactsFragment : Fragment(R.layout.fragment_add_contacts) {
     override fun onResume() {
         super.onResume()
 
+        resetListContacts()
         updateFragmentFields()
         initRecyclerView()
         initFloatingActionButton()
     }
 
+    private fun resetListContacts() {
+        mListContacts.clear()
+    }
+
     private fun initFloatingActionButton() {
         add_contacts_btn_next.setOnClickListener {
-            replaceFragment(CreateGroupFragment(mListContacts))
+            if (mListContacts.isEmpty()) {
+                showToast("Добавьте участников")
+            } else {
+                replaceFragment(CreateGroupFragment(mListContacts))
+            }
         }
     }
 
@@ -81,7 +91,6 @@ class AddContactsFragment : Fragment(R.layout.fragment_add_contacts) {
 
     private fun updateFragmentFields() {
         APP_ACTIVITY.title = "Добавить в группу"
-        APP_ACTIVITY.mAppDrawer.enableDrawer()
         hideKeyboard()
     }
 

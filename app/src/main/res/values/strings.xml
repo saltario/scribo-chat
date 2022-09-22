@@ -56,4 +56,12 @@
     <string name="chat_toast_clear">Чат очищен</string>
     <string name="chat_toast_delete">Чат удален</string>
 
+    <plurals name="count_members">
+        <item quantity="one">%d участник</item>
+        <item quantity="few">%d участника</item>
+        <item quantity="many">%d участников</item>
+        <item quantity="other">%d участников</item>
+    </plurals>
+
+
 </resources>
