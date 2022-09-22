@@ -8,9 +8,8 @@ import com.saltario.scribo.models.Common
 import com.saltario.scribo.ui.objects.AppValueEventListener
 import com.saltario.scribo.utilits.APP_ACTIVITY
 import com.saltario.scribo.utilits.hideKeyboard
-import com.saltario.scribo.utilits.showToast
+import com.saltario.scribo.utilits.replaceFragment
 import kotlinx.android.synthetic.main.fragment_add_contacts.*
-import kotlinx.android.synthetic.main.fragment_main_list.*
 
 class AddContactsFragment : Fragment(R.layout.fragment_add_contacts) {
 
@@ -35,7 +34,7 @@ class AddContactsFragment : Fragment(R.layout.fragment_add_contacts) {
 
     private fun initFloatingActionButton() {
         add_contacts_btn_next.setOnClickListener {
-            showToast("${mListContacts.size}")
+            replaceFragment(CreateGroupFragment(mListContacts))
         }
     }
 
@@ -71,7 +70,7 @@ class AddContactsFragment : Fragment(R.layout.fragment_add_contacts) {
                                 newModel.fullname = newModel.phone
                             }
 
-                            mAdapter.updateMainListItem(newModel)
+                            mAdapter.updateListItem(newModel)
                         })
                 })
             }

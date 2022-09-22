@@ -13,6 +13,7 @@
         <entry key="..\:/Documents/CODE/android/scribo-chat-repo/app/src/main/res/drawable/ic_btn_attach.xml" value="0.2395" />
         <entry key="..\:/Documents/CODE/android/scribo-chat-repo/app/src/main/res/drawable/ic_btn_play_voice_message.xml" value="0.2395" />
         <entry key="..\:/Documents/CODE/android/scribo-chat-repo/app/src/main/res/drawable/ic_btn_sent.xml" value="0.2395" />
+        <entry key="..\:/Documents/CODE/android/scribo-chat-repo/app/src/main/res/drawable/ic_check.xml" value="0.2395" />
         <entry key="..\:/Documents/CODE/android/scribo-chat-repo/app/src/main/res/drawable/ripple_effect.xml" value="0.2395" />
         <entry key="..\:/Documents/CODE/android/scribo-chat-repo/app/src/main/res/layout/activity_main.xml" value="0.2826086956521739" />
         <entry key="..\:/Documents/CODE/android/scribo-chat-repo/app/src/main/res/layout/activity_register.xml" value="0.36666666666666664" />
@@ -26,6 +27,8 @@
         <entry key="..\:/Documents/CODE/android/scribo-chat-repo/app/src/main/res/layout/fragment_change_username.xml" value="0.36666666666666664" />
         <entry key="..\:/Documents/CODE/android/scribo-chat-repo/app/src/main/res/layout/fragment_chats.xml" value="0.2962962962962963" />
         <entry key="..\:/Documents/CODE/android/scribo-chat-repo/app/src/main/res/layout/fragment_contacts.xml" value="0.36666666666666664" />
+        <entry key="..\:/Documents/CODE/android/scribo-chat-repo/app/src/main/res/layout/fragment_create_group.xml" value="0.36" />
+        <entry key="..\:/Documents/CODE/android/scribo-chat-repo/app/src/main/res/layout/fragment_create_group2.xml" value="0.36102564102564105" />
         <entry key="..\:/Documents/CODE/android/scribo-chat-repo/app/src/main/res/layout/fragment_enter_code.xml" value="0.36666666666666664" />
         <entry key="..\:/Documents/CODE/android/scribo-chat-repo/app/src/main/res/layout/fragment_enter_phone_number.xml" value="0.36666666666666664" />
         <entry key="..\:/Documents/CODE/android/scribo-chat-repo/app/src/main/res/layout/fragment_settings.xml" value="0.36666666666666664" />

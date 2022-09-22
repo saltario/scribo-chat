@@ -61,7 +61,7 @@ class MainListFragment : Fragment(R.layout.fragment_main_list) {
                                 newModel.fullname = newModel.phone
                             }
 
-                            mAdapter.updateMainListItem(newModel)
+                            mAdapter.updateListItem(newModel)
                         })
                 })
             }

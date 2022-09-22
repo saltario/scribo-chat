@@ -1,19 +1,15 @@
 package com.saltario.scribo.ui.screens.groups
 
 import android.view.LayoutInflater
-import androidx.recyclerview.widget.RecyclerView
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
+import androidx.recyclerview.widget.RecyclerView
 import com.saltario.scribo.R
 import com.saltario.scribo.models.Common
-import com.saltario.scribo.ui.screens.single_chat.SingleChatFragment
 import com.saltario.scribo.utilits.downloadAndSetImage
-import com.saltario.scribo.utilits.replaceFragment
-import com.saltario.scribo.utilits.showToast
 import de.hdodenhof.circleimageview.CircleImageView
 import kotlinx.android.synthetic.main.add_contacts_item.view.*
-import kotlinx.android.synthetic.main.main_list_item.view.*
 
 class AddContactsAdapter : RecyclerView.Adapter<AddContactsAdapter.AddContactsHolder>() {
 
@@ -46,7 +42,7 @@ class AddContactsAdapter : RecyclerView.Adapter<AddContactsAdapter.AddContactsHo
         holder.itemState.text = mListItems[position].state
     }
 
-    fun updateMainListItem(item: Common) {
+    fun updateListItem(item: Common) {
         mListItems.add(item)
         notifyItemInserted(mListItems.size)
     }
@@ -60,5 +56,4 @@ class AddContactsAdapter : RecyclerView.Adapter<AddContactsAdapter.AddContactsHo
         val itemState: TextView = view.add_contacts_state
         val itemCheck: CircleImageView = view.add_contacts_item_check
     }
-
 }

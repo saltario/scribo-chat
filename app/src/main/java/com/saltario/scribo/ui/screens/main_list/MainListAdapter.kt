@@ -30,7 +30,7 @@ class MainListAdapter : RecyclerView.Adapter<MainListAdapter.MainListHolder>() {
         holder.itemLastMessage.text = mListItems[position].lastMessage
     }
 
-    fun updateMainListItem(item: Common) {
+    fun updateListItem(item: Common) {
         mListItems.add(item)
         notifyItemInserted(mListItems.size)
     }
