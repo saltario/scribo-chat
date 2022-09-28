@@ -15,6 +15,8 @@ class EnterCodeFragment(val phoneNumber: String, val id: String) : Fragment(R.la
     override fun onStart() {
         super.onStart()
 
+        hideNavBottom()
+
         APP_ACTIVITY.title = phoneNumber
 
         register_input_code.addTextChangedListener(AppTextWatcher{
@@ -24,6 +26,11 @@ class EnterCodeFragment(val phoneNumber: String, val id: String) : Fragment(R.la
                 enterCode()
             }
         })
+    }
+
+    override fun onStop() {
+        super.onStop()
+        showNavBottom()
     }
 
     private fun enterCode() {
