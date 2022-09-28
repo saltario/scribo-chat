@@ -2,18 +2,18 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
     <item
-        android:title="Chats"
-        android:id="@+id/nav_bottom_chats"
-        android:icon="@drawable/ic_btn_voice"/>
-
-    <item
-        android:title="Contacts"
+        android:title="@string/nav_bottom_contacts"
         android:id="@+id/nav_bottom_contacts"
-        android:icon="@drawable/ic_btn_attach"/>
+        android:icon="@drawable/ic_menu_contacts"/>
 
     <item
-        android:title="Settings"
+        android:title="@string/nav_bottom_chats"
+        android:id="@+id/nav_bottom_chats"
+        android:icon="@drawable/ic_menu_chats"/>
+
+    <item
+        android:title="@string/nav_bottom_settings"
         android:id="@+id/nav_bottom_settings"
-        android:icon="@drawable/ic_btn_sent"/>
+        android:icon="@drawable/ic_menu_settings"/>
 
 </menu>
