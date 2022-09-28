@@ -5,7 +5,7 @@
     <item
         android:id="@+id/settings_confirm_change"
         android:title=""
-        android:icon="@drawable/ic_confirm_change"
+        android:icon="@drawable/ic_btn_action_menu_confirm_change"
         app:showAsAction="ifRoom" />
 
 </menu>

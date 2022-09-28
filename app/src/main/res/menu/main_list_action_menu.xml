@@ -5,7 +5,7 @@
     <item
         android:id="@+id/main_list_create_single_chat"
         android:title=""
-        android:icon="@drawable/ic_menu_invate"
+        android:icon="@drawable/ic_menu_create_single_chat"
         app:showAsAction="ifRoom" />
 
     <item

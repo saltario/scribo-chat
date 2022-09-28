@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <item
-        android:icon="@drawable/ic_btn_action_menu"
+        android:icon="@drawable/ic_btn_action_menu_burger"
         app:showAsAction="ifRoom"
         android:title="">
 
@@ -12,13 +12,13 @@
             <item
                 android:id="@+id/single_chat_action_menu_clear"
                 android:title="@string/single_chat_action_menu_clear"
-                android:icon="@drawable/ic_btn_clear_chat"
+                android:icon="@drawable/ic_btn_chat_clear"
                 app:showAsAction="never"/>
 
             <item
                 android:id="@+id/single_chat_action_menu_delete"
                 android:title="@string/single_chat_action_menu_delete"
-                android:icon="@drawable/ic_btn_delete_chat"
+                android:icon="@drawable/ic_btn_chat_delete"
                 app:showAsAction="never"/>
 
         </menu>

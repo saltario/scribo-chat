@@ -10,7 +10,7 @@
         android:id="@+id/register_image"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:src="@drawable/register_image"
+        android:src="@drawable/default_register_input_code"
         android:layout_marginTop="@dimen/app_vertical_large_margin"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

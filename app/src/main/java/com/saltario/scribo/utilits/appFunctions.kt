@@ -60,7 +60,7 @@ fun hideKeyboard(){
 fun ImageView.downloadAndSetImage(url: String){
     Picasso.get().load(url)
         .fit()
-        .placeholder(R.drawable.default_photo)
+        .placeholder(R.drawable.default_user_photo)
         .into(this)
 }
 
