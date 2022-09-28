@@ -30,6 +30,7 @@ class ContactsFragment : BaseFragment(R.layout.fragment_contacts) {
 
     override fun onResume() {
         super.onResume()
+        showNavBottom()
         APP_ACTIVITY.title = "Контакты"
         initRecycleView()
     }

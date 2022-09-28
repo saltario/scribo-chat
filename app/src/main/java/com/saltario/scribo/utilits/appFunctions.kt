@@ -6,6 +6,7 @@ import android.content.Intent
 import android.net.Uri
 import android.provider.ContactsContract
 import android.provider.OpenableColumns
+import android.view.View
 import android.view.inputmethod.InputMethodManager
 import android.widget.ImageView
 import android.widget.Toast
@@ -15,6 +16,7 @@ import com.saltario.scribo.R
 import com.saltario.scribo.database.updatePhonesFromDatabase
 import com.saltario.scribo.models.Common
 import com.squareup.picasso.Picasso
+import kotlinx.android.synthetic.main.activity_main.*
 import java.text.SimpleDateFormat
 import java.util.*
 
@@ -58,7 +60,7 @@ fun hideKeyboard(){
 fun ImageView.downloadAndSetImage(url: String){
     Picasso.get().load(url)
         .fit()
-        .placeholder(R.drawable.default_photo)
+        .placeholder(R.drawable.default_user_photo)
         .into(this)
 }
 
@@ -116,3 +118,11 @@ fun getFileNameFromUri(uri: Uri): String {
 
 fun getPlurals(count: Int) =
     APP_ACTIVITY.resources.getQuantityString(R.plurals.count_members, count, count)
+
+fun hideNavBottom() {
+    APP_ACTIVITY.main_nav_bottom.visibility = View.GONE
+}
+
+fun showNavBottom() {
+    APP_ACTIVITY.main_nav_bottom.visibility = View.VISIBLE
+}

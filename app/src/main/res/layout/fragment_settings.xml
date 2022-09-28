@@ -21,7 +21,7 @@
             android:layout_width="@dimen/settings_user_photo_width"
             android:layout_height="@dimen/settings_user_photo_height"
             android:layout_marginStart="@dimen/app_horizontal_margin"
-            android:src="@drawable/default_photo"
+            android:src="@drawable/default_user_photo"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent" />
@@ -154,11 +154,12 @@
 
     <de.hdodenhof.circleimageview.CircleImageView
         android:id="@+id/settings_btn_change_photo"
-        android:layout_width="@dimen/settings_btn_change_user_photo_width"
-        android:layout_height="@dimen/settings_btn_change_user_photo_height"
-        android:src="@drawable/ic_camera"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:src="@drawable/ic_btn_camera"
         android:layout_marginEnd="@dimen/app_horizontal_margin"
         app:civ_border_color="@color/color_label"
+        app:civ_circle_background_color="@color/color_label"
         app:civ_border_width="@dimen/settings_user_photo_border"
         app:layout_constraintBottom_toBottomOf="@+id/settings_header_block"
         app:layout_constraintEnd_toEndOf="parent"

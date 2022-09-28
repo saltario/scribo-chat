@@ -19,6 +19,7 @@ class SettingsFragment : BaseFragment(R.layout.fragment_settings) {
     override fun onResume() {
         super.onResume()
         setHasOptionsMenu(true)
+        showNavBottom()
         APP_ACTIVITY.title = "Настройки"
         initFields()
         initListeners()
@@ -80,7 +81,6 @@ class SettingsFragment : BaseFragment(R.layout.fragment_settings) {
                     putUrlToDatabase(it) {
                         settings_photo.downloadAndSetImage(it)
                         USER.photoUrl = it
-                        APP_ACTIVITY.mAppDrawer.updateHeader()
                         showToast(getString(R.string.app_toast_data_update))
                     }
                 }

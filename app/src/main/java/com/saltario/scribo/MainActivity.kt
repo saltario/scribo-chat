@@ -11,15 +11,15 @@ import com.saltario.scribo.database.initUser
 import com.saltario.scribo.databinding.ActivityMainBinding
 import com.saltario.scribo.ui.screens.main_list.MainListFragment
 import com.saltario.scribo.ui.screens.register.EnterPhoneNumberFragment
-import com.saltario.scribo.ui.objects.AppDrawer
 import com.saltario.scribo.ui.objects.AppStates
+import com.saltario.scribo.ui.screens.changes.SettingsFragment
+import com.saltario.scribo.ui.screens.contacts.ContactsFragment
 import com.saltario.scribo.utilits.*
 
 class MainActivity : AppCompatActivity() {
 
     private lateinit var mBinding: ActivityMainBinding
     lateinit var mToolBar: Toolbar
-    lateinit var mAppDrawer: AppDrawer
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -32,6 +32,25 @@ class MainActivity : AppCompatActivity() {
             initFields()
             initFunc()
             initContacts()
+            initNavBottomBar()
+        }
+    }
+
+    private fun initNavBottomBar() {
+
+        mBinding.mainNavBottom.setOnItemSelectedListener {
+
+            when(it.itemId) {
+
+                R.id.nav_bottom_chats -> replaceFragment(MainListFragment(), false)
+                R.id.nav_bottom_contacts -> replaceFragment(ContactsFragment(), false)
+                R.id.nav_bottom_settings -> replaceFragment(SettingsFragment(), false)
+
+                else -> {
+
+                }
+            }
+            true
         }
     }
 
@@ -59,13 +78,11 @@ class MainActivity : AppCompatActivity() {
     private fun initFields() {
         APP_ACTIVITY = this
         mToolBar = mBinding.mainToolbar
-        mAppDrawer = AppDrawer()
     }
 
     private fun initFunc() {
         setSupportActionBar(mToolBar)
         if (AUTH.currentUser != null){
-            mAppDrawer.create()
             replaceFragment(MainListFragment(), false)
         }
         else {

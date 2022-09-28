@@ -63,5 +63,9 @@
         <item quantity="other">%d участников</item>
     </plurals>
 
+    <!-- Nav Bottom -->
+    <string name="nav_bottom_chats">Чаты</string>
+    <string name="nav_bottom_settings">Настройки</string>
+    <string name="nav_bottom_contacts">Контакты</string>
 
 </resources>
