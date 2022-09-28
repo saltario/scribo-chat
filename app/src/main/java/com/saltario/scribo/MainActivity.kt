@@ -13,6 +13,8 @@ import com.saltario.scribo.ui.screens.main_list.MainListFragment
 import com.saltario.scribo.ui.screens.register.EnterPhoneNumberFragment
 import com.saltario.scribo.ui.objects.AppDrawer
 import com.saltario.scribo.ui.objects.AppStates
+import com.saltario.scribo.ui.screens.changes.SettingsFragment
+import com.saltario.scribo.ui.screens.contacts.ContactsFragment
 import com.saltario.scribo.utilits.*
 
 class MainActivity : AppCompatActivity() {
@@ -32,6 +34,24 @@ class MainActivity : AppCompatActivity() {
             initFields()
             initFunc()
             initContacts()
+            initNavBottomBar()
+        }
+    }
+
+    private fun initNavBottomBar() {
+
+        mBinding.mainNavBottom.setOnItemSelectedListener {
+
+            when(it.itemId) {
+                R.id.nav_bottom_chats -> replaceFragment(MainListFragment())
+                R.id.nav_bottom_contacts -> replaceFragment(ContactsFragment())
+                R.id.nav_bottom_settings -> replaceFragment(SettingsFragment())
+
+                else -> {
+
+                }
+            }
+            true
         }
     }
 
