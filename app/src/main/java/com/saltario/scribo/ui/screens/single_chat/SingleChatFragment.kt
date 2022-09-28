@@ -18,7 +18,6 @@ import com.saltario.scribo.models.User
 import com.saltario.scribo.ui.screens.BaseFragment
 import com.saltario.scribo.ui.message_recycle_view.views.AppViewFactory
 import com.saltario.scribo.ui.objects.*
-import com.saltario.scribo.ui.screens.changes.ChangeFullnameFragment
 import com.saltario.scribo.ui.screens.main_list.MainListFragment
 import com.saltario.scribo.utilits.*
 import com.theartofdev.edmodo.cropper.CropImage

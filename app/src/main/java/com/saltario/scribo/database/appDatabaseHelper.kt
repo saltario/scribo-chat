@@ -141,7 +141,6 @@ fun setFullNameToDatabase(fullname: String) {
         .addOnSuccessListener {
             showToast(APP_ACTIVITY.getString(R.string.app_toast_data_update))
             USER.fullname = fullname
-            APP_ACTIVITY.mAppDrawer.updateHeader()
             APP_ACTIVITY.supportFragmentManager.popBackStack()
         }
         .addOnFailureListener { showToast(it.message.toString()) }

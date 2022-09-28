@@ -108,7 +108,6 @@ class MainListFragment : Fragment(R.layout.fragment_main_list) {
 
     private fun updateFragmentFields() {
         APP_ACTIVITY.title = "Чаты"
-        APP_ACTIVITY.mAppDrawer.enableDrawer()
         hideKeyboard()
     }
 }

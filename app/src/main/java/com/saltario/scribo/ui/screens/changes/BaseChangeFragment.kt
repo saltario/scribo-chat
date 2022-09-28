@@ -7,20 +7,23 @@ import androidx.fragment.app.Fragment
 import com.saltario.scribo.R
 import com.saltario.scribo.utilits.APP_ACTIVITY
 import com.saltario.scribo.utilits.hideKeyboard
+import com.saltario.scribo.utilits.hideNavBottom
+import com.saltario.scribo.utilits.showNavBottom
 
 open class BaseChangeFragment(layout: Int) : Fragment(layout) {
 
     override fun onStart() {
         super.onStart()
 
-        APP_ACTIVITY.mAppDrawer.disableDrawer()
         setHasOptionsMenu(true)
         hideKeyboard()
+        hideNavBottom()
     }
 
     override fun onStop() {
         super.onStop()
         hideKeyboard()
+        showNavBottom()
     }
 
     override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
