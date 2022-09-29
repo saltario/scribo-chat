@@ -86,4 +86,47 @@
         <item name="android:textColorHint">@color/color_label</item>
     </style>
 
+
+
+
+
+
+
+
+
+
+
+    <style name="style_header_text">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginStart">@dimen/app_horizontal_margin</item>
+        <item name="android:layout_marginEnd">@dimen/app_horizontal_margin</item>
+        <item name="android:lines">2</item>
+        <item name="android:maxLines">2</item>
+        <item name="android:textAlignment">center</item>
+        <item name="android:textColor">@color/color_black</item>
+        <item name="android:textSize">32sp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="style_button_focusable">
+        <item name="android:layout_width">200dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginTop">@dimen/app_vertical_margin</item>
+        <item name="android:background">@drawable/custom_button_focusable</item>
+        <item name="android:textAllCaps">false</item>
+        <item name="android:textColor">@color/color_accent</item>
+        <item name="android:textSize">@dimen/normal_text_size</item>
+    </style>
+
+    <style name="style_button_not_focusable">
+        <item name="android:layout_width">200dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginTop">@dimen/app_vertical_margin</item>
+        <item name="android:background">@drawable/custom_button_not_focusable</item>
+        <item name="android:textAllCaps">false</item>
+        <item name="android:textColor">@color/color_primary_dark</item>
+        <item name="android:textSize">@dimen/normal_text_size</item>
+    </style>
+
 </resources>

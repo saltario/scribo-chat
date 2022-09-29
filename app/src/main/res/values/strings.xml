@@ -21,6 +21,11 @@
     <string name="login_text_login">Войти</string>
     <string name="login_text_register">Регистрация</string>
 
+    <!-- Welcome -->
+    <string name="welcome_text_welcome">Добро пожаловать</string>
+    <string name="welcome_privacy_hyperlink"><u>Политика конфиденциальности</u></string>
+    <string name="welcome_text_description">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</string>
+
     <!-- Settings -->
     <string name="settings_text_account">Аккаунт</string>
     <!-- Settings Labels-->
@@ -73,7 +78,7 @@
     <string name="nav_bottom_chats">Чаты</string>
     <string name="nav_bottom_settings">Настройки</string>
     <string name="nav_bottom_contacts">Контакты</string>
-
+    <string name="welcome_text_continue">Продолжить</string>
 
 
 </resources>

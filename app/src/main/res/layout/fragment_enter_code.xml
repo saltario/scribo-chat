@@ -44,7 +44,13 @@
 
     <EditText
         android:id="@+id/register_input_code"
-        style="@style/edit_phone_number"
+        android:background="@drawable/custom_edit_text"
+        android:inputType="phone"
+        android:maxLines="1"
+        android:padding="12dp"
+        android:textColor="@color/color_primary"
+        android:textColorHint="@color/color_primary"
+        android:textSize="@dimen/normal_text_size"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:gravity="center"
