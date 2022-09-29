@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:icon="@drawable/ic_btn_action_menu_burger"
+        app:showAsAction="ifRoom"
+        android:title="">
+
+        <menu>
+
+            <item
+                android:id="@+id/group_chat_action_menu_clear"
+                android:title="@string/single_chat_action_menu_clear"
+                android:icon="@drawable/ic_btn_chat_clear"
+                app:showAsAction="never"/>
+
+            <item
+                android:id="@+id/group_chat_action_menu_delete"
+                android:title="@string/single_chat_action_menu_delete"
+                android:icon="@drawable/ic_btn_chat_delete"
+                app:showAsAction="never"/>
+
+        </menu>
+
+    </item>
+
+</menu>
