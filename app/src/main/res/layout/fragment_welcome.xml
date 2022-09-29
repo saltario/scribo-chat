@@ -30,15 +30,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/welcome_text" />
 
-    <Button
-        android:id="@+id/welcome_btn_continue"
-        style="@style/style_button_focusable"
-        android:text="@string/welcome_text_continue"
-        android:layout_marginBottom="@dimen/app_horizontal_margin"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
-
     <TextView
         android:id="@+id/welcome_privacy_hyperlink"
         android:layout_width="match_parent"
@@ -51,6 +42,15 @@
         android:textColor="@color/color_primary"
         android:textSize="16sp"
         app:layout_constraintBottom_toTopOf="@+id/welcome_btn_continue"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/welcome_btn_continue"
+        style="@style/style_button_focusable"
+        android:text="@string/welcome_text_continue"
+        android:layout_marginBottom="@dimen/app_margin_bottom"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 

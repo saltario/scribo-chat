@@ -47,6 +47,7 @@
         <entry key="..\:/Documents/CODE/android/scribo-chat-repo/app/src/main/res/layout/fragment_enter_code.xml" value="0.36666666666666664" />
         <entry key="..\:/Documents/CODE/android/scribo-chat-repo/app/src/main/res/layout/fragment_enter_phone_number.xml" value="0.36666666666666664" />
         <entry key="..\:/Documents/CODE/android/scribo-chat-repo/app/src/main/res/layout/fragment_login.xml" value="0.35260416666666666" />
+        <entry key="..\:/Documents/CODE/android/scribo-chat-repo/app/src/main/res/layout/fragment_register.xml" value="0.36102564102564105" />
         <entry key="..\:/Documents/CODE/android/scribo-chat-repo/app/src/main/res/layout/fragment_settings.xml" value="0.36666666666666664" />
         <entry key="..\:/Documents/CODE/android/scribo-chat-repo/app/src/main/res/layout/fragment_single_chat.xml" value="0.36666666666666664" />
         <entry key="..\:/Documents/CODE/android/scribo-chat-repo/app/src/main/res/layout/fragment_welcome.xml" value="0.36102564102564105" />
@@ -58,6 +59,7 @@
         <entry key="..\:/Documents/CODE/android/scribo-chat-repo/app/src/main/res/layout/message_voice_item.xml" value="0.36102564102564105" />
         <entry key="..\:/Documents/CODE/android/scribo-chat-repo/app/src/main/res/layout/toolbar_group_chat.xml" value="0.36102564102564105" />
         <entry key="..\:/Documents/CODE/android/scribo-chat-repo/app/src/main/res/layout/toolbar_info.xml" value="0.36666666666666664" />
+        <entry key="..\:/Documents/CODE/android/scribo-chat-repo/app/src/main/res/layout/toolbar_single_chat.xml" value="0.36102564102564105" />
         <entry key="..\:/Documents/CODE/android/scribo-chat-repo/app/src/main/res/menu/group_chat_action_menu.xml" value="0.36102564102564105" />
         <entry key="..\:/Documents/CODE/android/scribo-chat-repo/app/src/main/res/menu/main_list_action_menu.xml" value="0.36102564102564105" />
         <entry key="..\:/Documents/CODE/android/scribo-chat-repo/app/src/main/res/menu/main_nav_bottom_menu.xml" value="0.36102564102564105" />
