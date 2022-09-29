@@ -4,8 +4,8 @@
     <!-- Application -->
     <dimen name="app_padding">10dp</dimen>
     <dimen name="app_horizontal_margin">16dp</dimen>
-    <dimen name="app_vertical_margin">10dp</dimen>
-    <dimen name="app_vertical_large_margin">16dp</dimen>
+    <dimen name="app_vertical_margin">16dp</dimen>
+    <dimen name="app_vertical_large_margin">30dp</dimen>
 
     <!--Text-->
     <dimen name="large_text_size">16sp</dimen>

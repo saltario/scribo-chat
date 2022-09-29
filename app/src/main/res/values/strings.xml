@@ -15,6 +15,12 @@
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="app_content_description">content description</string>
 
+
+    <!-- Login -->
+    <string name="login_text_set_phone">Введите номер телефона</string>
+    <string name="login_text_login">Войти</string>
+    <string name="login_text_register">Регистрация</string>
+
     <!-- Settings -->
     <string name="settings_text_account">Аккаунт</string>
     <!-- Settings Labels-->
@@ -40,7 +46,7 @@
     <string name="register_text_we_sent">Мы отправили вам смс с кодом проверки на ваш телефон</string>
     <!-- Register Hints-->
     <string name="register_input_code_hint">- - - - - -</string>
-    <string name="register_input_phone_number_hint">+16505553434</string>
+    <string name="register_input_phone_number_hint">+7(___)___-__-__</string>
     <!-- Register Toasts-->
     <string name="register_toast_enter_phone_number">Введите номер телефона!</string>
 
@@ -67,5 +73,7 @@
     <string name="nav_bottom_chats">Чаты</string>
     <string name="nav_bottom_settings">Настройки</string>
     <string name="nav_bottom_contacts">Контакты</string>
+
+
 
 </resources>

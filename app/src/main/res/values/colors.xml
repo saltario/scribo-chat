@@ -2,13 +2,14 @@
 <resources>
 
     <color name="color_primary">#BF3030</color>
-    <color name="color_primary_dark">#A60000</color>
+    <color name="color_primary_dark">#550000</color>
     <color name="color_accent">#FFFFFF</color>
 
     <color name="color_background_light">#FFFFFF</color>
     <color name="color_label">#A1A1A1</color>
     <color name="color_action_menu_button">#504949</color>
     <color name="color_black">#000000</color>
+    <color name="color_white">#FFFFFF</color>
 
     <color name="color_background_user_message">#C4FF91</color>
     <color name="color_background_other_message">#91FBFF</color>
