@@ -5,6 +5,7 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
 import androidx.core.content.ContextCompat
+import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.saltario.scribo.database.AUTH
 import com.saltario.scribo.database.initDatabase
 import com.saltario.scribo.database.initUser
@@ -20,6 +21,7 @@ class MainActivity : AppCompatActivity() {
 
     private lateinit var mBinding: ActivityMainBinding
     lateinit var mToolBar: Toolbar
+    lateinit var mNavBottom: BottomNavigationView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -30,15 +32,15 @@ class MainActivity : AppCompatActivity() {
         initDatabase()
         initUser(){
             initFields()
+            initNavBottomBar()
             initFunc()
             initContacts()
-            initNavBottomBar()
         }
     }
 
     private fun initNavBottomBar() {
 
-        mBinding.mainNavBottom.setOnItemSelectedListener {
+        mNavBottom.setOnItemSelectedListener {
 
             when(it.itemId) {
 
@@ -78,11 +80,14 @@ class MainActivity : AppCompatActivity() {
     private fun initFields() {
         APP_ACTIVITY = this
         mToolBar = mBinding.mainToolbar
+        mNavBottom = mBinding.mainNavBottom
     }
 
     private fun initFunc() {
+
         setSupportActionBar(mToolBar)
         if (AUTH.currentUser != null){
+            mNavBottom.selectedItemId = R.id.nav_bottom_chats
             replaceFragment(MainListFragment(), false)
         }
         else {

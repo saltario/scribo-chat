@@ -2,6 +2,12 @@
 
     <!-- Application -->
     <string name="app_name">Scribo Chat</string>
+
+    <string name="app_title_chats">Чаты</string>
+    <string name="app_title_contacts">Контакты</string>
+    <string name="app_title_create_group">Создание группы</string>
+    <string name="app_title_settings">Настройки</string>
+
     <!-- Default -->
     <string name="app_fullname_default">Вадим Шаульский</string>
     <string name="app_state_default">Онлайн</string>

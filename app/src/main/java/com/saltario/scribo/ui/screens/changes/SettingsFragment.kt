@@ -20,7 +20,7 @@ class SettingsFragment : BaseFragment(R.layout.fragment_settings) {
         super.onResume()
         setHasOptionsMenu(true)
         showNavBottom()
-        APP_ACTIVITY.title = "Настройки"
+        APP_ACTIVITY.title = getString(R.string.app_title_settings)
         initFields()
         initListeners()
     }
