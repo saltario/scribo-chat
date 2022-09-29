@@ -24,7 +24,7 @@ import com.theartofdev.edmodo.cropper.CropImage
 import kotlinx.android.synthetic.main.activity_main.view.*
 import kotlinx.android.synthetic.main.chat_choice_upload.*
 import kotlinx.android.synthetic.main.fragment_single_chat.*
-import kotlinx.android.synthetic.main.toolbar_info.view.*
+import kotlinx.android.synthetic.main.toolbar_single_chat.view.*
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
@@ -110,24 +110,28 @@ class SingleChatFragment(private val contact: Common) : BaseFragment(R.layout.fr
     }
 
     private fun initToolBar() {
-        mToolBarInfo = APP_ACTIVITY.mToolBar.info_toolbar
+        mToolBarInfo = APP_ACTIVITY.mToolBar.toolbar_single_chat
         mToolBarInfo.visibility = View.VISIBLE
         mListenerInfoToolbar = AppValueEventListener {
             mOtherUser = it.getUserModel()
             updateInfoToolBar()
+        }
+
+        mToolBarInfo.toolbar_single_chat_back.setOnClickListener {
+            parentFragmentManager.popBackStack()
         }
     }
 
     private fun updateInfoToolBar() {
 
         if (mOtherUser.fullname.isEmpty()) {
-            mToolBarInfo.info_toolbar_fullname.text = contact.fullname
+            mToolBarInfo.toolbar_single_chat_fullname.text = contact.fullname
         } else {
-            mToolBarInfo.info_toolbar_fullname.text = mOtherUser.fullname
+            mToolBarInfo.toolbar_single_chat_fullname.text = mOtherUser.fullname
         }
 
-        mToolBarInfo.info_toolbar_state.text = mOtherUser.state
-        mToolBarInfo.info_toolbar_photo.downloadAndSetImage(mOtherUser.photoUrl)
+        mToolBarInfo.toolbar_single_chat_state.text = mOtherUser.state
+        mToolBarInfo.toolbar_single_chat_photo.downloadAndSetImage(mOtherUser.photoUrl)
     }
 
     @SuppressLint("ClickableViewAccessibility")

@@ -6,29 +6,39 @@
     android:layout_height="?attr/actionBarSize"
     android:background="@color/color_primary">
 
+    <ImageView
+        android:id="@+id/toolbar_single_chat_back"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="@dimen/app_horizontal_margin"
+        android:src="@drawable/ic_btn_back"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <de.hdodenhof.circleimageview.CircleImageView
-        android:id="@+id/info_toolbar_photo"
+        android:id="@+id/toolbar_single_chat_photo"
         android:layout_width="@dimen/toolbar_user_photo_width"
         android:layout_height="@dimen/toolbar_user_photo_height"
         android:src="@drawable/default_user_photo"
         app:civ_circle_background_color="@color/color_accent"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintStart_toEndOf="@id/toolbar_single_chat_back"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/info_toolbar_fullname"
+        android:id="@+id/toolbar_single_chat_fullname"
         style="@style/normal_text"
         android:textColor="@color/color_accent"
         tools:text="@string/app_fullname_default"
-        app:layout_constraintStart_toEndOf="@+id/info_toolbar_photo"
-        app:layout_constraintTop_toTopOf="@+id/info_toolbar_photo" />
+        app:layout_constraintStart_toEndOf="@+id/toolbar_single_chat_photo"
+        app:layout_constraintTop_toTopOf="@+id/toolbar_single_chat_photo" />
 
     <TextView
-        android:id="@+id/info_toolbar_state"
+        android:id="@+id/toolbar_single_chat_state"
         style="@style/small_text"
         tools:text="@string/app_state_default"
-        app:layout_constraintStart_toEndOf="@+id/info_toolbar_photo"
-        app:layout_constraintTop_toBottomOf="@+id/info_toolbar_fullname" />
+        app:layout_constraintStart_toEndOf="@+id/toolbar_single_chat_photo"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar_single_chat_fullname" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

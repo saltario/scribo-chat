@@ -15,8 +15,12 @@
         style="@style/main_toolbar" >
 
         <include
-            layout="@layout/toolbar_info"
-            android:id="@+id/info_toolbar"
+            android:id="@+id/toolbar_single_chat"
+            layout="@layout/toolbar_single_chat"
+            android:visibility="gone"/>
+        <include
+            android:id="@+id/toolbar_group_chat"
+            layout="@layout/toolbar_group_chat"
             android:visibility="gone"/>
 
     </androidx.appcompat.widget.Toolbar>

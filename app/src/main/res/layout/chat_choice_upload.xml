@@ -6,7 +6,7 @@
     android:orientation="horizontal"
     android:layout_width="match_parent"
     android:layout_height="@dimen/bottom_sheet_height"
-    android:background="@color/color_label"
+    android:background="@color/color_light_grey"
     app:layout_behavior="com.google.android.material.bottomsheet.BottomSheetBehavior"
     app:behavior_hideable = "true"
     app:behavior_peekHeight = "0dp">

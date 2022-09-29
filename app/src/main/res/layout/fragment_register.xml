@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.screens.auth.RegisterFragment">
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/register_input_photo"
+        android:layout_width="@dimen/register_input_photo_width"
+        android:layout_height="@dimen/register_input_photo_height"
+        android:layout_marginTop="@dimen/app_header_margin_top"
+        android:src="@drawable/default_user_photo"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/register_edit_photo"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:src="@drawable/ic_btn_edit"
+        app:layout_constraintBottom_toBottomOf="@+id/register_input_photo"
+        app:layout_constraintEnd_toEndOf="@+id/register_input_photo"/>
+
+    <EditText
+        android:id="@+id/register_input_phone"
+        android:hint="@string/register_input_phone_number_hint"
+        android:inputType="phone"
+        android:layout_marginTop="@dimen/app_vertical_large_margin"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/register_input_photo"
+        tools:ignore="LabelFor"
+        style="@style/style_edit_text" />
+
+    <EditText
+        android:id="@+id/register_input_name"
+        android:hint="@string/register_input_name"
+        android:layout_marginTop="@dimen/app_vertical_margin"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/register_input_phone"
+        tools:ignore="LabelFor"
+        style="@style/style_edit_text" />
+
+    <EditText
+        android:id="@+id/register_input_surname"
+        android:hint="@string/register_input_surname"
+        android:layout_marginTop="@dimen/app_vertical_margin"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/register_input_name"
+        tools:ignore="LabelFor"
+        style="@style/style_edit_text"/>
+
+    <EditText
+        android:id="@+id/register_input_username"
+        android:hint="@string/register_input_username"
+        android:layout_marginTop="@dimen/app_vertical_margin"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/register_input_surname"
+        tools:ignore="LabelFor"
+        style="@style/style_edit_text"/>
+
+    <EditText
+        android:id="@+id/register_input_mail"
+        android:hint="@string/register_input_mail"
+        android:layout_marginTop="@dimen/app_vertical_margin"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/register_input_username"
+        tools:ignore="LabelFor"
+        style="@style/style_edit_text"/>
+
+    <Button
+        android:id="@+id/register_btn_register"
+        style="@style/style_button_focusable"
+        android:text="@string/login_text_register"
+        android:layout_marginBottom="@dimen/app_margin_bottom"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

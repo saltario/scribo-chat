@@ -24,7 +24,8 @@ import com.theartofdev.edmodo.cropper.CropImage
 import kotlinx.android.synthetic.main.activity_main.view.*
 import kotlinx.android.synthetic.main.chat_choice_upload.*
 import kotlinx.android.synthetic.main.fragment_single_chat.*
-import kotlinx.android.synthetic.main.toolbar_info.view.*
+import kotlinx.android.synthetic.main.toolbar_group_chat.view.*
+import kotlinx.android.synthetic.main.toolbar_single_chat.view.*
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
@@ -110,24 +111,28 @@ class GroupChatFragment(private val group: Common) : BaseFragment(R.layout.fragm
     }
 
     private fun initToolBar() {
-        mToolBarInfo = APP_ACTIVITY.mToolBar.info_toolbar
+        mToolBarInfo = APP_ACTIVITY.mToolBar.toolbar_group_chat
         mToolBarInfo.visibility = View.VISIBLE
         mListenerInfoToolbar = AppValueEventListener {
             mOtherUser = it.getUserModel()
             updateInfoToolBar()
+        }
+
+        mToolBarInfo.toolbar_group_chat_back.setOnClickListener {
+            parentFragmentManager.popBackStack()
         }
     }
 
     private fun updateInfoToolBar() {
 
         if (mOtherUser.fullname.isEmpty()) {
-            mToolBarInfo.info_toolbar_fullname.text = group.fullname
+            mToolBarInfo.toolbar_group_chat_fullname.text = group.fullname
         } else {
-            mToolBarInfo.info_toolbar_fullname.text = mOtherUser.fullname
+            mToolBarInfo.toolbar_group_chat_fullname.text = mOtherUser.fullname
         }
 
-        mToolBarInfo.info_toolbar_state.text = mOtherUser.state
-        mToolBarInfo.info_toolbar_photo.downloadAndSetImage(mOtherUser.photoUrl)
+        mToolBarInfo.toolbar_group_chat_state.text = mOtherUser.state
+        mToolBarInfo.toolbar_group_chat_photo.downloadAndSetImage(mOtherUser.photoUrl)
     }
 
     @SuppressLint("ClickableViewAccessibility")
@@ -302,22 +307,16 @@ class GroupChatFragment(private val group: Common) : BaseFragment(R.layout.fragm
     }
 
     override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
-        activity?.menuInflater?.inflate(R.menu.single_chat_action_menu, menu)
+        activity?.menuInflater?.inflate(R.menu.group_chat_action_menu, menu)
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         when (item.itemId) {
-            R.id.single_chat_action_menu_clear -> {
-                clearSingleChat(group.id) {
+            R.id.group_chat_action_menu_clear -> {
                     showToast(getString(R.string.chat_toast_clear))
-                    replaceFragment(MainListFragment())
-                }
             }
-            R.id.single_chat_action_menu_delete -> {
-                deleteSingleChat(group.id) {
+            R.id.group_chat_action_menu_delete -> {
                     showToast(getString(R.string.chat_toast_delete))
-                    replaceFragment(MainListFragment())
-                }
             }
         }
         return true

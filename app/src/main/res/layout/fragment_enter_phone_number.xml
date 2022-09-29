@@ -11,9 +11,17 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        android:importantForAutofill="no"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/custom_edit_text"
         android:hint="@string/register_input_phone_number_hint"
-        style="@style/edit_phone_number"
+        android:importantForAutofill="no"
+        android:inputType="phone"
+        android:maxLines="1"
+        android:padding="12dp"
+        android:textColor="@color/color_primary"
+        android:textColorHint="@color/color_primary"
+        android:textSize="@dimen/text_size_normal"
         tools:ignore="LabelFor" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton

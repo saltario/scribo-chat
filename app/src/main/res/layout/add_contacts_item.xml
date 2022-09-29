@@ -22,7 +22,7 @@
         android:layout_height="20dp"
         android:src="@drawable/ic_check"
         android:visibility="invisible"
-        app:civ_circle_background_color="@color/color_label"
+        app:civ_circle_background_color="@color/color_light_grey"
         app:layout_constraintBottom_toBottomOf="@+id/add_contacts_photo"
         app:layout_constraintEnd_toEndOf="@+id/add_contacts_photo"/>
 

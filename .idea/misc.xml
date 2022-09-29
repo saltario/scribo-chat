@@ -6,12 +6,17 @@
         <entry key="..\:/Documents/CODE/android/scribo-chat-repo/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.2395" />
         <entry key="..\:/Documents/CODE/android/scribo-chat-repo/app/src/main/res/drawable/bg_other_message.xml" value="0.2395" />
         <entry key="..\:/Documents/CODE/android/scribo-chat-repo/app/src/main/res/drawable/bg_user_message.xml" value="0.2395" />
+        <entry key="..\:/Documents/CODE/android/scribo-chat-repo/app/src/main/res/drawable/custom_button.xml" value="0.2395" />
+        <entry key="..\:/Documents/CODE/android/scribo-chat-repo/app/src/main/res/drawable/custom_button_not_focusable.xml" value="0.2395" />
+        <entry key="..\:/Documents/CODE/android/scribo-chat-repo/app/src/main/res/drawable/custom_edit_text.xml" value="0.2395" />
+        <entry key="..\:/Documents/CODE/android/scribo-chat-repo/app/src/main/res/drawable/dec_frame.xml" value="0.2395" />
         <entry key="..\:/Documents/CODE/android/scribo-chat-repo/app/src/main/res/drawable/header.xml" value="0.145" />
         <entry key="..\:/Documents/CODE/android/scribo-chat-repo/app/src/main/res/drawable/ic_baseline_edit_24.xml" value="0.2395" />
         <entry key="..\:/Documents/CODE/android/scribo-chat-repo/app/src/main/res/drawable/ic_btn_action_menu.xml" value="0.2395" />
         <entry key="..\:/Documents/CODE/android/scribo-chat-repo/app/src/main/res/drawable/ic_btn_action_menu_change_name.xml" value="0.2395" />
         <entry key="..\:/Documents/CODE/android/scribo-chat-repo/app/src/main/res/drawable/ic_btn_action_menu_exit.xml" value="0.2395" />
         <entry key="..\:/Documents/CODE/android/scribo-chat-repo/app/src/main/res/drawable/ic_btn_attach.xml" value="0.2395" />
+        <entry key="..\:/Documents/CODE/android/scribo-chat-repo/app/src/main/res/drawable/ic_btn_back.xml" value="0.2395" />
         <entry key="..\:/Documents/CODE/android/scribo-chat-repo/app/src/main/res/drawable/ic_btn_camera.xml" value="0.2395" />
         <entry key="..\:/Documents/CODE/android/scribo-chat-repo/app/src/main/res/drawable/ic_btn_clear_chat.xml" value="0.2395" />
         <entry key="..\:/Documents/CODE/android/scribo-chat-repo/app/src/main/res/drawable/ic_btn_delete_chat.xml" value="0.2395" />
@@ -41,15 +46,21 @@
         <entry key="..\:/Documents/CODE/android/scribo-chat-repo/app/src/main/res/layout/fragment_create_group2.xml" value="0.36102564102564105" />
         <entry key="..\:/Documents/CODE/android/scribo-chat-repo/app/src/main/res/layout/fragment_enter_code.xml" value="0.36666666666666664" />
         <entry key="..\:/Documents/CODE/android/scribo-chat-repo/app/src/main/res/layout/fragment_enter_phone_number.xml" value="0.36666666666666664" />
+        <entry key="..\:/Documents/CODE/android/scribo-chat-repo/app/src/main/res/layout/fragment_login.xml" value="0.35260416666666666" />
+        <entry key="..\:/Documents/CODE/android/scribo-chat-repo/app/src/main/res/layout/fragment_register.xml" value="0.36102564102564105" />
         <entry key="..\:/Documents/CODE/android/scribo-chat-repo/app/src/main/res/layout/fragment_settings.xml" value="0.36666666666666664" />
         <entry key="..\:/Documents/CODE/android/scribo-chat-repo/app/src/main/res/layout/fragment_single_chat.xml" value="0.36666666666666664" />
+        <entry key="..\:/Documents/CODE/android/scribo-chat-repo/app/src/main/res/layout/fragment_welcome.xml" value="0.36102564102564105" />
         <entry key="..\:/Documents/CODE/android/scribo-chat-repo/app/src/main/res/layout/main_list_item.xml" value="0.36102564102564105" />
         <entry key="..\:/Documents/CODE/android/scribo-chat-repo/app/src/main/res/layout/message_file_item.xml" value="0.36102564102564105" />
         <entry key="..\:/Documents/CODE/android/scribo-chat-repo/app/src/main/res/layout/message_image_item.xml" value="0.36102564102564105" />
         <entry key="..\:/Documents/CODE/android/scribo-chat-repo/app/src/main/res/layout/message_item.xml" value="0.36102564102564105" />
         <entry key="..\:/Documents/CODE/android/scribo-chat-repo/app/src/main/res/layout/message_text_item.xml" value="0.36102564102564105" />
         <entry key="..\:/Documents/CODE/android/scribo-chat-repo/app/src/main/res/layout/message_voice_item.xml" value="0.36102564102564105" />
+        <entry key="..\:/Documents/CODE/android/scribo-chat-repo/app/src/main/res/layout/toolbar_group_chat.xml" value="0.36102564102564105" />
         <entry key="..\:/Documents/CODE/android/scribo-chat-repo/app/src/main/res/layout/toolbar_info.xml" value="0.36666666666666664" />
+        <entry key="..\:/Documents/CODE/android/scribo-chat-repo/app/src/main/res/layout/toolbar_single_chat.xml" value="0.36102564102564105" />
+        <entry key="..\:/Documents/CODE/android/scribo-chat-repo/app/src/main/res/menu/group_chat_action_menu.xml" value="0.36102564102564105" />
         <entry key="..\:/Documents/CODE/android/scribo-chat-repo/app/src/main/res/menu/main_list_action_menu.xml" value="0.36102564102564105" />
         <entry key="..\:/Documents/CODE/android/scribo-chat-repo/app/src/main/res/menu/main_nav_bottom_menu.xml" value="0.36102564102564105" />
         <entry key="..\:/Documents/CODE/android/scribo-chat-repo/app/src/main/res/menu/settings_action_menu.xml" value="0.36666666666666664" />

@@ -41,7 +41,7 @@
             android:hint="@string/chat_input_message"
             android:padding="@dimen/app_padding"
             android:textColor="@color/color_primary"
-            android:textColorHint="@color/color_label"
+            android:textColorHint="@color/color_light_grey"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toStartOf="@+id/chat_btn_sent_message"
             app:layout_constraintStart_toStartOf="parent" />
