@@ -19,9 +19,13 @@
     <color name="color_background_chat">#2B91C6</color>
 
 
+    <color name="dark_primary">#B3282E</color>
+
+    <color name="dark_background">#1A1A1A</color>
+    <color name="dark_background_toolbars">#262626</color>
 
     <color name="dark_button">#B3282E</color>
-    <color name="dark_background">#1A1A1A</color>
+
     <color name="dark_search">#262626</color>
     <color name="dark_other">#404040</color>
     <color name="dark_stroke">#362F2E</color>

@@ -38,12 +38,10 @@
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/main_nav_bottom"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:visibility="visible"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:menu="@menu/main_nav_bottom_menu" />
+        app:menu="@menu/main_nav_bottom_menu"
+        style="@style/bottom_nav_menu" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
