@@ -16,19 +16,19 @@
     <dimen name="app_header_margin_top">40dp</dimen>
 
     <!--Text-->
-    <dimen name="text_size_large">16sp</dimen>
+    <dimen name="text_size_large">24sp</dimen>
     <dimen name="text_size_normal">16sp</dimen>
     <dimen name="text_size_small">14sp</dimen>
 
     <!--Settings fragment-->
-    <dimen name="settings_user_photo_width">55dp</dimen>
-    <dimen name="settings_user_photo_height">55dp</dimen>
+    <dimen name="settings_user_photo_width">140dp</dimen>
+    <dimen name="settings_user_photo_height">140dp</dimen>
 
     <dimen name="settings_btn_change_user_photo_width">45dp</dimen>
     <dimen name="settings_btn_change_user_photo_height">45dp</dimen>
 
     <dimen name="settings_user_photo_border">2dp</dimen>
-    <dimen name="settings_ripple_effect_radius">4dp</dimen>
+    <dimen name="settings_ripple_effect_radius">16dp</dimen>
 
     <!--Toolbar-->
     <dimen name="toolbar_user_photo_width">40dp</dimen>
@@ -38,6 +38,8 @@
 
     <!--Chats-->
     <dimen name="chats_vertical_margin_item">5dp</dimen>
+    <dimen name="chats_user_photo_width">55dp</dimen>
+    <dimen name="chats_user_photo_height">55dp</dimen>
 
     <!--Chat-->
     <dimen name="chat_background_message_radius">10dp</dimen>

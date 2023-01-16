@@ -35,6 +35,13 @@
 
     <!-- Settings -->
     <string name="settings_text_account">Аккаунт</string>
+    <!-- Settings Buttons-->
+    <string name="settings_button_data">Данные</string>
+    <string name="settings_button_appearance">Оформление</string>
+    <string name="settings_button_exit_profile">Выйти из аккаунта</string>
+    <!-- Settings Hyperlinks-->
+    <string name="settings_hyperlink_processing_and_storage">Политика обработки и хранения данных</string>
+    <string name="settings_hyperlink_privacy_policy">Политика конфиденциальности</string>
     <!-- Settings Labels-->
     <string name="settings_label_number_phone">Нажмите чтобы изменить номер телефона</string>
     <string name="settings_label_username">Нажмите чтобы изменить имя пользователя</string>

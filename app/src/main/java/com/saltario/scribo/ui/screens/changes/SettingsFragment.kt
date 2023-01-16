@@ -27,12 +27,12 @@ class SettingsFragment : BaseFragment(R.layout.fragment_settings) {
 
     private fun initListeners() {
         settings_btn_change_username.setOnClickListener { replaceFragment(ChangeUsernameFragment()) }
-        settings_btn_change_bio.setOnClickListener { replaceFragment(ChangeBioFragment()) }
-        settings_btn_change_photo.setOnClickListener { changePhoto() }
+//        settings_btn_change_bio.setOnClickListener { replaceFragment(ChangeBioFragment()) }
+//        settings_btn_change_photo.setOnClickListener { changePhoto() }
     }
 
     private fun initFields() {
-        settings_bio.text = USER.bio
+//        settings_bio.text = USER.bio
         settings_fullname.text = USER.fullname
         settings_phone_number.text = USER.phone
         settings_status.text = USER.state
