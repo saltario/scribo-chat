@@ -36,6 +36,9 @@
     <dimen name="toolbar_horizontal_margin">10dp</dimen>
     <dimen name="toolbar_vertical_margin">5dp</dimen>
 
+    <!--Chats-->
+    <dimen name="chats_vertical_margin_item">5dp</dimen>
+
     <!--Chat-->
     <dimen name="chat_background_message_radius">10dp</dimen>
 
