@@ -26,6 +26,8 @@
     <color name="dark_primary">#B3282E</color>
     <color name="dark_primary_dark">#262626</color>
 
+    <color name="dark_text_color">#FFFFFF</color>
+
     <color name="dark_background">#1A1A1A</color>
     <color name="dark_background_toolbars">#262626</color>
 

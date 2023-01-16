@@ -68,7 +68,6 @@ class ContactsFragment : BaseFragment(R.layout.fragment_contacts) {
                         holder.name.text = contact.fullname
                     }
 
-                    holder.state.text = contact.state
                     holder.photo.downloadAndSetImage(contact.photoUrl)
                     holder.itemView.setOnClickListener { replaceFragment(SingleChatFragment(model)) }
                 }
@@ -84,7 +83,6 @@ class ContactsFragment : BaseFragment(R.layout.fragment_contacts) {
 
     class ContactsHolder(view: View): RecyclerView.ViewHolder(view){
         val name: TextView = view.contact_fullname
-        val state: TextView = view.contact_state
         val photo: CircleImageView = view.contact_photo
     }
 }

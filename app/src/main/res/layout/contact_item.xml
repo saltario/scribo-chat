@@ -5,13 +5,14 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_margin="@dimen/app_horizontal_margin"
+    android:background="@color/dark_background"
     style="@style/settings_buttons">
 
     <de.hdodenhof.circleimageview.CircleImageView
         android:id="@+id/contact_photo"
         android:layout_width="@dimen/settings_user_photo_width"
         android:layout_height="@dimen/settings_user_photo_height"
-        android:src="@drawable/default_user_photo"
+        android:src="@drawable/dark_default_user_photo"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"/>
@@ -19,15 +20,9 @@
     <TextView
         android:id="@+id/contact_fullname"
         style="@style/normal_text"
-        tools:text="@string/app_fullname_default"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toEndOf="@+id/contact_photo"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/contact_state"
-        style="@style/small_text"
-        tools:text="@string/app_state_default"
-        app:layout_constraintStart_toEndOf="@+id/contact_photo"
-        app:layout_constraintTop_toBottomOf="@+id/contact_fullname" />
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="@string/app_fullname_default" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

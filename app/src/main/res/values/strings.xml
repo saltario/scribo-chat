@@ -9,7 +9,7 @@
     <string name="app_title_settings">Настройки</string>
 
     <!-- Default -->
-    <string name="app_fullname_default">Вадим Шаульский</string>
+    <string name="app_fullname_default">Имя Фамилия</string>
     <string name="app_state_default">Онлайн</string>
     <string name="app_number_phone_default">+79857493395</string>
     <string name="app_login_default">saltario</string>
