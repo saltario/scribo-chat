@@ -3,11 +3,10 @@
     <style name="AppThemeDark" parent="MaterialDrawerTheme">
 
         <item name="colorPrimary">@color/dark_primary</item>
+        <item name="colorPrimaryDark">@color/dark_primary_dark</item>
         <item name="android:colorBackground">@color/dark_background</item>
 
 
-
-        <item name="colorPrimaryDark">@color/color_primary_dark</item>
         <item name="colorAccent">@color/color_accent</item>
         <item name="popupTheme">@style/actionMenu</item>
         <item name="colorControlActivated">@color/color_primary</item>
@@ -15,6 +14,8 @@
     </style>
 
 
+
+    <!-- Нижнее навигационное меню -->
     <style name="bottom_nav_menu">
         <item name="android:layout_width">0dp</item>
         <item name="android:layout_height">wrap_content</item>
@@ -22,18 +23,13 @@
         <item name="android:background">@color/dark_background_toolbars</item>
     </style>
 
+    <!-- Тулбар на главной страницы (чаты) -->
     <style name="main_toolbar">
         <item name="android:theme">@style/ThemeOverlay.AppCompat.Dark.ActionBar</item>
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">?attr/actionBarSize</item>
         <item name="android:background">@color/dark_background_toolbars</item>
     </style>
-
-
-
-
-
-
 
 
 

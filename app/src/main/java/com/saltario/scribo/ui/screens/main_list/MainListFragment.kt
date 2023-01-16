@@ -128,9 +128,9 @@ class MainListFragment : Fragment(R.layout.fragment_main_list) {
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         when (item.itemId) {
-            R.id.main_list_create_single_chat -> {
-                replaceFragment(ContactsFragment())
-            }
+//            R.id.main_list_create_single_chat -> {
+//                replaceFragment(ContactsFragment())
+//            }
             R.id.main_list_create_group_chat -> {
                 replaceFragment(AddContactsFragment())
             }
