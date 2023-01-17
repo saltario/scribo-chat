@@ -300,7 +300,7 @@ class SingleChatFragment(private val contact: Common) : BaseFragment(R.layout.fr
     }
 
     override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
-        activity?.menuInflater?.inflate(R.menu.single_chat_action_menu, menu)
+        activity?.menuInflater?.inflate(R.menu.action_menu_single_chat, menu)
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {

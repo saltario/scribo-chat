@@ -1,18 +1,19 @@
 <resources>
 
-
     <string name="enter_phone_header">Введите ваш номер телефона</string>
     <string name="enter_phone_hint">+7(___)___-__-__</string>
 
 
-
-    <!-- Application -->
     <string name="app_name">Scribo Chat</string>
-
     <string name="app_title_chats">Чаты</string>
     <string name="app_title_contacts">Контакты</string>
-    <string name="app_title_create_group">Создание группы</string>
     <string name="app_title_settings">Настройки</string>
+
+
+
+
+    <string name="app_title_create_group">Создание группы</string>
+
 
     <!-- Default -->
     <string name="app_fullname_default">Имя Фамилия</string>

@@ -12,13 +12,13 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-        tools:listitem="@layout/add_contacts_item" />
+        tools:listitem="@layout/item_add_contacts" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/add_contacts_btn_next"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:src="@drawable/icon_next"
+        android:src="@drawable/icon_next_depricated"
         android:layout_margin="@dimen/app_horizontal_margin"
         android:backgroundTint="@color/color_primary"
         app:layout_constraintEnd_toEndOf="parent"

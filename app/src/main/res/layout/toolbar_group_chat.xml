@@ -20,7 +20,7 @@
         android:id="@+id/toolbar_group_chat_photo"
         android:layout_width="@dimen/toolbar_user_photo_width"
         android:layout_height="@dimen/toolbar_user_photo_height"
-        android:src="@drawable/default_user_photo"
+        android:src="@drawable/dark_default_user_photo"
         app:civ_circle_background_color="@color/color_black"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toEndOf="@id/toolbar_group_chat_back"

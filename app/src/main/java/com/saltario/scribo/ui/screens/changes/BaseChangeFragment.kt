@@ -27,7 +27,7 @@ open class BaseChangeFragment(layout: Int) : Fragment(layout) {
     }
 
     override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
-        APP_ACTIVITY.menuInflater.inflate(R.menu.settings_confirm_menu, menu)
+        APP_ACTIVITY.menuInflater.inflate(R.menu.action_menu_confirm, menu)
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {

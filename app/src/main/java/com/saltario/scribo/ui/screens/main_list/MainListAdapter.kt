@@ -14,7 +14,7 @@ import com.saltario.scribo.ui.screens.single_chat.SingleChatFragment
 import com.saltario.scribo.utilits.downloadAndSetImage
 import com.saltario.scribo.utilits.replaceFragment
 import de.hdodenhof.circleimageview.CircleImageView
-import kotlinx.android.synthetic.main.main_list_item.view.*
+import kotlinx.android.synthetic.main.item_main_list.view.*
 
 class MainListAdapter : RecyclerView.Adapter<MainListAdapter.MainListHolder>() {
 
@@ -22,7 +22,7 @@ class MainListAdapter : RecyclerView.Adapter<MainListAdapter.MainListHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MainListHolder {
         val view =
-            LayoutInflater.from(parent.context).inflate(R.layout.main_list_item, parent, false)
+            LayoutInflater.from(parent.context).inflate(R.layout.item_main_list, parent, false)
         val holder = MainListHolder(view)
         holder.itemView.setOnClickListener {
 

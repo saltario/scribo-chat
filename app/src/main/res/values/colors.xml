@@ -1,13 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <color name="color_primary">#BF3030</color>
-    <color name="color_primary_dark">#550000</color>
-
-
-
-    <color name="color_accent">#FFFFFF</color>
-
     <color name="color_background_light">#FFFFFF</color>
     <color name="color_background_dark">#FFFFFF</color>
 
@@ -22,6 +15,10 @@
     <color name="color_background_chat">#2B91C6</color>
 
 
+
+    <color name="color_primary">#BF3030</color>
+    <color name="color_primary_dark">#550000</color>
+    <color name="color_accent">#FFFFFF</color>
 
     <color name="dark_primary">#B3282E</color>
     <color name="dark_primary_dark">#262626</color>
@@ -46,19 +43,8 @@
     <color name="dark_other">#404040</color>
     <color name="dark_other_ripple">#A1A1A1</color>
 
-    <color name="dark_search">#262626</color>
-
     <color name="dark_stroke">#362F2E</color>
     <color name="dark_photo_background">#D0C4C3</color>
-
-
-    <color name="light_button">#D54144</color>
-    <color name="light_background">#FFFFFF</color>
-    <color name="light_search">#E6E6E6</color>
-    <color name="light_other">#E6E6E6</color>
-    <color name="light_photo_background">#362F2E</color>
-    <color name="light_stroke">#D0C4C3</color>
-    <color name="light_exit_button_stroke">#EB8A61</color>
 
     <color name="settings_data">#339E00</color>
     <color name="settings_appearance">#5E47CE</color>

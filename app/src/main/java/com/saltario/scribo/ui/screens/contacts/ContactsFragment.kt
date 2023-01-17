@@ -17,7 +17,7 @@ import com.saltario.scribo.ui.screens.single_chat.SingleChatFragment
 import com.saltario.scribo.utilits.*
 import de.hdodenhof.circleimageview.CircleImageView
 import kotlinx.android.synthetic.main.activity_main.view.*
-import kotlinx.android.synthetic.main.contact_item.view.*
+import kotlinx.android.synthetic.main.item_contact.view.*
 import kotlinx.android.synthetic.main.fragment_contacts.*
 
 class ContactsFragment : BaseFragment(R.layout.fragment_contacts) {
@@ -70,7 +70,7 @@ class ContactsFragment : BaseFragment(R.layout.fragment_contacts) {
 
         mAdapter = object: FirebaseRecyclerAdapter<Common, ContactsHolder>(options){
             override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ContactsHolder {
-                val view = LayoutInflater.from(parent.context).inflate(R.layout.contact_item, parent, false)
+                val view = LayoutInflater.from(parent.context).inflate(R.layout.item_contact, parent, false)
                 return ContactsHolder(view)
             }
 

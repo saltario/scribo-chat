@@ -44,7 +44,7 @@
 
     <EditText
         android:id="@+id/register_input_code"
-        android:background="@drawable/custom_edit_text"
+        android:background="@drawable/bg_edit_text"
         android:inputType="phone"
         android:maxLines="1"
         android:padding="12dp"

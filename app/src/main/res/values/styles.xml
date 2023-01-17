@@ -115,7 +115,7 @@
         <item name="android:layout_marginEnd">@dimen/app_horizontal_margin</item>
         <item name="android:clickable">true</item>
         <item name="android:focusable">true</item>
-        <item name="android:background">@drawable/background_ripple_next_label</item>
+        <item name="android:background">@drawable/bg_ripple_next_label</item>
     </style>
 
     <style name="settings_buttons">
@@ -126,7 +126,7 @@
         <item name="android:layout_marginEnd">@dimen/app_horizontal_margin</item>
         <item name="android:clickable">true</item>
         <item name="android:focusable">true</item>
-        <item name="android:background">@drawable/background_ripple_settings_label</item>
+        <item name="android:background">@drawable/bg_ripple_settings_label</item>
     </style>
 
     <style name="settings_button_exit">
@@ -137,13 +137,13 @@
         <item name="android:layout_marginEnd">@dimen/app_horizontal_margin</item>
         <item name="android:clickable">true</item>
         <item name="android:focusable">true</item>
-        <item name="android:background">@drawable/background_ripple_settings_exit_profile</item>
+        <item name="android:background">@drawable/bg_ripple_settings_exit_profile</item>
     </style>
 
     <style name="input_phone_number">
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>
-        <item name="android:background">@drawable/custom_edit_text</item>
+        <item name="android:background">@drawable/bg_edit_text</item>
         <item name="android:importantForAutofill">no</item>
         <item name="android:maxLines">1</item>
         <item name="android:paddingEnd">@dimen/input_padding_horizontal</item>
@@ -241,7 +241,7 @@
     <style name="style_edit_text">
         <item name="android:layout_width">200dp</item>
         <item name="android:layout_height">wrap_content</item>
-        <item name="android:background">@drawable/custom_edit_text</item>
+        <item name="android:background">@drawable/bg_edit_text</item>
         <item name="android:maxLines">1</item>
         <item name="android:padding">12dp</item>
         <item name="android:textColor">@color/color_primary</item>

@@ -18,7 +18,6 @@ import com.saltario.scribo.models.User
 import com.saltario.scribo.ui.screens.BaseFragment
 import com.saltario.scribo.ui.message_recycle_view.views.AppViewFactory
 import com.saltario.scribo.ui.objects.*
-import com.saltario.scribo.ui.screens.main_list.MainListFragment
 import com.saltario.scribo.utilits.*
 import com.theartofdev.edmodo.cropper.CropImage
 import kotlinx.android.synthetic.main.activity_main.view.*
@@ -307,7 +306,7 @@ class GroupChatFragment(private val group: Common) : BaseFragment(R.layout.fragm
     }
 
     override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
-        activity?.menuInflater?.inflate(R.menu.group_chat_action_menu, menu)
+        activity?.menuInflater?.inflate(R.menu.action_menu_group_chat, menu)
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {

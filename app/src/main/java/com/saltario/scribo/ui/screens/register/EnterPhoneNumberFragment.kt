@@ -9,10 +9,10 @@ import com.google.firebase.auth.PhoneAuthProvider
 import com.saltario.scribo.R
 import com.saltario.scribo.database.AUTH
 import com.saltario.scribo.utilits.*
-import kotlinx.android.synthetic.main.fragment_enter_phone_number.*
+import kotlinx.android.synthetic.main.fragment_enter_phone.*
 import java.util.concurrent.TimeUnit
 
-class EnterPhoneNumberFragment : Fragment(R.layout.fragment_enter_phone_number) {
+class EnterPhoneNumberFragment : Fragment(R.layout.fragment_enter_phone) {
 
     private lateinit var mPhoneNumber: String
     private lateinit var mCallback: PhoneAuthProvider.OnVerificationStateChangedCallbacks

@@ -37,7 +37,7 @@
                 android:id="@+id/login_input_phone"
                 android:layout_width="200dp"
                 android:layout_height="wrap_content"
-                android:background="@drawable/custom_edit_text"
+                android:background="@drawable/bg_edit_text"
                 android:hint="@string/enter_phone_hint"
                 android:importantForAutofill="no"
                 android:inputType="phone"

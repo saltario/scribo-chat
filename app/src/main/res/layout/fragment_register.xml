@@ -12,7 +12,7 @@
         android:layout_width="@dimen/register_input_photo_width"
         android:layout_height="@dimen/register_input_photo_height"
         android:layout_marginTop="@dimen/app_vertical_header_margin"
-        android:src="@drawable/default_user_photo"
+        android:src="@drawable/dark_default_user_photo"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -21,7 +21,7 @@
         android:id="@+id/register_edit_photo"
         android:layout_width="30dp"
         android:layout_height="30dp"
-        android:src="@drawable/ic_btn_edit"
+        android:src="@drawable/icon_edit"
         app:layout_constraintBottom_toBottomOf="@+id/register_input_photo"
         app:layout_constraintEnd_toEndOf="@+id/register_input_photo"/>
 

@@ -11,7 +11,7 @@
         android:id="@+id/add_contacts_photo"
         android:layout_width="@dimen/chats_user_photo_width"
         android:layout_height="@dimen/chats_user_photo_height"
-        android:src="@drawable/default_user_photo"
+        android:src="@drawable/dark_default_user_photo"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"/>

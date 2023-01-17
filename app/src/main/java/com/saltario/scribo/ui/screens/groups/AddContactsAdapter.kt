@@ -9,14 +9,14 @@ import com.saltario.scribo.R
 import com.saltario.scribo.models.Common
 import com.saltario.scribo.utilits.downloadAndSetImage
 import de.hdodenhof.circleimageview.CircleImageView
-import kotlinx.android.synthetic.main.add_contacts_item.view.*
+import kotlinx.android.synthetic.main.item_add_contacts.view.*
 
 class AddContactsAdapter : RecyclerView.Adapter<AddContactsAdapter.AddContactsHolder>() {
 
     private val mListItems = mutableListOf<Common>()
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): AddContactsHolder {
-        val view = LayoutInflater.from(parent.context).inflate(R.layout.add_contacts_item, parent, false)
+        val view = LayoutInflater.from(parent.context).inflate(R.layout.item_add_contacts, parent, false)
         val holder = AddContactsHolder(view)
 
         holder.itemView.setOnClickListener {
