@@ -11,7 +11,7 @@
         android:id="@+id/register_input_photo"
         android:layout_width="@dimen/register_input_photo_width"
         android:layout_height="@dimen/register_input_photo_height"
-        android:layout_marginTop="@dimen/app_header_margin_top"
+        android:layout_marginTop="@dimen/app_vertical_header_margin"
         android:src="@drawable/default_user_photo"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -27,7 +27,7 @@
 
     <EditText
         android:id="@+id/register_input_phone"
-        android:hint="@string/register_input_phone_number_hint"
+        android:hint="@string/enter_phone_hint"
         android:inputType="phone"
         android:layout_marginTop="@dimen/app_vertical_large_margin"
         app:layout_constraintEnd_toEndOf="parent"

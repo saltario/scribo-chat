@@ -1,65 +1,60 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <!-- Application -->
     <dimen name="app_padding">10dp</dimen>
-
     <dimen name="app_horizontal_margin">16dp</dimen>
-
     <dimen name="app_vertical_margin">16dp</dimen>
     <dimen name="app_vertical_large_margin">30dp</dimen>
-
-    <dimen name="app_input_phone_width">200dp</dimen>
-    <dimen name="app_input_phone_padding">12dp</dimen>
-
-    <dimen name="app_header_margin_top">40dp</dimen>
+    <dimen name="app_vertical_header_margin">40dp</dimen>
 
 
-    <dimen name="background_ripple_radius">12dp</dimen>
+    <dimen name="input_stroke_width">2dp</dimen>
+    <dimen name="input_padding_horizontal">20dp</dimen>
+    <dimen name="input_padding_vertical">10dp</dimen>
 
 
-    <!--Text-->
     <dimen name="text_size_header">36sp</dimen>
     <dimen name="text_size_large">24sp</dimen>
+    <dimen name="text_size_button">18sp</dimen>
+    <dimen name="text_size_input">18sp</dimen>
     <dimen name="text_size_normal">16sp</dimen>
     <dimen name="text_size_small">14sp</dimen>
 
-    <!--Buttons-->
+
     <dimen name="button_background_width">48dp</dimen>
     <dimen name="button_background_height">48dp</dimen>
     <dimen name="button_circle_padding">5dp</dimen>
-
+    <dimen name="button_background_ripple_radius">12dp</dimen>
     <dimen name="button_circle_width">64dp</dimen>
     <dimen name="button_circle_height">64dp</dimen>
 
 
-    <!--Settings fragment-->
-    <dimen name="settings_user_photo_width">140dp</dimen>
-    <dimen name="settings_user_photo_height">140dp</dimen>
-
-    <dimen name="settings_btn_change_user_photo_width">45dp</dimen>
-    <dimen name="settings_btn_change_user_photo_height">45dp</dimen>
-
-    <dimen name="settings_user_photo_border">2dp</dimen>
+    <dimen name="icon_button_height">40dp</dimen>
+    <dimen name="icon_button_width">40dp</dimen>
+    <dimen name="icon_button_padding">5dp</dimen>
 
 
-
-
-
-
-    <!--Toolbar-->
-    <dimen name="toolbar_user_photo_width">40dp</dimen>
-    <dimen name="toolbar_user_photo_height">40dp</dimen>
-    <dimen name="toolbar_horizontal_margin">10dp</dimen>
-    <dimen name="toolbar_vertical_margin">5dp</dimen>
-    <dimen name="toolbar_height">80dp</dimen>
-
-    <!--Chats-->
     <dimen name="chats_vertical_margin_item">5dp</dimen>
     <dimen name="chats_user_photo_width">55dp</dimen>
     <dimen name="chats_user_photo_height">55dp</dimen>
 
-    <!--Chat-->
+
+    <dimen name="settings_user_photo_width">140dp</dimen>
+    <dimen name="settings_user_photo_height">140dp</dimen>
+
+
+    <dimen name="toolbar_height">80dp</dimen>
+    <dimen name="toolbar_user_photo_width">40dp</dimen>
+    <dimen name="toolbar_user_photo_height">40dp</dimen>
+    <dimen name="toolbar_horizontal_margin">10dp</dimen>
+    <dimen name="toolbar_vertical_margin">5dp</dimen>
+
+
+
+
+
+
+
     <dimen name="chat_background_message_radius">10dp</dimen>
 
     <dimen name="chat_message_image_width">180dp</dimen>

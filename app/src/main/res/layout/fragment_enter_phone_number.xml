@@ -4,35 +4,56 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/dark_background_toolbars"
     tools:context=".ui.screens.register.EnterPhoneNumberFragment">
 
-    <EditText
-        android:id="@+id/register_input_phone_number"
-        app:layout_constraintEnd_toEndOf="parent"
+    <TextView
+        android:id="@+id/enter_phone_label"
+        style="@style/header_text"
+        android:layout_marginTop="@dimen/app_vertical_header_margin"
+        android:text="@string/enter_phone_header"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        android:layout_width="200dp"
-        android:layout_height="wrap_content"
-        android:background="@drawable/custom_edit_text"
-        android:hint="@string/register_input_phone_number_hint"
-        android:importantForAutofill="no"
-        android:inputType="phone"
-        android:maxLines="1"
-        android:padding="12dp"
-        android:textColor="@color/color_primary"
-        android:textColorHint="@color/color_primary"
-        android:textSize="@dimen/text_size_normal"
-        tools:ignore="LabelFor" />
+        tools:text="@string/enter_phone_header" />
 
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/register_btn_next"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:src="@drawable/ic_btn_next"
-        android:layout_margin="@dimen/app_horizontal_margin"
-        android:backgroundTint="@color/color_primary"
+    <EditText
+        android:id="@+id/enter_phone_number"
+        android:hint="@string/enter_phone_hint"
+        android:inputType="phone"
+        android:layout_marginTop="@dimen/app_vertical_header_margin"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/enter_phone_label"
+        tools:ignore="LabelFor"
+        style="@style/input_phone_number" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/enter_phone_btn_get_code"
+        style="@style/next_red_button"
+        android:layout_width="wrap_content"
+        android:layout_marginBottom="@dimen/app_vertical_large_margin"
+        android:layout_marginEnd="@dimen/app_vertical_large_margin"
         app:layout_constraintBottom_toBottomOf="parent"
-        android:contentDescription="@string/app_content_description" />
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <TextView
+            android:id="@+id/enter_phone_btn_get_code_text"
+            style="@style/button_text"
+            android:text="@string/login_get_code"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="@string/login_get_code" />
+
+        <ImageView
+            android:id="@+id/enter_phone_btn_get_code_icon"
+            android:src="@drawable/icon_next_2"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/enter_phone_btn_get_code_text"
+            app:layout_constraintTop_toTopOf="parent"
+            style="@style/icon_button" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

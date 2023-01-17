@@ -18,7 +18,7 @@
         android:id="@+id/add_contacts_btn_next"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:src="@drawable/ic_btn_next"
+        android:src="@drawable/icon_next"
         android:layout_margin="@dimen/app_horizontal_margin"
         android:backgroundTint="@color/color_primary"
         app:layout_constraintEnd_toEndOf="parent"

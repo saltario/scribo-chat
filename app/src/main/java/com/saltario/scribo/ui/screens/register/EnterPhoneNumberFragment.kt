@@ -43,13 +43,14 @@ class EnterPhoneNumberFragment : Fragment(R.layout.fragment_enter_phone_number) 
             }
         }
 
-        register_btn_next.setOnClickListener { sentCode() }
-        APP_ACTIVITY.title = getString(R.string.register_title_your_phone)
+        enter_phone_btn_get_code.setOnClickListener { sentCode() }
+        hideToolBar()
+        hideNavBottom()
     }
 
     private fun sentCode() {
 
-        if (register_input_phone_number.text.toString().isEmpty()) {
+        if (enter_phone_number.text.toString().isEmpty()) {
             showToast(getString(R.string.register_toast_enter_phone_number))
         } else {
             authUser()
@@ -57,7 +58,7 @@ class EnterPhoneNumberFragment : Fragment(R.layout.fragment_enter_phone_number) 
     }
 
     private fun authUser() {
-        mPhoneNumber = register_input_phone_number.text.toString()
+        mPhoneNumber = enter_phone_number.text.toString()
         PhoneAuthProvider.verifyPhoneNumber(
             PhoneAuthOptions
                 .newBuilder(FirebaseAuth.getInstance())

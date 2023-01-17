@@ -5,7 +5,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:layout_marginTop="@dimen/app_header_margin_top"
+    android:layout_marginTop="@dimen/app_vertical_header_margin"
     tools:context=".ui.screens.auth.WelcomeFragment">
 
     <TextView
