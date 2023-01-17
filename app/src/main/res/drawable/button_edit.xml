@@ -1,15 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
-
-<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
-    <item>
-        <shape android:shape="oval">
-            <solid android:color="@color/dark_button"/>
-            <size android:width="48dp" android:height="48dp" />
-            <padding android:bottom="5dp"/>
-            <padding android:left="5dp"/>
-            <padding android:right="5dp"/>
-            <padding android:top="5dp"/>
-        </shape>
+<ripple
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:color="@color/dark_button_ripple">
+    <item android:state_pressed="true">
+        <layer-list>
+            <item>
+                <shape android:shape="oval">
+                    <solid android:color="@color/dark_button"/>
+                    <size android:width="@dimen/button_background_width" android:height="@dimen/button_background_height" />
+                    <padding android:bottom="@dimen/button_circle_padding"/>
+                    <padding android:left="@dimen/button_circle_padding"/>
+                    <padding android:right="@dimen/button_circle_padding"/>
+                    <padding android:top="@dimen/button_circle_padding"/>
+                </shape>
+            </item>
+            <item android:drawable="@drawable/icon_edit" />
+        </layer-list>
     </item>
-    <item android:drawable="@drawable/icon_edit" />
-</layer-list>
+</ripple>

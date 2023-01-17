@@ -36,6 +36,7 @@
     <color name="dark_exit_button_stroke">#712C0E</color>
 
     <color name="dark_button">#B3282E</color>
+    <color name="dark_button_ripple">#550000</color>
 
     <color name="dark_search">#262626</color>
     <color name="dark_other">#404040</color>
