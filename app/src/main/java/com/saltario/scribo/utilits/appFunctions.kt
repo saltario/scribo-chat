@@ -126,3 +126,11 @@ fun hideNavBottom() {
 fun showNavBottom() {
     APP_ACTIVITY.main_nav_bottom.visibility = View.VISIBLE
 }
+
+fun hideToolBar() {
+    APP_ACTIVITY.main_toolbar.visibility = View.GONE
+}
+
+fun showToolBar() {
+    APP_ACTIVITY.main_toolbar.visibility = View.VISIBLE
+}

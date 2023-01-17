@@ -63,7 +63,7 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/settings_btn_change_number_phone"
         style="@style/settings_buttons"
-        android:layout_marginStart="@dimen/app_horizontal_large_margin"
+        android:layout_marginStart="@dimen/app_horizontal_margin"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/settings_header_block">
 
@@ -129,8 +129,8 @@
         android:id="@+id/settings_btn_data"
         style="@style/settings_buttons"
         android:layout_width="match_parent"
-        android:layout_marginStart="@dimen/app_horizontal_large_margin"
-        android:layout_marginEnd="@dimen/app_horizontal_large_margin"
+        android:layout_marginStart="@dimen/app_horizontal_margin"
+        android:layout_marginEnd="@dimen/app_horizontal_margin"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/settings_label_layout">
@@ -150,7 +150,7 @@
             android:layout_width="40dp"
             android:layout_height="40dp"
             android:padding="5dp"
-            android:layout_marginStart="@dimen/app_horizontal_large_margin"
+            android:layout_marginStart="@dimen/app_horizontal_margin"
             android:src="@drawable/button_settings_data"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -163,8 +163,8 @@
     android:id="@+id/settings_btn_appearance"
     style="@style/settings_buttons"
     android:layout_width="match_parent"
-    android:layout_marginStart="@dimen/app_horizontal_large_margin"
-    android:layout_marginEnd="@dimen/app_horizontal_large_margin"
+    android:layout_marginStart="@dimen/app_horizontal_margin"
+    android:layout_marginEnd="@dimen/app_horizontal_margin"
     app:layout_constraintEnd_toEndOf="parent"
     app:layout_constraintStart_toStartOf="parent"
     app:layout_constraintTop_toBottomOf="@+id/settings_btn_data">
@@ -183,7 +183,7 @@
         android:id="@+id/settings_button_appearance_icon"
         android:layout_width="40dp"
         android:layout_height="40dp"
-        android:layout_marginStart="@dimen/app_horizontal_large_margin"
+        android:layout_marginStart="@dimen/app_horizontal_margin"
         android:padding="5dp"
         android:src="@drawable/button_settings_appearance"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -197,8 +197,8 @@
         android:id="@+id/settings_btn_exit_profile"
         style="@style/settings_exit_button"
         android:layout_width="match_parent"
-        android:layout_marginStart="@dimen/app_horizontal_large_margin"
-        android:layout_marginEnd="@dimen/app_horizontal_large_margin"
+        android:layout_marginStart="@dimen/app_horizontal_margin"
+        android:layout_marginEnd="@dimen/app_horizontal_margin"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/settings_btn_appearance">
@@ -217,7 +217,7 @@
             android:id="@+id/settings_button_exit_profile_icon"
             android:layout_width="40dp"
             android:layout_height="40dp"
-            android:layout_marginStart="@dimen/app_horizontal_large_margin"
+            android:layout_marginStart="@dimen/app_horizontal_margin"
             android:padding="5dp"
             android:src="@drawable/icon_exit"
             app:layout_constraintBottom_toBottomOf="parent"

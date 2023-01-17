@@ -12,7 +12,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        style="@style/main_toolbar" >
+        style="@style/base_toolbar" >
 
         <include
             android:id="@+id/toolbar_single_chat"
@@ -21,6 +21,11 @@
         <include
             android:id="@+id/toolbar_group_chat"
             layout="@layout/toolbar_group_chat"
+            android:visibility="gone"/>
+
+        <include
+            android:id="@+id/toolbar_main_list"
+            layout="@layout/toolbar_main_list"
             android:visibility="gone"/>
 
     </androidx.appcompat.widget.Toolbar>

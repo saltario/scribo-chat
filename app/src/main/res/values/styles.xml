@@ -4,10 +4,9 @@
 
         <item name="colorPrimary">@color/dark_primary</item>
         <item name="colorPrimaryDark">@color/dark_primary_dark</item>
+        <item name="colorAccent">@color/color_accent</item>
         <item name="android:colorBackground">@color/dark_background</item>
 
-
-        <item name="colorAccent">@color/color_accent</item>
         <item name="popupTheme">@style/actionMenu</item>
         <item name="colorControlActivated">@color/color_primary</item>
 
@@ -15,7 +14,6 @@
 
 
 
-    <!-- Нижнее навигационное меню -->
     <style name="bottom_nav_menu">
         <item name="android:layout_width">0dp</item>
         <item name="android:layout_height">wrap_content</item>
@@ -23,12 +21,18 @@
         <item name="android:background">@color/dark_background_toolbars</item>
     </style>
 
-    <!-- Тулбар на главной страницы (чаты) -->
-    <style name="main_toolbar">
+    <style name="base_toolbar">
         <item name="android:theme">@style/ThemeOverlay.AppCompat.Dark.ActionBar</item>
         <item name="android:layout_width">match_parent</item>
-        <item name="android:layout_height">?attr/actionBarSize</item>
+        <item name="android:layout_height">@dimen/toolbar_height</item>
         <item name="android:background">@color/dark_background_toolbars</item>
+    </style>
+
+    <style name="toolbar_circle_button">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:padding">@dimen/app_padding</item>
+        <item name="android:layout_marginEnd">@dimen/app_horizontal_margin</item>
     </style>
 
 
@@ -62,6 +66,16 @@
     </style>
 
     <!-- Text-->
+    <style name="header_text">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginStart">@dimen/app_horizontal_margin</item>
+        <item name="android:layout_marginEnd">@dimen/app_horizontal_margin</item>
+        <item name="android:textSize">@dimen/text_size_header</item>
+        <item name="android:textColor">@color/dark_text_color</item>
+        <item name="android:fontFamily">@font/roboto_bold</item>
+    </style>
+
     <style name="large_text">
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>
@@ -164,6 +178,7 @@
         <item name="android:textColorHint">@color/color_primary</item>
         <item name="android:textSize">@dimen/text_size_normal</item>
     </style>
+
 
 
 

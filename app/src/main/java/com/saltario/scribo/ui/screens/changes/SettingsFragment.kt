@@ -18,9 +18,9 @@ class SettingsFragment : BaseFragment(R.layout.fragment_settings) {
 
     override fun onResume() {
         super.onResume()
-        setHasOptionsMenu(true)
+        setHasOptionsMenu(false)
+        hideToolBar()
         showNavBottom()
-        APP_ACTIVITY.title = getString(R.string.app_title_settings)
         initFields()
         initListeners()
     }
@@ -40,23 +40,19 @@ class SettingsFragment : BaseFragment(R.layout.fragment_settings) {
         settings_photo.downloadAndSetImage(USER.photoUrl)
     }
 
-    override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
-        activity?.menuInflater?.inflate(R.menu.settings_action_menu, menu)
-    }
-
-    override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        when (item.itemId) {
-            R.id.settings_action_menu_exit -> {
-                AppStates.updateState(AppStates.OFFLINE)
-                AUTH.signOut()
-                restartActivity()
-            }
-            R.id.settings_action_menu_change_name -> {
-                replaceFragment(ChangeFullnameFragment())
-            }
-        }
-        return true
-    }
+//    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+//        when (item.itemId) {
+//            R.id.settings_action_menu_exit -> {
+//                AppStates.updateState(AppStates.OFFLINE)
+//                AUTH.signOut()
+//                restartActivity()
+//            }
+//            R.id.settings_action_menu_change_name -> {
+//                replaceFragment(ChangeFullnameFragment())
+//            }
+//        }
+//        return true
+//    }
 
     private fun changePhoto() {
         CropImage.activity()
