@@ -2,12 +2,8 @@ package com.saltario.scribo.ui.screens.changes
 
 import android.app.Activity.RESULT_OK
 import android.content.Intent
-import android.view.Menu
-import android.view.MenuInflater
-import android.view.MenuItem
 import com.saltario.scribo.R
 import com.saltario.scribo.database.*
-import com.saltario.scribo.ui.objects.AppStates
 import com.saltario.scribo.ui.screens.BaseFragment
 import com.saltario.scribo.utilits.*
 import com.theartofdev.edmodo.cropper.CropImage
@@ -26,8 +22,16 @@ class SettingsFragment : BaseFragment(R.layout.fragment_settings) {
     }
 
     private fun initListeners() {
-        settings_btn_change_username.setOnClickListener { replaceFragment(ChangeUsernameFragment()) }
+
+        settings_btn_edit_profile.setOnClickListener { showToast("Редактировать настройки (потом)") }
+        settings_btn_data.setOnClickListener { showToast("Редактировать данные (потом)") }
+        settings_btn_appearance.setOnClickListener { showToast("Редактировать оформление (потом)") }
+        settings_btn_exit_profile.setOnClickListener { showToast("Выйти из профиля (потом)") }
+        settings_hyperlink_processing_and_storage.setOnClickListener { showToast("Обработка данных (потом)") }
+        settings_hyperlink_privacy_policy.setOnClickListener { showToast("Политика (потом)") }
+
 //        settings_btn_change_bio.setOnClickListener { replaceFragment(ChangeBioFragment()) }
+//        settings_btn_change_username.setOnClickListener { replaceFragment(ChangeUsernameFragment()) }
 //        settings_btn_change_photo.setOnClickListener { changePhoto() }
     }
 

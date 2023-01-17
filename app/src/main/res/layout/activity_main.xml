@@ -22,10 +22,13 @@
             android:id="@+id/toolbar_group_chat"
             layout="@layout/toolbar_group_chat"
             android:visibility="gone"/>
-
         <include
             android:id="@+id/toolbar_main_list"
             layout="@layout/toolbar_main_list"
+            android:visibility="gone"/>
+        <include
+            android:id="@+id/toolbar_contacts"
+            layout="@layout/toolbar_contacts"
             android:visibility="gone"/>
 
     </androidx.appcompat.widget.Toolbar>

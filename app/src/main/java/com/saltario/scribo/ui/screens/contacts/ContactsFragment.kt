@@ -11,11 +11,12 @@ import com.google.firebase.database.DatabaseReference
 import com.saltario.scribo.R
 import com.saltario.scribo.database.*
 import com.saltario.scribo.models.Common
-import com.saltario.scribo.ui.screens.single_chat.SingleChatFragment
 import com.saltario.scribo.ui.objects.AppValueEventListener
 import com.saltario.scribo.ui.screens.BaseFragment
+import com.saltario.scribo.ui.screens.single_chat.SingleChatFragment
 import com.saltario.scribo.utilits.*
 import de.hdodenhof.circleimageview.CircleImageView
+import kotlinx.android.synthetic.main.activity_main.view.*
 import kotlinx.android.synthetic.main.contact_item.view.*
 import kotlinx.android.synthetic.main.fragment_contacts.*
 
@@ -27,12 +28,13 @@ class ContactsFragment : BaseFragment(R.layout.fragment_contacts) {
     private lateinit var mRefUsers: DatabaseReference
     private lateinit var mRefUsersListener: AppValueEventListener
     private var mapListeners = hashMapOf<DatabaseReference, AppValueEventListener>()
+    private lateinit var mToolBarInfo: View
 
     override fun onResume() {
         super.onResume()
-        showNavBottom()
-        showToolBar()
-        APP_ACTIVITY.title = getString(R.string.app_title_contacts)
+
+        initToolBar()
+        initFields()
         initRecycleView()
     }
 
@@ -42,6 +44,20 @@ class ContactsFragment : BaseFragment(R.layout.fragment_contacts) {
         mapListeners.forEach{
             it.key.removeEventListener(it.value)
         }
+    }
+
+    private fun initFields() {
+
+        showToolBar()
+        showNavBottom()
+        setHasOptionsMenu(false)
+        hideKeyboard()
+    }
+
+    private fun initToolBar() {
+
+        mToolBarInfo = APP_ACTIVITY.mToolBar.toolbar_contacts
+        mToolBarInfo.visibility = View.VISIBLE
     }
 
     private fun initRecycleView() {
