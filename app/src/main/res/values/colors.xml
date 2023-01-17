@@ -33,13 +33,17 @@
     <color name="dark_background_toolbars">#262626</color>
 
     <color name="dark_exit_button">#E45F26</color>
+    <color name="dark_exit_button_ripple">#712C0E</color>
     <color name="dark_exit_button_stroke">#712C0E</color>
 
     <color name="dark_button">#B3282E</color>
     <color name="dark_button_ripple">#550000</color>
 
-    <color name="dark_search">#262626</color>
     <color name="dark_other">#404040</color>
+    <color name="dark_other_ripple">#A1A1A1</color>
+
+    <color name="dark_search">#262626</color>
+
     <color name="dark_stroke">#362F2E</color>
     <color name="dark_photo_background">#D0C4C3</color>
 

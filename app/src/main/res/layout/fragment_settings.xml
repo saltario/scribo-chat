@@ -27,8 +27,7 @@
 
         <de.hdodenhof.circleimageview.CircleImageView
             android:id="@+id/settings_btn_edit_profile"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
+            style="@style/toolbar_circle_button"
             android:src="@drawable/button_edit"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/settings_photo"
@@ -36,10 +35,7 @@
 
         <TextView
             android:id="@+id/settings_fullname"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
             style="@style/normal_text"
-            android:gravity="center"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -48,9 +44,6 @@
 
         <TextView
             android:id="@+id/settings_status"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:gravity="center"
             style="@style/small_text"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -61,47 +54,50 @@
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/settings_btn_change_number_phone"
-        style="@style/settings_buttons"
-        android:layout_marginStart="@dimen/app_horizontal_margin"
-        app:layout_constraintStart_toStartOf="parent"
+        android:id="@+id/settings_phone_and_nickname"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         app:layout_constraintTop_toBottomOf="@+id/settings_header_block">
 
-        <TextView
-            android:id="@+id/settings_phone_number"
-            style="@style/normal_text"
-            android:padding="5dp"
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/settings_btn_change_number_phone"
+            style="@style/settings_buttons"
+            android:layout_marginTop="0dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <TextView
+                android:id="@+id/settings_phone_number"
+                style="@style/normal_text"
+                android:padding="5dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@id/settings_btn_change_number_phone"
+                tools:text="@string/app_number_phone_default" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/settings_btn_change_username"
+            style="@style/settings_buttons"
+            android:layout_marginTop="0dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="@id/settings_btn_change_number_phone"
-            tools:text="@string/app_number_phone_default" />
+            app:layout_constraintTop_toTopOf="parent">
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
+            <TextView
+                android:id="@+id/settings_username"
+                style="@style/normal_text"
+                android:padding="5dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="@string/app_login_default" />
 
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/settings_btn_change_username"
-        style="@style/settings_buttons"
-        app:layout_constraintBottom_toBottomOf="@+id/settings_btn_change_number_phone"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/settings_btn_change_number_phone">
-
-        <TextView
-            android:id="@+id/settings_username"
-            style="@style/normal_text"
-            android:padding="5dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            tools:text="@string/app_login_default" />
-
-        <!-- Text-->
-        <!-- <View
-            app:layout_constraintTop_toBottomOf="@id/settings_label_username"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            style="@style/separator" />-->
+        </androidx.constraintlayout.widget.ConstraintLayout>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -111,11 +107,11 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/app_vertical_margin"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/settings_btn_change_number_phone">
+        app:layout_constraintTop_toBottomOf="@+id/settings_phone_and_nickname">
 
         <TextView
             android:id="@+id/settings_label"
-            style="@style/large_text"
+            style="@style/header_text"
             android:text="@string/app_title_settings"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -129,8 +125,6 @@
         android:id="@+id/settings_btn_data"
         style="@style/settings_buttons"
         android:layout_width="match_parent"
-        android:layout_marginStart="@dimen/app_horizontal_margin"
-        android:layout_marginEnd="@dimen/app_horizontal_margin"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/settings_label_layout">
@@ -138,8 +132,9 @@
         <TextView
             android:id="@+id/settings_data"
             style="@style/normal_text"
+            android:textSize="22sp"
+            android:fontFamily="@font/roboto"
             android:text="@string/settings_button_data"
-            android:padding="5dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toEndOf="@+id/settings_button_data_icon"
             app:layout_constraintTop_toTopOf="parent"
@@ -151,7 +146,7 @@
             android:layout_height="40dp"
             android:padding="5dp"
             android:layout_marginStart="@dimen/app_horizontal_margin"
-            android:src="@drawable/button_settings_data"
+            android:src="@drawable/icon_settings_data"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -163,8 +158,7 @@
     android:id="@+id/settings_btn_appearance"
     style="@style/settings_buttons"
     android:layout_width="match_parent"
-    android:layout_marginStart="@dimen/app_horizontal_margin"
-    android:layout_marginEnd="@dimen/app_horizontal_margin"
+        android:layout_marginTop="5dp"
     app:layout_constraintEnd_toEndOf="parent"
     app:layout_constraintStart_toStartOf="parent"
     app:layout_constraintTop_toBottomOf="@+id/settings_btn_data">
@@ -172,7 +166,8 @@
     <TextView
         android:id="@+id/settings_appearance"
         style="@style/normal_text"
-        android:padding="5dp"
+        android:textSize="22sp"
+        android:fontFamily="@font/roboto"
         android:text="@string/settings_button_appearance"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toEndOf="@+id/settings_button_appearance_icon"
@@ -185,7 +180,7 @@
         android:layout_height="40dp"
         android:layout_marginStart="@dimen/app_horizontal_margin"
         android:padding="5dp"
-        android:src="@drawable/button_settings_appearance"
+        android:src="@drawable/icon_settings_appearance"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -195,10 +190,8 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/settings_btn_exit_profile"
-        style="@style/settings_exit_button"
-        android:layout_width="match_parent"
-        android:layout_marginStart="@dimen/app_horizontal_margin"
-        android:layout_marginEnd="@dimen/app_horizontal_margin"
+        style="@style/settings_button_exit"
+        android:layout_width="wrap_content"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/settings_btn_appearance">
@@ -206,7 +199,9 @@
         <TextView
             android:id="@+id/settings_exit_profile"
             style="@style/normal_text"
-            android:padding="5dp"
+            android:textSize="22sp"
+            android:fontFamily="@font/roboto"
+            android:paddingEnd="@dimen/app_horizontal_margin"
             android:text="@string/settings_button_exit_profile"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toEndOf="@+id/settings_button_exit_profile_icon"
@@ -230,7 +225,6 @@
     <TextView
         android:id="@+id/settings_hyperlink_processing_and_storage"
         style="@style/hyperlink_text"
-        android:padding="5dp"
         android:text="@string/settings_hyperlink_processing_and_storage"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -241,14 +235,18 @@
     <TextView
         android:id="@+id/settings_hyperlink_privacy_policy"
         style="@style/hyperlink_text"
-        android:padding="5dp"
+        android:layout_marginTop="@dimen/app_vertical_margin"
         android:text="@string/settings_hyperlink_privacy_policy"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-
         app:layout_constraintTop_toBottomOf="@+id/settings_hyperlink_processing_and_storage"
         tools:text="@string/settings_hyperlink_privacy_policy" />
 
-
 </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <!-- Text-->
+    <!-- <View
+        app:layout_constraintTop_toBottomOf="@id/settings_label_username"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        style="@style/separator" />-->

@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ripple
     xmlns:android="http://schemas.android.com/apk/res/android"
-    android:color="@color/dark_exit_button_stroke">
+    android:color="@color/dark_exit_button_ripple">
     <item android:state_pressed="true">
         <shape android:shape="rectangle">
             <solid android:color="@color/dark_exit_button"/>
-            <corners android:radius="@dimen/settings_ripple_effect_radius"/>
+            <corners android:radius="@dimen/background_ripple_radius"/>
         </shape>
     </item>
 </ripple>

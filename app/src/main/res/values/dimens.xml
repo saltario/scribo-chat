@@ -14,6 +14,10 @@
 
     <dimen name="app_header_margin_top">40dp</dimen>
 
+
+    <dimen name="background_ripple_radius">12dp</dimen>
+
+
     <!--Text-->
     <dimen name="text_size_header">36sp</dimen>
     <dimen name="text_size_large">24sp</dimen>
@@ -37,7 +41,11 @@
     <dimen name="settings_btn_change_user_photo_height">45dp</dimen>
 
     <dimen name="settings_user_photo_border">2dp</dimen>
-    <dimen name="settings_ripple_effect_radius">16dp</dimen>
+
+
+
+
+
 
     <!--Toolbar-->
     <dimen name="toolbar_user_photo_width">40dp</dimen>

@@ -86,9 +86,28 @@
         <item name="android:fontFamily">@font/roboto_medium</item>
     </style>
 
+    <!-- Settings buttons-->
+    <style name="settings_buttons">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">48dp</item>
+        <item name="android:layout_marginTop">@dimen/app_vertical_margin</item>
+        <item name="android:layout_marginStart">@dimen/app_horizontal_margin</item>
+        <item name="android:layout_marginEnd">@dimen/app_horizontal_margin</item>
+        <item name="android:clickable">true</item>
+        <item name="android:focusable">true</item>
+        <item name="android:background">@drawable/background_ripple_settings_label</item>
+    </style>
 
-
-
+    <style name="settings_button_exit">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">48dp</item>
+        <item name="android:layout_marginTop">@dimen/app_vertical_margin</item>
+        <item name="android:layout_marginStart">@dimen/app_horizontal_margin</item>
+        <item name="android:layout_marginEnd">@dimen/app_horizontal_margin</item>
+        <item name="android:clickable">true</item>
+        <item name="android:focusable">true</item>
+        <item name="android:background">@drawable/background_ripple_settings_exit_profile</item>
+    </style>
 
 
     <!-- Action menu -->
@@ -96,27 +115,6 @@
         <item name="background">@color/color_background_light</item>
         <item name="actionMenuTextColor">@color/color_light_grey</item>
     </style>
-
-    <!-- Settings buttons-->
-    <style name="settings_buttons">
-        <item name="android:layout_width">wrap_content</item>
-        <item name="android:layout_height">48dp</item>
-        <item name="android:layout_marginTop">@dimen/app_vertical_margin</item>
-        <item name="android:clickable">true</item>
-        <item name="android:focusable">true</item>
-        <item name="android:background">@drawable/ripple_effect</item>
-    </style>
-
-    <style name="settings_exit_button">
-        <item name="android:layout_width">wrap_content</item>
-        <item name="android:layout_height">48dp</item>
-        <item name="android:layout_marginTop">@dimen/app_vertical_margin</item>
-        <item name="android:clickable">true</item>
-        <item name="android:focusable">true</item>
-        <item name="android:background">@drawable/background_settings_exit_profile</item>
-    </style>
-
-
 
     <style name="separator">
         <item name="android:layout_width">match_parent</item>
