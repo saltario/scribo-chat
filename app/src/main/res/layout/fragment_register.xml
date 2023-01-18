@@ -7,83 +7,102 @@
     android:layout_height="match_parent"
     tools:context=".ui.screens.auth.RegisterFragment">
 
+    <TextView
+        android:id="@+id/register_label"
+        style="@style/header_text"
+        android:layout_marginTop="@dimen/app_vertical_header_margin"
+        android:text="@string/register_header"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="@string/register_header" />
+
     <de.hdodenhof.circleimageview.CircleImageView
         android:id="@+id/register_input_photo"
         android:layout_width="@dimen/register_input_photo_width"
         android:layout_height="@dimen/register_input_photo_height"
-        android:layout_marginTop="@dimen/app_vertical_header_margin"
         android:src="@drawable/dark_default_user_photo"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="@dimen/app_vertical_margin"
+        android:layout_marginStart="@dimen/app_horizontal_margin"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <de.hdodenhof.circleimageview.CircleImageView
-        android:id="@+id/register_edit_photo"
-        android:layout_width="30dp"
-        android:layout_height="30dp"
-        android:src="@drawable/icon_edit"
-        app:layout_constraintBottom_toBottomOf="@+id/register_input_photo"
-        app:layout_constraintEnd_toEndOf="@+id/register_input_photo"/>
-
-    <EditText
-        android:id="@+id/register_input_phone"
-        android:hint="@string/enter_phone_hint"
-        android:inputType="phone"
-        android:layout_marginTop="@dimen/app_vertical_large_margin"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/register_input_photo"
-        tools:ignore="LabelFor"
-        style="@style/style_edit_text" />
+        app:layout_constraintTop_toBottomOf="@+id/register_label" />
 
     <EditText
         android:id="@+id/register_input_name"
+        style="@style/input"
         android:hint="@string/register_input_name"
-        android:layout_marginTop="@dimen/app_vertical_margin"
+        android:layout_width="0dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/register_input_phone"
-        tools:ignore="LabelFor"
-        style="@style/style_edit_text" />
+        app:layout_constraintStart_toEndOf="@+id/register_input_photo"
+        app:layout_constraintTop_toTopOf="@+id/register_input_photo"
+        tools:ignore="LabelFor" />
 
     <EditText
         android:id="@+id/register_input_surname"
+        style="@style/input"
         android:hint="@string/register_input_surname"
         android:layout_marginTop="@dimen/app_vertical_margin"
+        android:layout_width="0dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/register_input_photo"
         app:layout_constraintTop_toBottomOf="@+id/register_input_name"
-        tools:ignore="LabelFor"
-        style="@style/style_edit_text"/>
+        tools:ignore="LabelFor" />
 
     <EditText
         android:id="@+id/register_input_username"
+        style="@style/input"
         android:hint="@string/register_input_username"
         android:layout_marginTop="@dimen/app_vertical_margin"
+        android:layout_width="0dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/register_input_surname"
-        tools:ignore="LabelFor"
-        style="@style/style_edit_text"/>
+        app:layout_constraintTop_toBottomOf="@+id/register_input_photo"
+        tools:ignore="LabelFor" />
 
     <EditText
         android:id="@+id/register_input_mail"
         android:hint="@string/register_input_mail"
         android:layout_marginTop="@dimen/app_vertical_margin"
+        android:layout_width="0dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/register_input_username"
         tools:ignore="LabelFor"
-        style="@style/style_edit_text"/>
+        style="@style/input"/>
 
-    <Button
-        android:id="@+id/register_btn_register"
-        style="@style/style_button_focusable"
-        android:text="@string/login_text_register"
-        android:layout_marginBottom="@dimen/app_margin_bottom"
+    <ImageView
+        android:id="@+id/back_btn"
+        android:src="@drawable/icon_back"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        style="@style/button_back" />
 
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/register_btn_done"
+        style="@style/next_red_button"
+        android:layout_width="wrap_content"
+        android:layout_marginBottom="@dimen/app_vertical_large_margin"
+        android:layout_marginEnd="@dimen/app_vertical_large_margin"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <TextView
+            android:id="@+id/register_btn_done_text"
+            style="@style/button_text"
+            android:text="@string/button_done"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="@string/button_done" />
+
+        <ImageView
+            android:id="@+id/register_btn_done_icon"
+            android:src="@drawable/icon_done"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/register_btn_done_text"
+            app:layout_constraintTop_toTopOf="parent"
+            style="@style/icon_button" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

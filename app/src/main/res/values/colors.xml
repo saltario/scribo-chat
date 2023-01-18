@@ -29,7 +29,7 @@
     <color name="dark_background">#1A1A1A</color>
     <color name="dark_background_toolbars">#262626</color>
 
-    <color name="dark_input_background">#262626</color>
+    <color name="dark_input_background">#1A1A1A</color>
     <color name="dark_input_stroke">#FFFFFF</color>
     <color name="dark_input_hint">#A1A1A1</color>
 

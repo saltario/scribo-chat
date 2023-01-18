@@ -12,6 +12,8 @@
     <string name="welcome_header">Добро\nпожаловать</string>
     <string name="welcome_description">Приветствуем вас в нашем мессенджере.\nЗдесь вы можете общаться свободно!</string>
 
+    <string name="register_header">Регистрация</string>
+
 
     <string name="app_name">Scribo Chat</string>
     <string name="app_title_chats">Чаты</string>
@@ -40,6 +42,7 @@
 
 
     <string name="button_next">Продолжить</string>
+    <string name="button_done">Готово</string>
 
 
     <string name="login_get_code">Получить код</string>
