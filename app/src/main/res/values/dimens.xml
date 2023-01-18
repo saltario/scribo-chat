@@ -14,6 +14,7 @@
 
 
     <dimen name="text_size_header">36sp</dimen>
+    <dimen name="text_size_description">32sp</dimen>
     <dimen name="text_size_large">24sp</dimen>
     <dimen name="text_size_button">18sp</dimen>
     <dimen name="text_size_input">18sp</dimen>

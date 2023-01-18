@@ -6,6 +6,12 @@
     <string name="enter_code_header">Введите код подтверждения</string>
     <string name="enter_code_hint">- - - - - -</string>
 
+    <string name="hyperlink_processing_and_storage"><u>Политика обработки и хранения данных</u></string>
+    <string name="hyperlink_privacy_policy"><u>Политика конфиденциальности</u></string>
+
+    <string name="welcome_header">Добро\nпожаловать</string>
+    <string name="welcome_description">Приветствуем вас в нашем мессенджере.\nЗдесь вы можете общаться свободно!</string>
+
 
     <string name="app_name">Scribo Chat</string>
     <string name="app_title_chats">Чаты</string>
@@ -33,7 +39,7 @@
     <string name="app_content_description">content description</string>
 
 
-
+    <string name="button_next">Продолжить</string>
 
 
     <string name="login_get_code">Получить код</string>
@@ -56,8 +62,7 @@
     <string name="settings_button_appearance">Оформление</string>
     <string name="settings_button_exit_profile">Выйти из аккаунта</string>
     <!-- Settings Hyperlinks-->
-    <string name="settings_hyperlink_processing_and_storage">Политика обработки и хранения данных</string>
-    <string name="settings_hyperlink_privacy_policy">Политика конфиденциальности</string>
+
     <!-- Settings Labels-->
     <string name="settings_label_number_phone">Нажмите чтобы изменить номер телефона</string>
     <string name="settings_label_username">Нажмите чтобы изменить имя пользователя</string>

@@ -5,53 +5,70 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:layout_marginTop="@dimen/app_vertical_header_margin"
+    android:background="@color/dark_background_toolbars"
     tools:context=".ui.screens.auth.WelcomeFragment">
 
     <TextView
-        android:id="@+id/welcome_text"
-        android:text="@string/welcome_text_welcome"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:id="@+id/welcome_label"
+        style="@style/header_text"
+        android:layout_marginTop="@dimen/app_vertical_header_margin"
+        android:text="@string/welcome_header"
+        android:lines="2"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        style="@style/style_header_text" />
+        tools:text="@string/welcome_header" />
 
     <TextView
-        android:id="@+id/welcome_text_description"
+        android:id="@+id/description_label"
+        style="@style/description_text"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:text="@string/welcome_description"
+        android:layout_marginTop="@dimen/app_vertical_header_margin"
         android:layout_marginStart="@dimen/app_horizontal_margin"
-        android:layout_marginEnd="@dimen/app_horizontal_margin"
-        android:text="@string/welcome_text_description"
-        android:textAlignment="viewStart"
-        android:textColor="@color/color_black"
-        android:textSize="26sp"
-        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/welcome_text" />
-
-    <TextView
-        android:id="@+id/welcome_privacy_hyperlink"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="@dimen/app_horizontal_margin"
-        android:layout_marginStart="@dimen/app_horizontal_margin"
-        android:layout_marginEnd="@dimen/app_horizontal_margin"
-        android:text="@string/welcome_privacy_hyperlink"
-        android:textAlignment="center"
-        android:textColor="@color/color_primary"
-        android:textSize="16sp"
-        app:layout_constraintBottom_toTopOf="@+id/welcome_btn_continue"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/welcome_label"
+        tools:text="@string/welcome_description" />
 
-    <Button
-        android:id="@+id/welcome_btn_continue"
-        style="@style/style_button_focusable"
-        android:text="@string/welcome_text_continue"
-        android:layout_marginBottom="@dimen/app_margin_bottom"
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/welcome_btn_next"
+        style="@style/next_red_button"
+        android:layout_width="match_parent"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/welcome_hyperlink_privacy_policy">
+
+        <TextView
+            android:id="@+id/welcome_next"
+            style="@style/button_text"
+            android:layout_width="match_parent"
+            android:text="@string/button_next"
+            android:gravity="center"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="@string/button_next" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <TextView
+        android:id="@+id/welcome_hyperlink_processing_and_storage"
+        style="@style/hyperlink_text"
+        android:text="@string/hyperlink_processing_and_storage"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/description_label"
+        tools:text="@string/hyperlink_processing_and_storage" />
+
+    <TextView
+        android:id="@+id/welcome_hyperlink_privacy_policy"
+        style="@style/hyperlink_text"
+        android:layout_marginTop="@dimen/app_vertical_margin"
+        android:text="@string/hyperlink_privacy_policy"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/welcome_hyperlink_processing_and_storage"
+        tools:text="@string/hyperlink_privacy_policy" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

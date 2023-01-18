@@ -225,22 +225,22 @@
     <TextView
         android:id="@+id/settings_hyperlink_processing_and_storage"
         style="@style/hyperlink_text"
-        android:text="@string/settings_hyperlink_processing_and_storage"
+        android:text="@string/hyperlink_processing_and_storage"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/settings_btn_exit_profile"
-        tools:text="@string/settings_hyperlink_processing_and_storage" />
+        tools:text="@string/hyperlink_processing_and_storage" />
 
     <TextView
         android:id="@+id/settings_hyperlink_privacy_policy"
         style="@style/hyperlink_text"
         android:layout_marginTop="@dimen/app_vertical_margin"
-        android:text="@string/settings_hyperlink_privacy_policy"
+        android:text="@string/hyperlink_privacy_policy"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/settings_hyperlink_processing_and_storage"
-        tools:text="@string/settings_hyperlink_privacy_policy" />
+        tools:text="@string/hyperlink_privacy_policy" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
 
