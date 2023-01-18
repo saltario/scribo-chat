@@ -4,62 +4,38 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/dark_background_toolbars"
     tools:context=".ui.screens.register.EnterCodeFragment">
 
-    <ImageView
-        android:id="@+id/register_image"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:src="@drawable/default_register_input_code"
-        android:layout_marginTop="@dimen/app_vertical_large_margin"
-        app:layout_constraintEnd_toEndOf="parent"
+    <TextView
+        android:id="@+id/enter_code_label"
+        style="@style/header_text"
+        android:layout_marginTop="@dimen/app_vertical_header_margin"
+        android:text="@string/enter_code_header"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        android:contentDescription="@string/app_content_description" />
-
-    <TextView
-        android:id="@+id/register_text_enter_code"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:textStyle="bold"
-        android:textSize="@dimen/text_size_normal"
-        android:textColor="@color/color_primary"
-        android:gravity="center"
-        android:text="@string/register_text_enter_code"
-        android:layout_margin="@dimen/app_vertical_margin"
-        app:layout_constraintTop_toBottomOf="@id/register_image"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"/>
-
-    <TextView
-        android:id="@+id/register_text_we_sent"
-        style="@style/small_text"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="@dimen/app_vertical_margin"
-        android:gravity="center"
-        android:text="@string/register_text_we_sent"
-        app:layout_constraintTop_toBottomOf="@+id/register_text_enter_code"
-        tools:layout_editor_absoluteX="16dp" />
+        tools:text="@string/enter_code_header" />
 
     <EditText
-        android:id="@+id/register_input_code"
+        android:id="@+id/enter_code"
         android:background="@drawable/bg_edit_text"
-        android:inputType="phone"
-        android:maxLines="1"
-        android:padding="12dp"
-        android:textColor="@color/color_primary"
-        android:textColorHint="@color/color_primary"
-        android:textSize="@dimen/text_size_normal"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:gravity="center"
-        android:importantForAutofill="no"
-        android:maxLength="6"
-        android:hint="@string/register_input_code_hint"
+        style="@style/input"
+        android:inputType="number"
+        android:paddingEnd="56dp"
+        android:paddingStart="56dp"
+        android:layout_marginTop="@dimen/app_vertical_header_margin"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/register_text_we_sent"
+        app:layout_constraintTop_toBottomOf="@+id/enter_code_label"
+        android:maxLength="6"
+        android:hint="@string/enter_code_hint"
         tools:ignore="LabelFor" />
+
+    <ImageView
+        android:id="@+id/back_btn"
+        android:src="@drawable/icon_back"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        style="@style/button_back" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

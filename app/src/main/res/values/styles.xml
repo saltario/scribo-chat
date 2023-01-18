@@ -140,7 +140,7 @@
         <item name="android:background">@drawable/bg_ripple_settings_exit_profile</item>
     </style>
 
-    <style name="input_phone_number">
+    <style name="input">
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="android:background">@drawable/bg_edit_text</item>
@@ -161,7 +161,12 @@
         <item name="android:padding">@dimen/icon_button_padding</item>
     </style>
 
-
+    <style name="button_back">
+        <item name="android:layout_width">48dp</item>
+        <item name="android:layout_height">48dp</item>
+        <item name="android:layout_marginBottom">@dimen/app_vertical_large_margin</item>
+        <item name="android:layout_marginStart">@dimen/app_vertical_large_margin</item>
+    </style>
 
 
 

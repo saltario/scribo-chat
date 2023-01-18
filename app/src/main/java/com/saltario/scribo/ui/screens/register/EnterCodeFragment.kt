@@ -17,11 +17,11 @@ class EnterCodeFragment(val phoneNumber: String, val id: String) : Fragment(R.la
 
         hideNavBottom()
 
-        APP_ACTIVITY.title = phoneNumber
+        back_btn.setOnClickListener { parentFragmentManager.popBackStack() }
 
-        register_input_code.addTextChangedListener(AppTextWatcher{
+        enter_code.addTextChangedListener(AppTextWatcher{
 
-            val string: String = register_input_code.text.toString()
+            val string: String = enter_code.text.toString()
             if (string.length == 6){
                 enterCode()
             }
@@ -34,7 +34,7 @@ class EnterCodeFragment(val phoneNumber: String, val id: String) : Fragment(R.la
     }
 
     private fun enterCode() {
-        val code: String = register_input_code.text.toString()
+        val code: String = enter_code.text.toString()
         val credential: PhoneAuthCredential = PhoneAuthProvider.getCredential(id, code)
 
         AUTH.signInWithCredential(credential).addOnCompleteListener { task ->
