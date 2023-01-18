@@ -180,20 +180,6 @@
         <item name="android:layout_marginStart">@dimen/app_vertical_large_margin</item>
     </style>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-    <!-- Action menu -->
     <style name="actionMenu" parent="Theme.AppCompat.Light">
         <item name="background">@color/color_background_light</item>
         <item name="actionMenuTextColor">@color/color_light_grey</item>
@@ -207,66 +193,5 @@
         <item name="android:layout_marginEnd">@dimen/app_horizontal_margin</item>
         <item name="android:layout_marginStart">@dimen/app_horizontal_margin</item>
     </style>
-
-
-
-    <style name="edit_text">
-        <item name="android:layout_width">match_parent</item>
-        <item name="android:layout_height">wrap_content</item>
-        <item name="android:textColor">@color/color_primary</item>
-        <item name="android:textSize">@dimen/text_size_normal</item>
-        <item name="android:layout_margin">@dimen/app_horizontal_margin</item>
-        <item name="android:padding">@dimen/app_padding</item>
-        <item name="android:maxLines">1</item>
-        <item name="android:textColorHint">@color/color_light_grey</item>
-    </style>
-
-
-    <style name="style_header_text">
-        <item name="android:layout_width">match_parent</item>
-        <item name="android:layout_height">wrap_content</item>
-        <item name="android:layout_marginStart">@dimen/app_horizontal_margin</item>
-        <item name="android:layout_marginEnd">@dimen/app_horizontal_margin</item>
-        <item name="android:lines">2</item>
-        <item name="android:maxLines">2</item>
-        <item name="android:textAlignment">center</item>
-        <item name="android:textColor">@color/color_black</item>
-        <item name="android:textSize">32sp</item>
-        <item name="android:textStyle">bold</item>
-    </style>
-
-    <style name="style_button_focusable">
-        <item name="android:layout_width">200dp</item>
-        <item name="android:layout_height">wrap_content</item>
-        <item name="android:layout_marginTop">@dimen/app_vertical_margin</item>
-        <item name="android:background">@drawable/custom_button_focusable</item>
-        <item name="android:textAllCaps">false</item>
-        <item name="android:textColor">@color/color_accent</item>
-        <item name="android:textSize">@dimen/text_size_normal</item>
-    </style>
-
-    <style name="style_button_not_focusable">
-        <item name="android:layout_width">200dp</item>
-        <item name="android:layout_height">wrap_content</item>
-        <item name="android:layout_marginTop">@dimen/app_vertical_margin</item>
-        <item name="android:background">@drawable/custom_button_not_focusable</item>
-        <item name="android:textAllCaps">false</item>
-        <item name="android:textColor">@color/color_primary_dark</item>
-        <item name="android:textSize">@dimen/text_size_normal</item>
-    </style>
-
-    <style name="style_edit_text">
-        <item name="android:layout_width">200dp</item>
-        <item name="android:layout_height">wrap_content</item>
-        <item name="android:background">@drawable/bg_edit_text</item>
-        <item name="android:maxLines">1</item>
-        <item name="android:padding">12dp</item>
-        <item name="android:textColor">@color/color_primary</item>
-        <item name="android:textColorHint">@color/color_primary</item>
-        <item name="android:textSize">@dimen/text_size_normal</item>
-    </style>
-
-
-
 
 </resources>

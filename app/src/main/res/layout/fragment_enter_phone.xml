@@ -38,11 +38,11 @@
         <TextView
             android:id="@+id/enter_phone_btn_get_code_text"
             style="@style/button_text"
-            android:text="@string/login_get_code"
+            android:text="@string/button_get_code"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            tools:text="@string/login_get_code" />
+            tools:text="@string/button_get_code" />
 
         <ImageView
             android:id="@+id/enter_phone_btn_get_code_icon"

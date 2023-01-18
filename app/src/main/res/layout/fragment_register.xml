@@ -29,7 +29,7 @@
     <EditText
         android:id="@+id/register_input_name"
         style="@style/input"
-        android:hint="@string/register_input_name"
+        android:hint="@string/input_name_hint"
         android:layout_width="0dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/register_input_photo"
@@ -39,7 +39,7 @@
     <EditText
         android:id="@+id/register_input_surname"
         style="@style/input"
-        android:hint="@string/register_input_surname"
+        android:hint="@string/input_surname_hint"
         android:layout_marginTop="@dimen/app_vertical_margin"
         android:layout_width="0dp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -50,7 +50,7 @@
     <EditText
         android:id="@+id/register_input_username"
         style="@style/input"
-        android:hint="@string/register_input_username"
+        android:hint="@string/input_username_hint"
         android:layout_marginTop="@dimen/app_vertical_margin"
         android:layout_width="0dp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -60,7 +60,7 @@
 
     <EditText
         android:id="@+id/register_input_mail"
-        android:hint="@string/register_input_mail"
+        android:hint="@string/input_mail_hint"
         android:layout_marginTop="@dimen/app_vertical_margin"
         android:layout_width="0dp"
         app:layout_constraintEnd_toEndOf="parent"

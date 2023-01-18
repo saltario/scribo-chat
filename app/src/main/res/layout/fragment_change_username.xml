@@ -9,8 +9,8 @@
 
     <EditText
         android:id="@+id/settings_input_username"
-        style="@style/edit_text"
-        android:hint="@string/settings_input_username_hint"
+        style="@style/input"
+        android:hint="@string/input_username_hint"
         android:inputType="text"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

@@ -51,7 +51,8 @@
     <dimen name="toolbar_vertical_margin">5dp</dimen>
 
 
-
+    <dimen name="register_input_photo_width">105dp</dimen>
+    <dimen name="register_input_photo_height">105dp</dimen>
 
 
 
@@ -71,8 +72,7 @@
     <dimen name="bottom_sheet_height">70dp</dimen>
     <dimen name="bottom_sheet_icon_width">50dp</dimen>
     <dimen name="bottom_sheet_icon_height">50dp</dimen>
-    <dimen name="register_input_photo_width">105dp</dimen>
-    <dimen name="register_input_photo_height">105dp</dimen>
+
     <dimen name="app_margin_bottom">40dp</dimen>
 
 
