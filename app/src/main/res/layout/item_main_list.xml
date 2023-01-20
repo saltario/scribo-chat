@@ -6,7 +6,7 @@
     android:layout_height="wrap_content"
     android:layout_margin="@dimen/app_horizontal_margin"
     android:background="@color/dark_background"
-    style="@style/settings_buttons">
+    style="@style/grey_button">
 
     <de.hdodenhof.circleimageview.CircleImageView
         android:id="@+id/main_list_photo"

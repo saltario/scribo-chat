@@ -28,7 +28,7 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/enter_phone_btn_get_code"
-        style="@style/next_red_button"
+        style="@style/red_button"
         android:layout_width="wrap_content"
         android:layout_marginBottom="@dimen/app_vertical_large_margin"
         android:layout_marginEnd="@dimen/app_vertical_large_margin"
@@ -37,7 +37,7 @@
 
         <TextView
             android:id="@+id/enter_phone_btn_get_code_text"
-            style="@style/button_text"
+            style="@style/button_text_white"
             android:text="@string/button_get_code"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"

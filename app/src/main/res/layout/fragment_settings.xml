@@ -61,7 +61,7 @@
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/settings_btn_change_number_phone"
-            style="@style/settings_buttons"
+            style="@style/grey_button"
             android:layout_marginTop="0dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -81,7 +81,7 @@
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/settings_btn_change_username"
-            style="@style/settings_buttons"
+            style="@style/grey_button"
             android:layout_marginTop="0dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -123,7 +123,7 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/settings_btn_data"
-        style="@style/settings_buttons"
+        style="@style/grey_button"
         android:layout_width="match_parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -156,7 +156,7 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
     android:id="@+id/settings_btn_appearance"
-    style="@style/settings_buttons"
+    style="@style/grey_button"
     android:layout_width="match_parent"
         android:layout_marginTop="5dp"
     app:layout_constraintEnd_toEndOf="parent"
@@ -190,7 +190,7 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/settings_btn_exit_profile"
-        style="@style/settings_button_exit"
+        style="@style/orange_button"
         android:layout_width="wrap_content"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

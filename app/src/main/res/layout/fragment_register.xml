@@ -11,10 +11,10 @@
         android:id="@+id/register_label"
         style="@style/header_text"
         android:layout_marginTop="@dimen/app_vertical_header_margin"
-        android:text="@string/register_header"
+        android:text="@string/registration"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:text="@string/register_header" />
+        tools:text="@string/registration" />
 
     <de.hdodenhof.circleimageview.CircleImageView
         android:id="@+id/register_input_photo"
@@ -78,7 +78,7 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/register_btn_done"
-        style="@style/next_red_button"
+        style="@style/red_button"
         android:layout_width="wrap_content"
         android:layout_marginBottom="@dimen/app_vertical_large_margin"
         android:layout_marginEnd="@dimen/app_vertical_large_margin"
@@ -87,7 +87,7 @@
 
         <TextView
             android:id="@+id/register_btn_done_text"
-            style="@style/button_text"
+            style="@style/button_text_white"
             android:text="@string/button_done"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"

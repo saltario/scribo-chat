@@ -16,7 +16,7 @@
     <string name="settings_button_appearance">Оформление</string>
     <string name="settings_button_exit_profile">Выйти из аккаунта</string>
 
-    <string name="register_header">Регистрация</string>
+    <string name="registration">Регистрация</string>
 
     <string name="input_name_hint">Имя</string>
     <string name="input_surname_hint">Фамилия</string>
@@ -37,6 +37,9 @@
     <string name="button_next">Продолжить</string>
     <string name="button_done">Готово</string>
     <string name="button_get_code">Получить код</string>
+    <string name="login_text_login">Войти</string>
+
+    <string name="first_time">Первый раз?</string>
 
     <plurals name="count_members">
         <item quantity="one">%d участник</item>
@@ -67,7 +70,7 @@
 
     <!-- Login -->
     <string name="login_text_set_phone">Введите номер телефона</string>
-    <string name="login_text_login">Войти</string>
+
 
     <!-- Settings Toasts-->
     <string name="settings_toast_name_is_empty">Имя не может быть пустым</string>

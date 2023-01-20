@@ -23,7 +23,8 @@
     <color name="dark_primary">#B3282E</color>
     <color name="dark_primary_dark">#262626</color>
 
-    <color name="dark_text_color">#FFFFFF</color>
+    <color name="dark_text_color_white">#FFFFFF</color>
+    <color name="dark_text_color_black">#1A1A1A</color>
     <color name="dark_small_text_color">#D0C4C3</color>
 
     <color name="dark_background">#1A1A1A</color>
@@ -33,12 +34,18 @@
     <color name="dark_input_stroke">#FFFFFF</color>
     <color name="dark_input_hint">#A1A1A1</color>
 
-    <color name="dark_exit_button">#E45F26</color>
-    <color name="dark_exit_button_ripple">#712C0E</color>
-    <color name="dark_exit_button_stroke">#712C0E</color>
+    <color name="dark_orange_button">#E45F26</color>
+    <color name="dark_orange_button_ripple">#712C0E</color>
+    <color name="dark_orange_button_stroke">#712C0E</color>
 
-    <color name="dark_button">#B3282E</color>
-    <color name="dark_button_ripple">#550000</color>
+    <color name="dark_red_button">#B3282E</color>
+    <color name="dark_red_button_ripple">#550000</color>
+
+    <color name="dark_white_button">#FFFFFF</color>
+    <color name="dark_white_button_ripple">#A1A1A1</color>
+
+    <color name="dark_grey_button">#404040</color>
+    <color name="dark_grey_button_ripple">#A1A1A1</color>
 
     <color name="dark_other">#404040</color>
     <color name="dark_other_ripple">#A1A1A1</color>

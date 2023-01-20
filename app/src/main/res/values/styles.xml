@@ -42,7 +42,7 @@
         <item name="android:layout_marginStart">@dimen/app_horizontal_margin</item>
         <item name="android:layout_marginEnd">@dimen/app_horizontal_margin</item>
         <item name="android:textSize">@dimen/text_size_header</item>
-        <item name="android:textColor">@color/dark_text_color</item>
+        <item name="android:textColor">@color/dark_text_color_white</item>
         <item name="android:fontFamily">@font/roboto_bold</item>
     </style>
 
@@ -52,19 +52,30 @@
         <item name="android:layout_marginStart">@dimen/app_horizontal_margin</item>
         <item name="android:layout_marginEnd">@dimen/app_horizontal_margin</item>
         <item name="android:textSize">@dimen/text_size_large</item>
-        <item name="android:textColor">@color/dark_text_color</item>
+        <item name="android:textColor">@color/dark_text_color_white</item>
         <item name="android:fontFamily">@font/roboto_bold</item>
     </style>
 
-    <style name="button_text">
+    <style name="button_text_white">
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="android:layout_marginStart">@dimen/app_horizontal_margin</item>
         <item name="android:layout_marginEnd">@dimen/app_horizontal_margin</item>
         <item name="android:textSize">@dimen/text_size_button</item>
-        <item name="android:textColor">@color/dark_text_color</item>
+        <item name="android:textColor">@color/dark_text_color_white</item>
         <item name="android:fontFamily">@font/roboto</item>
     </style>
+
+    <style name="button_text_black">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginStart">@dimen/app_horizontal_margin</item>
+        <item name="android:layout_marginEnd">@dimen/app_horizontal_margin</item>
+        <item name="android:textSize">@dimen/text_size_button</item>
+        <item name="android:textColor">@color/dark_text_color_black</item>
+        <item name="android:fontFamily">@font/roboto_medium</item>
+    </style>
+
 
     <style name="input_text">
         <item name="android:layout_width">wrap_content</item>
@@ -72,7 +83,7 @@
         <item name="android:layout_marginStart">@dimen/app_horizontal_margin</item>
         <item name="android:layout_marginEnd">@dimen/app_horizontal_margin</item>
         <item name="android:textSize">@dimen/text_size_input</item>
-        <item name="android:textColor">@color/dark_text_color</item>
+        <item name="android:textColor">@color/dark_text_color_white</item>
         <item name="android:fontFamily">@font/roboto</item>
     </style>
 
@@ -82,7 +93,7 @@
         <item name="android:layout_marginStart">@dimen/app_horizontal_margin</item>
         <item name="android:layout_marginEnd">@dimen/app_horizontal_margin</item>
         <item name="android:textSize">@dimen/text_size_description</item>
-        <item name="android:textColor">@color/dark_text_color</item>
+        <item name="android:textColor">@color/dark_text_color_white</item>
         <item name="android:fontFamily">@font/roboto</item>
     </style>
 
@@ -92,7 +103,7 @@
         <item name="android:layout_marginStart">@dimen/app_horizontal_margin</item>
         <item name="android:layout_marginEnd">@dimen/app_horizontal_margin</item>
         <item name="android:textSize">@dimen/text_size_normal</item>
-        <item name="android:textColor">@color/dark_text_color</item>
+        <item name="android:textColor">@color/dark_text_color_white</item>
         <item name="android:fontFamily">@font/roboto_medium</item>
     </style>
 
@@ -117,7 +128,7 @@
     </style>
 
 
-    <style name="next_red_button">
+    <style name="red_button">
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">48dp</item>
         <item name="android:layout_marginTop">@dimen/app_vertical_margin</item>
@@ -125,10 +136,10 @@
         <item name="android:layout_marginEnd">@dimen/app_horizontal_margin</item>
         <item name="android:clickable">true</item>
         <item name="android:focusable">true</item>
-        <item name="android:background">@drawable/bg_ripple_next_label</item>
+        <item name="android:background">@drawable/bg_ripple_red_button</item>
     </style>
 
-    <style name="settings_buttons">
+    <style name="white_button">
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">48dp</item>
         <item name="android:layout_marginTop">@dimen/app_vertical_margin</item>
@@ -136,10 +147,10 @@
         <item name="android:layout_marginEnd">@dimen/app_horizontal_margin</item>
         <item name="android:clickable">true</item>
         <item name="android:focusable">true</item>
-        <item name="android:background">@drawable/bg_ripple_settings_label</item>
+        <item name="android:background">@drawable/bg_ripple_white_button</item>
     </style>
 
-    <style name="settings_button_exit">
+    <style name="grey_button">
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">48dp</item>
         <item name="android:layout_marginTop">@dimen/app_vertical_margin</item>
@@ -147,7 +158,18 @@
         <item name="android:layout_marginEnd">@dimen/app_horizontal_margin</item>
         <item name="android:clickable">true</item>
         <item name="android:focusable">true</item>
-        <item name="android:background">@drawable/bg_ripple_settings_exit_profile</item>
+        <item name="android:background">@drawable/bg_ripple_grey_button</item>
+    </style>
+
+    <style name="orange_button">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">48dp</item>
+        <item name="android:layout_marginTop">@dimen/app_vertical_margin</item>
+        <item name="android:layout_marginStart">@dimen/app_horizontal_margin</item>
+        <item name="android:layout_marginEnd">@dimen/app_horizontal_margin</item>
+        <item name="android:clickable">true</item>
+        <item name="android:focusable">true</item>
+        <item name="android:background">@drawable/bg_ripple_orange_button</item>
     </style>
 
     <style name="input">
@@ -162,7 +184,7 @@
         <item name="android:paddingBottom">@dimen/input_padding_vertical</item>
         <item name="android:layout_marginEnd">@dimen/app_horizontal_margin</item>
         <item name="android:layout_marginStart">@dimen/app_horizontal_margin</item>
-        <item name="android:textColor">@color/dark_text_color</item>
+        <item name="android:textColor">@color/dark_text_color_white</item>
         <item name="android:textColorHint">@color/dark_input_hint</item>
         <item name="android:textSize">@dimen/text_size_input</item>
     </style>
