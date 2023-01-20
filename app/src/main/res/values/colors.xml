@@ -1,11 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <color name="color_background_light">#FFFFFF</color>
-    <color name="color_background_dark">#FFFFFF</color>
-
-    <color name="color_black">#000000</color>
-    <color name="color_white">#FFFFFF</color>
     <color name="color_light_grey">#A1A1A1</color>
 
     <color name="color_action_menu_button">#504949</color>
@@ -15,13 +10,9 @@
     <color name="color_background_chat">#2B91C6</color>
 
 
-
-    <color name="color_primary">#BF3030</color>
-    <color name="color_primary_dark">#550000</color>
-    <color name="color_accent">#FFFFFF</color>
-
     <color name="dark_primary">#B3282E</color>
     <color name="dark_primary_dark">#262626</color>
+    <color name="dark_accent">#FFFFFF</color>
 
     <color name="dark_text_color_white">#FFFFFF</color>
     <color name="dark_text_color_black">#1A1A1A</color>
@@ -56,5 +47,7 @@
     <color name="settings_data">#339E00</color>
     <color name="settings_appearance">#5E47CE</color>
     <color name="settings_hyperlink">#3296FF</color>
+
+    <color name="dark_nav_bottom_bg_checked">#B3282E</color>
 
 </resources>

@@ -4,11 +4,11 @@
 
         <item name="colorPrimary">@color/dark_primary</item>
         <item name="colorPrimaryDark">@color/dark_primary_dark</item>
-        <item name="colorAccent">@color/color_accent</item>
+        <item name="colorAccent">@color/dark_accent</item>
         <item name="android:colorBackground">@color/dark_background</item>
 
         <item name="popupTheme">@style/actionMenu</item>
-        <item name="colorControlActivated">@color/color_primary</item>
+        <item name="colorControlActivated">@color/dark_primary</item>
 
     </style>
 
@@ -203,7 +203,7 @@
     </style>
 
     <style name="actionMenu" parent="Theme.AppCompat.Light">
-        <item name="background">@color/color_background_light</item>
+        <item name="background">@color/dark_accent</item>
         <item name="actionMenuTextColor">@color/color_light_grey</item>
     </style>
 

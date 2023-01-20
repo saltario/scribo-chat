@@ -47,9 +47,9 @@
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/main_nav_bottom"
         style="@style/bottom_nav_menu"
-        android:layout_height="84dp"
-        app:itemIconSize="72dp"
-        app:itemPaddingTop="0dp"
+        android:layout_height="80dp"
+        app:itemIconSize="74dp"
+        app:itemPaddingTop="-5dp"
         app:itemTextColor="@color/dark_text_color_white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

@@ -163,7 +163,7 @@ class SingleChatFragment(private val contact: Common) : BaseFragment(R.layout.fr
                 if (checkPermission(RECORD_AUDIO)){
                     if (event.action == MotionEvent.ACTION_DOWN){
                         chat_input_message.setText(getString(R.string.chat_record))
-                        chat_btn_voice.setColorFilter(ContextCompat.getColor(APP_ACTIVITY, R.color.color_black))
+                        chat_btn_voice.setColorFilter(ContextCompat.getColor(APP_ACTIVITY, R.color.dark_background))
                         val messageKey = getMessageKey(contact.id)
                         mAppVoiceRecorder.startRecorder(messageKey)
 

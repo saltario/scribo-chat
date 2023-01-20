@@ -24,7 +24,7 @@
             android:layout_height="wrap_content"
             android:gravity="end"
             android:padding="@dimen/app_padding"
-            android:textColor="@color/color_black"
+            android:textColor="@color/dark_background"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             tools:text="Привет всем" />
@@ -59,7 +59,7 @@
             android:layout_height="wrap_content"
             android:gravity="end"
             android:padding="@dimen/app_padding"
-            android:textColor="@color/color_black"
+            android:textColor="@color/dark_background"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             tools:text="Привет всем" />

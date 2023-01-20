@@ -20,7 +20,7 @@
         android:layout_height="wrap_content"
         android:src="@drawable/icon_next_depricated"
         android:layout_margin="@dimen/app_horizontal_margin"
-        android:backgroundTint="@color/color_primary"
+        android:backgroundTint="@color/dark_primary"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
         android:contentDescription="@string/app_content_description" />
