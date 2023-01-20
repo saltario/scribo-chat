@@ -57,6 +57,8 @@
 
 
 
+
+
     <dimen name="chat_background_message_radius">10dp</dimen>
 
     <dimen name="chat_message_image_width">180dp</dimen>

@@ -46,10 +46,14 @@
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/main_nav_bottom"
+        style="@style/bottom_nav_menu"
+        android:layout_height="84dp"
+        app:itemIconSize="72dp"
+        app:itemPaddingTop="0dp"
+        app:itemTextColor="@color/dark_text_color_white"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:menu="@menu/navigation_bottom_menu"
-        style="@style/bottom_nav_menu" />
+        app:menu="@menu/navigation_bottom_menu" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -4,16 +4,16 @@
     <item
         android:title="@string/nav_bottom_contacts"
         android:id="@+id/nav_bottom_contacts"
-        android:icon="@drawable/icon_contacts"/>
+        android:icon="@drawable/navigation_bottom_contacts"/>
 
     <item
         android:title="@string/nav_bottom_chats"
         android:id="@+id/nav_bottom_chats"
-        android:icon="@drawable/icon_chats"/>
+        android:icon="@drawable/navigation_bottom_chats"/>
 
     <item
         android:title="@string/nav_bottom_settings"
         android:id="@+id/nav_bottom_settings"
-        android:icon="@drawable/icon_settings"/>
+        android:icon="@drawable/navigation_bottom_settings"/>
 
 </menu>

@@ -16,6 +16,7 @@ import com.saltario.scribo.ui.objects.AppStates
 import com.saltario.scribo.ui.screens.changes.SettingsFragment
 import com.saltario.scribo.ui.screens.contacts.ContactsFragment
 import com.saltario.scribo.utilits.*
+import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
 
@@ -81,6 +82,7 @@ class MainActivity : AppCompatActivity() {
         APP_ACTIVITY = this
         mToolBar = mBinding.mainToolbar
         mNavBottom = mBinding.mainNavBottom
+        mNavBottom.itemIconTintList = null
     }
 
     private fun initFunc() {
