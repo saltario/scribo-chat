@@ -35,5 +35,10 @@
         app:layout_constraintStart_toEndOf="@+id/main_list_photo"
         tools:text="@string/app_last_message_default" />
 
+    <View
+        android:id="@+id/view"
+        style="@style/separator"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/main_list_photo" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

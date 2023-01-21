@@ -70,6 +70,10 @@
     <dimen name="chat_toolbar_image_width">56dp</dimen>
     <dimen name="chat_toolbar_image_height">56dp</dimen>
 
+
+
+
+
     <!--Bottom Sheet-->
     <dimen name="bottom_sheet_height">70dp</dimen>
     <dimen name="bottom_sheet_icon_width">50dp</dimen>
