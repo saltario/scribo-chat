@@ -198,7 +198,7 @@
         <item name="android:orientation">horizontal</item>
         <item name="android:gravity">center_vertical</item>
         <item name="android:textColor">@color/dark_text_color_white</item>
-        <item name="android:textColorHint">@color/dark_chat_input_message_text_color</item>
+        <item name="android:textColorHint">@color/dark_chat_message_text_color</item>
         <item name="android:textSize">@dimen/text_size_normal</item>
         <item name="android:fontFamily">@font/roboto</item>
         <item name="android:inputType">text</item>

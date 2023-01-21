@@ -94,7 +94,7 @@ class SingleChatFragment(private val contact: Common) : BaseFragment(R.layout.fr
 
     private fun initFields() {
 
-        setHasOptionsMenu(true)
+        setHasOptionsMenu(false)
 
         mBottomSheetBehavior = BottomSheetBehavior.from(bottom_sheet_choice)
         mBottomSheetBehavior.state = BottomSheetBehavior.STATE_HIDDEN

@@ -56,12 +56,7 @@
 
     <dimen name="bottom_bar_height">80dp</dimen>
 
-
-
-
-
-
-    <dimen name="chat_background_message_radius">10dp</dimen>
+    <dimen name="chat_background_radius">20dp</dimen>
 
     <dimen name="chat_message_image_width">180dp</dimen>
     <dimen name="chat_message_image_height">180dp</dimen>
@@ -71,6 +66,9 @@
 
     <dimen name="chat_btn_play_voice_message_width">50dp</dimen>
     <dimen name="chat_btn_play_voice_message_height">50dp</dimen>
+
+    <dimen name="chat_toolbar_image_width">56dp</dimen>
+    <dimen name="chat_toolbar_image_height">56dp</dimen>
 
     <!--Bottom Sheet-->
     <dimen name="bottom_sheet_height">70dp</dimen>

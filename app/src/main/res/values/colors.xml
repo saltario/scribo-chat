@@ -11,7 +11,7 @@
 
     <color name="dark_chat_background">#1A1A1A</color>
     <color name="dark_chat_background_input_message">#404040</color>
-    <color name="dark_chat_input_message_text_color">#e6e6e6</color>
+    <color name="dark_chat_message_text_color">#e6e6e6</color>
     <color name="dark_chat_background_user_message">#B3282E</color>
     <color name="dark_chat_background_other_message">#404040</color>
     <color name="dark_chat_background_burger_menu">#404040</color>

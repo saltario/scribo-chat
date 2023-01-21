@@ -57,7 +57,7 @@
     <!-- Default -->
     <string name="app_fullname_default">Петр Разумовский</string>
     <string name="app_last_message_default">Привет, как дела?</string>
-    <string name="app_state_default">Онлайн</string>
+    <string name="app_state_default">В сети</string>
     <string name="app_number_phone_default">+16505553434</string>
     <string name="app_login_default">scribo</string>
     <string name="app_bio_default">О себе</string>
