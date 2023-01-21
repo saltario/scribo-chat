@@ -189,6 +189,21 @@
         <item name="android:textSize">@dimen/text_size_input</item>
     </style>
 
+    <style name="input_message">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">40dp</item>
+        <item name="android:background">@drawable/bg_edit_message</item>
+        <item name="android:paddingHorizontal">20dp</item>
+        <item name="android:paddingVertical">6dp</item>
+        <item name="android:orientation">horizontal</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:textColor">@color/dark_text_color_white</item>
+        <item name="android:textColorHint">@color/dark_chat_input_message_text_color</item>
+        <item name="android:textSize">@dimen/text_size_normal</item>
+        <item name="android:fontFamily">@font/roboto</item>
+        <item name="android:inputType">text</item>
+    </style>
+
     <style name="icon_button">
         <item name="android:layout_width">@dimen/icon_button_width</item>
         <item name="android:layout_height">@dimen/icon_button_height</item>
@@ -215,5 +230,12 @@
         <item name="android:layout_marginEnd">@dimen/app_horizontal_margin</item>
         <item name="android:layout_marginStart">@dimen/app_horizontal_margin</item>
     </style>
+
+    <style name="chat_bar_panel_icon">
+        <item name="android:layout_width">36dp</item>
+        <item name="android:layout_height">36dp</item>
+    </style>
+
+
 
 </resources>
