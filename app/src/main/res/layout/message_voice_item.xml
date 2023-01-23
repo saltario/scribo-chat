@@ -49,7 +49,7 @@
 
         <TextView
             android:id="@+id/chat_other_voice_time"
-            style="@style/small_text"
+            style="@style/text_small"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginEnd="@dimen/app_horizontal_margin"
@@ -103,7 +103,7 @@
 
         <TextView
             android:id="@+id/chat_user_voice_time"
-            style="@style/small_text"
+            style="@style/text_small"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginEnd="@dimen/app_horizontal_margin"

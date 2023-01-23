@@ -28,7 +28,7 @@
 
     <TextView
         android:id="@+id/toolbar_group_chat_fullname"
-        style="@style/normal_text"
+        style="@style/text_normal"
         android:textColor="@color/dark_accent"
         tools:text="@string/app_fullname_default"
         app:layout_constraintStart_toEndOf="@+id/toolbar_group_chat_photo"
@@ -36,7 +36,7 @@
 
     <TextView
         android:id="@+id/toolbar_group_chat_state"
-        style="@style/small_text"
+        style="@style/text_small"
         tools:text="@string/app_state_default"
         app:layout_constraintStart_toEndOf="@+id/toolbar_group_chat_photo"
         app:layout_constraintTop_toBottomOf="@+id/toolbar_group_chat_fullname" />

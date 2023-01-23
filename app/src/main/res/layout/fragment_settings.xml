@@ -35,7 +35,7 @@
 
         <TextView
             android:id="@+id/settings_fullname"
-            style="@style/normal_text"
+            style="@style/text_normal"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -44,7 +44,7 @@
 
         <TextView
             android:id="@+id/settings_status"
-            style="@style/small_text"
+            style="@style/text_small"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -69,7 +69,7 @@
 
             <TextView
                 android:id="@+id/settings_phone_number"
-                style="@style/normal_text"
+                style="@style/text_normal"
                 android:padding="5dp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -89,7 +89,7 @@
 
             <TextView
                 android:id="@+id/settings_username"
-                style="@style/normal_text"
+                style="@style/text_normal"
                 android:padding="5dp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -111,7 +111,7 @@
 
         <TextView
             android:id="@+id/settings_label"
-            style="@style/header_text"
+            style="@style/text_header"
             android:text="@string/app_title_settings"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -131,7 +131,7 @@
 
         <TextView
             android:id="@+id/settings_data"
-            style="@style/normal_text"
+            style="@style/text_normal"
             android:textSize="22sp"
             android:fontFamily="@font/roboto"
             android:text="@string/settings_button_data"
@@ -165,7 +165,7 @@
 
     <TextView
         android:id="@+id/settings_appearance"
-        style="@style/normal_text"
+        style="@style/text_normal"
         android:textSize="22sp"
         android:fontFamily="@font/roboto"
         android:text="@string/settings_button_appearance"
@@ -198,7 +198,7 @@
 
         <TextView
             android:id="@+id/settings_exit_profile"
-            style="@style/normal_text"
+            style="@style/text_normal"
             android:textSize="22sp"
             android:fontFamily="@font/roboto"
             android:paddingEnd="@dimen/app_horizontal_margin"
@@ -224,7 +224,7 @@
 
     <TextView
         android:id="@+id/settings_hyperlink_processing_and_storage"
-        style="@style/hyperlink_text"
+        style="@style/text_hyperlink"
         android:text="@string/hyperlink_processing_and_storage"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -234,7 +234,7 @@
 
     <TextView
         android:id="@+id/settings_hyperlink_privacy_policy"
-        style="@style/hyperlink_text"
+        style="@style/text_hyperlink"
         android:layout_marginTop="@dimen/app_vertical_margin"
         android:text="@string/hyperlink_privacy_policy"
         app:layout_constraintEnd_toEndOf="parent"

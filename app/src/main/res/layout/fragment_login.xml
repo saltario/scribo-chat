@@ -9,7 +9,7 @@
 
     <TextView
         android:id="@+id/login_enter_phone_label"
-        style="@style/header_text"
+        style="@style/text_header"
         android:layout_marginTop="@dimen/app_vertical_header_margin"
         android:text="@string/enter_phone_header"
         app:layout_constraintStart_toStartOf="parent"
@@ -40,7 +40,7 @@
 
         <TextView
             android:id="@+id/first_time_label"
-            style="@style/input_text"
+            style="@style/text_input"
             android:text="@string/first_time"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -58,7 +58,7 @@
 
             <TextView
                 android:id="@+id/login_btn_registration_text"
-                style="@style/button_text_black"
+                style="@style/text_button_black"
                 android:text="@string/registration"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -81,7 +81,7 @@
 
         <TextView
             android:id="@+id/login_btn_login_text"
-            style="@style/button_text_white"
+            style="@style/text_button_white"
             android:text="@string/login_text_login"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"

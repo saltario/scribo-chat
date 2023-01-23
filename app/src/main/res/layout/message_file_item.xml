@@ -38,7 +38,7 @@
 
         <TextView
             android:id="@+id/chat_other_file_time"
-            style="@style/small_text"
+            style="@style/text_small"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginEnd="@dimen/app_horizontal_margin"
@@ -49,7 +49,7 @@
 
         <TextView
             android:id="@+id/chat_other_file_name"
-            style="@style/normal_text"
+            style="@style/text_normal"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:gravity="start"
@@ -107,7 +107,7 @@
 
         <TextView
             android:id="@+id/chat_user_file_time"
-            style="@style/small_text"
+            style="@style/text_small"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginEnd="@dimen/app_horizontal_margin"
@@ -118,7 +118,7 @@
 
         <TextView
             android:id="@+id/chat_user_file_name"
-            style="@style/normal_text"
+            style="@style/text_normal"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:gravity="start"

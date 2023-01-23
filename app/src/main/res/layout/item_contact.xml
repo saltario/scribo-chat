@@ -19,7 +19,7 @@
 
     <TextView
         android:id="@+id/contact_fullname"
-        style="@style/normal_text"
+        style="@style/text_normal"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toEndOf="@+id/contact_photo"
         app:layout_constraintTop_toTopOf="parent"

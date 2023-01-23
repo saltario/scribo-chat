@@ -34,7 +34,7 @@
 
         <TextView
             android:id="@+id/toolbar_single_chat_fullname"
-            style="@style/large_text"
+            style="@style/text_large"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
@@ -42,7 +42,7 @@
 
         <TextView
             android:id="@+id/toolbar_single_chat_state"
-            style="@style/small_text"
+            style="@style/text_small"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/toolbar_single_chat_fullname"

@@ -28,14 +28,14 @@
 
     <TextView
         android:id="@+id/add_contacts_fullname"
-        style="@style/normal_text"
+        style="@style/text_normal"
         tools:text="@string/app_fullname_default"
         app:layout_constraintStart_toEndOf="@+id/add_contacts_photo"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/add_contacts_state"
-        style="@style/small_text"
+        style="@style/text_small"
         android:maxLines="1"
         tools:text="Онлайн"
         app:layout_constraintStart_toEndOf="@+id/add_contacts_photo"

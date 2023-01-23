@@ -20,7 +20,7 @@
     <TextView
         android:id="@+id/main_list_fullname"
         android:layout_marginTop="@dimen/chats_vertical_margin_item"
-        style="@style/normal_text"
+        style="@style/text_normal"
         app:layout_constraintStart_toEndOf="@+id/main_list_photo"
         app:layout_constraintTop_toTopOf="parent"
         tools:text="@string/app_fullname_default" />
@@ -28,7 +28,7 @@
     <TextView
         android:id="@+id/main_list_last_message"
         android:layout_marginBottom="@dimen/chats_vertical_margin_item"
-        style="@style/small_text"
+        style="@style/text_small"
         android:maxLines="1"
 
         app:layout_constraintBottom_toBottomOf="parent"

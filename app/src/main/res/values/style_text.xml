@@ -8,55 +8,55 @@
         <item name="android:layout_marginEnd">@dimen/app_horizontal_margin</item>
     </style>
 
-    <style name="header_text" parent="text">
+    <style name="text_header" parent="text">
         <item name="android:textSize">@dimen/text_size_header</item>
         <item name="android:textColor">@color/dark_text_color_white</item>
         <item name="android:fontFamily">@font/roboto_bold</item>
     </style>
 
-    <style name="large_text" parent="text">
+    <style name="text_large" parent="text">
         <item name="android:textSize">@dimen/text_size_large</item>
         <item name="android:textColor">@color/dark_text_color_white</item>
         <item name="android:fontFamily">@font/roboto_bold</item>
     </style>
 
-    <style name="button_text_white" parent="text">
+    <style name="text_button_white" parent="text">
         <item name="android:textSize">@dimen/text_size_button</item>
         <item name="android:textColor">@color/dark_text_color_white</item>
         <item name="android:fontFamily">@font/roboto</item>
     </style>
 
-    <style name="button_text_black" parent="text">
+    <style name="text_button_black" parent="text">
         <item name="android:textSize">@dimen/text_size_button</item>
         <item name="android:textColor">@color/dark_text_color_black</item>
         <item name="android:fontFamily">@font/roboto_medium</item>
     </style>
 
-    <style name="input_text" parent="text">
+    <style name="text_input" parent="text">
         <item name="android:textSize">@dimen/text_size_input</item>
         <item name="android:textColor">@color/dark_text_color_white</item>
         <item name="android:fontFamily">@font/roboto</item>
     </style>
 
-    <style name="description_text" parent="text">
+    <style name="text_description" parent="text">
         <item name="android:textSize">@dimen/text_size_description</item>
         <item name="android:textColor">@color/dark_text_color_white</item>
         <item name="android:fontFamily">@font/roboto</item>
     </style>
 
-    <style name="normal_text" parent="text">
+    <style name="text_normal" parent="text">
         <item name="android:textSize">@dimen/text_size_normal</item>
         <item name="android:textColor">@color/dark_text_color_white</item>
         <item name="android:fontFamily">@font/roboto_medium</item>
     </style>
 
-    <style name="small_text" parent="text">
+    <style name="text_small" parent="text">
         <item name="android:textSize">@dimen/text_size_small</item>
         <item name="android:textColor">@color/dark_small_text_color</item>
         <item name="android:fontFamily">@font/roboto</item>
     </style>
 
-    <style name="hyperlink_text" parent="text">
+    <style name="text_hyperlink" parent="text">
         <item name="android:textSize">@dimen/text_size_normal</item>
         <item name="android:textColor">@color/settings_hyperlink</item>
         <item name="android:fontFamily">@font/roboto_medium</item>

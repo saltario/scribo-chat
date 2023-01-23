@@ -8,7 +8,7 @@
 
     <TextView
         android:id="@+id/enter_code_label"
-        style="@style/header_text"
+        style="@style/text_header"
         android:layout_marginTop="@dimen/app_vertical_header_margin"
         android:text="@string/enter_code_header"
         app:layout_constraintStart_toStartOf="parent"

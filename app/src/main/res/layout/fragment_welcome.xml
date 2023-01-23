@@ -9,7 +9,7 @@
 
     <TextView
         android:id="@+id/welcome_label"
-        style="@style/header_text"
+        style="@style/text_header"
         android:layout_marginTop="@dimen/app_vertical_header_margin"
         android:text="@string/welcome_header"
         android:lines="2"
@@ -19,7 +19,7 @@
 
     <TextView
         android:id="@+id/description_label"
-        style="@style/description_text"
+        style="@style/text_description"
         android:layout_width="match_parent"
         android:text="@string/welcome_description"
         android:layout_marginTop="@dimen/app_vertical_header_margin"
@@ -40,7 +40,7 @@
 
         <TextView
             android:id="@+id/welcome_next"
-            style="@style/button_text_white"
+            style="@style/text_button_white"
             android:layout_width="match_parent"
             android:text="@string/button_next"
             android:gravity="center"
@@ -52,7 +52,7 @@
 
     <TextView
         android:id="@+id/welcome_hyperlink_processing_and_storage"
-        style="@style/hyperlink_text"
+        style="@style/text_hyperlink"
         android:text="@string/hyperlink_processing_and_storage"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -62,7 +62,7 @@
 
     <TextView
         android:id="@+id/welcome_hyperlink_privacy_policy"
-        style="@style/hyperlink_text"
+        style="@style/text_hyperlink"
         android:layout_marginTop="@dimen/app_vertical_margin"
         android:text="@string/hyperlink_privacy_policy"
         app:layout_constraintEnd_toEndOf="parent"

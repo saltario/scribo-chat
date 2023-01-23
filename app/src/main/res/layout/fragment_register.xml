@@ -9,7 +9,7 @@
 
     <TextView
         android:id="@+id/register_label"
-        style="@style/header_text"
+        style="@style/text_header"
         android:layout_marginTop="@dimen/app_vertical_header_margin"
         android:text="@string/registration"
         app:layout_constraintStart_toStartOf="parent"
@@ -87,7 +87,7 @@
 
         <TextView
             android:id="@+id/register_btn_done_text"
-            style="@style/button_text_white"
+            style="@style/text_button_white"
             android:text="@string/button_done"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
