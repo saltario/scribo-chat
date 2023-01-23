@@ -1,18 +1,20 @@
 <resources>
 
-    <style name="AppThemeDark" parent="MaterialDrawerTheme">
+    <style name="AppThemeDark" parent="Theme.AppCompat.Light.NoActionBar">
 
         <item name="colorPrimary">@color/dark_primary</item>
-        <item name="colorPrimaryDark">@color/dark_primary_dark</item>
-        <item name="colorAccent">@color/dark_accent</item>
+        <item name="colorPrimaryVariant">@color/dark_primary_dark</item>
+        <item name="colorOnPrimary">@color/dark_primary_dark</item>
+
+        <item name="colorSecondary">@color/dark_primary_dark</item>
+        <item name="colorSecondaryVariant">@color/dark_primary_dark</item>
+        <item name="colorOnSecondary">@color/dark_primary_dark</item>
+
+        <item name="android:statusBarColor">?attr/colorPrimaryVariant</item>
+        <item name="windowActionBar">false</item>
         <item name="android:colorBackground">@color/dark_background</item>
 
-        <item name="popupTheme">@style/actionMenu</item>
-        <item name="colorControlActivated">@color/dark_primary</item>
-
     </style>
-
-
 
     <style name="bottom_nav_menu">
         <item name="android:layout_width">match_parent</item>
@@ -33,174 +35,6 @@
         <item name="android:layout_height">@dimen/button_circle_height</item>
         <item name="android:padding">@dimen/app_padding</item>
         <item name="android:layout_marginEnd">@dimen/app_horizontal_margin</item>
-    </style>
-
-    <!-- Text-->
-    <style name="header_text">
-        <item name="android:layout_width">wrap_content</item>
-        <item name="android:layout_height">wrap_content</item>
-        <item name="android:layout_marginStart">@dimen/app_horizontal_margin</item>
-        <item name="android:layout_marginEnd">@dimen/app_horizontal_margin</item>
-        <item name="android:textSize">@dimen/text_size_header</item>
-        <item name="android:textColor">@color/dark_text_color_white</item>
-        <item name="android:fontFamily">@font/roboto_bold</item>
-    </style>
-
-    <style name="large_text">
-        <item name="android:layout_width">wrap_content</item>
-        <item name="android:layout_height">wrap_content</item>
-        <item name="android:layout_marginStart">@dimen/app_horizontal_margin</item>
-        <item name="android:layout_marginEnd">@dimen/app_horizontal_margin</item>
-        <item name="android:textSize">@dimen/text_size_large</item>
-        <item name="android:textColor">@color/dark_text_color_white</item>
-        <item name="android:fontFamily">@font/roboto_bold</item>
-    </style>
-
-    <style name="button_text_white">
-        <item name="android:layout_width">wrap_content</item>
-        <item name="android:layout_height">wrap_content</item>
-        <item name="android:layout_marginStart">@dimen/app_horizontal_margin</item>
-        <item name="android:layout_marginEnd">@dimen/app_horizontal_margin</item>
-        <item name="android:textSize">@dimen/text_size_button</item>
-        <item name="android:textColor">@color/dark_text_color_white</item>
-        <item name="android:fontFamily">@font/roboto</item>
-    </style>
-
-    <style name="button_text_black">
-        <item name="android:layout_width">wrap_content</item>
-        <item name="android:layout_height">wrap_content</item>
-        <item name="android:layout_marginStart">@dimen/app_horizontal_margin</item>
-        <item name="android:layout_marginEnd">@dimen/app_horizontal_margin</item>
-        <item name="android:textSize">@dimen/text_size_button</item>
-        <item name="android:textColor">@color/dark_text_color_black</item>
-        <item name="android:fontFamily">@font/roboto_medium</item>
-    </style>
-
-    <style name="input_text">
-        <item name="android:layout_width">wrap_content</item>
-        <item name="android:layout_height">wrap_content</item>
-        <item name="android:layout_marginStart">@dimen/app_horizontal_margin</item>
-        <item name="android:layout_marginEnd">@dimen/app_horizontal_margin</item>
-        <item name="android:textSize">@dimen/text_size_input</item>
-        <item name="android:textColor">@color/dark_text_color_white</item>
-        <item name="android:fontFamily">@font/roboto</item>
-    </style>
-
-    <style name="description_text">
-        <item name="android:layout_width">wrap_content</item>
-        <item name="android:layout_height">wrap_content</item>
-        <item name="android:layout_marginStart">@dimen/app_horizontal_margin</item>
-        <item name="android:layout_marginEnd">@dimen/app_horizontal_margin</item>
-        <item name="android:textSize">@dimen/text_size_description</item>
-        <item name="android:textColor">@color/dark_text_color_white</item>
-        <item name="android:fontFamily">@font/roboto</item>
-    </style>
-
-    <style name="normal_text">
-        <item name="android:layout_width">wrap_content</item>
-        <item name="android:layout_height">wrap_content</item>
-        <item name="android:layout_marginStart">@dimen/app_horizontal_margin</item>
-        <item name="android:layout_marginEnd">@dimen/app_horizontal_margin</item>
-        <item name="android:textSize">@dimen/text_size_normal</item>
-        <item name="android:textColor">@color/dark_text_color_white</item>
-        <item name="android:fontFamily">@font/roboto_medium</item>
-    </style>
-
-    <style name="small_text">
-        <item name="android:layout_width">wrap_content</item>
-        <item name="android:layout_height">wrap_content</item>
-        <item name="android:layout_marginStart">@dimen/app_horizontal_margin</item>
-        <item name="android:layout_marginEnd">@dimen/app_horizontal_margin</item>
-        <item name="android:textSize">@dimen/text_size_small</item>
-        <item name="android:textColor">@color/dark_small_text_color</item>
-        <item name="android:fontFamily">@font/roboto</item>
-    </style>
-
-    <style name="hyperlink_text">
-        <item name="android:layout_width">wrap_content</item>
-        <item name="android:layout_height">wrap_content</item>
-        <item name="android:layout_marginStart">@dimen/app_horizontal_margin</item>
-        <item name="android:layout_marginEnd">@dimen/app_horizontal_margin</item>
-        <item name="android:textSize">@dimen/text_size_normal</item>
-        <item name="android:textColor">@color/settings_hyperlink</item>
-        <item name="android:fontFamily">@font/roboto_medium</item>
-    </style>
-
-
-    <style name="red_button">
-        <item name="android:layout_width">wrap_content</item>
-        <item name="android:layout_height">48dp</item>
-        <item name="android:layout_marginTop">@dimen/app_vertical_margin</item>
-        <item name="android:layout_marginStart">@dimen/app_horizontal_margin</item>
-        <item name="android:layout_marginEnd">@dimen/app_horizontal_margin</item>
-        <item name="android:clickable">true</item>
-        <item name="android:focusable">true</item>
-        <item name="android:background">@drawable/bg_ripple_red_button</item>
-    </style>
-
-    <style name="white_button">
-        <item name="android:layout_width">wrap_content</item>
-        <item name="android:layout_height">48dp</item>
-        <item name="android:layout_marginTop">@dimen/app_vertical_margin</item>
-        <item name="android:layout_marginStart">@dimen/app_horizontal_margin</item>
-        <item name="android:layout_marginEnd">@dimen/app_horizontal_margin</item>
-        <item name="android:clickable">true</item>
-        <item name="android:focusable">true</item>
-        <item name="android:background">@drawable/bg_ripple_white_button</item>
-    </style>
-
-    <style name="grey_button">
-        <item name="android:layout_width">wrap_content</item>
-        <item name="android:layout_height">48dp</item>
-        <item name="android:layout_marginTop">@dimen/app_vertical_margin</item>
-        <item name="android:layout_marginStart">@dimen/app_horizontal_margin</item>
-        <item name="android:layout_marginEnd">@dimen/app_horizontal_margin</item>
-        <item name="android:clickable">true</item>
-        <item name="android:focusable">true</item>
-        <item name="android:background">@drawable/bg_ripple_grey_button</item>
-    </style>
-
-    <style name="orange_button">
-        <item name="android:layout_width">wrap_content</item>
-        <item name="android:layout_height">48dp</item>
-        <item name="android:layout_marginTop">@dimen/app_vertical_margin</item>
-        <item name="android:layout_marginStart">@dimen/app_horizontal_margin</item>
-        <item name="android:layout_marginEnd">@dimen/app_horizontal_margin</item>
-        <item name="android:clickable">true</item>
-        <item name="android:focusable">true</item>
-        <item name="android:background">@drawable/bg_ripple_orange_button</item>
-    </style>
-
-    <style name="input">
-        <item name="android:layout_width">wrap_content</item>
-        <item name="android:layout_height">wrap_content</item>
-        <item name="android:background">@drawable/bg_edit_text</item>
-        <item name="android:importantForAutofill">no</item>
-        <item name="android:maxLines">1</item>
-        <item name="android:paddingEnd">@dimen/input_padding_horizontal</item>
-        <item name="android:paddingStart">@dimen/input_padding_horizontal</item>
-        <item name="android:paddingTop">@dimen/input_padding_vertical</item>
-        <item name="android:paddingBottom">@dimen/input_padding_vertical</item>
-        <item name="android:layout_marginEnd">@dimen/app_horizontal_margin</item>
-        <item name="android:layout_marginStart">@dimen/app_horizontal_margin</item>
-        <item name="android:textColor">@color/dark_text_color_white</item>
-        <item name="android:textColorHint">@color/dark_input_hint</item>
-        <item name="android:textSize">@dimen/text_size_input</item>
-    </style>
-
-    <style name="input_message">
-        <item name="android:layout_width">0dp</item>
-        <item name="android:layout_height">40dp</item>
-        <item name="android:background">@drawable/bg_edit_message</item>
-        <item name="android:paddingHorizontal">20dp</item>
-        <item name="android:paddingVertical">6dp</item>
-        <item name="android:orientation">horizontal</item>
-        <item name="android:gravity">center_vertical</item>
-        <item name="android:textColor">@color/dark_text_color_white</item>
-        <item name="android:textColorHint">@color/dark_chat_message_text_color</item>
-        <item name="android:textSize">@dimen/text_size_normal</item>
-        <item name="android:fontFamily">@font/roboto</item>
-        <item name="android:inputType">text</item>
     </style>
 
     <style name="icon_button">
@@ -229,9 +63,6 @@
         <item name="android:layout_width">36dp</item>
         <item name="android:layout_height">36dp</item>
     </style>
-
-
-
 
     <style name="actionMenu" parent="Theme.AppCompat.Light">
         <item name="background">@color/dark_accent</item>

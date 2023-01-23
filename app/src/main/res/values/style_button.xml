@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="button">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">48dp</item>
+        <item name="android:layout_marginTop">@dimen/app_vertical_margin</item>
+        <item name="android:layout_marginHorizontal">@dimen/app_horizontal_margin</item>
+        <item name="android:clickable">true</item>
+        <item name="android:focusable">true</item>
+    </style>
+
+    <style name="red_button" parent="button">
+        <item name="android:background">@drawable/bg_ripple_red_button</item>
+    </style>
+
+    <style name="white_button" parent="button">
+        <item name="android:background">@drawable/bg_ripple_white_button</item>
+    </style>
+
+    <style name="grey_button" parent="button">
+        <item name="android:background">@drawable/bg_ripple_grey_button</item>
+    </style>
+
+    <style name="orange_button" parent="button">
+        <item name="android:background">@drawable/bg_ripple_orange_button</item>
+    </style>
+
+</resources>

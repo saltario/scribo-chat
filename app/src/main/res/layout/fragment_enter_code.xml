@@ -18,7 +18,7 @@
     <EditText
         android:id="@+id/enter_code"
         android:background="@drawable/bg_edit_text"
-        style="@style/input"
+        style="@style/input_change"
         android:inputType="number"
         android:paddingEnd="56dp"
         android:paddingStart="56dp"

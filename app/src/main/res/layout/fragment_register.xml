@@ -28,7 +28,7 @@
 
     <EditText
         android:id="@+id/register_input_name"
-        style="@style/input"
+        style="@style/input_change"
         android:hint="@string/input_name_hint"
         android:layout_width="0dp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -38,7 +38,7 @@
 
     <EditText
         android:id="@+id/register_input_surname"
-        style="@style/input"
+        style="@style/input_change"
         android:hint="@string/input_surname_hint"
         android:layout_marginTop="@dimen/app_vertical_margin"
         android:layout_width="0dp"
@@ -49,7 +49,7 @@
 
     <EditText
         android:id="@+id/register_input_username"
-        style="@style/input"
+        style="@style/input_change"
         android:hint="@string/input_username_hint"
         android:layout_marginTop="@dimen/app_vertical_margin"
         android:layout_width="0dp"
@@ -67,7 +67,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/register_input_username"
         tools:ignore="LabelFor"
-        style="@style/input"/>
+        style="@style/input_change"/>
 
     <ImageView
         android:id="@+id/back_btn"
