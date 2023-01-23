@@ -17,6 +17,7 @@
     <string name="settings_button_exit_profile">Выйти из аккаунта</string>
 
     <string name="registration">Регистрация</string>
+    <string name="edit_profile">Редактирование</string>
 
     <string name="input_name_hint">Имя</string>
     <string name="input_surname_hint">Фамилия</string>
@@ -36,6 +37,7 @@
 
     <string name="button_next">Продолжить</string>
     <string name="button_done">Готово</string>
+    <string name="button_cancel">Отмена</string>
     <string name="button_get_code">Получить код</string>
     <string name="login_text_login">Войти</string>
 

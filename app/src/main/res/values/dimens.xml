@@ -17,7 +17,7 @@
     <dimen name="text_size_description">32sp</dimen>
     <dimen name="text_size_large">24sp</dimen>
     <dimen name="text_size_button">18sp</dimen>
-    <dimen name="text_size_input">18sp</dimen>
+    <dimen name="text_size_input">16sp</dimen>
     <dimen name="text_size_normal">16sp</dimen>
     <dimen name="text_size_small">14sp</dimen>
 
@@ -25,9 +25,12 @@
     <dimen name="button_background_width">48dp</dimen>
     <dimen name="button_background_height">48dp</dimen>
     <dimen name="button_circle_padding">5dp</dimen>
-    <dimen name="button_background_ripple_radius">12dp</dimen>
+    <dimen name="button_background_ripple_radius">14dp</dimen>
     <dimen name="button_circle_width">64dp</dimen>
     <dimen name="button_circle_height">64dp</dimen>
+
+
+    <dimen name="input_background_radius">14dp</dimen>
 
 
     <dimen name="icon_button_height">40dp</dimen>
@@ -51,8 +54,8 @@
     <dimen name="toolbar_vertical_margin">5dp</dimen>
 
 
-    <dimen name="register_input_photo_width">105dp</dimen>
-    <dimen name="register_input_photo_height">105dp</dimen>
+    <dimen name="register_input_photo_width">124dp</dimen>
+    <dimen name="register_input_photo_height">124dp</dimen>
 
     <dimen name="bottom_bar_height">80dp</dimen>
 

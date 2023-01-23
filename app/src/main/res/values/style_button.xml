@@ -26,4 +26,8 @@
         <item name="android:background">@drawable/bg_ripple_orange_button</item>
     </style>
 
+    <style name="stroke_button" parent="button">
+        <item name="android:background">@drawable/bg_ripple_stroke_button</item>
+    </style>
+
 </resources>
