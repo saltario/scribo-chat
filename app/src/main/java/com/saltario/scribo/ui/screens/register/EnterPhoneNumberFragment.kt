@@ -39,7 +39,7 @@ class EnterPhoneNumberFragment : Fragment(R.layout.fragment_enter_phone) {
             }
 
             override fun onCodeSent(id: String, token: PhoneAuthProvider.ForceResendingToken) {
-                replaceFragment(EnterCodeFragment(mPhoneNumber, id))
+                replaceFragment(EnterCodeFragment(mPhoneNumber, id, false))
             }
         }
 

@@ -11,14 +11,11 @@ import com.saltario.scribo.database.initDatabase
 import com.saltario.scribo.database.initUser
 import com.saltario.scribo.databinding.ActivityMainBinding
 import com.saltario.scribo.ui.objects.AppStates
+import com.saltario.scribo.ui.screens.auth.LoginFragment
 import com.saltario.scribo.ui.screens.changes.SettingsFragment
 import com.saltario.scribo.ui.screens.contacts.ContactsFragment
 import com.saltario.scribo.ui.screens.main_list.MainListFragment
-import com.saltario.scribo.ui.screens.register.EnterPhoneNumberFragment
-import com.saltario.scribo.utilits.APP_ACTIVITY
-import com.saltario.scribo.utilits.READ_CONTACTS
-import com.saltario.scribo.utilits.initContacts
-import com.saltario.scribo.utilits.replaceFragment
+import com.saltario.scribo.utilits.*
 
 class MainActivity : AppCompatActivity() {
 
@@ -32,17 +29,23 @@ class MainActivity : AppCompatActivity() {
         mBinding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(mBinding.root)
 
+        initFields()
+        initNavBottomBar()
+        initToolbar()
+
         initDatabase()
         initUser(){
-            initFields()
-            initNavBottomBar()
-            initFunc()
+            loginNavigation()
             initContacts()
         }
+
     }
 
     private fun initNavBottomBar() {
 
+        mNavBottom = mBinding.mainNavBottom
+        mNavBottom.itemIconTintList = null
+        mNavBottom.selectedItemId = R.id.nav_bottom_chats
         mNavBottom.setOnItemSelectedListener {
 
             when(it.itemId) {
@@ -57,6 +60,11 @@ class MainActivity : AppCompatActivity() {
             }
             true
         }
+    }
+
+    private fun initToolbar() {
+        mToolBar = mBinding.mainToolbar
+        setSupportActionBar(mToolBar)
     }
 
     override fun onRequestPermissionsResult(
@@ -82,20 +90,15 @@ class MainActivity : AppCompatActivity() {
 
     private fun initFields() {
         APP_ACTIVITY = this
-        mToolBar = mBinding.mainToolbar
-        mNavBottom = mBinding.mainNavBottom
-        mNavBottom.itemIconTintList = null
     }
 
-    private fun initFunc() {
+    private fun loginNavigation() {
 
-        setSupportActionBar(mToolBar)
         if (AUTH.currentUser != null){
-            mNavBottom.selectedItemId = R.id.nav_bottom_chats
             replaceFragment(MainListFragment(), false)
         }
         else {
-            replaceFragment(EnterPhoneNumberFragment(), false)
+            replaceFragment(LoginFragment(), false)
         }
     }
 }

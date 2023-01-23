@@ -38,8 +38,8 @@ class SettingsFragment : BaseFragment(R.layout.fragment_settings) {
 
     private fun profileExit() {
         AppStates.updateState(AppStates.OFFLINE)
-                AUTH.signOut()
-                restartActivity()
+        AUTH.signOut()
+        restartActivity()
     }
 
     private fun initFields() {

@@ -10,7 +10,7 @@ import com.saltario.scribo.ui.objects.AppValueEventListener
 import com.saltario.scribo.utilits.*
 import kotlinx.android.synthetic.main.fragment_enter_code.*
 
-class EnterCodeFragment(val phoneNumber: String, val id: String) : Fragment(R.layout.fragment_enter_code) {
+class EnterCodeFragment(val phoneNumber: String, val id: String, firstTime: Boolean) : Fragment(R.layout.fragment_enter_code) {
 
     override fun onStart() {
         super.onStart()
