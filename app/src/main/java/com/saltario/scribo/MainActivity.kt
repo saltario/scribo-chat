@@ -10,13 +10,15 @@ import com.saltario.scribo.database.AUTH
 import com.saltario.scribo.database.initDatabase
 import com.saltario.scribo.database.initUser
 import com.saltario.scribo.databinding.ActivityMainBinding
-import com.saltario.scribo.ui.screens.main_list.MainListFragment
-import com.saltario.scribo.ui.screens.register.EnterPhoneNumberFragment
 import com.saltario.scribo.ui.objects.AppStates
 import com.saltario.scribo.ui.screens.changes.SettingsFragment
 import com.saltario.scribo.ui.screens.contacts.ContactsFragment
-import com.saltario.scribo.utilits.*
-import kotlinx.android.synthetic.main.activity_main.*
+import com.saltario.scribo.ui.screens.main_list.MainListFragment
+import com.saltario.scribo.ui.screens.register.EnterPhoneNumberFragment
+import com.saltario.scribo.utilits.APP_ACTIVITY
+import com.saltario.scribo.utilits.READ_CONTACTS
+import com.saltario.scribo.utilits.initContacts
+import com.saltario.scribo.utilits.replaceFragment
 
 class MainActivity : AppCompatActivity() {
 

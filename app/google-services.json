@@ -1,33 +1,42 @@
 {
   "project_info": {
-    "project_number": "901869768690",
-    "project_id": "scribo-chat",
-    "storage_bucket": "scribo-chat.appspot.com"
+    "project_number": "536918816143",
+    "firebase_url": "https://scribo-375612-default-rtdb.europe-west1.firebasedatabase.app",
+    "project_id": "scribo-375612",
+    "storage_bucket": "scribo-375612.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:901869768690:android:0b2b4369f4ca5940f1656b",
+        "mobilesdk_app_id": "1:536918816143:android:53fb2c5bb84e33cfcf87fa",
         "android_client_info": {
           "package_name": "com.saltario.scribo"
         }
       },
       "oauth_client": [
         {
-          "client_id": "901869768690-1l02q68n382mo63ehcvt76l38s8576tu.apps.googleusercontent.com",
+          "client_id": "536918816143-270nbj8c7f9q679fg6l0c005ed114hjn.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.saltario.scribo",
+            "certificate_hash": "ca15af3815ef42127f4d353a7433e7c453d84d58"
+          }
+        },
+        {
+          "client_id": "536918816143-ftignign87sq6630g9hkoaccvnaeh8dh.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyChV3h0efKOUjUsZrJm5oogIxapIH4gdPo"
+          "current_key": "AIzaSyDPuGWmu5nfSBQL8ye4SM6QOaX7c24-hQc"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "901869768690-1l02q68n382mo63ehcvt76l38s8576tu.apps.googleusercontent.com",
+              "client_id": "536918816143-ftignign87sq6630g9hkoaccvnaeh8dh.apps.googleusercontent.com",
               "client_type": 3
             }
           ]
