@@ -8,6 +8,7 @@ import com.google.firebase.auth.PhoneAuthOptions
 import com.google.firebase.auth.PhoneAuthProvider
 import com.saltario.scribo.R
 import com.saltario.scribo.database.AUTH
+import com.saltario.scribo.ui.screens.changes.ChangeBioFragment
 import com.saltario.scribo.ui.screens.register.EnterCodeFragment
 import com.saltario.scribo.utilits.*
 import kotlinx.android.synthetic.main.fragment_login.*

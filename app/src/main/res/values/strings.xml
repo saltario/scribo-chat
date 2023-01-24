@@ -96,5 +96,6 @@
     <string name="single_chat_action_menu_delete">Удалить чат</string>
     <string name="chat_toast_clear">Чат очищен</string>
     <string name="chat_toast_delete">Чат удален</string>
+    <string name="input_text_hint_phone">Номер телефона</string>
 
 </resources>

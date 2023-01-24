@@ -6,13 +6,21 @@
     android:layout_height="match_parent"
     tools:context=".ui.screens.changes.ChangeBioFragment">
 
-    <EditText
-        android:id="@+id/settings_input_bio"
-        style="@style/input_change"
-        android:hint="@string/input_bio_hint"
-        android:inputType="text"
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/settings_input_bio_1"
+        style="@style/input_text_layout_phone"
+        android:hint="@string/input_text_hint_phone"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/settings_input_bio"
+            android:hint="@string/enter_phone_hint"
+            android:inputType="phone"
+            style="@style/input_phone"/>
+
+    </com.google.android.material.textfield.TextInputLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -27,7 +27,7 @@
     <dimen name="text_size_description">32sp</dimen>
     <dimen name="text_size_large">24sp</dimen>
     <dimen name="text_size_button">18sp</dimen>
-    <dimen name="text_size_input">16sp</dimen>
+    <dimen name="text_size_input">18sp</dimen>
     <dimen name="text_size_normal">16sp</dimen>
     <dimen name="text_size_small">14sp</dimen>
 
@@ -93,7 +93,7 @@
     <dimen name="bottom_sheet_icon_height">50dp</dimen>
 
     <dimen name="app_margin_bottom">40dp</dimen>
-
+    <dimen name="input_text_layout_box_corners_radius">18dp</dimen>
 
 
 </resources>

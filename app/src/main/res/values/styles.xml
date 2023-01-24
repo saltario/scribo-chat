@@ -1,6 +1,6 @@
 <resources>
 
-    <style name="AppThemeDark" parent="Theme.AppCompat.Light.NoActionBar">
+    <style name="AppThemeDark" parent="Theme.MaterialComponents.Light.NoActionBar">
 
         <item name="colorPrimary">@color/dark_primary</item>
         <item name="colorPrimaryVariant">@color/dark_primary_dark</item>

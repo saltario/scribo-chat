@@ -1,18 +1,39 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <style name="input_change">
-        <item name="android:layout_width">0dp</item>
-        <item name="android:layout_height">56dp</item>
-        <item name="android:background">@drawable/bg_edit_text</item>
+    <style name="input_text_layout_phone" parent="Widget.Material3.TextInputEditText.OutlinedBox">
+
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginHorizontal">@dimen/app_horizontal_margin</item>
+
+        <item name="boxBackgroundMode">outline</item>
+        <item name="boxStrokeColor">@color/input_text_layout_box_stroke</item>
+
+        <item name="boxCornerRadiusTopStart">@dimen/input_text_layout_box_corners_radius</item>
+        <item name="boxCornerRadiusTopEnd">@dimen/input_text_layout_box_corners_radius</item>
+        <item name="boxCornerRadiusBottomStart">@dimen/input_text_layout_box_corners_radius</item>
+        <item name="boxCornerRadiusBottomEnd">@dimen/input_text_layout_box_corners_radius</item>
+
+        <item name="boxStrokeWidth">2dp</item>
+        <item name="boxStrokeWidthFocused">2dp</item>
+
+        <item name="android:textColorHint">@color/transparent</item>
+        <item name="hintTextColor">@color/dark_text_color_white</item>
+
+    </style>
+
+    <style name="input_phone">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">72dp</item>
         <item name="android:textColor">@color/dark_text_color_white</item>
-        <item name="android:textColorHint">@color/dark_text_color_white</item>
         <item name="android:textSize">@dimen/text_size_input</item>
         <item name="android:importantForAutofill">no</item>
         <item name="android:maxLines">1</item>
+        <item name="android:textColorHint">@color/dark_text_color_white</item>
         <item name="android:paddingHorizontal">@dimen/input_padding_horizontal</item>
         <item name="android:paddingVertical">@dimen/input_padding_vertical</item>
-        <item name="android:layout_marginHorizontal">@dimen/app_horizontal_margin</item>
+        <item name="android:layout_gravity">center</item>
     </style>
 
     <style name="input_message">
@@ -28,6 +49,20 @@
         <item name="android:textSize">@dimen/text_size_normal</item>
         <item name="android:fontFamily">@font/roboto</item>
         <item name="android:inputType">text</item>
+    </style>
+
+    <style name="input_change">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">56dp</item>
+        <item name="android:background">@drawable/bg_edit_text</item>
+        <item name="android:textColor">@color/dark_text_color_white</item>
+        <item name="android:textColorHint">@color/dark_text_color_white</item>
+        <item name="android:textSize">@dimen/text_size_input</item>
+        <item name="android:importantForAutofill">no</item>
+        <item name="android:maxLines">1</item>
+        <item name="android:paddingHorizontal">@dimen/input_padding_horizontal</item>
+        <item name="android:paddingVertical">@dimen/input_padding_vertical</item>
+        <item name="android:layout_marginHorizontal">@dimen/app_horizontal_margin</item>
     </style>
 
 </resources>
