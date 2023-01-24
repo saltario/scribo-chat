@@ -29,11 +29,6 @@ class EnterCodeFragment(val phoneNumber: String, val id: String, val firstTime: 
         })
     }
 
-    override fun onStop() {
-        super.onStop()
-        showNavBottom()
-    }
-
     private fun enterCode() {
         val code: String = enter_code.text.toString()
         val credential: PhoneAuthCredential = PhoneAuthProvider.getCredential(id, code)

@@ -211,8 +211,8 @@ fun updatePhonesFromDatabase(arrayContacts: ArrayList<Common>) {
 //<editor-fold desc="PUT GET PUT">
 
 // Кладем адрес файла пользователя в БД
-inline fun putUrlToDatabase(url: String, crossinline function: () -> Unit) {
-    REF_DATABASE_ROOT.child(NODE_USERS).child(CURRENT_UID).child(CHILD_PHOTO_URL).setValue(url)
+inline fun putUrlToDatabase(url: String, UID: String = CURRENT_UID, crossinline function: () -> Unit) {
+    REF_DATABASE_ROOT.child(NODE_USERS).child(UID).child(CHILD_PHOTO_URL).setValue(url)
         .addOnSuccessListener { function() }
         .addOnFailureListener { showToast(it.message.toString()) }
 }
