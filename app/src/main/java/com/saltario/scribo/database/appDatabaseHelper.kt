@@ -124,8 +124,8 @@ fun DataSnapshot.getUserModel(): User =
 
 //<editor-fold desc="SET USER INFORMATION">
 
-fun setBioToDatabase(newBio: String) {
-    REF_DATABASE_ROOT.child(NODE_USERS).child(CURRENT_UID).child(CHILD_BIO)
+fun setBioToDatabase(newBio: String, UID: String = CURRENT_UID) {
+    REF_DATABASE_ROOT.child(NODE_USERS).child(UID).child(CHILD_BIO)
         .setValue(newBio)
         .addOnSuccessListener {
             showToast(APP_ACTIVITY.getString(R.string.app_toast_data_update))
@@ -135,8 +135,8 @@ fun setBioToDatabase(newBio: String) {
         .addOnFailureListener { showToast(it.message.toString()) }
 }
 
-fun setFullNameToDatabase(fullname: String) {
-    REF_DATABASE_ROOT.child(NODE_USERS).child(CURRENT_UID).child(CHILD_FULLNAME)
+fun setFullNameToDatabase(fullname: String, UID: String = CURRENT_UID) {
+    REF_DATABASE_ROOT.child(NODE_USERS).child(UID).child(CHILD_FULLNAME)
         .setValue(fullname)
         .addOnSuccessListener {
             showToast(APP_ACTIVITY.getString(R.string.app_toast_data_update))
@@ -148,17 +148,17 @@ fun setFullNameToDatabase(fullname: String) {
 
 //<editor-fold desc="USERNAME">
 
-fun setUsernameToDatabase(newUsername: String) {
+fun setUsernameToDatabase(newUsername: String, UID: String = CURRENT_UID) {
     REF_DATABASE_ROOT.child(NODE_USERNAMES).child(newUsername)
-        .setValue(CURRENT_UID)
+        .setValue(UID)
         .addOnSuccessListener {
             updateCurrentUsername(newUsername)
         }
         .addOnFailureListener { showToast(it.message.toString()) }
 }
 
-private fun updateCurrentUsername(newUserName: String) {
-    REF_DATABASE_ROOT.child(NODE_USERS).child(CURRENT_UID).child(CHILD_USERNAME)
+private fun updateCurrentUsername(newUserName: String, UID: String = CURRENT_UID) {
+    REF_DATABASE_ROOT.child(NODE_USERS).child(UID).child(CHILD_USERNAME)
         .setValue(newUserName)
         .addOnSuccessListener {
             showToast(APP_ACTIVITY.getString(R.string.app_toast_data_update))

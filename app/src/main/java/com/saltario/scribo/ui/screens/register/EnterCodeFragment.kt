@@ -49,26 +49,22 @@ class EnterCodeFragment(val phoneNumber: String, val id: String, val firstTime: 
                 REF_DATABASE_ROOT.child(NODE_USERS).child(uid)
                     .addListenerForSingleValueEvent(AppValueEventListener{
 
-                        if (!it.hasChild(CHILD_USERNAME)) {
-                            dateMap[CHILD_USERNAME] = uid
-                        }
+                        if (!it.hasChild(CHILD_USERNAME)) dateMap[CHILD_USERNAME] = uid
 
                         REF_DATABASE_ROOT.child(NODE_PHONES).child(phoneNumber).setValue(uid)
                             .addOnFailureListener { showToast(it.message.toString()) }
                             .addOnSuccessListener {
                                 REF_DATABASE_ROOT.child(NODE_USERS).child(uid).updateChildren(dateMap)
                                     .addOnFailureListener { showToast(it.message.toString()) }
-                                    .addOnSuccessListener { navigate() }
+                                    .addOnSuccessListener{
+                                        if (firstTime) replaceFragment(RegisterFragment(uid))
+                                        else restartActivity()
+                                }
                             }
                     })
             } else {
                 showToast(task.exception?.message.toString())
             }
         }
-    }
-
-    private fun navigate() {
-        if (firstTime) replaceFragment(RegisterFragment())
-        else restartActivity()
     }
 }

@@ -22,7 +22,7 @@
     <string name="input_name_hint">Имя</string>
     <string name="input_surname_hint">Фамилия</string>
     <string name="input_username_hint">Никнейм</string>
-    <string name="input_mail_hint">Почта</string>
+    <string name="input_mail_hint">Почта (необязательно)</string>
     <string name="input_bio_hint">Описание</string>
 
     <string name="nav_bottom_chats">Чаты</string>
