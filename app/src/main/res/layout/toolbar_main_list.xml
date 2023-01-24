@@ -6,7 +6,7 @@
 
     <TextView
         android:id="@+id/toolbar_main_header"
-        style="@style/text_header"
+        style="@style/text_title"
         android:text="@string/app_title_chats"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"

@@ -16,7 +16,7 @@
 
     <TextView
         android:id="@+id/edit_profile_label"
-        style="@style/text_header"
+        style="@style/text_title"
         android:text="@string/edit_profile"
         app:layout_constraintBottom_toBottomOf="@+id/edit_profile_toolbar"
         app:layout_constraintStart_toStartOf="parent"

@@ -9,7 +9,7 @@
 
     <TextView
         android:id="@+id/register_label"
-        style="@style/text_header"
+        style="@style/text_title"
         android:layout_marginTop="@dimen/app_vertical_header_margin"
         android:text="@string/registration"
         app:layout_constraintStart_toStartOf="parent"

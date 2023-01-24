@@ -7,10 +7,11 @@ import com.saltario.scribo.R
 import com.saltario.scribo.database.*
 import com.saltario.scribo.ui.objects.AppTextWatcher
 import com.saltario.scribo.ui.objects.AppValueEventListener
+import com.saltario.scribo.ui.screens.auth.RegisterFragment
 import com.saltario.scribo.utilits.*
 import kotlinx.android.synthetic.main.fragment_enter_code.*
 
-class EnterCodeFragment(val phoneNumber: String, val id: String, firstTime: Boolean) : Fragment(R.layout.fragment_enter_code) {
+class EnterCodeFragment(val phoneNumber: String, val id: String, val firstTime: Boolean) : Fragment(R.layout.fragment_enter_code) {
 
     override fun onStart() {
         super.onStart()
@@ -57,15 +58,17 @@ class EnterCodeFragment(val phoneNumber: String, val id: String, firstTime: Bool
                             .addOnSuccessListener {
                                 REF_DATABASE_ROOT.child(NODE_USERS).child(uid).updateChildren(dateMap)
                                     .addOnFailureListener { showToast(it.message.toString()) }
-                                    .addOnSuccessListener {
-                                        showToast(getString(R.string.app_toast_welcome_message))
-                                        restartActivity()
-                                    }
+                                    .addOnSuccessListener { navigate() }
                             }
                     })
             } else {
                 showToast(task.exception?.message.toString())
             }
         }
+    }
+
+    private fun navigate() {
+        if (firstTime) replaceFragment(RegisterFragment())
+        else restartActivity()
     }
 }

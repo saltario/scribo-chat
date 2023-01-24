@@ -4,15 +4,21 @@
     <style name="text">
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>
-        <item name="android:layout_marginStart">@dimen/app_horizontal_margin</item>
-        <item name="android:layout_marginEnd">@dimen/app_horizontal_margin</item>
+        <item name="android:layout_marginHorizontal">@dimen/app_horizontal_margin</item>
     </style>
 
-    <style name="text_header" parent="text">
+    <style name="text_title" parent="text">
         <item name="android:textSize">@dimen/text_size_header</item>
         <item name="android:textColor">@color/dark_text_color_white</item>
         <item name="android:fontFamily">@font/roboto_bold</item>
     </style>
+
+    <style name="text_header" parent="text_title">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_marginTop">@dimen/app_vertical_large_margin</item>
+        <item name="android:layout_marginHorizontal">@dimen/app_horizontal_large_margin</item>
+    </style>
+
 
     <style name="text_large" parent="text">
         <item name="android:textSize">@dimen/text_size_large</item>

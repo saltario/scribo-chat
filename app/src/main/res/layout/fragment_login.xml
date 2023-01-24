@@ -10,29 +10,29 @@
     <TextView
         android:id="@+id/login_enter_phone_label"
         style="@style/text_header"
-        android:layout_marginTop="@dimen/app_vertical_header_margin"
         android:text="@string/enter_phone_header"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         tools:text="@string/enter_phone_header" />
 
     <EditText
         android:id="@+id/login_enter_phone_number"
+        style="@style/input_change"
         android:hint="@string/enter_phone_hint"
         android:inputType="phone"
-        android:layout_marginTop="@dimen/app_vertical_header_margin"
+        android:layout_marginTop="@dimen/app_vertical_large_margin"
+        android:layout_width="223dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/login_enter_phone_label"
-        tools:ignore="LabelFor"
-        style="@style/input_change" />
+        tools:ignore="LabelFor" />
 
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="@dimen/app_horizontal_margin"
-        android:layout_marginStart="@dimen/app_horizontal_margin"
+        android:layout_marginHorizontal="@dimen/app_horizontal_large_margin"
         android:layout_marginTop="@dimen/app_vertical_large_margin"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

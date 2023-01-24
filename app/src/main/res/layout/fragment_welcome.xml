@@ -9,7 +9,7 @@
 
     <TextView
         android:id="@+id/welcome_label"
-        style="@style/text_header"
+        style="@style/text_title"
         android:layout_marginTop="@dimen/app_vertical_header_margin"
         android:text="@string/welcome_header"
         android:lines="2"

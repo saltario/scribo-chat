@@ -111,7 +111,7 @@
 
         <TextView
             android:id="@+id/settings_label"
-            style="@style/text_header"
+            style="@style/text_title"
             android:text="@string/app_title_settings"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
