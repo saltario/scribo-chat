@@ -10,7 +10,7 @@
     <TextView
         android:id="@+id/welcome_label"
         style="@style/text_title"
-        android:layout_marginTop="@dimen/app_vertical_header_margin"
+        android:layout_marginTop="@dimen/app_vertical_large_margin"
         android:text="@string/welcome_header"
         android:lines="2"
         app:layout_constraintStart_toStartOf="parent"
@@ -22,7 +22,7 @@
         style="@style/text_description"
         android:layout_width="match_parent"
         android:text="@string/welcome_description"
-        android:layout_marginTop="@dimen/app_vertical_header_margin"
+        android:layout_marginTop="@dimen/app_vertical_large_margin"
         android:layout_marginStart="@dimen/app_horizontal_margin"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

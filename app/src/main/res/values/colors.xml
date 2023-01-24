@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources xmlns:tools="http://schemas.android.com/tools">
+<resources>
 
+    <color name="transparent">#00000000</color>
+    <color name="hyperlink">#3296FF</color>
     <color name="color_light_grey">#A1A1A1</color>
     <color name="color_action_menu_button">#504949</color>
 
@@ -47,12 +49,10 @@
     <color name="dark_stroke">#362F2E</color>
     <color name="dark_photo_background">#D0C4C3</color>
 
-    <color name="settings_data">#339E00</color>
-    <color name="settings_appearance">#5E47CE</color>
-    <color name="settings_hyperlink">#3296FF</color>
+    <color name="settings_data_background">#339E00</color>
+    <color name="settings_appearance_background">#5E47CE</color>
 
     <color name="dark_nav_bottom_bg_checked">#B3282E</color>
     <color name="dark_separator_list_item">#FFFFFF</color>
-    <color name="transparent">#00000000</color>
 
 </resources>

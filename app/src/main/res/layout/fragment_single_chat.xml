@@ -50,7 +50,7 @@
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                style="@style/chat_bar_panel_icon" />
+                style="@style/chat_bottom_bar_icon" />
 
             <EditText
                 android:id="@+id/chat_input_message"
@@ -74,7 +74,7 @@
 
                 <ImageView
                     android:id="@+id/chat_btn_sent_message"
-                    style="@style/chat_bar_panel_icon"
+                    style="@style/chat_bottom_bar_icon"
                     android:src="@drawable/icon_message_send"
                     android:visibility="gone"
                     app:layout_constraintBottom_toBottomOf="parent"
@@ -83,7 +83,7 @@
 
                 <ImageView
                     android:id="@+id/chat_btn_voice"
-                    style="@style/chat_bar_panel_icon"
+                    style="@style/chat_bottom_bar_icon"
                     android:src="@drawable/icon_message_voice"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"

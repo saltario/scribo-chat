@@ -9,7 +9,7 @@
     <TextView
         android:id="@+id/enter_phone_label"
         style="@style/text_title"
-        android:layout_marginTop="@dimen/app_vertical_header_margin"
+        android:layout_marginTop="@dimen/app_vertical_large_margin"
         android:text="@string/enter_phone_header"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -19,7 +19,7 @@
         android:id="@+id/enter_phone_number"
         android:hint="@string/enter_phone_hint"
         android:inputType="phone"
-        android:layout_marginTop="@dimen/app_vertical_header_margin"
+        android:layout_marginTop="@dimen/app_vertical_large_margin"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/enter_phone_label"

@@ -9,7 +9,7 @@
 
     <ImageView
         android:id="@+id/edit_profile_toolbar"
-        style="@style/base_toolbar"
+        style="@style/toolbar"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
