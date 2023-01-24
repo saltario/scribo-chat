@@ -38,7 +38,6 @@ class MainActivity : AppCompatActivity() {
             loginNavigation()
             initContacts()
         }
-
     }
 
     private fun initNavBottomBar() {

@@ -10,7 +10,7 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/settings_header_block"
         android:layout_width="match_parent"
-        android:layout_height="250dp"
+        android:layout_height="wrap_content"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" >
@@ -19,15 +19,18 @@
             android:id="@+id/settings_photo"
             android:layout_width="@dimen/settings_user_photo_width"
             android:layout_height="@dimen/settings_user_photo_height"
-            android:layout_marginTop="@dimen/app_vertical_large_margin"
+            android:layout_marginTop="@dimen/app_vertical_margin"
             android:src="@drawable/dark_default_user_photo"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
-        <de.hdodenhof.circleimageview.CircleImageView
+        <ImageView
             android:id="@+id/settings_btn_edit_profile"
             style="@style/toolbar_circle_button"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:padding="0dp"
             android:src="@drawable/button_edit"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/settings_photo"
@@ -36,7 +39,8 @@
         <TextView
             android:id="@+id/settings_fullname"
             style="@style/text_normal"
-            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_marginTop="@dimen/app_vertical_margin"
+            app:layout_constraintBottom_toTopOf="@+id/settings_status"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/settings_photo"
@@ -45,10 +49,9 @@
         <TextView
             android:id="@+id/settings_status"
             style="@style/text_small"
-            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/settings_fullname"
+            app:layout_constraintTop_toBottomOf="@id/settings_fullname"
             tools:text="@string/app_state_default" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
@@ -57,6 +60,10 @@
         android:id="@+id/settings_phone_and_nickname"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/app_vertical_margin"
+        android:layout_marginHorizontal="@dimen/settings_horizontal_margin"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/settings_header_block">
 
         <androidx.constraintlayout.widget.ConstraintLayout
@@ -82,9 +89,11 @@
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/settings_btn_change_username"
             style="@style/grey_button"
+            android:layout_width="0dp"
             android:layout_marginTop="0dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/settings_btn_change_number_phone"
             app:layout_constraintTop_toTopOf="parent">
 
             <TextView
@@ -106,6 +115,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/app_vertical_margin"
+        android:layout_marginStart="@dimen/settings_horizontal_margin"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/settings_phone_and_nickname">
 
@@ -125,6 +135,7 @@
         android:id="@+id/settings_btn_data"
         style="@style/grey_button"
         android:layout_width="match_parent"
+        android:layout_marginHorizontal="@dimen/settings_horizontal_margin"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/settings_label_layout">
@@ -159,6 +170,7 @@
     style="@style/grey_button"
     android:layout_width="match_parent"
         android:layout_marginTop="5dp"
+        android:layout_marginHorizontal="@dimen/settings_horizontal_margin"
     app:layout_constraintEnd_toEndOf="parent"
     app:layout_constraintStart_toStartOf="parent"
     app:layout_constraintTop_toBottomOf="@+id/settings_btn_data">
@@ -243,10 +255,3 @@
         tools:text="@string/hyperlink_privacy_policy" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
-
-    <!-- Text-->
-    <!-- <View
-        app:layout_constraintTop_toBottomOf="@id/settings_label_username"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        style="@style/separator" />-->

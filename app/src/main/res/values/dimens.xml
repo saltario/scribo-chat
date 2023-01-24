@@ -5,6 +5,7 @@
     <dimen name="app_horizontal_large_margin">48dp</dimen>
 
     <dimen name="app_vertical_margin">16dp</dimen>
+    <dimen name="settings_horizontal_margin">24dp</dimen>
     <dimen name="app_vertical_large_margin">48dp</dimen>
 
 
@@ -33,7 +34,7 @@
 
     <dimen name="button_background_width">48dp</dimen>
     <dimen name="button_background_height">48dp</dimen>
-    <dimen name="button_circle_padding">5dp</dimen>
+    <dimen name="button_circle_padding">10dp</dimen>
     <dimen name="button_background_ripple_radius">14dp</dimen>
     <dimen name="button_circle_width">64dp</dimen>
     <dimen name="button_circle_height">64dp</dimen>

@@ -61,8 +61,9 @@
     <string name="app_last_message_default">Привет, как дела?</string>
     <string name="app_state_default">В сети</string>
     <string name="app_number_phone_default">+16505553434</string>
-    <string name="app_login_default">scribo</string>
+    <string name="app_login_default">\u0040scribo</string>
     <string name="app_bio_default">О себе</string>
+    <string name="app_dog">\u0040</string>
     <!-- Toasts -->
     <string name="app_toast_data_update">Данные обновлены</string>
     <string name="app_toast_welcome_message">Добро пожаловать</string>
