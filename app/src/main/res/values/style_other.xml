@@ -12,9 +12,13 @@
 
     <style name="bottom_nav_menu">
         <item name="android:layout_width">match_parent</item>
-        <item name="android:layout_height">wrap_content</item>
-        <item name="android:visibility">visible</item>
+        <item name="android:layout_height">@dimen/bottom_bar_height</item>
         <item name="android:background">@color/dark_background_toolbars</item>
+    </style>
+
+    <style name="bottom_nav_menu_theme">
+        <item name="colorSecondaryContainer">@color/dark_text_color_white</item>
+        <item name="colorOnSecondaryContainer">@color/dark_primary</item>
     </style>
 
     <style name="toolbar">
