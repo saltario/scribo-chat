@@ -24,7 +24,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/enter_phone_label"
         tools:ignore="LabelFor"
-        style="@style/input_change" />
+        style="@style/input_change_dep" />
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/enter_phone_btn_get_code"

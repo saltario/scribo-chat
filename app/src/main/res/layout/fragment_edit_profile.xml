@@ -32,7 +32,7 @@
 
     <EditText
         android:id="@+id/edit_profile_input_name"
-        style="@style/input_change"
+        style="@style/input_change_dep"
         android:hint="@string/input_name_hint"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/edit_profile_input_photo"
@@ -41,7 +41,7 @@
 
     <EditText
         android:id="@+id/edit_profile_input_surname"
-        style="@style/input_change"
+        style="@style/input_change_dep"
         android:hint="@string/input_surname_hint"
         android:layout_marginTop="@dimen/app_vertical_margin"
         app:layout_constraintEnd_toEndOf="parent"
@@ -55,14 +55,14 @@
         android:inputType="phone"
         android:layout_marginTop="@dimen/app_vertical_margin"
         tools:ignore="LabelFor"
-        style="@style/input_change"
+        style="@style/input_change_dep"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/edit_profile_input_photo"/>
 
     <EditText
         android:id="@+id/edit_profile_input_username"
-        style="@style/input_change"
+        style="@style/input_change_dep"
         android:hint="@string/input_username_hint"
         android:layout_marginTop="@dimen/app_vertical_margin"
         app:layout_constraintEnd_toEndOf="parent"
@@ -78,7 +78,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/edit_profile_input_username"
         tools:ignore="LabelFor"
-        style="@style/input_change"/>
+        style="@style/input_change_dep"/>
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/edit_profile_btn_done"

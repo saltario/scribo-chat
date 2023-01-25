@@ -14,7 +14,8 @@
     <dimen name="input_padding_horizontal">20dp</dimen>
     <dimen name="input_padding_vertical">10dp</dimen>
     <dimen name="input_background_radius">14dp</dimen>
-    <dimen name="input_text_layout_box_corners_radius">18dp</dimen>
+    <dimen name="input_phone_layout_box_corners_radius">18dp</dimen>
+    <dimen name="input_change_layout_box_corners_radius">14dp</dimen>
 
 
     <dimen name="text_size_header">36sp</dimen>
