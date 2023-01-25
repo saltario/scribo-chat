@@ -1,5 +1,7 @@
 package com.saltario.scribo.ui.screens.auth
 
+import android.view.Window
+import android.view.WindowManager
 import androidx.fragment.app.Fragment
 import com.google.firebase.FirebaseException
 import com.google.firebase.auth.FirebaseAuth
@@ -25,6 +27,7 @@ class LoginFragment : Fragment(R.layout.fragment_login) {
         initListeners()
         hideToolBar()
         hideNavBottom()
+        setStatusBarColor(R.color.dark_background)
 
         mCallback = object: PhoneAuthProvider.OnVerificationStateChangedCallbacks(){
             override fun onVerificationCompleted(credential: PhoneAuthCredential) {

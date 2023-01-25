@@ -15,22 +15,26 @@
         app:layout_constraintTop_toTopOf="parent"
         tools:text="@string/enter_code_header" />
 
-    <EditText
-        android:id="@+id/enter_code"
-        android:background="@drawable/bg_edit_text"
-        style="@style/input_change_dep"
-        android:textSize="24sp"
-        android:inputType="number"
-        android:gravity="center"
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/enter_code_input_label"
+        style="@style/input_text_layout_phone"
+        android:hint="@string/input_text_hint_code"
         android:layout_marginTop="@dimen/app_vertical_large_margin"
-        android:layout_width="wrap_content"
-        android:paddingHorizontal="100dp"
+        android:padding="0dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/enter_code_label"
-        android:maxLength="6"
-        android:hint="@string/enter_code_hint"
-        tools:ignore="LabelFor" />
+        app:layout_constraintTop_toBottomOf="@+id/enter_code_label">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/enter_code"
+            style="@style/input_phone"
+            android:layout_width="270dp"
+            android:inputType="number"
+            android:textAlignment="center"
+            android:maxLength="6"
+            android:hint="@string/enter_code_hint" />
+
+    </com.google.android.material.textfield.TextInputLayout>
 
     <ImageView
         android:id="@+id/back_btn"

@@ -7,6 +7,7 @@ import android.net.Uri
 import android.provider.ContactsContract
 import android.provider.OpenableColumns
 import android.view.View
+import android.view.Window
 import android.view.inputmethod.InputMethodManager
 import android.widget.ImageView
 import android.widget.Toast
@@ -133,4 +134,9 @@ fun hideToolBar() {
 
 fun showToolBar() {
     APP_ACTIVITY.main_toolbar.visibility = View.VISIBLE
+}
+
+fun setStatusBarColor(color: Int) {
+    val window: Window = APP_ACTIVITY.window
+    window.statusBarColor = APP_ACTIVITY.resources.getColor(color)
 }

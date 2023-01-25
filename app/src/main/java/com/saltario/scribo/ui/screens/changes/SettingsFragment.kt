@@ -4,6 +4,7 @@ import com.saltario.scribo.R
 import com.saltario.scribo.database.*
 import com.saltario.scribo.ui.objects.AppStates
 import com.saltario.scribo.ui.screens.BaseFragment
+import com.saltario.scribo.ui.screens.auth.LoginFragment
 import com.saltario.scribo.utilits.*
 import kotlinx.android.synthetic.main.fragment_settings.*
 
@@ -38,7 +39,7 @@ class SettingsFragment : BaseFragment(R.layout.fragment_settings) {
     private fun profileExit() {
         AppStates.updateState(AppStates.OFFLINE)
         AUTH.signOut()
-        restartActivity()
+        replaceFragment(LoginFragment())
     }
 
     private fun setUserInfoToLayout() {
