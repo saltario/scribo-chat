@@ -1,7 +1,5 @@
 package com.saltario.scribo.ui.screens.auth
 
-import android.view.Window
-import android.view.WindowManager
 import androidx.fragment.app.Fragment
 import com.google.firebase.FirebaseException
 import com.google.firebase.auth.FirebaseAuth
@@ -33,7 +31,7 @@ class LoginFragment : Fragment(R.layout.fragment_login) {
             override fun onVerificationCompleted(credential: PhoneAuthCredential) {
                 AUTH.signInWithCredential(credential).addOnCompleteListener { task ->
                     if (task.isSuccessful){
-                        showToast("Welcome")
+                        showToast(getString(R.string.app_toast_welcome_message))
                         restartActivity()
                     } else {
                         showToast(task.exception?.message.toString())

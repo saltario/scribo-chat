@@ -11,7 +11,7 @@ android {
 
     defaultConfig {
         applicationId "com.saltario.scribo"
-        minSdk 26
+        minSdk 27
         targetSdk 33
         versionCode 1
         versionName "1.0"
@@ -67,7 +67,6 @@ dependencies {
 
     // reCaptcha
     implementation 'androidx.browser:browser:1.4.0'
-    implementation 'com.google.firebase:firebase-appcheck-playintegrity:16.1.0'
 
     // Test
     testImplementation 'junit:junit:4.13.2'

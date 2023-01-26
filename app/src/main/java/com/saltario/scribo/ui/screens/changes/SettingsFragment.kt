@@ -15,6 +15,7 @@ class SettingsFragment : BaseFragment(R.layout.fragment_settings) {
         setHasOptionsMenu(false)
         hideToolBar()
         showNavBottom()
+        setStatusBarColor(R.color.dark_background)
         setUserInfoToLayout()
         initListeners()
     }

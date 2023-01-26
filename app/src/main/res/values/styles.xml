@@ -12,7 +12,11 @@
 
         <item name="android:statusBarColor">?attr/colorPrimaryVariant</item>
         <item name="windowActionBar">false</item>
+
         <item name="android:colorBackground">@color/dark_background</item>
+
+        <item name="android:windowLightNavigationBar">false</item>
+        <item name="android:navigationBarColor">@color/dark_primary_dark</item>
 
     </style>
 
