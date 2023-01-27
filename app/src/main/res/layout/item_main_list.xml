@@ -10,8 +10,8 @@
 
     <de.hdodenhof.circleimageview.CircleImageView
         android:id="@+id/main_list_photo"
-        android:layout_width="@dimen/chats_user_photo_width"
-        android:layout_height="@dimen/chats_user_photo_height"
+        android:layout_width="@dimen/user_photo_normal_size"
+        android:layout_height="@dimen/user_photo_normal_size"
         android:src="@drawable/dark_default_user_photo"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toTopOf="parent"

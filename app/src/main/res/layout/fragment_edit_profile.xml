@@ -25,10 +25,9 @@
 
     <de.hdodenhof.circleimageview.CircleImageView
         android:id="@+id/edit_profile_input_photo"
-        style="@style/edit_photo"
-        android:layout_marginTop="24dp"
-        android:src="@drawable/dark_default_user_photo_stroke"
-        app:layout_constraintStart_toStartOf="parent"
+        style="@style/profile_photo_normal"
+        android:layout_marginTop="@dimen/app_horizontal_normal_margin"
+        app:layout_constraintStart_toStartOf="@+id/start_vertical_guideline"
         app:layout_constraintTop_toBottomOf="@+id/edit_profile_toolbar" />
 
     <com.google.android.material.textfield.TextInputLayout
@@ -69,7 +68,7 @@
         android:id="@+id/edit_profile_enter_phone_input_label"
         style="@style/input_text_layout_phone"
         android:layout_width="0dp"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="@dimen/app_horizontal_normal_margin"
         android:layout_marginHorizontal="0dp"
         android:hint="@string/input_text_hint_phone"
         android:padding="0dp"
@@ -90,7 +89,7 @@
         android:id="@+id/edit_profile_input_username_label"
         style="@style/input_text_layout_change"
         android:layout_width="0dp"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="@dimen/app_horizontal_normal_margin"
         android:layout_marginHorizontal="0dp"
         android:paddingStart="0dp"
         android:hint="@string/input_username_hint"
@@ -125,15 +124,15 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/edit_profile_btn_delete_profile"
-        style="@style/red_button"
-        android:layout_width="wrap_content"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        style="@style/red_stroke_button"
+
+        app:layout_constraintEnd_toStartOf="@+id/end_vertical_guideline"
+        app:layout_constraintStart_toStartOf="@+id/start_vertical_guideline"
         app:layout_constraintTop_toBottomOf="@+id/edit_profile_input_mail_label">
 
         <TextView
             android:id="@+id/edit_profile_delete_profile"
-            style="@style/text_normal"
+            style="@style/text_input"
             android:fontFamily="@font/roboto"
             android:paddingEnd="@dimen/app_horizontal_margin"
             android:text="@string/settings_button_delete_profile"
@@ -159,9 +158,9 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/edit_profile_btn_back"
-        style="@style/stroke_button"
+        style="@style/transparent_button"
         android:layout_width="0dp"
-        android:layout_marginStart="@dimen/app_horizontal_large_margin"
+        android:layout_marginStart="@dimen/app_horizontal_normal_margin"
         android:layout_marginEnd="@dimen/app_horizontal_margin"
         app:layout_constraintEnd_toStartOf="@+id/edit_profile_btn_done"
         app:layout_constraintStart_toStartOf="parent"
@@ -192,7 +191,7 @@
         android:id="@+id/edit_profile_btn_done"
         style="@style/red_button"
         android:layout_width="wrap_content"
-        android:layout_marginEnd="@dimen/app_vertical_large_margin"
+        android:layout_marginEnd="@dimen/app_horizontal_normal_margin"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="@+id/buttons_guideline">
 

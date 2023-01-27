@@ -10,8 +10,18 @@
         <item name="android:focusable">true</item>
     </style>
 
+    <style name="button_stroke" parent="button">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">48dp</item>
+        <item name="android:layout_marginHorizontal">0dp</item>
+    </style>
+
     <style name="red_button" parent="button">
         <item name="android:background">@drawable/bg_ripple_red_button</item>
+    </style>
+
+    <style name="red_stroke_button" parent="button_stroke">
+        <item name="android:background">@drawable/bg_ripple_red_stroke_button</item>
     </style>
 
     <style name="white_button" parent="button">
@@ -26,7 +36,11 @@
         <item name="android:background">@drawable/bg_ripple_orange_button</item>
     </style>
 
-    <style name="stroke_button" parent="button">
+    <style name="orange_stroke_button" parent="button_stroke">
+        <item name="android:background">@drawable/bg_ripple_orange_stroke_button</item>
+    </style>
+
+    <style name="transparent_button" parent="button">
         <item name="android:background">@drawable/bg_ripple_stroke_button</item>
     </style>
 

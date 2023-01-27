@@ -35,7 +35,8 @@
     <color name="dark_orange_button_stroke">#712C0E</color>
 
     <color name="dark_red_button">#B3282E</color>
-    <color name="dark_red_button_ripple">#550000</color>
+    <color name="dark_red_button_ripple">#90091a</color>
+    <color name="dark_red_button_stroke">#90091a</color>
 
     <color name="dark_white_button">#FFFFFF</color>
     <color name="dark_white_button_ripple">#A1A1A1</color>

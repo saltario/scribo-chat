@@ -48,11 +48,18 @@
         <item name="android:padding">@dimen/icon_button_padding</item>
     </style>
 
-    <style name="edit_photo">
-        <item name="android:layout_width">@dimen/register_input_photo_width</item>
-        <item name="android:layout_height">@dimen/register_input_photo_height</item>
-        <item name="android:layout_marginStart">@dimen/app_horizontal_large_margin</item>
-        <item name="android:layout_marginTop">@dimen/app_horizontal_large_margin</item>
+    <style name="profile_photo">
+        <item name="android:src">@drawable/dark_default_user_photo_stroke</item>
+    </style>
+
+    <style name="profile_photo_normal" parent="profile_photo">
+        <item name="android:layout_width">@dimen/input_photo_normal_size</item>
+        <item name="android:layout_height">@dimen/input_photo_normal_size</item>
+    </style>
+
+    <style name="profile_photo_large" parent="profile_photo">
+        <item name="android:layout_width">@dimen/input_photo_large_size</item>
+        <item name="android:layout_height">@dimen/input_photo_large_size</item>
     </style>
 
     <style name="chat_bottom_bar_icon">

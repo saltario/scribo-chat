@@ -18,8 +18,9 @@
 
     <de.hdodenhof.circleimageview.CircleImageView
         android:id="@+id/register_input_photo"
-        android:src="@drawable/dark_default_user_photo_stroke"
-        style="@style/edit_photo"
+        style="@style/profile_photo_normal"
+        android:layout_marginStart="@dimen/app_horizontal_large_margin"
+        android:layout_marginTop="@dimen/app_vertical_margin"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/register_label" />
 

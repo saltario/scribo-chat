@@ -28,11 +28,12 @@
     </style>
 
     <style name="input_text_layout_change" parent="input_text_layout">
-        <item name="android:layout_width">0dp</item>
         <item name="boxCornerRadiusTopStart">@dimen/input_change_layout_box_corners_radius</item>
         <item name="boxCornerRadiusTopEnd">@dimen/input_change_layout_box_corners_radius</item>
         <item name="boxCornerRadiusBottomStart">@dimen/input_change_layout_box_corners_radius</item>
         <item name="boxCornerRadiusBottomEnd">@dimen/input_change_layout_box_corners_radius</item>
+
+        <item name="android:layout_width">0dp</item>
         <item name="android:textColorHint">@color/dark_text_color_white</item>
         <item name="android:paddingEnd">0dp</item>
         <item name="android:paddingStart">@dimen/app_horizontal_margin</item>

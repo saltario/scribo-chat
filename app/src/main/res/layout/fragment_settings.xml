@@ -17,10 +17,8 @@
 
         <de.hdodenhof.circleimageview.CircleImageView
             android:id="@+id/settings_photo"
-            android:layout_width="@dimen/settings_user_photo_width"
-            android:layout_height="@dimen/settings_user_photo_height"
+            style="@style/profile_photo_large"
             android:layout_marginTop="@dimen/app_vertical_margin"
-            android:src="@drawable/dark_default_user_photo"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -61,7 +59,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/app_vertical_margin"
-        android:layout_marginHorizontal="@dimen/settings_horizontal_margin"
+        android:layout_marginHorizontal="@dimen/app_horizontal_normal_margin"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/settings_header_block">
@@ -115,7 +113,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/app_vertical_margin"
-        android:layout_marginStart="@dimen/settings_horizontal_margin"
+        android:layout_marginStart="@dimen/app_horizontal_normal_margin"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/settings_phone_and_nickname">
 
@@ -135,7 +133,7 @@
         android:id="@+id/settings_btn_data"
         style="@style/grey_button"
         android:layout_width="match_parent"
-        android:layout_marginHorizontal="@dimen/settings_horizontal_margin"
+        android:layout_marginHorizontal="@dimen/app_horizontal_normal_margin"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/settings_label_layout">
@@ -170,7 +168,7 @@
     style="@style/grey_button"
     android:layout_width="match_parent"
         android:layout_marginTop="5dp"
-        android:layout_marginHorizontal="@dimen/settings_horizontal_margin"
+        android:layout_marginHorizontal="@dimen/app_horizontal_normal_margin"
     app:layout_constraintEnd_toEndOf="parent"
     app:layout_constraintStart_toStartOf="parent"
     app:layout_constraintTop_toBottomOf="@+id/settings_btn_data">
@@ -202,7 +200,7 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/settings_btn_exit_profile"
-        style="@style/orange_button"
+        style="@style/orange_stroke_button"
         android:layout_width="wrap_content"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -210,7 +208,7 @@
 
         <TextView
             android:id="@+id/settings_exit_profile"
-            style="@style/text_normal"
+            style="@style/text_input"
             android:textSize="22sp"
             android:fontFamily="@font/roboto"
             android:paddingEnd="@dimen/app_horizontal_margin"

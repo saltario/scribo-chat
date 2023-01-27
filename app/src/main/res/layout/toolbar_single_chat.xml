@@ -16,8 +16,8 @@
 
     <de.hdodenhof.circleimageview.CircleImageView
         android:id="@+id/toolbar_single_chat_photo"
-        android:layout_width="@dimen/chat_toolbar_image_width"
-        android:layout_height="@dimen/chat_toolbar_image_height"
+        android:layout_width="@dimen/user_photo_normal_size"
+        android:layout_height="@dimen/user_photo_normal_size"
         android:layout_marginEnd="@dimen/app_horizontal_margin"
         android:src="@drawable/dark_default_user_photo"
         app:layout_constraintBottom_toBottomOf="parent"
