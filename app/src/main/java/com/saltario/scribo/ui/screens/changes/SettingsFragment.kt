@@ -12,10 +12,12 @@ class SettingsFragment : BaseFragment(R.layout.fragment_settings) {
 
     override fun onResume() {
         super.onResume()
+
         setHasOptionsMenu(false)
         hideToolBar()
         showNavBottom()
         setStatusBarColor(R.color.dark_background)
+
         setUserInfoToLayout()
         initListeners()
     }
@@ -23,8 +25,10 @@ class SettingsFragment : BaseFragment(R.layout.fragment_settings) {
     private fun initListeners() {
         settings_btn_edit_profile.setOnClickListener { profileEdit() }
         settings_btn_exit_profile.setOnClickListener { profileExit() }
+
         settings_btn_data.setOnClickListener { dataSettingsEdit() }
         settings_btn_appearance.setOnClickListener { appearanceSettingsEdit() }
+
         settings_hyperlink_processing_and_storage.setOnClickListener { showToast("Обработка данных (потом)") }
         settings_hyperlink_privacy_policy.setOnClickListener { showToast("Политика (потом)") }
     }

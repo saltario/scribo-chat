@@ -8,10 +8,7 @@ import com.saltario.scribo.database.*
 import com.saltario.scribo.models.Common
 import com.saltario.scribo.ui.objects.AppValueEventListener
 import com.saltario.scribo.ui.screens.groups.AddContactsFragment
-import com.saltario.scribo.utilits.APP_ACTIVITY
-import com.saltario.scribo.utilits.hideKeyboard
-import com.saltario.scribo.utilits.replaceFragment
-import com.saltario.scribo.utilits.showToolBar
+import com.saltario.scribo.utilits.*
 import kotlinx.android.synthetic.main.activity_main.view.*
 import kotlinx.android.synthetic.main.fragment_main_list.*
 import kotlinx.android.synthetic.main.toolbar_main_list.view.*
@@ -50,6 +47,7 @@ class MainListFragment : Fragment(R.layout.fragment_main_list) {
         showToolBar()
         setHasOptionsMenu(false)
         hideKeyboard()
+        setStatusBarColor(R.color.dark_background_toolbars)
     }
 
     private fun initToolBar() {

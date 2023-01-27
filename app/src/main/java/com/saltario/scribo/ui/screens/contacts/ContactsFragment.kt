@@ -34,7 +34,7 @@ class ContactsFragment : BaseFragment(R.layout.fragment_contacts) {
         super.onResume()
 
         initToolBar()
-        initFields()
+        prepareView()
         initRecycleView()
     }
 
@@ -46,12 +46,13 @@ class ContactsFragment : BaseFragment(R.layout.fragment_contacts) {
         }
     }
 
-    private fun initFields() {
+    private fun prepareView() {
 
         showToolBar()
         showNavBottom()
         setHasOptionsMenu(false)
         hideKeyboard()
+        setStatusBarColor(R.color.dark_background_toolbars)
     }
 
     private fun initToolBar() {
