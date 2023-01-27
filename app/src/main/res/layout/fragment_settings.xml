@@ -151,7 +151,7 @@
             app:layout_constraintTop_toTopOf="parent"
             tools:text="@string/settings_button_data" />
 
-        <de.hdodenhof.circleimageview.CircleImageView
+        <ImageView
             android:id="@+id/settings_button_data_icon"
             android:layout_width="40dp"
             android:layout_height="40dp"
@@ -186,7 +186,7 @@
         app:layout_constraintTop_toTopOf="parent"
         tools:text="@string/settings_button_appearance" />
 
-    <de.hdodenhof.circleimageview.CircleImageView
+    <ImageView
         android:id="@+id/settings_button_appearance_icon"
         android:layout_width="40dp"
         android:layout_height="40dp"
@@ -220,7 +220,7 @@
             app:layout_constraintTop_toTopOf="parent"
             tools:text="@string/settings_button_exit_profile" />
 
-        <de.hdodenhof.circleimageview.CircleImageView
+        <ImageView
             android:id="@+id/settings_button_exit_profile_icon"
             android:layout_width="40dp"
             android:layout_height="40dp"

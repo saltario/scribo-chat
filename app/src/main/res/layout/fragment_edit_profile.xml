@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -17,6 +16,7 @@
     <TextView
         android:id="@+id/edit_profile_label"
         style="@style/text_title"
+        android:layout_marginStart="@dimen/app_horizontal_normal_margin"
         android:text="@string/edit_profile"
         app:layout_constraintBottom_toBottomOf="@+id/edit_profile_toolbar"
         app:layout_constraintStart_toStartOf="parent"
@@ -25,99 +25,147 @@
 
     <de.hdodenhof.circleimageview.CircleImageView
         android:id="@+id/edit_profile_input_photo"
+        style="@style/edit_photo"
+        android:layout_marginTop="24dp"
         android:src="@drawable/dark_default_user_photo_stroke"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/edit_profile_toolbar"
-        style="@style/edit_photo" />
+        app:layout_constraintTop_toBottomOf="@+id/edit_profile_toolbar" />
 
-    <EditText
-        android:id="@+id/edit_profile_input_name"
-        style="@style/input_change_dep"
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/edit_profile_input_name_label"
+        style="@style/input_text_layout_change"
         android:hint="@string/input_name_hint"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_margin="0dp"
+        app:layout_constraintEnd_toEndOf="@id/end_vertical_guideline"
         app:layout_constraintStart_toEndOf="@+id/edit_profile_input_photo"
-        app:layout_constraintTop_toTopOf="@+id/edit_profile_input_photo"
-        tools:ignore="LabelFor" />
+        app:layout_constraintTop_toTopOf="@+id/edit_profile_input_photo">
 
-    <EditText
-        android:id="@+id/edit_profile_input_surname"
-        style="@style/input_change_dep"
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/edit_profile_input_name"
+            style="@style/input_change"
+            android:hint="@string/input_name_hint" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/edit_profile_input_surname_label"
+        style="@style/input_text_layout_change"
+        android:layout_marginTop="12dp"
         android:hint="@string/input_surname_hint"
-        android:layout_marginTop="@dimen/app_vertical_margin"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginHorizontal="0dp"
+        app:layout_constraintEnd_toEndOf="@id/end_vertical_guideline"
+        app:layout_constraintBottom_toBottomOf="@+id/edit_profile_input_photo"
         app:layout_constraintStart_toEndOf="@+id/edit_profile_input_photo"
-        app:layout_constraintTop_toBottomOf="@+id/edit_profile_input_name"
-        tools:ignore="LabelFor" />
+        app:layout_constraintTop_toBottomOf="@+id/edit_profile_input_name_label">
 
-    <EditText
-        android:id="@+id/edit_profile_input_phone"
-        android:hint="@string/enter_phone_hint"
-        android:inputType="phone"
-        android:layout_marginTop="@dimen/app_vertical_margin"
-        tools:ignore="LabelFor"
-        style="@style/input_change_dep"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/edit_profile_input_photo"/>
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/edit_profile_input_surname"
+            style="@style/input_change"
+            android:hint="@string/input_surname_hint" />
 
-    <EditText
-        android:id="@+id/edit_profile_input_username"
-        style="@style/input_change_dep"
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/edit_profile_enter_phone_input_label"
+        style="@style/input_text_layout_phone"
+        android:layout_width="0dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginHorizontal="0dp"
+        android:hint="@string/input_text_hint_phone"
+        android:padding="0dp"
+        android:paddingEnd="0dp"
+        android:paddingStart="0dp"
+        app:layout_constraintEnd_toEndOf="@id/end_vertical_guideline"
+        app:layout_constraintStart_toStartOf="@+id/start_vertical_guideline"
+        app:layout_constraintTop_toBottomOf="@+id/edit_profile_input_surname_label">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/edit_profile_enter_phone_number"
+            style="@style/input_phone"
+            android:hint="@string/enter_phone_hint" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/edit_profile_input_username_label"
+        style="@style/input_text_layout_change"
+        android:layout_width="0dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginHorizontal="0dp"
+        android:paddingStart="0dp"
         android:hint="@string/input_username_hint"
-        android:layout_marginTop="@dimen/app_vertical_margin"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/edit_profile_input_phone"
-        tools:ignore="LabelFor" />
+        app:layout_constraintEnd_toStartOf="@+id/end_vertical_guideline"
+        app:layout_constraintStart_toStartOf="@+id/start_vertical_guideline"
+        app:layout_constraintTop_toBottomOf="@+id/edit_profile_enter_phone_input_label">
 
-    <EditText
-        android:id="@+id/edit_profile_input_mail"
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/edit_profile_input_username"
+            style="@style/input_change"
+            android:hint="@string/input_username_hint" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/edit_profile_input_mail_label"
+        style="@style/input_text_layout_change"
+        android:layout_marginHorizontal="0dp"
+        android:layout_marginTop="12dp"
         android:hint="@string/input_mail_hint"
-        android:layout_marginTop="@dimen/app_vertical_margin"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/edit_profile_input_username"
-        tools:ignore="LabelFor"
-        style="@style/input_change_dep"/>
+        android:paddingStart="0dp"
+        app:layout_constraintEnd_toStartOf="@+id/end_vertical_guideline"
+        app:layout_constraintStart_toStartOf="@+id/start_vertical_guideline"
+        app:layout_constraintTop_toBottomOf="@+id/edit_profile_input_username_label">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/edit_profile_input_mail"
+            style="@style/input_change"
+            android:hint="@string/input_mail_hint" />
+
+    </com.google.android.material.textfield.TextInputLayout>
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/edit_profile_btn_done"
+        android:id="@+id/edit_profile_btn_delete_profile"
         style="@style/red_button"
         android:layout_width="wrap_content"
-        android:layout_marginBottom="@dimen/app_vertical_large_margin"
-        android:layout_marginEnd="@dimen/app_vertical_large_margin"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent">
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/edit_profile_input_mail_label">
 
         <TextView
-            android:id="@+id/edit_profile_btn_done_text"
-            style="@style/text_button_white"
-            android:text="@string/button_done"
+            android:id="@+id/edit_profile_delete_profile"
+            style="@style/text_normal"
+            android:fontFamily="@font/roboto"
+            android:paddingEnd="@dimen/app_horizontal_margin"
+            android:text="@string/settings_button_delete_profile"
+            android:textSize="22sp"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/edit_profile_button_delete_profile_icon"
             app:layout_constraintTop_toTopOf="parent"
-            tools:text="@string/button_done" />
+            tools:text="@string/settings_button_delete_profile" />
 
         <ImageView
-            android:id="@+id/edit_profile_btn_done_icon"
-            android:src="@drawable/icon_done"
+            android:id="@+id/edit_profile_button_delete_profile_icon"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginStart="@dimen/app_horizontal_margin"
+            android:padding="5dp"
+            android:src="@drawable/icon_exit"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/edit_profile_btn_done_text"
-            app:layout_constraintTop_toTopOf="parent"
-            style="@style/icon_button" />
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
+
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/edit_profile_btn_back"
         style="@style/stroke_button"
         android:layout_width="0dp"
-        android:layout_marginBottom="@dimen/app_vertical_large_margin"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginStart="@dimen/app_horizontal_large_margin"
+        android:layout_marginEnd="@dimen/app_horizontal_margin"
         app:layout_constraintEnd_toStartOf="@+id/edit_profile_btn_done"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintHorizontal_bias="0">
+        app:layout_constraintTop_toTopOf="@+id/buttons_guideline">
 
         <TextView
             android:id="@+id/edit_profile_btn_back_text"
@@ -131,12 +179,62 @@
         <ImageView
             android:id="@+id/edit_profile_btn_back_icon"
             style="@style/icon_button"
-            android:src="@drawable/icon_cancel"
+            android:layout_marginStart="10dp"
             android:padding="10dp"
+            android:src="@drawable/icon_cancel"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/edit_profile_btn_done"
+        style="@style/red_button"
+        android:layout_width="wrap_content"
+        android:layout_marginEnd="@dimen/app_vertical_large_margin"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/buttons_guideline">
+
+        <TextView
+            android:id="@+id/edit_profile_btn_done_text"
+            style="@style/text_button_white"
+            android:text="@string/button_done"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="@string/button_done" />
+
+        <ImageView
+            android:id="@+id/edit_profile_btn_done_icon"
+            style="@style/icon_button"
+            android:src="@drawable/icon_done"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/edit_profile_btn_done_text"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/buttons_guideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.86" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/start_vertical_guideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="48dp" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/end_vertical_guideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_end="48dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

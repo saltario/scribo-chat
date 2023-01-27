@@ -51,8 +51,8 @@
     <style name="edit_photo">
         <item name="android:layout_width">@dimen/register_input_photo_width</item>
         <item name="android:layout_height">@dimen/register_input_photo_height</item>
-        <item name="android:layout_marginStart">@dimen/app_horizontal_margin</item>
-        <item name="android:layout_marginTop">@dimen/app_vertical_margin</item>
+        <item name="android:layout_marginStart">@dimen/app_horizontal_large_margin</item>
+        <item name="android:layout_marginTop">@dimen/app_horizontal_large_margin</item>
     </style>
 
     <style name="chat_bottom_bar_icon">

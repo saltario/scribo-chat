@@ -31,6 +31,7 @@
     <string name="settings_button_data">Данные</string>
     <string name="settings_button_appearance">Оформление</string>
     <string name="settings_button_exit_profile">Выйти из аккаунта</string>
+    <string name="settings_button_delete_profile">Удалить аккаунт</string>
 
     <string name="registration">Регистрация</string>
     <string name="edit_profile">Редактирование</string>

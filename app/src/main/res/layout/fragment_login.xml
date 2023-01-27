@@ -30,7 +30,6 @@
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/login_enter_phone_number"
             style="@style/input_phone"
-            android:layout_height="72dp"
             android:layout_width="270dp"
             android:hint="@string/enter_phone_hint" />
 

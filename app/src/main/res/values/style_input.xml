@@ -34,6 +34,9 @@
         <item name="boxCornerRadiusBottomStart">@dimen/input_change_layout_box_corners_radius</item>
         <item name="boxCornerRadiusBottomEnd">@dimen/input_change_layout_box_corners_radius</item>
         <item name="android:textColorHint">@color/dark_text_color_white</item>
+        <item name="android:paddingEnd">0dp</item>
+        <item name="android:paddingStart">@dimen/app_horizontal_margin</item>
+        <item name="android:padding">0dp</item>
     </style>
 
     <style name="input">

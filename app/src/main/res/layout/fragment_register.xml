@@ -18,11 +18,8 @@
 
     <de.hdodenhof.circleimageview.CircleImageView
         android:id="@+id/register_input_photo"
-        android:layout_width="@dimen/register_input_photo_width"
-        android:layout_height="@dimen/register_input_photo_height"
         android:src="@drawable/dark_default_user_photo_stroke"
-        android:layout_marginTop="@dimen/app_vertical_large_margin"
-        android:layout_marginStart="@dimen/app_horizontal_large_margin"
+        style="@style/edit_photo"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/register_label" />
 
@@ -67,7 +64,7 @@
         style="@style/input_text_layout_change"
         android:layout_marginHorizontal="@dimen/app_horizontal_large_margin"
         android:layout_marginTop="@dimen/app_vertical_margin"
-        android:padding="0dp"
+        android:paddingStart="0dp"
         android:hint="@string/input_username_hint"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -85,7 +82,7 @@
         style="@style/input_text_layout_change"
         android:layout_marginHorizontal="@dimen/app_horizontal_large_margin"
         android:layout_marginTop="5dp"
-        android:padding="0dp"
+        android:paddingStart="0dp"
         android:hint="@string/input_mail_hint"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
