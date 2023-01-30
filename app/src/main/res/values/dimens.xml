@@ -38,12 +38,10 @@
     <dimen name="text_size_small">14sp</dimen>
 
 
-    <dimen name="button_background_width">48dp</dimen>
-    <dimen name="button_background_height">48dp</dimen>
-    <dimen name="button_circle_padding">10dp</dimen>
-    <dimen name="button_background_ripple_radius">14dp</dimen>
-    <dimen name="button_circle_width">64dp</dimen>
-    <dimen name="button_circle_height">64dp</dimen>
+    <dimen name="button_circle_size">40dp</dimen>
+    <dimen name="button_circle_padding">8dp</dimen>
+
+    <dimen name="button_background_ripple_radius">12dp</dimen>
 
 
     <dimen name="bottom_bar_height">80dp</dimen>

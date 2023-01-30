@@ -28,12 +28,7 @@
         <item name="android:background">@color/dark_background_toolbars</item>
     </style>
 
-    <style name="toolbar_circle_button">
-        <item name="android:layout_width">@dimen/button_circle_width</item>
-        <item name="android:layout_height">@dimen/button_circle_height</item>
-        <item name="android:padding">@dimen/app_padding</item>
-        <item name="android:layout_marginEnd">@dimen/app_horizontal_margin</item>
-    </style>
+
 
     <style name="button_back">
         <item name="android:layout_width">48dp</item>
@@ -48,19 +43,6 @@
         <item name="android:padding">@dimen/icon_button_padding</item>
     </style>
 
-    <style name="profile_photo">
-        <item name="android:src">@drawable/dark_default_user_photo_stroke</item>
-    </style>
-
-    <style name="profile_photo_normal" parent="profile_photo">
-        <item name="android:layout_width">@dimen/input_photo_normal_size</item>
-        <item name="android:layout_height">@dimen/input_photo_normal_size</item>
-    </style>
-
-    <style name="profile_photo_large" parent="profile_photo">
-        <item name="android:layout_width">@dimen/input_photo_large_size</item>
-        <item name="android:layout_height">@dimen/input_photo_large_size</item>
-    </style>
 
     <style name="chat_bottom_bar_icon">
         <item name="android:layout_width">36dp</item>

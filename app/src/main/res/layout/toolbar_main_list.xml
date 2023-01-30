@@ -15,11 +15,13 @@
 
     <ImageView
         android:id="@+id/toolbar_main_create_group_chat"
+        style="@style/button_circle_toolbar"
         android:src="@drawable/button_add"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/toolbar_main_header"
         app:layout_constraintTop_toTopOf="parent"
-        style="@style/toolbar_circle_button" />
+        app:layout_constraintHorizontal_bias="1" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

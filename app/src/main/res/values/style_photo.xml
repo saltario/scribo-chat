@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="profile_photo">
+        <item name="android:src">@drawable/dark_default_user_photo_stroke</item>
+    </style>
+
+    <style name="profile_photo_normal" parent="profile_photo">
+        <item name="android:layout_width">@dimen/input_photo_normal_size</item>
+        <item name="android:layout_height">@dimen/input_photo_normal_size</item>
+    </style>
+
+    <style name="profile_photo_large" parent="profile_photo">
+        <item name="android:layout_width">@dimen/input_photo_large_size</item>
+        <item name="android:layout_height">@dimen/input_photo_large_size</item>
+    </style>
+
+</resources>

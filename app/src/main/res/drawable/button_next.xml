@@ -7,7 +7,7 @@
             <item>
                 <shape android:shape="oval">
                     <solid android:color="@color/dark_red_button"/>
-                    <size android:width="@dimen/button_background_width" android:height="@dimen/button_background_height" />
+                    <size android:width="@dimen/button_circle_size" android:height="@dimen/button_circle_size" />
                     <padding android:bottom="@dimen/button_circle_padding"/>
                     <padding android:left="@dimen/button_circle_padding"/>
                     <padding android:right="@dimen/button_circle_padding"/>

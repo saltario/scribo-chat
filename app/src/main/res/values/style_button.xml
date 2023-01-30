@@ -16,6 +16,16 @@
         <item name="android:layout_marginHorizontal">0dp</item>
     </style>
 
+    <style name="button_circle" parent="button">
+        <item name="android:layout_width">@dimen/button_circle_size</item>
+        <item name="android:layout_height">@dimen/button_circle_size</item>
+        <item name="android:layout_marginVertical">0dp</item>
+    </style>
+
+    <style name="button_circle_toolbar" parent="button_circle">
+        <item name="android:layout_marginEnd">@dimen/app_horizontal_margin</item>
+    </style>
+
     <style name="red_button" parent="button">
         <item name="android:background">@drawable/bg_ripple_red_button</item>
     </style>
@@ -29,7 +39,9 @@
     </style>
 
     <style name="grey_button" parent="button">
+        <item name="android:layout_height">48dp</item>
         <item name="android:background">@drawable/bg_ripple_grey_button</item>
+        <item name="android:layout_marginHorizontal">0dp</item>
     </style>
 
     <style name="orange_button" parent="button">

@@ -32,6 +32,7 @@
     <string name="settings_button_appearance">Оформление</string>
     <string name="settings_button_exit_profile">Выйти из аккаунта</string>
     <string name="settings_button_delete_profile">Удалить аккаунт</string>
+    <string name="settings_bio">О себе</string>
 
     <string name="registration">Регистрация</string>
     <string name="edit_profile">Редактирование</string>
@@ -61,7 +62,7 @@
     <string name="app_state_default">В сети</string>
     <string name="app_number_phone_default">+16505553434</string>
     <string name="app_login_default">\u0040scribo</string>
-    <string name="app_bio_default">О себе</string>
+    <string name="app_bio_default">Что-то о себе</string>
     <string name="app_dog">\u0040</string>
 
 

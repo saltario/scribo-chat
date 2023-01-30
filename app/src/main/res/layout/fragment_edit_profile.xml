@@ -11,7 +11,8 @@
         style="@style/toolbar"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        android:contentDescription="@string/app_content_description"/>
 
     <TextView
         android:id="@+id/edit_profile_label"
@@ -95,7 +96,8 @@
         android:hint="@string/input_username_hint"
         app:layout_constraintEnd_toStartOf="@+id/end_vertical_guideline"
         app:layout_constraintStart_toStartOf="@+id/start_vertical_guideline"
-        app:layout_constraintTop_toBottomOf="@+id/edit_profile_enter_phone_input_label">
+        app:layout_constraintTop_toBottomOf="@+id/edit_profile_enter_phone_input_label"
+        tools:ignore="RtlSymmetry">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/edit_profile_input_username"
@@ -113,7 +115,8 @@
         android:paddingStart="0dp"
         app:layout_constraintEnd_toStartOf="@+id/end_vertical_guideline"
         app:layout_constraintStart_toStartOf="@+id/start_vertical_guideline"
-        app:layout_constraintTop_toBottomOf="@+id/edit_profile_input_username_label">
+        app:layout_constraintTop_toBottomOf="@+id/edit_profile_input_username_label"
+        tools:ignore="RtlSymmetry">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/edit_profile_input_mail"
@@ -140,7 +143,8 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toEndOf="@+id/edit_profile_button_delete_profile_icon"
             app:layout_constraintTop_toTopOf="parent"
-            tools:text="@string/settings_button_delete_profile" />
+            tools:text="@string/settings_button_delete_profile"
+            tools:ignore="RtlSymmetry" />
 
         <ImageView
             android:id="@+id/edit_profile_button_delete_profile_icon"
@@ -151,7 +155,8 @@
             android:src="@drawable/icon_exit"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"
+            android:contentDescription="@string/app_content_description"/>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -183,7 +188,8 @@
             android:src="@drawable/icon_cancel"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"
+            android:contentDescription="@string/app_content_description"/>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -211,7 +217,8 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/edit_profile_btn_done_text"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"
+            android:contentDescription="@string/app_content_description"/>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -220,7 +227,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.86" />
+        app:layout_constraintGuide_begin="713dp" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/start_vertical_guideline"
