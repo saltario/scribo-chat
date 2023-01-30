@@ -5,7 +5,7 @@
     <item android:state_pressed="true">
         <shape android:shape="rectangle">
             <stroke android:color="@color/dark_white_button" android:width="@dimen/input_stroke_width"/>
-            <corners android:radius="@dimen/button_background_ripple_radius"/>
+            <corners android:radius="@dimen/button_background_ripple_radius_large"/>
         </shape>
     </item>
 </ripple>

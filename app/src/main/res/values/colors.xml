@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
+    <color name="ic_launcher_background">#1A1A1B</color>
+
     <color name="transparent">#00000000</color>
     <color name="hyperlink">#3296FF</color>
     <color name="color_light_grey">#A1A1A1</color>
