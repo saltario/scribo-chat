@@ -20,7 +20,7 @@
         android:id="@+id/add_contacts_item_check"
         android:layout_width="20dp"
         android:layout_height="20dp"
-        android:src="@drawable/ic_check"
+        android:src="@drawable/icon_done"
         android:visibility="invisible"
         app:civ_circle_background_color="@color/color_light_grey"
         app:layout_constraintBottom_toBottomOf="@+id/add_contacts_photo"

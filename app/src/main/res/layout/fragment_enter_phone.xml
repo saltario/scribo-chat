@@ -46,7 +46,7 @@
 
         <ImageView
             android:id="@+id/enter_phone_btn_get_code_icon"
-            android:src="@drawable/icon_next_2"
+            android:src="@drawable/icon_next"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/enter_phone_btn_get_code_text"

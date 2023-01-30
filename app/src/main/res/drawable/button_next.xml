@@ -14,7 +14,7 @@
                     <padding android:top="@dimen/button_circle_padding"/>
                 </shape>
             </item>
-            <item android:drawable="@drawable/icon_next_depricated" />
+            <item android:drawable="@drawable/icon_next" />
         </layer-list>
     </item>
 </ripple>

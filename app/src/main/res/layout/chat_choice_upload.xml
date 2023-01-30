@@ -16,13 +16,13 @@
         android:layout_width="@dimen/bottom_sheet_icon_width"
         android:layout_height="match_parent"
         android:layout_margin="@dimen/app_horizontal_margin"
-        android:src="@drawable/ic_btn_bottom_sheet_attach_image"/>
+        android:src="@drawable/icon_image"/>
 
     <ImageView
         android:id="@+id/btn_bottom_sheet_attach_file"
         android:layout_width="@dimen/bottom_sheet_icon_width"
         android:layout_height="match_parent"
         android:layout_margin="@dimen/app_horizontal_margin"
-        android:src="@drawable/ic_btn_bottom_sheet_attach_file"/>
+        android:src="@drawable/icon_file"/>
 
 </LinearLayout>

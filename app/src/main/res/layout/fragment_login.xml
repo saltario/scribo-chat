@@ -98,7 +98,7 @@
 
         <ImageView
             android:id="@+id/login_btn_login_icon"
-            android:src="@drawable/icon_next_2"
+            android:src="@drawable/icon_next"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/login_btn_login_text"

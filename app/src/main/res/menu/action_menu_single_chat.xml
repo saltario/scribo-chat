@@ -12,13 +12,13 @@
             <item
                 android:id="@+id/single_chat_action_menu_clear"
                 android:title="@string/single_chat_action_menu_clear"
-                android:icon="@drawable/ic_btn_chat_clear"
+                android:icon="@drawable/icon_delete"
                 app:showAsAction="never"/>
 
             <item
                 android:id="@+id/single_chat_action_menu_delete"
                 android:title="@string/single_chat_action_menu_delete"
-                android:icon="@drawable/ic_btn_chat_delete"
+                android:icon="@drawable/icon_delete"
                 app:showAsAction="never"/>
 
         </menu>
