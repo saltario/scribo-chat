@@ -47,6 +47,8 @@
     <string name="button_cancel">Отмена</string>
     <string name="button_get_code">Получить код</string>
     <string name="login_text_login">Войти</string>
+    <string name="button_picture">Картинка</string>
+    <string name="button_file">Файл</string>
 
     <string name="first_time">Первый раз?</string>
 

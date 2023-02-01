@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="bottom_sheet">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">@dimen/bottom_sheet_height</item>
+        <item name="android:background">@color/dark_background_toolbars</item>
+        <item name="android:orientation">horizontal</item>
+        <item name="behavior_peekHeight">0dp</item>
+        <item name="behavior_hideable">true</item>
+        <item name="layout_behavior">com.google.android.material.bottomsheet.BottomSheetBehavior</item>
+     </style>
+
+    <style name="bottom_sheet_button">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">@dimen/bottom_sheet_button_height</item>
+        <item name="android:layout_marginStart">@dimen/app_horizontal_margin</item>
+        <item name="android:layout_gravity">center</item>
+        <item name="android:background">@drawable/bg_ripple_white_bottom_sheet_button</item>
+    </style>
+
+    <style name="bottom_sheet_button_text" parent="text_normal">
+        <item name="android:textColor">@color/dark_text_color_black</item>
+        <item name="android:layout_gravity">center</item>
+    </style>
+
+    <style name="bottom_sheet_button_icon">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginStart">@dimen/app_horizontal_margin</item>
+        <item name="android:layout_gravity">center</item>
+    </style>
+
+</resources>

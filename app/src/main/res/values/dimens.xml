@@ -75,7 +75,10 @@
 
 
 
-    <dimen name="bottom_sheet_height">70dp</dimen>
+    <dimen name="bottom_sheet_height">88dp</dimen>
+    <dimen name="bottom_sheet_button_height">64dp</dimen>
+    <dimen name="bottom_sheet_button_radius">26dp</dimen>
+
     <dimen name="bottom_sheet_icon_width">50dp</dimen>
     <dimen name="bottom_sheet_icon_height">50dp</dimen>
 

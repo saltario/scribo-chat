@@ -1,28 +1,36 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/bottom_sheet_choice"
-    android:orientation="horizontal"
-    android:layout_width="match_parent"
-    android:layout_height="@dimen/bottom_sheet_height"
-    android:background="@color/color_light_grey"
-    app:layout_behavior="com.google.android.material.bottomsheet.BottomSheetBehavior"
-    app:behavior_hideable = "true"
-    app:behavior_peekHeight = "0dp">
+    style="@style/bottom_sheet">
 
-    <ImageView
+    <LinearLayout
         android:id="@+id/btn_bottom_sheet_attach_image"
-        android:layout_width="@dimen/bottom_sheet_icon_width"
-        android:layout_height="match_parent"
-        android:layout_margin="@dimen/app_horizontal_margin"
-        android:src="@drawable/icon_image"/>
+        style="@style/bottom_sheet_button">
 
-    <ImageView
+        <ImageView
+            style="@style/bottom_sheet_button_icon"
+            android:src="@drawable/icon_image_black"
+            android:contentDescription="@string/app_content_description" />
+
+        <TextView
+            style="@style/bottom_sheet_button_text"
+            android:text="@string/button_picture"/>
+
+    </LinearLayout>
+
+    <LinearLayout
         android:id="@+id/btn_bottom_sheet_attach_file"
-        android:layout_width="@dimen/bottom_sheet_icon_width"
-        android:layout_height="match_parent"
-        android:layout_margin="@dimen/app_horizontal_margin"
-        android:src="@drawable/icon_file"/>
+        style="@style/bottom_sheet_button">
+
+        <ImageView
+            style="@style/bottom_sheet_button_icon"
+            android:src="@drawable/icon_file_black"
+            android:contentDescription="@string/app_content_description" />
+
+        <TextView
+            style="@style/bottom_sheet_button_text"
+            android:text="@string/button_file"/>
+
+    </LinearLayout>
 
 </LinearLayout>
