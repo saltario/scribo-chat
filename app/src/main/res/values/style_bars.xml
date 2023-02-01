@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="bar">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">@dimen/bar_height</item>
+        <item name="android:background">@color/dark_background_bar</item>
+    </style>
+
+    <style name="toolbar" parent="bar">
+        <item name="android:theme">@style/ThemeOverlay.AppCompat.Dark.ActionBar</item>
+    </style>
+
+    <style name="bottom_nav_menu" parent="bar">
+        <item name="android:theme">@style/bottom_nav_menu_theme</item>
+        <item name="itemIconTint">@color/bottom_navigation_icon</item>
+        <item name="itemTextColor">@color/dark_text_color_white</item>
+    </style>
+
+    <style name="bottom_nav_menu_theme">
+        <item name="colorSecondaryContainer">@color/dark_text_color_white</item>
+        <item name="colorOnSecondaryContainer">@color/dark_primary</item>
+    </style>
+
+</resources>

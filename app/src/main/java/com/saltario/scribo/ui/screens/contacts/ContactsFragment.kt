@@ -52,7 +52,7 @@ class ContactsFragment : BaseFragment(R.layout.fragment_contacts) {
         showNavBottom()
         setHasOptionsMenu(false)
         hideKeyboard()
-        setStatusBarColor(R.color.dark_background_toolbars)
+        setStatusBarColor(R.color.dark_background_bar)
     }
 
     private fun initToolBar() {

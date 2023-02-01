@@ -1,10 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <style name="bottom_sheet">
-        <item name="android:layout_width">match_parent</item>
+    <style name="bottom_sheet" parent="bar">
         <item name="android:layout_height">@dimen/bottom_sheet_height</item>
-        <item name="android:background">@color/dark_background_toolbars</item>
         <item name="android:orientation">horizontal</item>
         <item name="behavior_peekHeight">0dp</item>
         <item name="behavior_hideable">true</item>

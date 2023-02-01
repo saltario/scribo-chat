@@ -48,13 +48,17 @@
 
     <dimen name="bottom_bar_height">80dp</dimen>
 
+    <dimen name="bottom_sheet_height">88dp</dimen>
+    <dimen name="bottom_sheet_button_height">64dp</dimen>
+    <dimen name="bottom_sheet_button_radius">26dp</dimen>
+
 
     <dimen name="icon_button_size">40dp</dimen>
     <dimen name="icon_button_padding">5dp</dimen>
 
 
     <dimen name="chats_vertical_margin_item">5dp</dimen>
-    <dimen name="toolbar_height">80dp</dimen>
+
     <dimen name="toolbar_horizontal_margin">10dp</dimen>
     <dimen name="toolbar_vertical_margin">5dp</dimen>
 
@@ -73,13 +77,9 @@
     <dimen name="chat_btn_play_voice_message_height">50dp</dimen>
 
 
+    <dimen name="bar_height">80dp</dimen>
 
 
-    <dimen name="bottom_sheet_height">88dp</dimen>
-    <dimen name="bottom_sheet_button_height">64dp</dimen>
-    <dimen name="bottom_sheet_button_radius">26dp</dimen>
 
-    <dimen name="bottom_sheet_icon_width">50dp</dimen>
-    <dimen name="bottom_sheet_icon_height">50dp</dimen>
 
 </resources>

@@ -47,7 +47,7 @@ class MainListFragment : Fragment(R.layout.fragment_main_list) {
         showToolBar()
         setHasOptionsMenu(false)
         hideKeyboard()
-        setStatusBarColor(R.color.dark_background_toolbars)
+        setStatusBarColor(R.color.dark_background_bar)
     }
 
     private fun initToolBar() {

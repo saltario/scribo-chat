@@ -26,7 +26,7 @@
     <color name="dark_small_text_color">#D0C4C3</color>
 
     <color name="dark_background">#1A1A1A</color>
-    <color name="dark_background_toolbars">#262626</color>
+    <color name="dark_background_bar">#262626</color>
 
     <color name="dark_input_background">#1A1A1A</color>
     <color name="dark_input_stroke">#FFFFFF</color>

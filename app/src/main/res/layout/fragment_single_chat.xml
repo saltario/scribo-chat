@@ -38,7 +38,7 @@
             android:id="@+id/chat_bar_panel"
             android:layout_width="match_parent"
             android:layout_height="@dimen/bottom_bar_height"
-            android:background="@color/dark_background_toolbars"
+            android:background="@color/dark_background_bar"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent">
