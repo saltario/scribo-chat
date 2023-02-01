@@ -67,7 +67,6 @@
     <string name="app_bio_default">Что-то о себе</string>
     <string name="app_dog">\u0040</string>
 
-
     <string name="app_toast_data_update">Данные обновлены</string>
     <string name="app_toast_welcome_message">Добро пожаловать</string>
     <string name="hello_blank_fragment">Hello blank fragment</string>

@@ -3,7 +3,7 @@
 
     <style name="bar">
         <item name="android:layout_width">match_parent</item>
-        <item name="android:layout_height">@dimen/bar_height</item>
+        <item name="android:layout_height">@dimen/app_bar_height</item>
         <item name="android:background">@color/dark_background_bar</item>
     </style>
 
