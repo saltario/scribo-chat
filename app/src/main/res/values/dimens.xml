@@ -34,6 +34,7 @@
     <dimen name="text_size_large">24sp</dimen>
     <dimen name="text_size_button">18sp</dimen>
     <dimen name="text_size_input">18sp</dimen>
+    <dimen name="text_size_time">11sp</dimen>
     <dimen name="text_size_normal">16sp</dimen>
     <dimen name="text_size_small">14sp</dimen>
 
@@ -57,7 +58,13 @@
     <dimen name="toolbar_horizontal_margin">10dp</dimen>
     <dimen name="toolbar_vertical_margin">5dp</dimen>
 
-    <dimen name="chat_background_message_radius">20dp</dimen>
+
+    <dimen name="chat_message_vertical_margin">1dp</dimen>
+    <dimen name="chat_background_message_radius">26dp</dimen>
+
+
+
+
     <dimen name="chat_message_image_width">180dp</dimen>
     <dimen name="chat_message_image_height">180dp</dimen>
     <dimen name="chat_message_voice_width">180dp</dimen>

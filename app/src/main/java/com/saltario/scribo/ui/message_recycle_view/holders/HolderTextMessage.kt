@@ -1,6 +1,7 @@
 package com.saltario.scribo.ui.message_recycle_view.holders
 
 import android.view.View
+import android.widget.LinearLayout
 import android.widget.TextView
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.recyclerview.widget.RecyclerView
@@ -11,11 +12,11 @@ import kotlinx.android.synthetic.main.message_text_item.view.*
 
 class HolderTextMessage(view: View): RecyclerView.ViewHolder(view), MessageHolder {
 
-    private val blockUserMessage: ConstraintLayout = view.block_user_message
+    private val blockUserMessage: LinearLayout = view.block_user_message
     private val chatUserMessage: TextView = view.chat_user_message
     private val chatUserMessageTime: TextView = view.chat_user_time
 
-    private val blockOtherUserMessage: ConstraintLayout = view.block_other_message
+    private val blockOtherUserMessage: LinearLayout = view.block_other_message
     private val chatOtherUserMessage: TextView = view.chat_other_message
     private val chatOtherUserMessageTime: TextView = view.chat_other_time
 

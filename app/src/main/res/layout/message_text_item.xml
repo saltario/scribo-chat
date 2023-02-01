@@ -7,75 +7,43 @@
     android:layout_height="wrap_content">
 
     <!-- Text message User (me) -->
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <LinearLayout
         android:id="@+id/block_user_message"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_margin="@dimen/app_horizontal_margin"
-        android:background="@drawable/bg_message_user"
+        style="@style/message_user_block"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
         <TextView
-            android:id="@+id/chat_user_message"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="end"
-            android:padding="@dimen/app_padding"
-            android:maxWidth="300dp"
-            android:textColor="@color/dark_chat_message_text_color"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            tools:text="Привет всем" />
-
-        <TextView
             android:id="@+id/chat_user_time"
-            style="@style/text_small"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginEnd="@dimen/app_horizontal_margin"
-            android:gravity="end"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/chat_user_message"
+            style="@style/message_time"
             tools:text="21:45" />
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
+        <TextView
+            android:id="@+id/chat_user_message"
+            style="@style/message_user_text"
+            tools:text="Привет всем" />
+
+    </LinearLayout>
 
     <!-- Text message Other User -->
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <LinearLayout
         android:id="@+id/block_other_message"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_margin="@dimen/app_horizontal_margin"
-        android:background="@drawable/bg_message_other"
+        style="@style/message_other_block"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
         <TextView
             android:id="@+id/chat_other_message"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="end"
-            android:padding="@dimen/app_padding"
-            android:textColor="@color/dark_background"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
+            style="@style/message_other_text"
             tools:text="Привет всем" />
 
         <TextView
             android:id="@+id/chat_other_time"
-            style="@style/text_small"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginEnd="@dimen/app_horizontal_margin"
-            android:gravity="end"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/chat_other_message"
+            style="@style/message_time"
             tools:text="21:45" />
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
+    </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
