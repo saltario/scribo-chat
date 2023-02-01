@@ -16,7 +16,7 @@
 
         <TextView
             android:id="@+id/chat_user_time"
-            style="@style/message_time"
+            style="@style/message_time_text"
             tools:text="21:45" />
 
         <TextView
@@ -41,7 +41,7 @@
 
         <TextView
             android:id="@+id/chat_other_time"
-            style="@style/message_time"
+            style="@style/message_time_text"
             tools:text="21:45" />
 
     </LinearLayout>
