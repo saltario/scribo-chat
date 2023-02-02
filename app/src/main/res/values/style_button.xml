@@ -56,4 +56,12 @@
         <item name="android:background">@drawable/bg_ripple_stroke_button</item>
     </style>
 
+    <style name="toolbar_button_back">
+        <item name="android:layout_width">@dimen/icon_button_size</item>
+        <item name="android:layout_height">@dimen/icon_button_size</item>
+        <item name="android:src">@drawable/icon_back</item>
+        <item name="android:clickable">true</item>
+        <item name="android:focusable">true</item>
+    </style>
+
 </resources>
