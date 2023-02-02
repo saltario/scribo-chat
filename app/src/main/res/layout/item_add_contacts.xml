@@ -5,16 +5,24 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_margin="@dimen/app_horizontal_margin"
+    android:background="@color/dark_background"
     style="@style/grey_button">
+
+    <CheckBox
+        android:id="@+id/checkBox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
 
     <de.hdodenhof.circleimageview.CircleImageView
         android:id="@+id/add_contacts_photo"
-        android:layout_width="@dimen/user_photo_normal_size"
-        android:layout_height="@dimen/user_photo_normal_size"
-        android:src="@drawable/dark_default_user_photo"
+        style="@style/list_photo"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintStart_toStartOf="parent"/>
+        app:layout_constraintStart_toEndOf="@+id/checkBox"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <de.hdodenhof.circleimageview.CircleImageView
         android:id="@+id/add_contacts_item_check"
@@ -30,15 +38,15 @@
         android:id="@+id/add_contacts_fullname"
         style="@style/text_normal"
         tools:text="@string/app_fullname_default"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toEndOf="@+id/add_contacts_photo"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
-        android:id="@+id/add_contacts_state"
-        style="@style/text_small"
-        android:maxLines="1"
-        tools:text="Онлайн"
+    <View
+        android:id="@+id/view"
+        style="@style/separator"
         app:layout_constraintStart_toEndOf="@+id/add_contacts_photo"
         app:layout_constraintTop_toBottomOf="@+id/add_contacts_fullname" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

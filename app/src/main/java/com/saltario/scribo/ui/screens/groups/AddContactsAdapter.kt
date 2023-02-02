@@ -39,7 +39,7 @@ class AddContactsAdapter : RecyclerView.Adapter<AddContactsAdapter.AddContactsHo
     override fun onBindViewHolder(holder: AddContactsHolder, position: Int) {
         holder.itemFullname.text = mListItems[position].fullname
         holder.itemPhoto.downloadAndSetImage(mListItems[position].photoUrl)
-        holder.itemState.text = mListItems[position].state
+//        holder.itemState.text = mListItems[position].state
     }
 
     fun updateListItem(item: Common) {
@@ -53,7 +53,7 @@ class AddContactsAdapter : RecyclerView.Adapter<AddContactsAdapter.AddContactsHo
 
         val itemFullname: TextView = view.add_contacts_fullname
         val itemPhoto: CircleImageView = view.add_contacts_photo
-        val itemState: TextView = view.add_contacts_state
+//        val itemState: TextView = view.add_contacts_state
         val itemCheck: CircleImageView = view.add_contacts_item_check
     }
 }
