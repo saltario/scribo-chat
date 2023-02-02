@@ -94,7 +94,7 @@ class GroupChatFragment(private val group: Common) : BaseFragment(R.layout.fragm
 
     private fun initFields() {
 
-        setHasOptionsMenu(true)
+        setHasOptionsMenu(false)
 
         mBottomSheetBehavior = BottomSheetBehavior.from(bottom_sheet_choice)
         mBottomSheetBehavior.state = BottomSheetBehavior.STATE_HIDDEN
@@ -130,7 +130,7 @@ class GroupChatFragment(private val group: Common) : BaseFragment(R.layout.fragm
             mToolBarInfo.toolbar_group_chat_fullname.text = mOtherUser.fullname
         }
 
-        mToolBarInfo.toolbar_group_chat_state.text = mOtherUser.state
+        mToolBarInfo.toolbar_group_chat_member_count.text = "Участники"
         mToolBarInfo.toolbar_group_chat_photo.downloadAndSetImage(mOtherUser.photoUrl)
     }
 
@@ -305,19 +305,4 @@ class GroupChatFragment(private val group: Common) : BaseFragment(R.layout.fragm
         }
     }
 
-    override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
-        activity?.menuInflater?.inflate(R.menu.action_menu_group_chat, menu)
-    }
-
-    override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        when (item.itemId) {
-            R.id.group_chat_action_menu_clear -> {
-                    showToast(getString(R.string.chat_toast_clear))
-            }
-            R.id.group_chat_action_menu_delete -> {
-                    showToast(getString(R.string.chat_toast_delete))
-            }
-        }
-        return true
-    }
 }

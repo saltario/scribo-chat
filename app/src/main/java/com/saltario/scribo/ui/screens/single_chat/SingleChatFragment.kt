@@ -299,11 +299,7 @@ class SingleChatFragment(private val contact: Common) : BaseFragment(R.layout.fr
         }
     }
 
-    override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
-        activity?.menuInflater?.inflate(R.menu.action_menu_single_chat, menu)
-    }
-
-    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+    /*override fun onOptionsItemSelected(item: MenuItem): Boolean {
         when (item.itemId) {
             R.id.single_chat_action_menu_clear -> {
                 clearSingleChat(contact.id) {
@@ -319,5 +315,5 @@ class SingleChatFragment(private val contact: Common) : BaseFragment(R.layout.fr
             }
         }
         return true
-    }
+    }*/
 }

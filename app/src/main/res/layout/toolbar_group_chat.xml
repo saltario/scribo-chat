@@ -2,43 +2,50 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="?attr/actionBarSize"
-    android:background="@color/dark_primary">
+    style="@style/toolbar">
 
     <ImageView
         android:id="@+id/toolbar_group_chat_back"
-        android:layout_width="40dp"
-        android:layout_height="40dp"
-        android:layout_marginStart="@dimen/app_horizontal_margin"
-        android:src="@drawable/icon_back"
+        style="@style/toolbar_button_back"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        android:contentDescription="@string/app_content_description"/>
 
     <de.hdodenhof.circleimageview.CircleImageView
         android:id="@+id/toolbar_group_chat_photo"
-        android:layout_width="@dimen/user_photo_normal_size"
-        android:layout_height="@dimen/user_photo_normal_size"
-        android:src="@drawable/dark_default_group_photo"
-        app:civ_circle_background_color="@color/dark_background"
+        style="@style/toolbar_photo"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toEndOf="@id/toolbar_group_chat_back"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
-        android:id="@+id/toolbar_group_chat_fullname"
-        style="@style/text_normal"
-        android:textColor="@color/dark_accent"
-        tools:text="@string/app_fullname_default"
-        app:layout_constraintStart_toEndOf="@+id/toolbar_group_chat_photo"
-        app:layout_constraintTop_toTopOf="@+id/toolbar_group_chat_photo" />
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/chat_bar_panel_icons"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintHorizontal_bias="0"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/toolbar_group_chat_photo"
+        app:layout_constraintStart_toEndOf="@+id/toolbar_group_chat_back"
+        app:layout_constraintTop_toTopOf="parent">
 
-    <TextView
-        android:id="@+id/toolbar_group_chat_state"
-        style="@style/text_small"
-        tools:text="@string/app_state_default"
-        app:layout_constraintStart_toEndOf="@+id/toolbar_group_chat_photo"
-        app:layout_constraintTop_toBottomOf="@+id/toolbar_group_chat_fullname" />
+        <TextView
+            android:id="@+id/toolbar_group_chat_fullname"
+            style="@style/text_large"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="@string/app_fullname_default" />
+
+        <TextView
+            android:id="@+id/toolbar_group_chat_member_count"
+            style="@style/text_small"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/toolbar_group_chat_fullname"
+            tools:text="@string/app_state_default" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

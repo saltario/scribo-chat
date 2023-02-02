@@ -24,7 +24,7 @@
 
             <ImageView
                 android:id="@+id/chat_user_image"
-                style="@style/message_user_image"
+                style="@style/message_image"
                 android:contentDescription="@string/app_content_description"
                 android:src="@drawable/dark_default_empty_image"/>
 
@@ -45,7 +45,7 @@
 
             <ImageView
                 android:id="@+id/chat_other_image"
-                style="@style/message_other_image"
+                style="@style/message_image"
                 android:contentDescription="@string/app_content_description"
                 android:src="@drawable/dark_default_empty_image"/>
 

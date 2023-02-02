@@ -74,7 +74,7 @@
 
     <style name="message_file_name" parent="message_text">
         <item name="android:paddingStart">@dimen/app_padding_small</item>
-        <item name="maxLines">2</item>
+        <item name="android:maxLines">2</item>
     </style>
 
     <style name="message_image">
@@ -86,14 +86,6 @@
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="cardCornerRadius">@dimen/chat_message_image_radius</item>
-    </style>
-
-    <style name="message_user_image" parent="message_image">
-
-    </style>
-
-    <style name="message_other_image" parent="message_image">
-
     </style>
 
     <style name="input_message" parent="input">
