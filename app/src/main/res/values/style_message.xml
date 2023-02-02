@@ -15,17 +15,25 @@
         <item name="android:layout_marginStart">@dimen/app_horizontal_normal_margin</item>
     </style>
 
-    <style name="message_file_user_block" parent="message_user_block">
+    <style name="message_attach_user_block" parent="message_user_block">
         <item name="android:background">@drawable/bg_message_user</item>
     </style>
 
-    <style name="message_file_other_block" parent="message_other_block">
+    <style name="message_attach_other_block" parent="message_other_block">
         <item name="android:background">@drawable/bg_message_other</item>
     </style>
 
+    <style name="message_voice_wave">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:paddingStart">@dimen/app_padding_small</item>
+        <item name="android:paddingEnd">15dp</item>
+        <item name="android:src">@drawable/dark_default_voice_wave</item>
+    </style>
+
     <style name="message_button">
-        <item name="android:layout_width">50dp</item>
-        <item name="android:layout_height">50dp</item>
+        <item name="android:layout_width">40dp</item>
+        <item name="android:layout_height">40dp</item>
         <item name="android:layout_margin">2dp</item>
     </style>
 
@@ -42,20 +50,10 @@
 
     <style name="message_time" parent="message">
         <item name="android:layout_marginHorizontal">5dp</item>
+        <item name="android:layout_marginBottom">5dp</item>
         <item name="android:textSize">@dimen/text_size_time</item>
-        <item name="android:gravity">end</item>
-    </style>
-
-    <style name="message_time_text" parent="message_time">
-        <item name="android:layout_gravity">center</item>
-    </style>
-
-    <style name="message_time_image" parent="message_time">
         <item name="android:layout_gravity">bottom</item>
-    </style>
-
-    <style name="message_time_file" parent="message_time">
-        <item name="android:layout_gravity">center</item>
+        <item name="android:gravity">end</item>
     </style>
 
     <style name="message_text" parent="message">
@@ -75,6 +73,7 @@
     </style>
 
     <style name="message_file_name" parent="message_text">
+        <item name="android:paddingStart">@dimen/app_padding_small</item>
         <item name="maxLines">2</item>
     </style>
 

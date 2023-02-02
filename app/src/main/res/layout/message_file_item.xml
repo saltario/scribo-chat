@@ -17,7 +17,8 @@
 
         <TextView
             android:id="@+id/chat_user_file_time"
-            style="@style/message_time_file"
+            style="@style/message_time"
+            app:layout_constraintVertical_bias="1"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toStartOf="@+id/block_user_file_content"
             app:layout_constraintTop_toTopOf="parent"
@@ -25,7 +26,7 @@
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/block_user_file_content"
-            style="@style/message_file_user_block"
+            style="@style/message_attach_user_block"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent">
@@ -71,7 +72,8 @@
 
         <TextView
             android:id="@+id/chat_other_file_time"
-            style="@style/message_time_file"
+            style="@style/message_time"
+            app:layout_constraintVertical_bias="1"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toEndOf="@+id/block_other_file_content"
             app:layout_constraintTop_toTopOf="parent"
@@ -79,7 +81,7 @@
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/block_other_file_content"
-            style="@style/message_file_other_block"
+            style="@style/message_attach_other_block"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent">
