@@ -8,10 +8,7 @@
 
     <de.hdodenhof.circleimageview.CircleImageView
         android:id="@+id/create_group_input_photo"
-        android:layout_width="@dimen/user_photo_normal_size"
-        android:layout_height="@dimen/user_photo_normal_size"
-        android:layout_margin="@dimen/app_horizontal_margin"
-        android:src="@drawable/dark_default_group_photo"
+        style="@style/new_group_photo"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 

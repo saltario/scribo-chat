@@ -5,7 +5,8 @@
     <string name="app_title_chats">Чаты</string>
     <string name="app_title_contacts">Контакты</string>
     <string name="app_title_settings">Настройки</string>
-    <string name="app_title_create_group">Создание группы</string>
+    <string name="app_title_new_group">Новая группа</string>
+    <string name="app_title_add_contacts">Добавить в группу</string>
 
     <string name="enter_phone_header">Введите номер телефона</string>
     <string name="enter_phone_hint">+1(___)___-__-__</string>
@@ -43,6 +44,7 @@
 
 
     <string name="button_next">Продолжить</string>
+    <string name="button_next_2">Далее</string>
     <string name="button_done">Готово</string>
     <string name="button_cancel">Отмена</string>
     <string name="button_get_code">Получить код</string>

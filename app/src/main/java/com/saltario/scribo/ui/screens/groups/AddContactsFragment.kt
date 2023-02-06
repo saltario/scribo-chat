@@ -1,5 +1,6 @@
 package com.saltario.scribo.ui.screens.groups
 
+import android.annotation.SuppressLint
 import androidx.recyclerview.widget.RecyclerView
 import com.saltario.scribo.R
 import com.saltario.scribo.database.*
@@ -48,6 +49,7 @@ class AddContactsFragment : BaseFragment(R.layout.fragment_add_contacts) {
         }
     }
 
+    @SuppressLint("SuspiciousIndentation")
     private fun initRecyclerView() {
 
         mRecyclerView = add_contacts_recycle_view

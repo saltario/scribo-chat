@@ -58,7 +58,7 @@ class CreateGroupFragment(private var listContacts: List<Common>) : BaseFragment
     }
 
     private fun updateFragmentFields() {
-        APP_ACTIVITY.title = getString(R.string.app_title_create_group)
+        APP_ACTIVITY.title = getString(R.string.app_title_new_group)
         create_group_input_name.requestFocus()
         create_group_counts.text = getPlurals(listContacts.size)
     }

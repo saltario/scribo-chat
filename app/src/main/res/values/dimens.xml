@@ -14,7 +14,7 @@
 
     <dimen name="user_photo_size">40dp</dimen>
     <dimen name="user_photo_normal_size">60dp</dimen>
-    <dimen name="user_photo_large_size">60dp</dimen>
+    <dimen name="user_photo_large_size">72dp</dimen>
 
     <dimen name="input_phone_layout_box_corners_radius">18dp</dimen>
     <dimen name="input_change_layout_box_corners_radius">14dp</dimen>
