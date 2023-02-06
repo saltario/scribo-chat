@@ -24,6 +24,15 @@
     </style>
 
     <style name="input_text_layout_phone" parent="input_text_layout">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:paddingEnd">0dp</item>
+        <item name="android:paddingStart">0dp</item>
+        <item name="android:padding">0dp</item>
+        <item name="android:layout_marginHorizontal">0dp</item>
+        <item name="android:hint">@string/input_text_hint_phone</item>
+    </style>
+
+    <style name="input_text_layout_code" parent="input_text_layout">
 
     </style>
 
@@ -56,6 +65,7 @@
     <style name="input_phone" parent="input">
         <item name="android:layout_height">72dp</item>
         <item name="android:inputType">phone</item>
+        <item name="android:hint">@string/enter_phone_hint</item>
     </style>
 
     <style name="input_change" parent="input">

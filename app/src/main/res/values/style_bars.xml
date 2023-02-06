@@ -8,7 +8,7 @@
     </style>
 
     <style name="toolbar" parent="bar">
-        <item name="android:theme">@style/ThemeOverlay.AppCompat.Dark.ActionBar</item>
+        <item name="android:theme">@style/ThemeOverlay.Material3.Dark.ActionBar</item>
     </style>
 
     <style name="bottom_nav_menu" parent="bar">

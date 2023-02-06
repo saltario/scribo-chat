@@ -68,21 +68,14 @@
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/edit_profile_enter_phone_input_label"
         style="@style/input_text_layout_phone"
-        android:layout_width="0dp"
         android:layout_marginTop="@dimen/app_horizontal_normal_margin"
-        android:layout_marginHorizontal="0dp"
-        android:hint="@string/input_text_hint_phone"
-        android:padding="0dp"
-        android:paddingEnd="0dp"
-        android:paddingStart="0dp"
         app:layout_constraintEnd_toEndOf="@id/end_vertical_guideline"
         app:layout_constraintStart_toStartOf="@+id/start_vertical_guideline"
         app:layout_constraintTop_toBottomOf="@+id/edit_profile_input_surname_label">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/edit_profile_enter_phone_number"
-            style="@style/input_phone"
-            android:hint="@string/enter_phone_hint" />
+            style="@style/input_phone"/>
 
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -234,13 +227,13 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        app:layout_constraintGuide_begin="48dp" />
+        app:layout_constraintGuide_begin="@dimen/app_horizontal_normal_margin" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/end_vertical_guideline"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        app:layout_constraintGuide_end="48dp" />
+        app:layout_constraintGuide_end="@dimen/app_horizontal_normal_margin" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

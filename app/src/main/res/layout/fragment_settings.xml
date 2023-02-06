@@ -269,7 +269,6 @@
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
-
     <TextView
         android:id="@+id/settings_hyperlink_processing_and_storage"
         style="@style/text_hyperlink"
@@ -295,13 +294,13 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        app:layout_constraintGuide_begin="48dp" />
+        app:layout_constraintGuide_begin="@dimen/app_horizontal_normal_margin" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/end_vertical_guideline"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        app:layout_constraintGuide_end="48dp" />
+        app:layout_constraintGuide_end="@dimen/app_horizontal_normal_margin" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

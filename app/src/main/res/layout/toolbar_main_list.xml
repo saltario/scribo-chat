@@ -21,7 +21,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/toolbar_main_header"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintHorizontal_bias="1" />
+        app:layout_constraintHorizontal_bias="1"
+        android:contentDescription="@string/app_content_description" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
