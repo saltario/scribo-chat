@@ -51,7 +51,7 @@ class SettingsFragment : BaseFragment(R.layout.fragment_settings) {
         settings_fullname.text = USER.fullname
         settings_phone_number.text = USER.phone
         settings_status.text = USER.state
-        settings_username.text = getString(R.string.app_dog) + USER.username
+        settings_username.text = getString(R.string.text_dog) + USER.username
         settings_photo.downloadAndSetImage(USER.photoUrl)
     }
 

@@ -1,7 +1,6 @@
 package com.saltario.scribo.ui.message_recycle_view.holders
 
 import android.os.Environment
-import android.provider.Settings.Global.getString
 import android.view.View
 import android.widget.ImageView
 import android.widget.ProgressBar
@@ -86,7 +85,7 @@ class HolderFileMessage(view: View): RecyclerView.ViewHolder(view), MessageHolde
                 mFile.createNewFile()
                 getFileFromStorage(mFile, view.fileUrl) {
 
-                    showToast(APP_ACTIVITY.getString(R.string.chat_toast_download_success))
+                    showToast(APP_ACTIVITY.getString(R.string.app_toast_download_success))
 
                     if (view.from == CURRENT_UID) {
 

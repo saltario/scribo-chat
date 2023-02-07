@@ -67,7 +67,7 @@ class LoginFragment : Fragment(R.layout.fragment_login) {
     private fun sentCode() {
 
         if (login_enter_phone_number.text.toString().isEmpty()) {
-            showToast(getString(R.string.register_toast_enter_phone_number))
+            showToast(getString(R.string.app_toast_phone_number_is_empty))
         } else {
             authUser()
         }

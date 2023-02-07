@@ -18,7 +18,6 @@ import com.saltario.scribo.models.User
 import com.saltario.scribo.ui.screens.BaseFragment
 import com.saltario.scribo.ui.message_recycle_view.views.AppViewFactory
 import com.saltario.scribo.ui.objects.*
-import com.saltario.scribo.ui.screens.main_list.MainListFragment
 import com.saltario.scribo.utilits.*
 import com.theartofdev.edmodo.cropper.CropImage
 import kotlinx.android.synthetic.main.activity_main.view.*
@@ -142,7 +141,7 @@ class SingleChatFragment(private val contact: Common) : BaseFragment(R.layout.fr
             mSmoothScrollToPosition = true
             val message = chat_input_message.text.toString()
             if (message.isEmpty()) {
-                showToast(getString(R.string.chat_toast_message_is_empty))
+                showToast(getString(R.string.app_toast_message_is_empty))
             } else {
                 sendMessageAsText(message, contact.id){
                     chat_input_message.setText("")
@@ -162,7 +161,7 @@ class SingleChatFragment(private val contact: Common) : BaseFragment(R.layout.fr
 
                 if (checkPermission(RECORD_AUDIO)){
                     if (event.action == MotionEvent.ACTION_DOWN){
-                        chat_input_message.setText(getString(R.string.chat_record))
+                        chat_input_message.setText(getString(R.string.text_record))
                         chat_btn_voice.setColorFilter(ContextCompat.getColor(APP_ACTIVITY, R.color.dark_background))
                         val messageKey = getMessageKey(contact.id)
                         mAppVoiceRecorder.startRecorder(messageKey)
@@ -183,7 +182,7 @@ class SingleChatFragment(private val contact: Common) : BaseFragment(R.layout.fr
         // Проверяем если поле ввода текста пустое то скрываем кнопку отправки
         chat_input_message.addTextChangedListener(AppTextWatcher{
             val string = chat_input_message.text.toString()
-            if (string.isEmpty() || string == getString(R.string.chat_record)){
+            if (string.isEmpty() || string == getString(R.string.text_record)){
                 chat_btn_sent_message.visibility = View.GONE
                 chat_btn_attach.visibility = View.VISIBLE
                 chat_btn_voice.visibility = View.VISIBLE

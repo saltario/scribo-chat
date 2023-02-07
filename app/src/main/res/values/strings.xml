@@ -8,51 +8,57 @@
     <string name="app_title_new_group">Новая группа</string>
     <string name="app_title_add_contacts">Добавить в группу</string>
 
-    <string name="enter_phone_header">Введите номер телефона</string>
-    <string name="enter_phone_hint">+1(___)___-__-__</string>
 
+    <string name="enter_phone_header">Введите номер телефона</string>
     <string name="enter_code_header">Введите код подтверждения</string>
-    <string name="enter_code_hint">- - - - - -</string>
+    <string name="registration_header">Регистрация</string>
+    <string name="edit_profile_header">Редактирование</string>
+
 
     <string name="input_name_hint">Имя</string>
     <string name="input_surname_hint">Фамилия</string>
     <string name="input_username_hint">Никнейм</string>
     <string name="input_mail_hint">Почта (необязательно)</string>
     <string name="input_bio_hint">Описание</string>
+    <string name="input_group_name_hint">Название группы</string>
+    <string name="input_message_hint">Сообщение</string>
 
     <string name="input_text_hint_phone">Номер телефона</string>
+    <string name="enter_phone_hint">+1(___)___-__-__</string>
+
     <string name="input_text_hint_code">Код подтверждения</string>
+    <string name="enter_code_hint">- - - - - -</string>
 
-    <string name="hyperlink_processing_and_storage"><u>Политика обработки и хранения данных</u></string>
-    <string name="hyperlink_privacy_policy"><u>Политика конфиденциальности</u></string>
 
-    <string name="welcome_header">Добро\nпожаловать</string>
-    <string name="welcome_description">Приветствуем вас в нашем мессенджере.\nЗдесь вы можете общаться свободно!</string>
+    <string name="app_data_text">Данные</string>
+    <string name="app_appearance_text">Оформление</string>
+    <string name="app_exit_profile">Выйти из аккаунта</string>
+    <string name="app_delete_profile">Удалить аккаунт</string>
+    <string name="app_bio_text">О себе</string>
 
-    <string name="settings_button_data">Данные</string>
-    <string name="settings_button_appearance">Оформление</string>
-    <string name="settings_button_exit_profile">Выйти из аккаунта</string>
-    <string name="settings_button_delete_profile">Удалить аккаунт</string>
-    <string name="settings_bio">О себе</string>
-
-    <string name="registration">Регистрация</string>
-    <string name="edit_profile">Редактирование</string>
 
     <string name="nav_bottom_chats">Чаты</string>
     <string name="nav_bottom_settings">Настройки</string>
     <string name="nav_bottom_contacts">Контакты</string>
 
 
-    <string name="button_next">Продолжить</string>
-    <string name="button_next_2">Далее</string>
-    <string name="button_done">Готово</string>
-    <string name="button_cancel">Отмена</string>
-    <string name="button_get_code">Получить код</string>
-    <string name="login_text_login">Войти</string>
-    <string name="button_picture">Картинка</string>
-    <string name="button_file">Файл</string>
+    <string name="app_toast_welcome_message">Добро пожаловать</string>
+    <string name="app_toast_data_update">Данные обновлены</string>
 
-    <string name="first_time">Первый раз?</string>
+    <string name="app_toast_name_is_empty">Имя не может быть пустым</string>
+    <string name="app_toast_username_is_empty">Имя пользователя пустое</string>
+    <string name="app_toast_username_not_unique">Имя не уникально</string>
+    <string name="app_toast_message_is_empty">Сообщение не может быть пустым</string>
+    <string name="app_toast_phone_number_is_empty">Номер телефона не может быть пустым</string>
+    <string name="app_toast_download_success">Загружено</string>
+
+
+    <string name="chat_clear">Очистить чат</string>
+    <string name="chat_delete">Удалить чат</string>
+
+    <string name="chat_toast_clear">Чат очищен</string>
+    <string name="chat_toast_delete">Чат удален</string>
+
 
     <plurals name="count_members">
         <item quantity="one">%d участник</item>
@@ -61,6 +67,24 @@
         <item quantity="other">%d участников</item>
     </plurals>
 
+
+    <string name="hyperlink_processing_and_storage"><u>Политика обработки и хранения данных</u></string>
+    <string name="hyperlink_privacy_policy"><u>Политика конфиденциальности</u></string>
+
+
+    <string name="text_next">Продолжить</string>
+    <string name="text_next_2">Далее</string>
+    <string name="text_done">Готово</string>
+    <string name="text_cancel">Отмена</string>
+    <string name="text_get_code">Получить код</string>
+    <string name="text_login">Войти</string>
+    <string name="text_picture">Картинка</string>
+    <string name="text_file">Файл</string>
+    <string name="text_first_time">Первый раз?</string>
+    <string name="text_record">Запись</string>
+    <string name="text_dog">\u0040</string>
+
+
     <string name="app_fullname_default">Петр Разумовский</string>
     <string name="app_last_message_default">Привет, как дела?</string>
     <string name="app_state_default">В сети</string>
@@ -68,26 +92,7 @@
     <string name="app_number_phone_default">+16505553434</string>
     <string name="app_login_default">\u0040scribo</string>
     <string name="app_bio_default">Что-то о себе</string>
-    <string name="app_dog">\u0040</string>
+    <string name="app_content_description">Картинка</string>
 
-    <string name="app_toast_data_update">Данные обновлены</string>
-    <string name="app_toast_welcome_message">Добро пожаловать</string>
-    <string name="hello_blank_fragment">Hello blank fragment</string>
-    <string name="app_content_description">content description</string>
-    <string name="login_text_set_phone">Введите номер телефона</string>
-    <string name="settings_toast_name_is_empty">Имя не может быть пустым</string>
-    <string name="settings_toast_username_is_empty">Имя пользователя пустое</string>
-    <string name="settings_toast_username_not_unique">Имя не уникально</string>
-    <string name="settings_action_menu_change_name">Изменить имя</string>
-    <string name="settings_action_menu_exit">Выход</string>
-    <string name="register_toast_enter_phone_number">Введите номер телефона!</string>
-    <string name="chat_input_message">Сообщение</string>
-    <string name="chat_record">Запись</string>
-    <string name="chat_toast_message_is_empty">Сообщение не может быть пустым</string>
-    <string name="chat_toast_download_success">Загружено</string>
-    <string name="single_chat_action_menu_clear">Очистить чат</string>
-    <string name="single_chat_action_menu_delete">Удалить чат</string>
-    <string name="chat_toast_clear">Чат очищен</string>
-    <string name="chat_toast_delete">Чат удален</string>
-
+    
 </resources>

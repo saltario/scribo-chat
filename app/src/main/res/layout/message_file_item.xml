@@ -47,7 +47,7 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toEndOf="@+id/chat_btn_user_download_file"
                 app:layout_constraintTop_toTopOf="parent"
-                tools:text="@string/button_file" />
+                tools:text="@string/text_file" />
 
             <ProgressBar
                 android:id="@+id/chat_user_download_progress_bar"
@@ -102,7 +102,7 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toEndOf="@+id/chat_btn_other_download_file"
                 app:layout_constraintTop_toTopOf="parent"
-                tools:text="@string/button_file" />
+                tools:text="@string/text_file" />
 
             <ProgressBar
                 android:id="@+id/chat_other_download_progress_bar"

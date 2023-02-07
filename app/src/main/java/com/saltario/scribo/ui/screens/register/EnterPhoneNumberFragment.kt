@@ -51,7 +51,7 @@ class EnterPhoneNumberFragment : Fragment(R.layout.fragment_enter_phone) {
     private fun sentCode() {
 
         if (enter_phone_number.text.toString().isEmpty()) {
-            showToast(getString(R.string.register_toast_enter_phone_number))
+            showToast(getString(R.string.app_toast_phone_number_is_empty))
         } else {
             authUser()
         }

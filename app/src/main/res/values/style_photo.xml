@@ -29,8 +29,14 @@
         <item name="android:layout_marginEnd">@dimen/app_horizontal_normal_margin</item>
     </style>
 
+    <style name="list_photo_small" parent="photo">
+        <item name="android:layout_width">@dimen/user_photo_size</item>
+        <item name="android:layout_height">@dimen/user_photo_size</item>
+        <item name="android:layout_marginEnd">@dimen/app_horizontal_normal_margin</item>
+    </style>
+
     <style name="new_group_photo" parent="photo">
-        <item name="android:src">@drawable/dark_default_user_photo_stroke</item>
+        <item name="android:src">@drawable/dark_default_group_photo_stroke</item>
         <item name="android:layout_width">@dimen/user_photo_large_size</item>
         <item name="android:layout_height">@dimen/user_photo_large_size</item>
     </style>

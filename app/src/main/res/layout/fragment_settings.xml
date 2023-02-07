@@ -120,13 +120,13 @@
             style="@style/text_small"
             android:fontFamily="@font/roboto"
             android:textColor="@color/dark_text_color_white"
-            android:text="@string/settings_bio"
+            android:text="@string/app_bio_text"
             android:layout_marginTop="5dp"
             app:layout_constraintVertical_bias="0"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            tools:text="@string/settings_bio" />
+            tools:text="@string/app_bio_text" />
 
         <TextView
             android:id="@+id/bio"
@@ -177,12 +177,12 @@
             android:id="@+id/settings_data"
             style="@style/text_normal"
             android:fontFamily="@font/roboto"
-            android:text="@string/settings_button_data"
+            android:text="@string/app_data_text"
             android:textSize="22sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toEndOf="@+id/settings_button_data_icon"
             app:layout_constraintTop_toTopOf="parent"
-            tools:text="@string/settings_button_data" />
+            tools:text="@string/app_data_text" />
 
         <ImageView
             android:id="@+id/settings_button_data_icon"
@@ -212,12 +212,12 @@
             android:id="@+id/settings_appearance"
             style="@style/text_normal"
             android:fontFamily="@font/roboto"
-            android:text="@string/settings_button_appearance"
+            android:text="@string/app_appearance_text"
             android:textSize="22sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toEndOf="@+id/settings_button_appearance_icon"
             app:layout_constraintTop_toTopOf="parent"
-            tools:text="@string/settings_button_appearance" />
+            tools:text="@string/app_appearance_text" />
 
         <ImageView
             android:id="@+id/settings_button_appearance_icon"
@@ -247,12 +247,12 @@
             style="@style/text_input"
             android:fontFamily="@font/roboto"
             android:paddingEnd="@dimen/app_horizontal_margin"
-            android:text="@string/settings_button_exit_profile"
+            android:text="@string/app_exit_profile"
             android:textSize="22sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toEndOf="@+id/settings_button_exit_profile_icon"
             app:layout_constraintTop_toTopOf="parent"
-            tools:text="@string/settings_button_exit_profile"
+            tools:text="@string/app_exit_profile"
             tools:ignore="RtlSymmetry" />
 
         <ImageView

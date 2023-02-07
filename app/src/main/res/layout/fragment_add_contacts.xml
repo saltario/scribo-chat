@@ -33,11 +33,11 @@
         <TextView
             android:id="@+id/add_contacts_btn_back_text"
             style="@style/text_button_white"
-            android:text="@string/button_cancel"
+            android:text="@string/text_cancel"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toEndOf="@+id/add_contacts_btn_back_icon"
             app:layout_constraintTop_toTopOf="parent"
-            tools:text="@string/button_cancel" />
+            tools:text="@string/text_cancel" />
 
         <ImageView
             android:id="@+id/add_contacts_btn_back_icon"
@@ -64,11 +64,11 @@
         <TextView
             android:id="@+id/add_contacts_btn_next_text"
             style="@style/text_button_white"
-            android:text="@string/button_next_2"
+            android:text="@string/text_next_2"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            tools:text="@string/button_next_2" />
+            tools:text="@string/text_next_2" />
 
         <ImageView
             android:id="@+id/add_contacts_btn_next_icon"

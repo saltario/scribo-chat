@@ -18,11 +18,11 @@
         android:id="@+id/edit_profile_label"
         style="@style/text_title"
         android:layout_marginStart="@dimen/app_horizontal_normal_margin"
-        android:text="@string/edit_profile"
+        android:text="@string/edit_profile_header"
         app:layout_constraintBottom_toBottomOf="@+id/edit_profile_toolbar"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:text="@string/edit_profile" />
+        tools:text="@string/edit_profile_header" />
 
     <de.hdodenhof.circleimageview.CircleImageView
         android:id="@+id/edit_profile_input_photo"
@@ -131,12 +131,12 @@
             style="@style/text_input"
             android:fontFamily="@font/roboto"
             android:paddingEnd="@dimen/app_horizontal_margin"
-            android:text="@string/settings_button_delete_profile"
+            android:text="@string/app_delete_profile"
             android:textSize="22sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toEndOf="@+id/edit_profile_button_delete_profile_icon"
             app:layout_constraintTop_toTopOf="parent"
-            tools:text="@string/settings_button_delete_profile"
+            tools:text="@string/app_delete_profile"
             tools:ignore="RtlSymmetry" />
 
         <ImageView
@@ -167,11 +167,11 @@
         <TextView
             android:id="@+id/edit_profile_btn_back_text"
             style="@style/text_button_white"
-            android:text="@string/button_cancel"
+            android:text="@string/text_cancel"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toEndOf="@+id/edit_profile_btn_back_icon"
             app:layout_constraintTop_toTopOf="parent"
-            tools:text="@string/button_cancel" />
+            tools:text="@string/text_cancel" />
 
         <ImageView
             android:id="@+id/edit_profile_btn_back_icon"
@@ -197,11 +197,11 @@
         <TextView
             android:id="@+id/edit_profile_btn_done_text"
             style="@style/text_button_white"
-            android:text="@string/button_done"
+            android:text="@string/text_done"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            tools:text="@string/button_done" />
+            tools:text="@string/text_done" />
 
         <ImageView
             android:id="@+id/edit_profile_btn_done_icon"

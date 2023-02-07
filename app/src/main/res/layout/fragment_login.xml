@@ -43,11 +43,11 @@
             android:id="@+id/first_time_label"
             style="@style/text_input"
             android:layout_marginStart="10dp"
-            android:text="@string/first_time"
+            android:text="@string/text_first_time"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            tools:text="@string/first_time" />
+            tools:text="@string/text_first_time" />
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/login_btn_registration"
@@ -62,12 +62,12 @@
             <TextView
                 android:id="@+id/login_btn_registration_text"
                 style="@style/text_button_black"
-                android:text="@string/registration"
+                android:text="@string/registration_header"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                tools:text="@string/registration" />
+                tools:text="@string/registration_header" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -85,11 +85,11 @@
         <TextView
             android:id="@+id/login_btn_login_text"
             style="@style/text_button_white"
-            android:text="@string/login_text_login"
+            android:text="@string/text_login"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            tools:text="@string/login_text_login" />
+            tools:text="@string/text_login" />
 
         <ImageView
             android:id="@+id/login_btn_login_icon"

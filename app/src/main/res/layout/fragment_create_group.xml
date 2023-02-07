@@ -4,29 +4,87 @@
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    tools:context=".ui.screens.groups.CreateGroupFragment">
+    tools:context=".ui.screens.groups.CreateGroupFragment"
+    android:background="@color/dark_background">
 
     <de.hdodenhof.circleimageview.CircleImageView
         android:id="@+id/create_group_input_photo"
         style="@style/new_group_photo"
+        android:layout_marginTop="@dimen/app_horizontal_normal_margin"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="@id/start_vertical_guideline" />
 
-    <EditText
-        android:id="@+id/create_group_input_name"
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/create_group_input_name_label"
+        style="@style/input_text_layout_change"
+        android:hint="@string/input_group_name_hint"
+        android:layout_margin="0dp"
+        app:layout_constraintBottom_toBottomOf="@+id/create_group_input_photo"
+        app:layout_constraintEnd_toEndOf="@id/end_vertical_guideline"
+        app:layout_constraintStart_toEndOf="@id/create_group_input_photo"
+        app:layout_constraintTop_toTopOf="@id/create_group_input_photo">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/create_group_input_name"
+            style="@style/input_change"
+            android:hint="@string/input_group_name_hint"/>
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/create_group_contacts_recycle_view"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="@dimen/app_horizontal_margin"
-        android:textColor="@color/dark_primary"
-        android:maxLines="1"
-        android:textSize="@dimen/text_size_normal"
-        android:hint="Тестовая группа"
-        android:textColorHint="@color/color_light_grey"
-        android:focusableInTouchMode="true"
-        app:layout_constraintBottom_toBottomOf="@+id/create_group_input_photo"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@id/create_group_input_photo"
-        app:layout_constraintTop_toTopOf="@id/create_group_input_photo" />
+        android:layout_marginVertical="@dimen/app_horizontal_normal_margin"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        app:layout_constraintEnd_toEndOf="@id/end_vertical_guideline"
+        app:layout_constraintStart_toStartOf="@id/start_vertical_guideline"
+        app:layout_constraintTop_toBottomOf="@+id/create_group_input_photo"
+        tools:listitem="@layout/item_add_contacts" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/create_group_btn_finish"
+        style="@style/red_button"
+        android:layout_width="wrap_content"
+        android:layout_marginEnd="@dimen/app_horizontal_normal_margin"
+        android:layout_marginBottom="@dimen/app_horizontal_normal_margin"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <TextView
+            android:id="@+id/create_group_btn_finish_text"
+            style="@style/text_button_white"
+            android:text="@string/text_done"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="@string/text_done" />
+
+        <ImageView
+            android:id="@+id/create_group_btn_finish_icon"
+            style="@style/icon_button"
+            android:contentDescription="@string/app_content_description"
+            android:src="@drawable/icon_done"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/create_group_btn_finish_text"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/start_vertical_guideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="@dimen/app_horizontal_normal_margin" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/end_vertical_guideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_end="@dimen/app_horizontal_normal_margin" />
 
     <TextView
         android:id="@+id/create_group_counts"
@@ -34,33 +92,12 @@
         android:layout_height="wrap_content"
         android:layout_margin="@dimen/app_vertical_large_margin"
         android:text="Участники"
+        android:visibility="gone"
         android:textColor="@color/dark_primary"
         android:textSize="@dimen/text_size_small"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/create_group_input_photo" />
-
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/create_group_contacts_recycle_view"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-        tools:listitem="@layout/item_add_contacts"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/create_group_counts"/>
-
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/create_group_btn_finish"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:src="@drawable/icon_done"
-        android:layout_margin="@dimen/app_horizontal_margin"
-        android:backgroundTint="@color/dark_primary"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"
-        android:contentDescription="@string/app_content_description" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

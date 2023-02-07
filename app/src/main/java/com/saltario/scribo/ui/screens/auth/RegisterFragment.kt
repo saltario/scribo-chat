@@ -40,13 +40,13 @@ class RegisterFragment(val uid: String) : Fragment(R.layout.fragment_register) {
         val username = register_input_username.text.toString().lowercase(Locale.getDefault())
 
         if (username.isEmpty()){
-            showToast(getString(R.string.settings_toast_username_is_empty))
+            showToast(getString(R.string.app_toast_username_is_empty))
 
         } else {
             REF_DATABASE_ROOT.child(NODE_USERNAMES).addListenerForSingleValueEvent(
                 AppValueEventListener {
                 if (it.hasChild(username)){
-                    showToast(getString(R.string.settings_toast_username_not_unique))
+                    showToast(getString(R.string.app_toast_username_not_unique))
                 } else {
                     setUsernameToDatabase(username, uid)
                 }
@@ -60,7 +60,7 @@ class RegisterFragment(val uid: String) : Fragment(R.layout.fragment_register) {
         val surname = register_input_surname.text.toString()
 
         if (name.isEmpty()){
-            showToast(getString(R.string.settings_toast_name_is_empty))
+            showToast(getString(R.string.app_toast_name_is_empty))
 
         } else {
             val fullname = "$name $surname"
