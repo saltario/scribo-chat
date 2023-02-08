@@ -51,6 +51,7 @@
     <string name="app_toast_message_is_empty">Сообщение не может быть пустым</string>
     <string name="app_toast_phone_number_is_empty">Номер телефона не может быть пустым</string>
     <string name="app_toast_phone_contacts_is_empty">Добавьте участников</string>
+    <string name="app_toast_group_name_is_empty">Введите имя группы</string>
     <string name="app_toast_download_success">Загружено</string>
 
 

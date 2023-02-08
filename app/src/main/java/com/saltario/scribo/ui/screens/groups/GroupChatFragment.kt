@@ -131,7 +131,7 @@ class GroupChatFragment(private val group: Common) : BaseFragment(R.layout.fragm
         }
 
         mToolBarInfo.toolbar_group_chat_member_count.text = "Участники"
-        mToolBarInfo.toolbar_group_chat_photo.downloadAndSetImage(mOtherUser.photoUrl)
+        mToolBarInfo.toolbar_group_chat_photo.downloadAndSetImage(group.photoUrl, group.type)
     }
 
     @SuppressLint("ClickableViewAccessibility")

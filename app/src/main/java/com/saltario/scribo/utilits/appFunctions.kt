@@ -14,6 +14,8 @@ import android.widget.Toast
 import androidx.fragment.app.Fragment
 import com.saltario.scribo.MainActivity
 import com.saltario.scribo.R
+import com.saltario.scribo.database.TYPE_CHAT
+import com.saltario.scribo.database.TYPE_GROUP
 import com.saltario.scribo.database.updatePhonesFromDatabase
 import com.saltario.scribo.models.Common
 import com.squareup.picasso.Picasso
@@ -58,10 +60,14 @@ fun hideKeyboard(){
     inputManager.hideSoftInputFromWindow(APP_ACTIVITY.window.decorView.windowToken, 0)
 }
 
-fun ImageView.downloadAndSetImage(url: String){
+fun ImageView.downloadAndSetImage(url: String, chatType: String = TYPE_CHAT){
+
+    var defaultPhoto: Int = R.drawable.dark_default_user_photo
+    if (chatType == TYPE_GROUP) { defaultPhoto = R.drawable.dark_default_group_photo }
+
     Picasso.get().load(url)
         .fit()
-        .placeholder(R.drawable.dark_default_user_photo)
+        .placeholder(defaultPhoto)
         .into(this)
 }
 

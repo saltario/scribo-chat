@@ -36,7 +36,7 @@ class MainListAdapter : RecyclerView.Adapter<MainListAdapter.MainListHolder>() {
 
     override fun onBindViewHolder(holder: MainListHolder, position: Int) {
         holder.itemFullname.text = mListItems[position].fullname
-        holder.itemPhoto.downloadAndSetImage(mListItems[position].photoUrl)
+        holder.itemPhoto.downloadAndSetImage(mListItems[position].photoUrl, mListItems[holder.absoluteAdapterPosition].type)
         holder.itemLastMessage.text = mListItems[position].lastMessage
     }
 
@@ -48,7 +48,6 @@ class MainListAdapter : RecyclerView.Adapter<MainListAdapter.MainListHolder>() {
     override fun getItemCount(): Int = mListItems.size
 
     class MainListHolder(view: View): RecyclerView.ViewHolder(view){
-
         val itemFullname: TextView = view.main_list_fullname
         val itemPhoto: CircleImageView = view.main_list_photo
         val itemLastMessage: TextView = view.main_list_last_message
