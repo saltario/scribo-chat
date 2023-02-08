@@ -50,6 +50,7 @@
     <string name="app_toast_username_not_unique">Имя не уникально</string>
     <string name="app_toast_message_is_empty">Сообщение не может быть пустым</string>
     <string name="app_toast_phone_number_is_empty">Номер телефона не может быть пустым</string>
+    <string name="app_toast_phone_contacts_is_empty">Добавьте участников</string>
     <string name="app_toast_download_success">Загружено</string>
 
 
@@ -86,12 +87,18 @@
 
 
     <string name="app_fullname_default">Петр Разумовский</string>
-    <string name="app_last_message_default">Привет, как дела?</string>
     <string name="app_state_default">В сети</string>
     <string name="app_group_member_count_default">Участники</string>
     <string name="app_number_phone_default">+16505553434</string>
     <string name="app_login_default">\u0040scribo</string>
     <string name="app_bio_default">Что-то о себе</string>
     <string name="app_content_description">Картинка</string>
+
+    <string name="app_last_message_default">Привет, как дела?</string>
+    <string name="app_last_group_message_default">Напишите что-нибудь!</string>
+    <string name="app_last_message_image_default">Картинка</string>
+    <string name="app_last_message_voice_default">Голосовое сообщение</string>
+    <string name="app_last_message_file_default">Файл</string>
+
 
 </resources>

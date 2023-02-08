@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="list_item_small">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:background">@color/dark_background</item>
+        <item name="android:layout_marginVertical">@dimen/app_vertical_margin_small</item>
+        <item name="android:layout_marginHorizontal">@dimen/app_horizontal_normal_margin</item>
+    </style>
+
+    <style name="list_item_small_with_checkbox" parent="list_item_small">
+        <item name="android:layout_marginStart">0dp</item>
+        <item name="android:layout_marginEnd">@dimen/app_horizontal_normal_margin</item>
+    </style>
+
+</resources>

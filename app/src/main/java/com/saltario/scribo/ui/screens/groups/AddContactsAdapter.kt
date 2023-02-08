@@ -3,6 +3,7 @@ package com.saltario.scribo.ui.screens.groups
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.CheckBox
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.saltario.scribo.R
@@ -22,12 +23,12 @@ class AddContactsAdapter : RecyclerView.Adapter<AddContactsAdapter.AddContactsHo
         holder.itemView.setOnClickListener {
             if (mListItems[holder.absoluteAdapterPosition].check) {
 
-                holder.itemCheck.visibility = View.INVISIBLE
+                holder.itemCheck.isChecked = false
                 mListItems[holder.absoluteAdapterPosition].check = false
                 AddContactsFragment.mListContacts.remove(mListItems[holder.absoluteAdapterPosition])
 
             } else {
-                holder.itemCheck.visibility = View.VISIBLE
+                holder.itemCheck.isChecked = true
                 mListItems[holder.absoluteAdapterPosition].check = true
                 AddContactsFragment.mListContacts.add(mListItems[holder.absoluteAdapterPosition])
             }
@@ -39,7 +40,6 @@ class AddContactsAdapter : RecyclerView.Adapter<AddContactsAdapter.AddContactsHo
     override fun onBindViewHolder(holder: AddContactsHolder, position: Int) {
         holder.itemFullname.text = mListItems[position].fullname
         holder.itemPhoto.downloadAndSetImage(mListItems[position].photoUrl)
-//        holder.itemState.text = mListItems[position].state
     }
 
     fun updateListItem(item: Common) {
@@ -50,10 +50,8 @@ class AddContactsAdapter : RecyclerView.Adapter<AddContactsAdapter.AddContactsHo
     override fun getItemCount(): Int = mListItems.size
 
     class AddContactsHolder(view: View): RecyclerView.ViewHolder(view){
-
         val itemFullname: TextView = view.add_contacts_fullname
         val itemPhoto: CircleImageView = view.add_contacts_photo
-//        val itemState: TextView = view.add_contacts_state
-        val itemCheck: CircleImageView = view.add_contacts_item_check
+        val itemCheck: CheckBox = view.add_contacts_checkbox
     }
 }

@@ -96,10 +96,14 @@ class MainListFragment : Fragment(R.layout.fragment_main_list) {
 
                         val tempList = it.children.map { it.getCommonModel() }
 
-                        if (tempList.isEmpty()) {
-                            newModel.lastMessage = "Чат очищен"
-                        } else {
-                            newModel.lastMessage = tempList[0].text
+                        if (tempList.isEmpty()) { newModel.lastMessage = getString(R.string.app_last_group_message_default) }
+                        else {
+                            when (tempList[0].type) {
+                                TYPE_IMAGE -> { newModel.lastMessage = getString(R.string.app_last_message_image_default) }
+                                TYPE_VOICE -> { newModel.lastMessage = getString(R.string.app_last_message_voice_default) }
+                                TYPE_FILE -> { newModel.lastMessage = getString(R.string.app_last_message_file_default) }
+                                else -> { newModel.lastMessage = tempList[0].text }
+                            }
                         }
 
                         newModel.type = TYPE_GROUP
@@ -120,15 +124,17 @@ class MainListFragment : Fragment(R.layout.fragment_main_list) {
 
                     val tempList = it.children.map { it.getCommonModel() }
 
-                    if (tempList.isEmpty()) {
-                        newModel.lastMessage = "Чат очищен"
-                    } else {
-                        newModel.lastMessage = tempList[0].text
+                    if (tempList.isEmpty()) { newModel.lastMessage = getString(R.string.app_last_message_default) }
+                    else {
+                        when (tempList[0].type) {
+                            TYPE_IMAGE -> { newModel.lastMessage = getString(R.string.app_last_message_image_default) }
+                            TYPE_VOICE -> { newModel.lastMessage = getString(R.string.app_last_message_voice_default) }
+                            TYPE_FILE -> { newModel.lastMessage = getString(R.string.app_last_message_file_default) }
+                            else -> { newModel.lastMessage = tempList[0].text }
+                        }
                     }
 
-                    if (newModel.fullname.isEmpty()) {
-                        newModel.fullname = newModel.phone
-                    }
+                    if (newModel.fullname.isEmpty()) { newModel.fullname = newModel.phone }
 
                     newModel.type = TYPE_CHAT
                     mAdapter.updateListItem(newModel)

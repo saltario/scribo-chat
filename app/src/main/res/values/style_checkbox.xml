@@ -1,7 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <style name="checkbox" parent="AppThemeDark">
+    <style name="checkbox">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:theme">@style/checkbox_theme</item>
+    </style>
+
+    <style name="checkbox_theme" parent="AppThemeDark">
         <item name="colorPrimary">@color/dark_text_color_white</item>
         <item name="colorOnPrimary">@color/dark_background</item>
     </style>

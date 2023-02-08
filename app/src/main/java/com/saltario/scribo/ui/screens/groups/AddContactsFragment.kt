@@ -1,6 +1,7 @@
 package com.saltario.scribo.ui.screens.groups
 
 import android.annotation.SuppressLint
+import android.view.View
 import androidx.recyclerview.widget.RecyclerView
 import com.saltario.scribo.R
 import com.saltario.scribo.database.*
@@ -8,13 +9,14 @@ import com.saltario.scribo.models.Common
 import com.saltario.scribo.ui.objects.AppValueEventListener
 import com.saltario.scribo.ui.screens.BaseFragment
 import com.saltario.scribo.utilits.APP_ACTIVITY
-import com.saltario.scribo.utilits.hideKeyboard
 import com.saltario.scribo.utilits.replaceFragment
 import com.saltario.scribo.utilits.showToast
+import kotlinx.android.synthetic.main.activity_main.view.*
 import kotlinx.android.synthetic.main.fragment_add_contacts.*
 
 class AddContactsFragment : BaseFragment(R.layout.fragment_add_contacts) {
 
+    private lateinit var mToolBarInfo: View
     private lateinit var mRecyclerView: RecyclerView
     private lateinit var mAdapter: AddContactsAdapter
     private var mListItems = listOf<Common>()
@@ -30,19 +32,24 @@ class AddContactsFragment : BaseFragment(R.layout.fragment_add_contacts) {
         super.onResume()
 
         resetListContacts()
-        updateFragmentFields()
+        initToolBar()
         initRecyclerView()
-        initFloatingActionButton()
+        initListeners()
     }
 
     private fun resetListContacts() {
         mListContacts.clear()
     }
 
-    private fun initFloatingActionButton() {
+    private fun initToolBar() {
+        mToolBarInfo = APP_ACTIVITY.mToolBar.toolbar_add_contacts
+        mToolBarInfo.visibility = View.VISIBLE
+    }
+
+    private fun initListeners() {
         add_contacts_btn_next.setOnClickListener {
             if (mListContacts.isEmpty()) {
-                showToast("Добавьте участников")
+                showToast(getString(R.string.app_toast_phone_contacts_is_empty))
             } else {
                 replaceFragment(CreateGroupFragment(mListContacts))
             }
@@ -74,15 +81,17 @@ class AddContactsFragment : BaseFragment(R.layout.fragment_add_contacts) {
 
                             val tempList = it.children.map { it.getCommonModel() }
 
-                            if (tempList.isEmpty()) {
-                                newModel.lastMessage = "Чат очищен"
-                            } else {
-                                newModel.lastMessage = tempList[0].text
+                            if (tempList.isEmpty()) { newModel.lastMessage = getString(R.string.app_last_group_message_default) }
+                            else {
+                                when (newModel.type) {
+                                    TYPE_IMAGE -> { newModel.lastMessage = getString(R.string.app_last_message_image_default) }
+                                    TYPE_VOICE -> { newModel.lastMessage = getString(R.string.app_last_message_voice_default) }
+                                    TYPE_FILE -> { newModel.lastMessage = getString(R.string.app_last_message_file_default) }
+                                    else -> { newModel.lastMessage = tempList[0].text }
+                                }
                             }
 
-                            if (newModel.fullname.isEmpty()){
-                                newModel.fullname = newModel.phone
-                            }
+                            if (newModel.fullname.isEmpty()){ newModel.fullname = newModel.phone }
 
                             mAdapter.updateListItem(newModel)
                         })
@@ -91,11 +100,6 @@ class AddContactsFragment : BaseFragment(R.layout.fragment_add_contacts) {
         })
 
         mRecyclerView.adapter = mAdapter
-    }
-
-    private fun updateFragmentFields() {
-        APP_ACTIVITY.title = "Добавить в группу"
-        hideKeyboard()
     }
 
     companion object {

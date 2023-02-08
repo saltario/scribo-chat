@@ -2,17 +2,11 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:layout_marginEnd="@dimen/app_horizontal_normal_margin"
-    android:layout_marginVertical="@dimen/app_vertical_margin_small"
-    android:background="@color/dark_background">
+    style="@style/list_item_small_with_checkbox">
 
     <CheckBox
         android:id="@+id/add_contacts_checkbox"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:theme="@style/checkbox"
+        style="@style/checkbox"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -23,16 +17,6 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toEndOf="@+id/add_contacts_checkbox"
         app:layout_constraintTop_toTopOf="parent" />
-
-    <de.hdodenhof.circleimageview.CircleImageView
-        android:id="@+id/add_contacts_item_check"
-        android:layout_width="20dp"
-        android:layout_height="20dp"
-        android:src="@drawable/icon_done"
-        android:visibility="invisible"
-        app:civ_circle_background_color="@color/color_light_grey"
-        app:layout_constraintBottom_toBottomOf="@+id/add_contacts_photo"
-        app:layout_constraintEnd_toEndOf="@+id/add_contacts_photo"/>
 
     <TextView
         android:id="@+id/add_contacts_fullname"
