@@ -74,7 +74,7 @@
             android:id="@+id/add_contacts_btn_next_icon"
             style="@style/icon_button"
             android:contentDescription="@string/app_content_description"
-            android:src="@drawable/icon_done"
+            android:src="@drawable/icon_next"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/add_contacts_btn_next_text"

@@ -4,13 +4,15 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    android:layout_marginEnd="@dimen/app_horizontal_normal_margin"
     android:layout_marginVertical="@dimen/app_vertical_margin_small"
     android:background="@color/dark_background">
 
     <CheckBox
-        android:id="@+id/checkBox"
+        android:id="@+id/add_contacts_checkbox"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:theme="@style/checkbox"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -19,7 +21,7 @@
         android:id="@+id/add_contacts_photo"
         style="@style/list_photo_small"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/checkBox"
+        app:layout_constraintStart_toEndOf="@+id/add_contacts_checkbox"
         app:layout_constraintTop_toTopOf="parent" />
 
     <de.hdodenhof.circleimageview.CircleImageView

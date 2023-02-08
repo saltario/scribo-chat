@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <style name="checkbox">
-
+    <style name="checkbox" parent="AppThemeDark">
+        <item name="colorPrimary">@color/dark_text_color_white</item>
+        <item name="colorOnPrimary">@color/dark_background</item>
     </style>
 
 </resources>
