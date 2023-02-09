@@ -34,6 +34,11 @@ class SettingsFragment : BaseFragment(R.layout.fragment_settings) {
 
         settings_hyperlink_processing_and_storage.setOnClickListener { showToast("Обработка данных (потом)") }
         settings_hyperlink_privacy_policy.setOnClickListener { showToast("Политика (потом)") }
+
+        settings_btn_change_number_phone.setOnClickListener { showToast("Номер телефона изменить нельзя!") }
+        settings_btn_change_username.setOnClickListener { showToast("Никнейм можно изменить в настройках профиля") }
+
+        bio.setOnClickListener { showToast("Скоро можно будет менять") }
     }
 
     private fun appearanceSettingsEdit() {

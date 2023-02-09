@@ -81,6 +81,7 @@
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/register_input_mail_label"
         style="@style/input_text_layout_change"
+        android:visibility="gone"
         android:layout_marginHorizontal="@dimen/app_horizontal_large_margin"
         android:layout_marginTop="5dp"
         android:paddingStart="0dp"

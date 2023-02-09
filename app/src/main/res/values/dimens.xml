@@ -8,6 +8,7 @@
     <dimen name="app_vertical_margin_small">8dp</dimen>
     <dimen name="app_vertical_margin">16dp</dimen>
     <dimen name="app_vertical_normal_margin">24dp</dimen>
+    <dimen name="app_vertical_half_normal_margin">12dp</dimen>
     <dimen name="app_vertical_large_margin">48dp</dimen>
 
     <dimen name="input_photo_normal_size">124dp</dimen>

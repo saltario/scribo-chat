@@ -69,6 +69,7 @@
         android:id="@+id/edit_profile_enter_phone_input_label"
         style="@style/input_text_layout_phone"
         android:textColorHint="@color/dark_text_color_white"
+        android:visibility="gone"
         android:layout_marginTop="@dimen/app_horizontal_normal_margin"
         app:layout_constraintEnd_toEndOf="@id/end_vertical_guideline"
         app:layout_constraintStart_toStartOf="@+id/start_vertical_guideline"
@@ -160,11 +161,12 @@
         android:id="@+id/edit_profile_btn_back"
         style="@style/transparent_button"
         android:layout_width="0dp"
+        android:layout_marginBottom="@dimen/app_vertical_large_margin"
         android:layout_marginStart="@dimen/app_horizontal_normal_margin"
         android:layout_marginEnd="@dimen/app_horizontal_margin"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/edit_profile_btn_done"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/buttons_guideline">
+        app:layout_constraintStart_toStartOf="parent">
 
         <TextView
             android:id="@+id/edit_profile_btn_back_text"
@@ -179,12 +181,12 @@
             android:id="@+id/edit_profile_btn_back_icon"
             style="@style/icon_button"
             android:layout_marginStart="10dp"
+            android:contentDescription="@string/app_content_description"
             android:padding="10dp"
             android:src="@drawable/icon_cancel"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            android:contentDescription="@string/app_content_description"/>
+            app:layout_constraintTop_toTopOf="parent" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -192,9 +194,10 @@
         android:id="@+id/edit_profile_btn_done"
         style="@style/red_button"
         android:layout_width="wrap_content"
+        android:layout_marginBottom="@dimen/app_vertical_large_margin"
         android:layout_marginEnd="@dimen/app_horizontal_normal_margin"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/buttons_guideline">
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
 
         <TextView
             android:id="@+id/edit_profile_btn_done_text"
@@ -208,21 +211,14 @@
         <ImageView
             android:id="@+id/edit_profile_btn_done_icon"
             style="@style/icon_button"
+            android:contentDescription="@string/app_content_description"
             android:src="@drawable/icon_done"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/edit_profile_btn_done_text"
-            app:layout_constraintTop_toTopOf="parent"
-            android:contentDescription="@string/app_content_description"/>
+            app:layout_constraintTop_toTopOf="parent" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/buttons_guideline"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_begin="713dp" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/start_vertical_guideline"
