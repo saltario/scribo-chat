@@ -10,7 +10,6 @@ import com.saltario.scribo.utilits.*
 import com.theartofdev.edmodo.cropper.CropImage
 import com.theartofdev.edmodo.cropper.CropImageView
 import kotlinx.android.synthetic.main.fragment_edit_profile.*
-import kotlinx.android.synthetic.main.fragment_register.*
 import java.util.*
 
 class EditProfileFragment : BaseFragment(R.layout.fragment_edit_profile) {
@@ -18,9 +17,16 @@ class EditProfileFragment : BaseFragment(R.layout.fragment_edit_profile) {
     override fun onStart() {
         super.onStart()
 
-        hideNavBottom()
+        prepareView()
         updateFragmentFields()
         initListeners()
+    }
+
+    private fun prepareView() {
+        setHasOptionsMenu(false)
+        hideToolBar()
+        hideNavBottom()
+        setStatusBarColor(R.color.dark_background_bar)
     }
 
     private fun updateFragmentFields() {
@@ -43,6 +49,7 @@ class EditProfileFragment : BaseFragment(R.layout.fragment_edit_profile) {
         edit_profile_input_photo.setOnClickListener { changePhoto() }
         edit_profile_btn_back.setOnClickListener { parentFragmentManager.popBackStack() }
         edit_profile_btn_done.setOnClickListener { done() }
+        edit_profile_btn_delete_profile.setOnClickListener { showToast("Удаление аккаунта (потом)") }
     }
 
     private fun done() {

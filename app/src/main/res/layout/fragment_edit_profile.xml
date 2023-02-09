@@ -68,6 +68,7 @@
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/edit_profile_enter_phone_input_label"
         style="@style/input_text_layout_phone"
+        android:textColorHint="@color/dark_text_color_white"
         android:layout_marginTop="@dimen/app_horizontal_normal_margin"
         app:layout_constraintEnd_toEndOf="@id/end_vertical_guideline"
         app:layout_constraintStart_toStartOf="@+id/start_vertical_guideline"
@@ -101,6 +102,7 @@
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/edit_profile_input_mail_label"
+        android:visibility="gone"
         style="@style/input_text_layout_change"
         android:layout_marginHorizontal="0dp"
         android:layout_marginTop="12dp"

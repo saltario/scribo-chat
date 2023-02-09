@@ -13,13 +13,16 @@ class SettingsFragment : BaseFragment(R.layout.fragment_settings) {
     override fun onResume() {
         super.onResume()
 
+        setUserInfoToLayout()
+        prepareView()
+        initListeners()
+    }
+
+    private fun prepareView() {
         setHasOptionsMenu(false)
         hideToolBar()
         showNavBottom()
         setStatusBarColor(R.color.dark_background)
-
-        setUserInfoToLayout()
-        initListeners()
     }
 
     private fun initListeners() {
