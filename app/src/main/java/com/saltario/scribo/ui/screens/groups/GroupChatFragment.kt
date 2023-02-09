@@ -3,6 +3,7 @@ package com.saltario.scribo.ui.screens.groups
 import android.annotation.SuppressLint
 import android.content.Intent
 import android.net.Uri
+import android.opengl.Visibility
 import android.view.*
 import android.widget.AbsListView
 import androidx.core.content.ContextCompat
@@ -130,7 +131,7 @@ class GroupChatFragment(private val group: Common) : BaseFragment(R.layout.fragm
             mToolBarInfo.toolbar_group_chat_fullname.text = mOtherUser.fullname
         }
 
-        mToolBarInfo.toolbar_group_chat_member_count.text = "Участники"
+        mToolBarInfo.toolbar_group_chat_member_count.text = "Группа"
         mToolBarInfo.toolbar_group_chat_photo.downloadAndSetImage(group.photoUrl, group.type)
     }
 
@@ -151,33 +152,40 @@ class GroupChatFragment(private val group: Common) : BaseFragment(R.layout.fragm
         }
         // Отправка вложения
         chat_btn_attach.setOnClickListener {
-            mSmoothScrollToPosition = true
-            attach()
+//            mSmoothScrollToPosition = true
+//            attach()
+            showToast("Пока недоступно")
+        }
+
+        chat_btn_voice.setOnClickListener {
+//            mSmoothScrollToPosition = true
+//            attach()
+            showToast("Пока недоступно")
         }
 
         // Отправка звукового сообщения
-        CoroutineScope(Dispatchers.IO).launch {
-            chat_btn_voice.setOnTouchListener { _, event ->
-
-                if (checkPermission(RECORD_AUDIO)){
-                    if (event.action == MotionEvent.ACTION_DOWN){
-                        chat_input_message.setText(getString(R.string.text_record))
-                        chat_btn_voice.setColorFilter(ContextCompat.getColor(APP_ACTIVITY, R.color.dark_background))
-                        val messageKey = getMessageKey(group.id)
-                        mAppVoiceRecorder.startRecorder(messageKey)
-
-                    } else if (event.action == MotionEvent.ACTION_UP) {
-                        chat_input_message.setText("")
-                        chat_btn_voice.colorFilter = null
-                        mAppVoiceRecorder.stopRecorder { file, messageKey ->
-                            uploadAnSendFileMessageToStorage(Uri.fromFile(file), messageKey, group.id, TYPE_VOICE)
-                            mSmoothScrollToPosition = true
-                        }
-                    }
-                }
-                true
-            }
-        }
+//        CoroutineScope(Dispatchers.IO).launch {
+//            chat_btn_voice.setOnTouchListener { _, event ->
+//
+//                if (checkPermission(RECORD_AUDIO)){
+//                    if (event.action == MotionEvent.ACTION_DOWN){
+//                        chat_input_message.setText(getString(R.string.text_record))
+//                        chat_btn_voice.setColorFilter(ContextCompat.getColor(APP_ACTIVITY, R.color.dark_background))
+//                        val messageKey = getMessageKey(group.id)
+//                        mAppVoiceRecorder.startRecorder(messageKey)
+//
+//                    } else if (event.action == MotionEvent.ACTION_UP) {
+//                        chat_input_message.setText("")
+//                        chat_btn_voice.colorFilter = null
+//                        mAppVoiceRecorder.stopRecorder { file, messageKey ->
+//                            uploadAnSendFileMessageToStorage(Uri.fromFile(file), messageKey, group.id, TYPE_VOICE)
+//                            mSmoothScrollToPosition = true
+//                        }
+//                    }
+//                }
+//                true
+//            }
+//        }
 
         // Проверяем если поле ввода текста пустое то скрываем кнопку отправки
         chat_input_message.addTextChangedListener(AppTextWatcher{
