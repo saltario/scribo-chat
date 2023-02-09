@@ -1,4 +1,4 @@
-package com.saltario.scribo.ui.screens.register
+package com.saltario.scribo.ui.screens.auth
 
 import androidx.fragment.app.Fragment
 import com.google.firebase.FirebaseException
