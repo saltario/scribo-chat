@@ -20,10 +20,7 @@
     <a href="https://github.com/vane4ek852" target="_blank">Иваном Лебедем</a>
 </h3>
 
-<br>
-
-<center>
-    <table >
+<table align="center">
         <tbody>
             <tr>
             <th>Основные функции приложения</th>
@@ -47,18 +44,13 @@
             <td align="center">Поддержка картинок и фотографий в сообщениях</td>
             </tr>
         </tbody>
-    </table>
-</center>
-
-<br>
+</table>
 
 <h3 align="center">
     <img src="http://saltario.ru/wp-content/uploads/2023/02/group-chat-edit-screen-dark.png" height="600"alt="Scribo Chat App">
     <img src="http://saltario.ru/wp-content/uploads/2023/02/chat-screen-dark.png" height="600"alt="Scribo Chat App"> 
     </a>
 </h3>
-
-<br>
 
 <h3 align="center">Разработка ведется с сентября 2022 года по сей день</h3>
 <h3 align="center">Текущее состояние: Альфа</h3><br>
